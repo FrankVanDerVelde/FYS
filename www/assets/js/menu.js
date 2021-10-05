@@ -1,5 +1,5 @@
-const toggleBtn = document.querySelector("#toggleBtn");
-const navList = document.querySelector("#navList");
+const toggleBtn = document.querySelector("#toggle-btn");
+const navList = document.querySelector("#nav-list");
 const dropdownBtn = document.querySelector(".drop-btn");
 const dropdown = document.querySelector("#dropdown-content");
 const themeSwitch = document.querySelector("#checkbox");
@@ -28,9 +28,11 @@ if (theme === "dark-theme"){
 function resetTheme() {
     if (themeSwitch.checked) {
         document.body.classList.add("dark-theme")
+        document.body.classList.remove("light-theme");
         localStorage.setItem("data-theme", "dark-theme");
         ball.style.transform = "translateX(20px)";
     } else {
+        document.body.classList.add("light-theme");
         document.body.classList.remove("dark-theme")
         localStorage.setItem("data-theme", "light-theme");
         ball.style.transform = "translateX(0px)";
