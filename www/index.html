@@ -11,56 +11,138 @@
     <link rel="stylesheet" href="./assets/css/home/home.css">
 </head>
 <body class="light-theme">
-    <header class="navbar">
-        <div class="logo">
-            <a href="">
-                <img src="./assets/img/corendon-logo.svg" alt="Logo">
-            </a>
+<nav class="navbar">
+    <div class="logo">
+        <a href="">
+            <img src="./assets/img/corendon-logo.svg" alt="Logo">
+        </a>
+    </div>
+    <ul class="navList" id="navList">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="index.html">Test1</a></li>
+        <li><a href="index.html">Test2</a></li>
+        <li><a href="index.html">Test3</a></li>
+        <li><a href="index.html">Test4</a></li>
+        <div class="dropdown">
+            <button class="dropbtn">
+                <i class="fa fa-caret-down"></i>
+                <i class="fa fa-caret-up"></i>
+            </button>
+            <div class="dropdown-content" id="dropdown-content">
+                <a href="./assets/views/auth/login.html">Inloggen</a>
+                <a href="#">Registreren</a>
+            </div>
         </div>
-        <nav class="nav-list" id="nav-list">
-            <ul>
-                <li><a href="./index.html" class="active">Home</a></li>
-                <li><a href="../www/assets/views/about.html">About</a></li>
-                <li><a href="../www/assets/views/contact.html" >Contact</a></li>
-                <li class="dropdown-box">
-                    <div class="dropdown">
-                        <button class="drop-btn">
-                            <i class="fa fa-caret-down"></i>
-                            <i class="fa fa-caret-up"></i>
-                        </button>
-                        <div class="dropdown-content" id="dropdown-content">
-                            <a href="./assets/views/auth/login.html">Inloggen</a>
-                            <a href="#">Registreren</a>
-                        </div>
-                    </div>
-                </li>
-            </ul>
-        </nav>
-        <div class="theme-switch-box">
-            <label class="switch">
-                <div>
-                    <input type="checkbox" class="checkbox" id="checkbox">
-                    <label for="checkbox" class="label">
-                        <i class="fas fa-sun"></i>
-                        <i class="fas fa-moon"></i>
-                        <div class="ball"></div>
-                    </label>
-                </div>
+    </ul>
+    <label class="switch">
+        <div>
+            <input type="checkbox" class="checkbox" id="checkbox">
+            <label for="checkbox" class="label">
+                <i class='fas fa-sun'></i>
+                <i class="fas fa-moon"></i>
+                <div class='ball'></div>
             </label>
         </div>
-        <div class="burger-menu" id="toggle-btn">
-            <div class="menu-line"></div>
-            <div class="menu-line"></div>
-            <div class="menu-line"></div>
-        </div>
-    </header>
+    </label>
+
+    <div class="burgerMenu" id="toggleBtn">
+        <div class="menuLine"></div>
+        <div class="menuLine"></div>
+        <div class="menuLine"></div>
+    </div>
+</nav>
 
 <main>
+    <div class="mainSection">
+        <div class="leftSection">
+            <div class="top"></div>
 
+            <div class="items-left">
+                <div class="mainText">
+                    <div class="text1">Vind jouw</div>
+                    <div class="text2">Reispartner!</div>
+                </div>
+                <div class="subText">Wij helpen u een reispartner te vinden voor u eerst volgende vakantie!</div>
+                <button class="subButton">Vind match</button>
+            </div>
+            <div class="bottom"></div>
+
+        </div>
+        <div class="rightSection"></div>
+    </div>
+
+<!--    <section class="cards">-->
+<!--        <div class="flex-grid">-->
+<!--            <div class="col">-->
+<!--                <div class="style1">-->
+<!--                    <div class="profile-img">-->
+<!--                        <img src="https://www.w3schools.com/howto/img_avatar.png" alt="">-->
+<!--                    </div>-->
+<!--                    <div class="heart-toggle">-->
+<!--                        <i class="fa fa-heart" id="hearted"></i>-->
+<!--                    </div>-->
+<!--                    <div class="container">-->
+<!--                        <p>John doe, 55</p>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+
+<!--        <div class="flex-grid">-->
+<!--            <div class="col">-->
+<!--                <div class="style2">-->
+<!--                    <div class="profile-img">-->
+<!--                        <img src="https://www.w3schools.com/howto/img_avatar.png" alt="">-->
+<!--                    </div>-->
+<!--                    <div class="heart-toggle">-->
+<!--                        <i class="fa fa-heart" id="hearted"></i>-->
+<!--                    </div>-->
+<!--                    <div class="container">-->
+<!--                        <ul>-->
+<!--                            <li><i class="fas fa-user"></i>John doe</li>-->
+<!--                            <li><i class="fas fa-map-marker-alt"></i>London</li>-->
+<!--                            <li><i class="fas fa-transgender-alt"></i>Man</li>-->
+<!--                        </ul>-->
+<!--                    </div>-->
+<!--                    <div class="card-footer">-->
+<!--                        <a href="" class="read-more-btn">Read more</a>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+
+<!--        <div class="flex-grid">-->
+<!--            <div class="col">-->
+<!--                <div class="style3">-->
+<!--                    <div class="profile-img">-->
+<!--                        <img src="https://www.w3schools.com/howto/img_avatar.png">-->
+<!--                    </div>-->
+<!--                    <div class="heart-toggle">-->
+<!--                        <i class="fa fa-heart" id="hearted"></i>-->
+<!--                    </div>-->
+<!--                    <div class="container">-->
+<!--                        <p>John doe, 55</p>-->
+<!--                        <br>-->
+<!--                        <br>-->
+<!--                        <br>-->
+<!--                    </div>-->
+<!--                    <div class="card-footer">-->
+<!--                        <a href="" class="read-more-btn">Read more</a>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </section>-->
 </main>
 
 <footer></footer>
 
-
+<script src="./assets/js/menu.js"></script>
+<script src="./assets/js/heart.js"></script>
+<script>
+    function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+    }
+</script>
 </body>
 </html>
