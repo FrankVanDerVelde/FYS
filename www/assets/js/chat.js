@@ -1,15 +1,15 @@
-const showChatBtn = document.querySelector('#chatBtn');
-const chatBox = document.querySelector('#main-chat-box');
-const closeChatBtn = document.querySelector('#close-chat');
+const showChatBtn = document.querySelector("#chat-btn");
+const chatBox = document.querySelector("#main-chat-box");
+const closeChatBtn = document.querySelector("#close-chat");
 
-showChatBtn.addEventListener('click', () => {
-    chatBox.classList.remove('hide-chat');
-    chatBox.classList.add('show-chat');
+showChatBtn.addEventListener("click", () => {
+    chatBox.classList.remove("hide-chat");
+    chatBox.classList.add("show-chat");
 });
 
-closeChatBtn.addEventListener('click', () => {
-    chatBox.classList.remove('show-chat');
-    chatBox.classList.add('hide-chat');
+closeChatBtn.addEventListener("click", () => {
+    chatBox.classList.remove("show-chat");
+    chatBox.classList.add("hide-chat");
 });
 
 const checkdevice =  () => {
@@ -22,4 +22,4 @@ const checkdevice =  () => {
 }
 
 checkdevice();
-window.addEventListener('resize', checkdevice);
+window.addEventListener("resize", checkdevice);
