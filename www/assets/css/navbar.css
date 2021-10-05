@@ -24,24 +24,24 @@ body, html{
     width: 150px;
 }
 
-.navList{
+.nav-list{
     display: flex;
     justify-content: center;
     flex: 2;
 }
 
-.navList li{
+.nav-list li{
     display: inline-block;
     padding: 20px 10px;
 }
 
-.navList li a{
+.nav-list li a{
     color: var(--text1);
     padding: 8px 8px;
     border-radius: 10px;
 }
 
-.navList li a:hover{
+.nav-list li a:hover{
     background-color: rgba(211, 0, 0, 0.8);
     color: white;
     transition: all 0.4s ease-in;
@@ -57,11 +57,11 @@ body, html{
     display: flex;
     justify-content: flex-end;
 }
-.burgerMenu{
+.burger-menu{
     display: none;
 }
 
-.menuLine{
+.menu-line{
     width: 28px;
     height: 3px;
     margin-bottom: 5px;
@@ -78,13 +78,13 @@ a{
     justify-content: center;
 }
 
-.dropdown .dropbtn {
+.dropdown .drop-btn {
     cursor: pointer;
     font-size: 16px;
     border: none;
     outline: none;
     color: var(--burger-bg);
-    padding: 0px 16px;
+    padding: 0 16px;
     background-color: inherit;
     font-family: inherit;
     margin: 0;
@@ -169,7 +169,7 @@ a{
         flex-direction: column;
     }
 
-    .burgerMenu{
+    .burger-menu{
         display: block;
         position:absolute;
         right: 15px;
@@ -182,29 +182,29 @@ a{
         padding: 10px;
     }
 
-    .navList{
+    .nav-list{
         width: 100%;
         text-align: center;
         display:none;
     }
 
-    .navList li{
+    .nav-list li{
         display: block;
         padding: 10px;
     }
 
-    .navList li:last-child{
+    .nav-list li:last-child{
         padding-bottom: 40px;
         display: inline-block;
         justify-content: center;
     }
 
-    .activeMenu{
+    .active-menu{
         display: block;
     }
 
     .animation{
-        animation: menuAnimation 500ms ease-in-out forwards;
+        animation: menu-animation 500ms ease-in-out forwards;
         transform-origin: top center;
     }
 
@@ -215,7 +215,7 @@ a{
     }
 }
 
-@keyframes menuAnimation {
+@keyframes menu-animation {
     0% {
         opacity: 0;
         transform: rotateX(-90deg);
