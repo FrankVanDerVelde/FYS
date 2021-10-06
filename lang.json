@@ -1,0 +1,29 @@
+{
+  "langs": {
+    "nl": [
+      {
+        "id": "testh",
+        "text": "dit is een test",
+        "page": "index"
+      },
+      {
+        "id": "test2",
+        "text": "dit is een test",
+        "page": "index"
+      }
+    ],
+    "en": [
+      {
+        "id": "testh",
+        "text": "THIS IS A TEST",
+        "page": "index"
+      },
+      {
+        "id": "testh2",
+        "text": "dit is een test",
+        "page": "index"
+      }
+    ],
+    "de": {}
+  }
+}
