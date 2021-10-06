@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>$Title$</title>
+    <link href="./assets/profile/profile-overview.css" rel="stylesheet"/>
+    <link href="./assets/css/navbar.css" rel="stylesheet">
+</head>
+<body class="light-theme">
+<header class="navbar">
+    <div class="logo">
+        <a href="">
+            <img src="./assets/img/corendon-logo.svg" alt="Logo">
+        </a>
+    </div>
+    <nav class="navList" id="navList">
+        <ul>
+            <li><a href="./index.html" class="active">Home</a></li>
+            <li><a href="../www/assets/views/about.html">About</a></li>
+            <li><a href="../www/assets/views/contact.html">Contact</a></li>
+            <li class="dropdown-box">
+                <div class="dropdown">
+                    <button class="dropbtn">
+                        <i class="fa fa-caret-down"></i>
+                        <i class="fa fa-caret-up"></i>
+                    </button>
+                    <div class="dropdown-content" id="dropdown-content">
+                        <a href="./assets/views/auth/login.html">Inloggen</a>
+                        <a href="#">Registreren</a>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </nav>
+    <div class="theme-switch-box">
+        <label class="switch">
+            <div>
+                <input type="checkbox" class="checkbox" id="checkbox">
+                <label for="checkbox" class="label">
+                    <i class='fas fa-sun'></i>
+                    <i class="fas fa-moon"></i>
+                    <div class='ball'></div>
+                </label>
+            </div>
+        </label>
+    </div>
+    <div class="burgerMenu" id="toggleBtn">
+        <div class="menuLine"></div>
+        <div class="menuLine"></div>
+        <div class="menuLine"></div>
+    </div>
+</header>
+<main>
+    <div class="bio-container">
+ <span class="big-container-text">
+            Bio:
+        </span>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi maximus egestas sapien sed varius. Nam euismod
+            efficitur sapien nec condimentum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames
+            ac turpis egestas. Ut luctus suscipit volutpat. Duis accumsan viverra tellus vitae posuere. Curabitur
+            commodo arcu vel massa ultricies, non tempus augue dapibus. Praesent sem ex, accumsan eget rhoncus vel,
+            consequat nec lectus. Cras eu massa fermentum erat tincidunt dignissim et nec lacus.</p>
+    </div>
+    <div class="basic-info-container">
+        <img src="./assets/img/placeholder-images/profile-photo.png">
+        <span class="basic-info"><span class="bold">Naam:</span>John Doe</span>
+        <span class="basic-info"><span class="bold">Leeftijd:</span>35</span>
+        <span class="basic-info"><span class="bold">Location:</span>Amsterdam</span>
+    </div>
+    <div class="interests">
+        <span class="big-container-text">
+            Interesses:
+        </span>
+        <ul>
+            <li>Lorem ipsum dolor sit amet</li>
+            <li>Lorem ipsum dolor sit amet</li>
+            <li>Lorem ipsum dolor sit amet</li>
+            <li>Lorem ipsum dolor sit amet</li>
+            <li>Lorem ipsum dolor sit amet</li>
+            <li>Lorem ipsum dolor sit amet</li>
+            <li>Lorem ipsum dolor sit amet</li>
+        </ul>
+    </div>
+    <div class="contact-info">
+        <span>Contact:</span>
+        <span><span>icon here</span>Stuur een bericht</span>
+        <span><span>icon here</span>061234568</span>
+        <span><span>icon here</span>johndoe@mail.com</span>
+    </div>
+</main>
+
+<footer></footer>
+</body>
+</html>
