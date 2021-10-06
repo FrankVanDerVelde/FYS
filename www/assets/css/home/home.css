@@ -12,8 +12,8 @@ html{
 .mainSection{
     display: flex;
     flex-direction: row;
-    height: 93vh;
-    max-height:93vh;
+    height: 100vh;
+    max-height:100vh;
 }
 .leftSection{
     display: flex;
@@ -61,7 +61,7 @@ html{
     background: rgba(216,30,5,1);
     opacity: 1;
     margin-top: 25px;
-    border: 1px solid rgba(0,0,0,1);
+    border: 0px solid rgba(0,0,0,0);
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
     border-bottom-left-radius: 15px;
@@ -69,6 +69,8 @@ html{
     overflow: hidden;
     color: white;
     align-self: flex-start;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
 }
 .text1{
     font-size: 3.5em;
@@ -107,10 +109,7 @@ html{
 .hearted{
     color: var(--red);
 }
- @media only screen and (min-width: 480px) and (orientation: portrait)
- {
 
- }
 
 @media all and (max-width: 1000px){
    .flex-grid{
@@ -129,7 +128,7 @@ html{
         background-repeat: round;
         background-size: cover;
         background-position: center;
-        height: auto;
+        height: 100vh;
         max-width: 100%;
         width: 100% ;
     }
@@ -162,7 +161,6 @@ html{
         background: rgba(216,30,5,1);
         opacity: 1;
         margin-top: 25px;
-        border: 1px solid rgba(0,0,0,1);
         border-top-left-radius: 15px;
         border-top-right-radius: 15px;
         border-bottom-left-radius: 15px;
@@ -170,6 +168,8 @@ html{
         overflow: hidden;
         color: white;
         align-self: center;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
     }
     .text1{
         font-size: 3.5em;
@@ -189,6 +189,82 @@ html{
     }
 
 }
+
+/* phone */
+@media only screen and (max-width: 600px)  and (orientation: portrait){
+    html{
+        overflow-x:hidden;
+    }
+    .leftSection{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        background-image: url("../../img/arrowphone.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        height: 60vh;
+        max-width: 100%;
+        width: 100% ;
+    }
+    .rightSection{
+        background-image: url("../../img/peoplephone.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        height: 35vh;
+        max-width: 100% ;
+        width: 100% ;
+    }
+    .mainSection{
+        display: flex;
+        flex-direction: column;
+        height: 93vh;
+        max-height:93vh;
+    }
+    .mainText{
+        display: flex;
+        flex-direction: column;
+        max-width: 80%;
+        width: 100%;
+        align-self: center;
+
+    }
+    .subButton{
+        width: 166px;
+        height: 44px;
+        background: rgba(216,30,5,1);
+        opacity: 1;
+        margin-top: 25px;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+        overflow: hidden;
+        color: white;
+        align-self: center;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+    .text1{
+        font-size: 2.5em;
+        font-weight: lighter;
+        text-align: center;
+    }
+    .text2{
+        font-size: 3em;
+        font-weight: bold;
+        text-align: center;
+    }
+    .subText{
+        max-width: 80%;
+        width: 100%;
+        align-self: center;
+        text-align: center;
+    }
+}
+
+
 
 /* iPad Portrait */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
@@ -235,7 +311,6 @@ html{
         background: rgba(216,30,5,1);
         opacity: 1;
         margin-top: 25px;
-        border: 1px solid rgba(0,0,0,1);
         border-top-left-radius: 15px;
         border-top-right-radius: 15px;
         border-bottom-left-radius: 15px;
@@ -243,6 +318,8 @@ html{
         overflow: hidden;
         color: white;
         align-self: center;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
     }
     .text1{
         font-size: 3.5em;
