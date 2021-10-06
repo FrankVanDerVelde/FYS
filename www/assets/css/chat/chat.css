@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
-.chatBtn {
+.chat-btn {
     display: block;
     position: fixed;
     width: 60px;
@@ -34,13 +34,12 @@
 .chat-modal{
     visibility: hidden;
     position: fixed;
-    bottom: 0px;
-    right: 0px;
+    bottom: 0;
+    right: 0;
     z-index: 100;
-    background-color: white;
+    background-color: var(--bg);
     width:360px;
     transform:scale(0.1);
-    border: 3px solid var(--border-color);
     transform-origin: bottom right;
     transform-style: preserve-3D;
     transition: transform 300ms ease-in-out;
@@ -50,13 +49,17 @@
     display: flex;
     justify-content: space-between;
     padding: 10px;
-    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 0 rgba(0, 0, 0, 0.12);
 }
 
 .close-chat{
     background: none;
     border: none;
     cursor: pointer;
+}
+
+.back-btn-chat{
+    color: var(--text1);
 }
 
 .close-icon{
@@ -70,7 +73,6 @@
     height: 380px;
     margin-bottom: 60px;
 }
-
 
 .chat-content::-webkit-scrollbar {
     width: 5px;
@@ -97,7 +99,7 @@
     display: flex;
     justify-content: center;
     box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08);
-    background-color: white;
+    background-color: var(--bg);
     width: 100%;
 }
 
