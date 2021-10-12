@@ -62,6 +62,15 @@ main::after {
     width: 45%;
 }
 
+.basic-info {
+    display: flex;
+}
+
+.basic-info input {
+    flex-grow: 1;
+    width: 100%;
+}
+
 .basic-info-text-container {
     font-size: 18px;
     /*margin: 7px 0;*/
@@ -162,6 +171,21 @@ main::after {
     background-color: #96b4ef
 }
 
+.input-container {
+    flex-grow: 1;
+    padding-right: 10px;
+}
+
+.info-bar input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
 .contact-info-container .big-text {
     font-size: 20px;
     font-weight: 600;
@@ -190,6 +214,14 @@ main::after {
     font-size: 18px;
     /*margin-bottom: 125px;*/
 }
+
+.bio-container textarea {
+    resize: none;
+    width: 100%;
+    resize: none;
+}
+
+
 
 /* Interests container */
 
