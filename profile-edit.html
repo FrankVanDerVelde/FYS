@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>$Title$</title>
-    <link href="./assets/css/profile/profile-edit.css" rel="stylesheet"/>
+    <link href="./assets/css/profile/profile-overview.css" rel="stylesheet"/>
     <link href="./assets/css/navbar.css" rel="stylesheet">
     <link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
           integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" rel="stylesheet">
@@ -58,21 +58,42 @@
 
         <div class="basic-info-container">
             <div class="profile-picture-container">
+                <div class="profile-picture-edit-button-container">
+                    <label for="profile-picture-upload-button" class="custom-file-upload-button">
+                        <i class="fas fa-edit"></i>
+                    </label>
+                    <input id="profile-picture-upload-button" accept="image/*" type="file"/>
+                </div>
+                <div class="profile-picture-delete-button-container">
+                    <label for="delete-profile-picture-button" class="delete-button">
+                        <i class="fas fa-trash-alt"></i>
+                    </label>
+                    <input id="delete-profile-picture-button" value="" type="button"/>
+                </div>
                 <img alt="Profile picture" class="profile-picture"
                      src="./assets/img/placeholder-images/profile-picture.png">
             </div>
+
             <div class="basic-info-text-container">
-                <span class="basic-info"><span class="bold">Naam:</span><input type="text" placeholder="John Doe"></span>
-                <span class="basic-info"><span class="bold">Leeftijd:</span><input type="number" placeholder="35"></span>
-                <span class="basic-info"><span class="bold">Location:</span><input type="text" placeholder="Amsterdam"></span>
+                <span class="basic-info editable"><span class="bold">Naam:</span><input type="text"
+                                                                                        placeholder="John Doe"></span>
+                <span class="basic-info editable"><span class="bold">Leeftijd:</span><input type="number"
+                                                                                            placeholder="35"></span>
+                <span class="basic-info editable"><span class="bold">Location:</span><input type="text"
+                                                                                            placeholder="Amsterdam"></span>
                 <div class="wijzig-profiel-button-container">
-                    <span class="edit-profile-button">wijzig profiel</span>
+                    <span class="edit-profile-button">Opslaan</span>
                 </div>
             </div>
 
         </div>
 
         <div class="contact-info-container">
+            <!--            <div class="info-bar">-->
+            <!--                <span class="icon interesses"><i class="far fa-heart"></i></span>-->
+            <!--                <span>Verander Interesses</span>-->
+            <!--            </div>-->
+
             <div class="info-bar">
                 <span class="icon interesses"><i class="far fa-heart"></i></span>
                 <span>Verander Interesses</span>
@@ -81,7 +102,7 @@
             <div class="info-bar">
                 <span class="icon phone-number"><i class="fas fa-phone-alt"></i></span>
                 <div class="input-container">
-                <input type="number" placeholder="061234568">
+                    <input type="number" placeholder="061234568">
                 </div>
             </div>
 
@@ -94,36 +115,138 @@
 
         <div class="bio-container">
  <span class="big-container-text">
-            Bio:
+            Bio
         </span>
-            <textarea>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi maximus egestas sapien sed varius. Nam
+            <div class="textarea-container">
+            <textarea>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi maximus egestas sapien sed varius. Nam
 euismod efficitur sapien nec condimentum. Pellentesque habitant morbi tristique senectus et netus et
 malesuada fames ac turpis egestas. Ut luctus suscipit volutpat. Duis accumsan viverra tellus vitae
 posuere. Curabitur commodo arcu vel massa ultricies, non tempus augue dapibus. Praesent sem ex, accumsan
 eget rhoncus vel, consequat nec lectus. Cras eu massa fermentum erat tincidunt dignissim et nec
-lacus.
-            </textarea>
+lacus.</textarea>
+            </div>
         </div>
 
         <div class="interests-container">
         <span class="big-container-text">
-            Interesses:
+            Interesses
         </span>
-            <div class="interests-container">
-                <div class="interest-container">
-                    <img >
-                    <span></span>
+            <div class="interests-checkboxes-container">
+                <div class="interest-checkbox-container">
+                    <input type="checkbox" id="sports" name="sports"
+                           checked>
+                    <label for="sports">Sports</label>
+                </div>
 
-                    <!-- https://images.google.com/?q=cat&tbs=iar:s&gws_rd=ssl -->
+                <div class="interest-checkbox-container">
+                    <input type="checkbox" id="nature" name="nature"
+                           checked>
+                    <label for="nature">Nature</label>
+                </div>
+
+                <div class="interest-checkbox-container">
+                    <input type="checkbox" id="drinking" name="drinking"
+                           checked>
+                    <label for="drinking">Drinking</label>
+                </div>
+
+                <div class="interest-checkbox-container">
+                    <input type="checkbox" id="swimming" name="swimming"
+                           checked>
+                    <label for="swimming">Swimming</label>
+                </div>
+
+                <div class="interest-checkbox-container">
+                    <input type="checkbox" id="beach" name="beach"
+                           checked>
+                    <label for="beach">Beach</label>
+                </div>
+
+                <div class="interest-checkbox-container">
+                    <input type="checkbox" id="eating" name="eating"
+                           checked>
+                    <label for="eating">Eating</label>
+                </div>
+
+                <div class="interest-checkbox-container">
+                    <input type="checkbox" id="sight-seeing" name="sight-seeing"
+                           checked>
+                    <label for="sight-seeing">Sight seeing</label>
+                </div>
+
+                <div class="interest-checkbox-container">
+                    <input type="checkbox" id="shopping" name="shopping"
+                           checked>
+                    <label for="shopping">Shopping</label>
+                </div>
+
+                <div class="interest-checkbox-container">
+                    <input type="checkbox" id="etc" name="etc"
+                           checked>
+                    <label for="shopping">etc</label>
+                </div>
+
+                <div class="interest-checkbox-container">
+                    <input type="checkbox" id="etc" name="etc"
+                           checked>
+                    <label for="shopping">etc</label>
+                </div>
+
+                <div class="interest-checkbox-container">
+                    <input type="checkbox" id="etc" name="etc"
+                           checked>
+                    <label for="shopping">etc</label>
+                </div>
+
+                <div class="interest-checkbox-container">
+                    <input type="checkbox" id="etc" name="etc"
+                           checked>
+                    <label for="shopping">etc</label>
+                </div>
+
+                <div class="interest-checkbox-container">
+                    <input type="checkbox" id="etc" name="etc"
+                           checked>
+                    <label for="shopping">etc</label>
+                </div>
+
+                <div class="interest-checkbox-container">
+                    <input type="checkbox" id="etc" name="etc"
+                           checked>
+                    <label for="shopping">etc</label>
+                </div>
+
+                <div class="interest-checkbox-container">
+                    <input type="checkbox" id="etc" name="etc"
+                           checked>
+                    <label for="shopping">etc</label>
+                </div>
+
+                <div class="interest-checkbox-container">
+                    <input type="checkbox" id="etc" name="etc"
+                           checked>
+                    <label for="shopping">etc</label>
+                </div>
+
+                <div class="interest-checkbox-container">
+                    <input type="checkbox" id="etc" name="etc"
+                           checked>
+                    <label for="shopping">etc</label>
+                </div>
+
+                <div class="interest-checkbox-container">
+                    <input type="checkbox" id="etc" name="etc"
+                           checked>
+                    <label for="shopping">etc</label>
                 </div>
             </div>
         </div>
-
     </div>
+
 </main>
 
-<footer></footer>
-</body>
+<footer>footer</footer>
 <script src="/assets/js/scaling-textarea.js"></script>
+</body>
+
 </html>
