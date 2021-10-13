@@ -38,7 +38,9 @@ main::after {
     flex-wrap: wrap;
     justify-content: space-between;
     /*max-width: 95em;*/
-    max-width: 1329px;
+    max-width: 950px;
+    height:100%;
+    margin: 3em;
 }
 
 .bio-container, .basic-info-container, .interests-container, .contact-info-container {
@@ -53,7 +55,7 @@ main::after {
 
 .basic-info-container {
     display: flex;
-    padding: 4em 3em;
+    padding: 2.5em 2em;
     margin-bottom: 3em;
     justify-content: space-between;
 }
@@ -63,7 +65,7 @@ main::after {
 }
 
 .basic-info-text-container {
-    font-size: 18px;
+    /*font-size: 18px;*/
     /*margin: 7px 0;*/
     display: flex;
     flex-direction: column;
@@ -72,7 +74,7 @@ main::after {
 }
 
 .basic-info-text-container > * {
-    margin: 10px 0;
+    margin: 5px 0;
 }
 
 .basic-info-text-container span.bold {
@@ -131,23 +133,23 @@ main::after {
     /*height: 72px;*/
     display: flex;
     align-items: center;
-    margin: 10px 0;
+    margin: 5px 0;
     background-color: white;
 }
 
 .info-bar .icon {
-    font-size: 20px;
+    /*font-size: 20px;*/
     border-radius: 15px;
     margin: 10px;
-    width: 55px;
-    height: 55px;
+    width: 40px;
+    height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .info-bar .icon i {
-    font-size: 28px;
+    font-size: 18px;
 }
 
 .info-bar .icon.interesses, .info-bar .icon.send-message {
@@ -163,14 +165,14 @@ main::after {
 }
 
 .contact-info-container .big-text {
-    font-size: 20px;
+    /*font-size: 20px;*/
     font-weight: 600;
     color: black;
 }
 
 .contact-info-container span {
     color: #58A8F7;
-    font-size: 16px;
+    /*font-size: 16px;*/
     margin: 7px 0;
     margin-left: 15px;
 }
@@ -181,24 +183,47 @@ main::after {
 }
 
 .big-container-text {
-    font-size: 40px;
+    /*font-size: 40px;*/
 }
 
 /* Bio container */
 
 .bio-container {
-    font-size: 18px;
+    /*font-size: 18px;*/
     /*margin-bottom: 125px;*/
 }
 
 /* Interests container */
 
 .interests-container {
-    font-size: 18px;
+    /*font-size: 18px;*/
 }
 
 .interests-container ul {
     margin: 0.5em 0 0.5em 28px;
+}
+
+.interests-elements-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.interest-element {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+
+.interest-element img {
+    width: 85px;
+    height: 85px;
+    border-radius: 50px;
+}
+
+.interest-element span {
+    text-align: center;
 }
 
 /* media queries */
@@ -270,4 +295,8 @@ main::after {
     .basic-info-container > div {
         width: 100%;
     }
+}
+
+footer {
+    height: 300px;
 }
