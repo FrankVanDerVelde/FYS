@@ -20,16 +20,21 @@
     --border-color-prio-dark: rgba(0, 0, 0, 0.20);
     --box-shadow: rgba(83, 83, 83, 0.15);
     --border-color: #f1f1f1;
+    --tabs-color: #e7e7e7;
+    --tab-color: #F2F2F2;
+
 }
 
 .dark-theme {
     --bg: rgb(36, 36, 38);
     --nav-bg:rgb(36, 36, 38);
-    --text1: #a8a8a8;
+    --text1: #FFF;
     --burger-bg:#FFFFFF;
     --nav-shadow: rgba(0, 0, 0, 0.3);
     --border-color-prio-dark:rgba(0, 0, 0, 0.5) ;
     --box-shadow: rgba(0, 0, 0, 0.3);
     --border-color: rgba(0, 0, 0, 0.3);
+    --tabs-color: #4C4C4C;
+    --tab-color: #696969;
 }
 

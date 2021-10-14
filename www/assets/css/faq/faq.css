@@ -1,5 +1,8 @@
 body{
     padding-top: 74px;
+    background-color:var(--bg) ;
+    color:var(--text1) ;
+
 }
 .infobox{
     min-width: 90%;
@@ -35,8 +38,8 @@ body{
     padding-bottom: 50px;
 }
 .tab-header{
-    background-color: #e7e7e7;
-    color: #444;
+    background-color: var(--tabs-color);
+    color: var(--text1);
     cursor: pointer;
     padding: 18px;
     width: 100%;
@@ -53,7 +56,7 @@ body{
 }
 .tab{
     padding: 30px 18px;
-    background-color: #F2F2F2;
+    background-color: var(--tab-color);
     display: none;
     overflow: hidden;
 }
