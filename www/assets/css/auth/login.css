@@ -1,15 +1,21 @@
 @import url('../custom.css');
 
-body{
-    background-color: #202124;
+main{
+    min-height: 100vh;
+    background-image: url("../../img/auth-bg.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-position-y: top;
+    overflow-x: hidden;
 }
-.right-top{
+
+.rechts-boven{
     position: absolute;
     right: 10px;
     top: 18px;
 }
 
-.right-top a{
+.rechts-boven a{
     color: white;
     text-decoration: none;
     padding: 8px 20px;
@@ -18,12 +24,12 @@ body{
     transition: background-color 500ms ease-in;
 }
 
-.right-top a:hover{
+.rechts-boven a:hover{
     background-color: rgba(211, 0, 0, 0.6);
     transition: background-color 500ms ease-in;
 }
 
-.red-under-layer{
+.rood-achterkant-box{
     position: fixed;
     top: 50%;
     left: 50%;
@@ -32,11 +38,11 @@ body{
     height: 400px;
 
     background: var(--red);
-    box-shadow: 0 4px 15px 5px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 4px 15px 5px rgba(0, 0, 0, 0.25);
     border-radius: 50px;
 }
 
-.white-upper-layer{
+.wit-bovenkant-box{
     position: absolute;
     top: 50%;
     left: 50%;
@@ -67,8 +73,7 @@ body{
     padding: 30px 30px;
 }
 
-.email-box,
-.wachtwoord-box{
+.email-box, .wachtwoord-box{
     display: flex;
     flex-direction: column;
 }
@@ -79,15 +84,14 @@ label{
     font-weight: 700;
 }
 
-input[type=email],
-input[type=password]{
+input[type=email], input[type=password]{
     background-color: #f6f6f6;
     color: black;
     padding: 15px;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    margin: 8px 0;
+    margin: 8px 0px;
     border: 2px solid #f6f6f6;
     transition: all 500ms ease-in-out;
     border-radius: 5px;

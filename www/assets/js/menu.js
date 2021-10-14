@@ -16,7 +16,6 @@ themeSwitch.addEventListener("change", () => {
     resetTheme();
 });
 
-//Darkmode
 if (theme === "dark-theme"){
     document.body.classList.add("dark-theme");
     document.body.classList.remove("light-theme");
@@ -40,9 +39,17 @@ function resetTheme() {
     }
 }
 
-//Dropdown arrows
 dropdownBtn.addEventListener("click", () => {
     dropdown.classList.toggle("show");
     document.querySelector(".fa-caret-down").classList.toggle("hide");
     document.querySelector(".fa-caret-up").classList.toggle("show");
+});
+
+document.addEventListener("scroll", function() {
+        let scrollTop = document.documentElement["scrollTop"] || document.body["scrollTop"];
+        let scrollBottom = (document.documentElement["scrollHeight"] || document.body["scrollHeight"]) - document.documentElement.clientHeight;
+        let scrollPercent = scrollTop / scrollBottom * 100 ;
+        document.querySelector(".scroll-progress").style.width = scrollPercent + "%";
+    document.querySelector(".scroll-progress").setAttribute("value", scrollPercent);
+
 });

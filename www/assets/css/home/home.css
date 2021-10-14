@@ -1,0 +1,342 @@
+html{
+    overflow:hidden;
+}
+.top,.bottom{
+    flex:1;
+}
+.mainSection{
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    max-height:100vh;
+}
+.image-red-arrow{
+    height: 100%;
+    width: 50% ;
+    z-index: 0;
+    position: absolute;
+}
+.image-red-ipad-phone{
+    display: none;
+}
+.image-people{
+    height: auto;
+    width: 50vw ;
+    z-index: 0;
+    margin: auto auto;
+    display: block;
+}
+.image-people-phone{
+    display: none   ;
+}
+.leftSection{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    max-width: 50%;
+    width: 50vw ;
+
+}
+.rightSection{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    max-width: 50%;
+    width: 50vw;
+}
+.items-left{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   flex:1;
+    z-index: 1;
+}
+
+.mainText{
+    display: flex;
+    flex-direction: column;
+    max-width: 80%;
+    width: 100%;
+    align-self: flex-start;
+
+}
+.subButton{
+    width: 166px;
+    height: 44px;
+    background: rgba(216,30,5,1);
+    opacity: 1;
+    margin-top: 25px;
+    border: 0px solid rgba(0,0,0,0);
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    overflow: hidden;
+    color: white;
+    align-self: flex-start;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    text-align: center;
+    line-height: 3;
+}
+.text1{
+    font-size: 3.5em;
+    font-weight: lighter;
+}
+.text2{
+    font-size: 4em;
+    font-weight: bold;
+}
+.subText{
+    max-width: 80%;
+    width: 100%;
+    align-self: flex-start;
+}
+
+/* iPad Landscape */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1080px) {
+    /* CSS */
+    .leftSection{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100vh;
+        max-width: 100%;
+        width: 100% ;
+    }
+    .image-red-ipad-phone{
+        display: none;
+    }
+
+    .rightSection{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        max-width: 100% ;
+        width: 100% ;
+    }
+
+    .mainSection{
+        display: flex;
+        flex-direction: row;
+        height: 93vh;
+        max-height:93vh;
+    }
+    .image-red-arrow{
+        height: 100%;
+        width: 50% ;
+        z-index: 0;
+        position: absolute;
+    }
+    .image-people{
+        height: auto;
+        width: 50vw ;
+        z-index: 0;
+        margin: 50% auto;
+        display: block;
+    }
+    .image-people-phone{
+        display: none   ;
+    }
+    .mainText{
+        display: flex;
+        flex-direction: column;
+        max-width: 80%;
+        width: 100%;
+        align-self: center;
+
+    }
+    .subButton{
+        width: 166px;
+        height: 44px;
+        background: rgba(216,30,5,1);
+        margin-top: 25px;
+        overflow: hidden;
+        align-self: center;
+
+    }
+    .text1{
+        font-size: 3.5em;
+        font-weight: lighter;
+        text-align: center;
+    }
+    .text2{
+        font-size: 4em;
+        font-weight: bold;
+        text-align: center;
+    }
+    .subText{
+        max-width: 80%;
+        width: 100%;
+        align-self: center;
+        text-align: center;
+    }
+
+}
+/* iPad Portrait */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+    /* CSS */
+    .leftSection{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 56vh;
+        max-width: 100%;
+        width: 100% ;
+    }
+    .rightSection{
+        max-width: 100% ;
+        width: 100% ;
+    }
+    .image-red-arrow{
+        display: none;
+    }
+    .image-red-ipad-phone{
+        display: block;
+        height: auto;
+        width: 100%;
+        z-index: 0;
+        position: absolute;
+    }
+    .image-people{
+        height: auto;
+        width: 75% ;
+        z-index: 0;
+        margin: 14% auto;
+        display: block;
+
+    }
+    .image-people-phone{
+        display: none   ;
+    }
+    .items-left{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex:1;
+        z-index: 1;
+        margin-top:20%;
+    }
+
+    .mainSection{
+        display: flex;
+        flex-direction: column;
+        height: 93vh;
+        max-height:93vh;
+    }
+    .mainText{
+        display: flex;
+        flex-direction: column;
+        max-width: 80%;
+        width: 100%;
+        align-self: center;
+    }
+
+    .subButton{
+        width: 166px;
+        height: 44px;
+        background: rgba(216,30,5,1);
+        margin-top: 25px;
+        overflow: hidden;
+        align-self: center;
+
+    }
+    .text1{
+        font-size: 3.5em;
+        font-weight: lighter;
+        text-align: center;
+    }
+    .text2{
+        font-size: 4em;
+        font-weight: bold;
+        text-align: center;
+    }
+    .subText{
+        max-width: 80%;
+        width: 100%;
+        align-self: center;
+        text-align: center;
+    }
+}
+/* phone */
+@media only screen and (max-width: 600px)  and (orientation: portrait){
+    html{
+        overflow-x:hidden;
+    }
+    .leftSection{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 60vh;
+        max-width: 100%;
+        width: 100% ;
+    }
+    .image-red-ipad-phone{
+        display: block;
+        position: absolute;
+        height: 63vh;
+        width: 100%;
+        margin-top: 0;
+    }
+    .image-red-arrow{
+        display: none;
+
+    }
+    .image-people-phone{
+        display: block;
+        width: 100%;
+        margin-top: 10%;
+    }
+    .image-people{
+        display: none;
+    }
+    .rightSection{
+        height: 35vh;
+        max-width: 100% ;
+        width: 100% ;
+    }
+    .mainSection{
+        display: flex;
+        flex-direction: column;
+        height: 93vh;
+        max-height:93vh;
+    }
+    .mainText{
+        display: flex;
+        flex-direction: column;
+        max-width: 80%;
+        width: 100%;
+        align-self: center;
+
+    }
+    .subButton{
+        width: 166px;
+        height: 44px;
+        background: rgba(216,30,5,1);
+        margin-top: 25px;
+        overflow: hidden;
+        align-self: center;
+
+    }
+    .text1{
+        font-size: 2.5em;
+        font-weight: lighter;
+        text-align: center;
+    }
+    .text2{
+        font-size: 3em;
+        font-weight: bold;
+        text-align: center;
+    }
+    .subText{
+        max-width: 80%;
+        width: 100%;
+        align-self: center;
+        text-align: center;
+    }
+}
+
+
+

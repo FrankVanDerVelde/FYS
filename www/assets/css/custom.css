@@ -1,6 +1,6 @@
-@import url(https://fonts.googleapis.com/css2?family=Poppins&display=swap);
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
-* {
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -13,27 +13,28 @@
 
 .light-theme {
     --bg: #FFFFFF;
-    --nav-bg: #FFFFFF;
-    --text1: #000000;
-    --burger-bg: #000000;
-    --nav-shadow: rgba(83, 83, 83, 0.15);
+    --nav-bg:#FFFFFF;
+    --text1:#000000;
+    --burger-bg:#000000;
+    --nav-shadow:  rgba(83, 83, 83, 0.15);
     --border-color-prio-dark: rgba(0, 0, 0, 0.20);
     --box-shadow: rgba(83, 83, 83, 0.15);
     --border-color: #f1f1f1;
-    --blob-bg: #F6C7C1;
-    --icon-socials: #3F3D56;
+    --tabs-color: #e7e7e7;
+    --tab-color: #F2F2F2;
+
 }
 
 .dark-theme {
-    --bg: #202124;
-    --nav-bg: #202124;
-    --text1:#FFFFFF;
-    --burger-bg: #FFFFFF;
+    --bg: rgb(36, 36, 38);
+    --nav-bg:rgb(36, 36, 38);
+    --text1: #FFF;
+    --burger-bg:#FFFFFF;
     --nav-shadow: rgba(0, 0, 0, 0.3);
-    --border-color-prio-dark: rgba(0, 0, 0, 0.5);
+    --border-color-prio-dark:rgba(0, 0, 0, 0.5) ;
     --box-shadow: rgba(0, 0, 0, 0.3);
     --border-color: rgba(0, 0, 0, 0.3);
-    --blob-bg: rgba(211, 0, 0, 0.8);
-    --icon-socials: #a8a8a8;
+    --tabs-color: #4C4C4C;
+    --tab-color: #696969;
 }
 

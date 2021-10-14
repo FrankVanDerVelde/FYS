@@ -1,11 +1,34 @@
 @import url("./custom.css");
 
-body, html {
+body, html{
     background-color: var(--bg);
 }
 
-.navbar {
-    background-color: var(--nav-bg);
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    appearance: none;
+    width: 100%;
+    height: 2px;
+    border: none;
+    background: transparent;
+}
+
+.scroll-progress::-webkit-progress-bar {
+    background: transparent;
+}
+
+.scroll-progress::-webkit-progress-value {
+    background: var(--red) fixed;
+}
+
+.scroll-progress::-moz-progress-bar {
+    background: var(--red) fixed;
+}
+
+.navbar{
+    background-color:var(--nav-bg);
     box-shadow: 0 -2px 20px 0 var(--nav-shadow);
     display: flex;
     justify-content: space-around;
@@ -16,66 +39,65 @@ body, html {
     width: 100%;
 }
 
-.logo {
+.logo{
     padding: 20px;
     flex: 1;
 }
 
-.logo a img {
+.logo a img{
     width: 150px;
 }
 
-.nav-list {
+.nav-list{
     display: flex;
     justify-content: center;
     flex: 2;
 }
 
-.nav-list li {
+.nav-list li{
     display: inline-block;
     padding: 20px 10px;
 }
 
-.nav-list li a {
+.nav-list li a{
     color: var(--text1);
     padding: 8px 8px;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 
-.nav-list li a:hover {
+.nav-list li a:hover{
     background-color: rgba(211, 0, 0, 0.8);
     color: white;
     transition: all 0.4s ease-in;
 }
 
-.navbar li a.active {
+.navbar li a.active{
     background-color: var(--red);
     color: white;
 }
 
-.theme-switch-box {
+.theme-switch-box{
     flex: 1;
     display: flex;
     justify-content: flex-end;
 }
-
-.burger-menu {
+.burger-menu{
     display: none;
 }
 
-.menu-line {
+.menu-line{
     width: 28px;
     height: 3px;
     margin-bottom: 5px;
-    background-color: var(--burger-bg);
+    background-color:var(--burger-bg);
 }
 
-a {
+a{
     text-decoration: none;
 }
 
 /*Dropdown navbar*/
-.dropdown-box {
+.dropdown-box{
     display: inline-block;
     justify-content: center;
 }
@@ -101,41 +123,40 @@ a {
     min-width: 160px;
     z-index: 1;
     border: 1px solid var(--border-color-prio-dark);
-    border-radius: 5px;
+    border-radius: 10px;
 }
 
 .dropdown-content a {
     display: block;
 }
 
-.fa-caret-up {
+.fa-caret-up{
     display: none;
 }
 
-.hide {
+.hide{
     display: none;
 }
 
 .show {
     display: block;
 }
-
 /* dark/light mode switcher */
 .checkbox {
     opacity: 0;
     position: absolute;
 }
 
-.switch {
+.switch{
     padding-right: 20px;
 }
 
 .label {
     width: 45px;
     height: 22px;
-    background-color: #111;
+    background-color:#111;
     display: flex;
-    border-radius: 50px;
+    border-radius:50px;
     align-items: center;
     justify-content: space-between;
     padding: 5px;
@@ -148,13 +169,13 @@ a {
     height: 19px;
     background-color: white;
     position: absolute;
-    top: 2px;
-    left: 2px;
+    top: 1.5px;
+    left: 1.5px;
     border-radius: 50%;
     transition: transform 0.2s linear;
 }
 
-.checkbox:checked + .label .ball {
+.checkbox:checked + .label .ball{
     transform: translateX(20px);
 }
 
@@ -167,57 +188,55 @@ a {
 }
 
 /* responsive design */
-@media all and (max-width: 768px) {
-
-    .navbar {
+@media all and (max-width: 768px){
+    .navbar{
         flex-direction: column;
     }
 
-    .burger-menu {
+    .burger-menu{
         display: block;
-        position: absolute;
+        position:absolute;
         right: 15px;
         top: 15px;
         cursor: pointer;
     }
 
-    .logo {
+    .logo{
         width: 100%;
         padding: 10px;
     }
 
-    .nav-list {
+    .nav-list{
         width: 100%;
-        display: none;
+        text-align: center;
+        display:none;
     }
 
-    .nav-list li {
+    .nav-list li{
         display: block;
-        padding: 15px;
-        border-bottom: 1px solid rgba(227, 227, 227, 0.25);
+        padding: 10px;
     }
 
-    .nav-list li:last-child {
-        display: flex;
-        justify-content: flex-end;
-        border-bottom: 0;
+    .nav-list li:last-child{
+        padding-bottom: 40px;
+        display: inline-block;
+        justify-content: center;
     }
 
-    .active-menu {
+    .active-menu{
         display: block;
     }
 
-    .animation {
+    .animation{
         animation: menu-animation 500ms ease-in-out forwards;
         transform-origin: top center;
     }
 
-    .switch {
+    .switch{
         position: fixed;
         right: 50px;
         top: 14px;
     }
-
 }
 
 @keyframes menu-animation {
