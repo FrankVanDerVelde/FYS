@@ -46,10 +46,10 @@
     </div>
 </header>
 <main>
-    <div class="card" style="oveflow-x: auto">
+    <div class="card">
         <h1>Gebruikers</h1>
         <div class="search">
-            <img src="../../img/search.png" onclick="test()">
+            <img src="../../img/search.png" alt="gebruiker foto" onclick="test()">
             <input type="text">
             <p>Zoeken: </p>
         </div>
@@ -185,7 +185,7 @@
             <div class="right-side">
                 <div class="right-inputs">
                     <p>Bio:</p>
-                    <textarea name="" id="" cols="15" rows="8"></textarea>
+                    <textarea name="bio" cols="15" rows="8"></textarea>
                 </div>
                 <div class="right-inputs">
                     <p id="type">Gebruikers Typen:</p>
@@ -208,7 +208,7 @@
         <script src="../../js/admin/table.js"></script>
 
         <div class="pagination">
-            <button class="pagination-btn-left" onclick="decrementPage()" onchange="getMaxPages()"><</button>
+            <button class="pagination-btn-left" onclick="decrementPage()" onchange="getMaxPages()">&lt;</button>
             <input type="text" class="pagination-input" id="page" value="1"> <span id="pages">\<script>getMaxPages()</script></span>
             <button class="pagination-btn-right" onclick="incrementPage()" onchange="getMaxPages()">></button>
         </div>
