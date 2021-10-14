@@ -139,4 +139,7 @@ input[type=password]:focus{
         text-align: center;
         flex-direction: column;
     }
+    .wit-bovenkant-box {
+        width: 60%;
+    }
 }
