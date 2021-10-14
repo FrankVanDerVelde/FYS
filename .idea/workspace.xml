@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="70d99db9-d02d-4d25-95af-1c86a1b3bc7b" name="Changes" comment="privacy en verklaring pdf toegevoegd&#10;en footer links werkend gemaakt">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/assets/css/custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/www/assets/css/custom.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/assets/css/footer.css" beforeDir="false" afterPath="$PROJECT_DIR$/www/assets/css/footer.css" afterDir="false" />
+    <list default="true" id="70d99db9-d02d-4d25-95af-1c86a1b3bc7b" name="Changes" comment="footer darkmode fix">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +59,7 @@
       <option name="presentableId" value="Default" />
       <updated>1633420511321</updated>
       <workItem from="1633420516637" duration="13848000" />
-      <workItem from="1634233728328" duration="4786000" />
+      <workItem from="1634233728328" duration="5002000" />
     </task>
     <task id="LOCAL-00001" summary="Footer toegevoegd 1">
       <created>1634235688926</created>
@@ -84,7 +82,14 @@
       <option name="project" value="LOCAL" />
       <updated>1634238277599</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="footer darkmode fix">
+      <created>1634239540016</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1634239540016</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -106,6 +111,7 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Footer toegevoegd 1" />
     <MESSAGE value="privacy en verklaring pdf toegevoegd&#10;en footer links werkend gemaakt" />
-    <option name="LAST_COMMIT_MESSAGE" value="privacy en verklaring pdf toegevoegd&#10;en footer links werkend gemaakt" />
+    <MESSAGE value="footer darkmode fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="footer darkmode fix" />
   </component>
 </project>
