@@ -4,6 +4,7 @@ footer{
     background-image: url("../svg/Shape.svg");
     background-repeat: no-repeat;
     background-position: top center;
+    color: var(--text1) ;
 }
 .footer-nav{
     padding-top: 60px;
@@ -28,7 +29,7 @@ footer{
 .left-footer-nav a{
     text-align: left;
     text-decoration: none;
-    color: black;
+    color: var(--text1) ;
 }
 
 .right-footer-nav{
@@ -73,11 +74,7 @@ footer{
 }
 .right-footer-nav nav a{
     text-decoration: none;
-    color: black;
-}
-.right-footer-nav nav a {
-    text-decoration: none;
-    color: black;
+    color: var(--text1) ;
 }
 .footer-image img{
     margin-left: auto;
@@ -110,6 +107,7 @@ footer{
         max-width: 100%;
         margin: auto;
         padding-top: 30px;
+        color: var(--text1) ;
     }
     .footer-text-box{
         flex-direction: column;
