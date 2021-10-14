@@ -5,7 +5,8 @@ footer{
     background-repeat: no-repeat;
     background-position: top center;
     color: var(--text1) ;
-    background-color: var(--bg) ;
+    background-color: var(--bg);
+    background-size: 100%;
 }
 .footer-nav{
     padding-top: 60px;
@@ -91,12 +92,19 @@ footer{
     display: flex;
 }
 .footer-privacy-nav a {
-    color: var(--text1) ;
+    color: var(--text1);
 }
-.
+
+@media only screen and (max-width: 1400px) {
+    footer {
+        background-size: initial;
+    }
+}
+
 @media only screen and (max-width: 600px) {
     .footer-nav {
         flex-direction: column;
+        padding-top: 33px;
         padding-bottom: 75px;
     }
     .left-footer-nav {
@@ -117,5 +125,16 @@ footer{
     }
     .footer-text-box{
         flex-direction: column;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .footer-nav {
+        padding-top: 5px;
+        width: 90%;
+    }
+
+    .right-footer-nav nav {
+        justify-content: space-evenly;
     }
 }
