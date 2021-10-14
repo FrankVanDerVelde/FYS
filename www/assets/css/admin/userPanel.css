@@ -1,0 +1,275 @@
+@import url("../custom.css");
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+}
+
+.card {
+    height: 700px;
+    width: 80%;
+    position: relative;
+    background: var(--bg);
+    color: var(--text1);
+    box-shadow: 0px 15px 30px rgba(83, 83, 83, 0.15);
+    /*margin: 0 auto;*/
+    margin-top: 5%;
+}
+
+.edit-button {
+    background-color: #1CA1F1;
+    width: 80px;
+    height: 30px;
+    border-radius: 15px;
+    float: left;
+}
+
+.delete-button {
+    background-color: #F50000;
+    width: 80px;
+    height: 30px;
+    border-radius: 15px;
+    float: left;
+}
+
+.search {
+    margin-right: 20px;
+    color: var(--text1);
+}
+
+.search input {
+    margin-right: 10px;
+    margin-top: 10px;
+    background: rgba(217, 217, 217, 0.5);
+    border: 0.5px solid #000000;
+    border-radius: 25px;
+    float: right;
+    text-indent: 10px;
+}
+
+.search p {
+    margin-top: 10px;
+    float: right;
+    margin-right: 30px;
+    color: var(--text1)
+}
+
+.search img {
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+    margin-top: 10px;
+    float: right;
+}
+
+/*Table styling*/
+
+table {
+    margin-top: 100px;
+    border-collapse: collapse;
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+    color: var(--text1);
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {background-color: #cbcbcb;}
+
+/* Pagination */
+
+.pagination {
+    float: left;
+    margin-left: 140px;
+}
+
+.pagination-input {
+    width: 20px;
+    text-align: center;
+}
+
+.pagination-btn-left {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+}
+
+.pagination-btn-right {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    margin-left: 20px;
+}
+
+/*Delete Dialog*/
+.delete-dialog {
+    display: none;
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background-color: var(--bg);
+    top: 25%;
+    left: 35%;
+    border-radius: 20px;
+    filter: drop-shadow(4px 8px 8px rgba(0, 0, 0, 0.25));
+}
+
+.delete-dialog i {
+    color: #F50000;
+    margin-top: 30px;
+}
+
+.delete-dialog h2 {
+    margin-top: 30px;
+}
+
+.delete-dialog p {
+    margin-top: 30px;
+}
+
+.delete-dialog input[type=text] {
+    width: 250px;
+    height: 40px;
+    background: rgba(217, 217, 217, 0.5);
+    border: 0.5px solid #000000;
+    border-radius: 25px;
+    drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    text-indent: 10px;
+    color: var(--text1);
+}
+
+.buttons {
+    margin-top: 30px ;
+}
+
+.cancel-delete {
+    width: 90px;
+    background: #C4C4C4;
+    border-radius: 25px;
+}
+
+.delete-user {
+    width: 90px;
+    background: #F50000;
+    border-radius: 25px;
+
+}
+
+/* Edit Dialog */
+.edit-dialog {
+    display: none;
+    position: absolute;
+    width: 800px;
+    height: 450px;
+    background-color: var(--bg);
+    color: var(--text1);
+    top: 120px;
+    left: 250px;
+    border-radius: 20px;
+    filter: drop-shadow(4px 8px 8px rgba(0, 0, 0, 0.25));
+    margin-right: 20%;
+}
+
+.edit-dialog p {
+    margin-top: 30px;
+    float: left;
+    margin-left: 10%;
+}
+
+.edit-dialog img {
+    margin-top: 30px;
+    width: 150px;
+    height: 150px;
+    float: left;
+    margin-left: 30px;
+    border-radius: 30px;
+}
+
+.edit-buttons {
+    float: left;
+    margin-left: 32%;
+    margin-top: 10px;
+}
+
+.edit-dialog input[type=text] {
+    float: left;
+    width: 250px;
+    background: rgba(217, 217, 217, 0.5);
+    border: 0.5px solid #000000;
+    border-radius: 25px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    text-indent: 10px;
+    margin-top: 32px;
+    margin-left: 5px;
+}
+
+.edit-dialog input[type=date] {
+    float: left;
+    width: 120px;
+    background: rgba(217, 217, 217, 0.5);
+    border: 0.5px solid #000000;
+    border-radius: 25px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    text-indent: 10px;
+    margin-top: 32px;
+    margin-left: 5px;
+}
+
+.edit-dialog input[type=password] {
+    float: left;
+    width: 190px;
+    background: rgba(217, 217, 217, 0.5);
+    border: 0.5px solid #000000;
+    border-radius: 25px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    text-indent: 10px;
+    margin-top: 32px;
+    margin-left: 5px;
+}
+
+.right-inputs select {
+    margin-top: 12px;
+}
+
+#type {
+    margin-top: 12px;
+}
+
+.right-inputs textarea {
+    margin-left: 100px;
+    margin-top: -25px;
+}
+
+#close-button {
+    float: left;
+    width: 120px;
+    background: #F50000;
+    border: 0.5px solid #000000;
+    border-radius: 25px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    text-indent: 10px;
+    margin-top: 32px;
+    margin-left: 160px;
+}
+
+#save-button {
+    margin-top: 23px;
+    background: #1CA1F1;
+    border: 0.5px solid #000000;
+    border-radius: 25px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    text-indent: 3px;
+    width: 120px;
+}
+
+textarea {
+    background: var(--bg);
+    color: var(--text);
+}
