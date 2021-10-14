@@ -5,17 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="70d99db9-d02d-4d25-95af-1c86a1b3bc7b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/www/assets/css/Matches/matches.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/team-4.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/main.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/style/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/assets/views/Matches.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/assets/views/Matches.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/assets/views/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/assets/views/about.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/assets/views/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/assets/views/contact.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/faq.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/faq.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/profile-edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/profile-edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/profile-overview.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/profile-overview.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,6 +66,7 @@
       <option name="presentableId" value="Default" />
       <updated>1633420511321</updated>
       <workItem from="1633420516637" duration="13848000" />
+      <workItem from="1634233728328" duration="1816000" />
     </task>
     <servers />
   </component>
@@ -85,6 +83,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
