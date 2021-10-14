@@ -97,7 +97,7 @@ input[type=email], input[type=password]{
     border-radius: 5px;
 }
 
-input[type=email]:focus, 
+input[type=email]:focus,
 input[type=password]:focus{
     outline: none;
     transition: all 2s ease;
@@ -138,5 +138,8 @@ input[type=password]:focus{
     .form-footer{
         text-align: center;
         flex-direction: column;
+    }
+    .wit-bovenkant-box {
+        width: 60%;
     }
 }
