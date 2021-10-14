@@ -20,9 +20,11 @@
     --border-color-prio-dark: rgba(0, 0, 0, 0.20);
     --box-shadow: rgba(83, 83, 83, 0.15);
     --border-color: #f1f1f1;
+    --blob-bg: #F6C7C1;
+    --icon-socials: #3F3D56;
     --tabs-color: #e7e7e7;
     --tab-color: #F2F2F2;
-    --social-footer-nav: invert(0) ;
+    --social-footer-nav: invert(0);
 
 }
 
@@ -35,6 +37,8 @@
     --border-color-prio-dark:rgba(0, 0, 0, 0.5) ;
     --box-shadow: rgba(0, 0, 0, 0.3);
     --border-color: rgba(0, 0, 0, 0.3);
+    --blob-bg: rgba(211, 0, 0, 0.8);
+    --icon-socials: #a8a8a8;
     --tabs-color: #4C4C4C;
     --tab-color: #696969;
     --social-footer-nav: invert(1) ;
