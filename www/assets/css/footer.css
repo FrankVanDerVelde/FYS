@@ -5,7 +5,7 @@ footer{
     background-repeat: no-repeat;
     background-position: top center;
     color: var(--text1) ;
-    background-color: white;
+    background-color: var(--bg) ;
     background-size: 100%;
 }
 .footer-nav{
