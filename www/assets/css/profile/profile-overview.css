@@ -1,0 +1,581 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    font-size: 14px;
+    height: 100%;
+    padding-top: 73px;
+}
+
+main {
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main::after {
+    content: "";
+    background: url(../../img/red-background-blob.png) no-repeat center;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    left: 0;
+}
+
+.profile-page-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    height: 100%;
+    margin: 3em;
+}
+
+.bio-container, .basic-info-container, .interests-container, .contact-info-container {
+    padding: 1.5em 2em;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    width: 49%;
+    background-color: white;
+}
+
+/* Basic info container */
+
+.basic-info-container {
+    display: flex;
+    padding: 4em 3em;
+    margin-bottom: 3em;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.basic-info input {
+    display: block;
+    border-radius: 5px;
+    border: 1px solid gray;
+    padding-left: 4px;
+}
+
+.basic-info-container > div {
+    width: 45%;
+}
+
+.basic-info-text-container {
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+.basic-info-text-container > * {
+    margin: 10px 0;
+}
+
+.basic-info-text-container span.bold {
+    font-weight: 600;
+    margin: 10px 0;
+}
+
+.profile-picture-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-height: 227px;
+    max-width: 227px;
+    min-height: 197px;
+    min-width: 197px;
+}
+
+.profile-picture-container::after {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+}
+
+.profile-picture-container div {
+    border-radius: 100px;
+    font-size: 21px;
+}
+
+.profile-picture-container input {
+    display: none;
+}
+
+.profile-picture-container label {
+    cursor: pointer;
+}
+
+.profile-picture-container label:hover {
+    color: gray;
+}
+
+.profile-picture-edit-button-container {
+    position: absolute;
+    z-index: 1;
+    top: 15px;
+    left: 18px;
+}
+
+.profile-picture-delete-button-container {
+    position: absolute;
+    z-index: 1;
+    top: 15px;
+    right: 16px;
+}
+
+.custom-file-upload-button {
+
+}
+
+.custom-file-delete-button {
+
+}
+
+.basic-info-container .profile-picture {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    max-height: 227px;
+    max-width: 227px;
+    min-height: 197px;
+    min-width: 197px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.change-profile-button-container {
+    width: 100%;
+}
+
+.edit-profile-button {
+    font-size: 14px;
+    background-color: #DB1B1B;
+    color: white;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    padding: 5px 18px;
+    border-radius: 10px;
+    font-weight: 100;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    max-width: 100%;
+}
+
+/* Contact container */
+
+.contact-info-container {
+    display: flex;
+    flex-direction: column;
+    box-shadow: none;
+    padding: 0;
+    justify-content: center;
+    margin-bottom: 3em;
+    background-color: initial;
+}
+
+.info-bar {
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    margin: 5px 0;
+    background-color: white;
+}
+
+.info-bar .icon {
+    font-size: 20px;
+    border-radius: 15px;
+    margin: 10px;
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.info-bar .icon i {
+    font-size: 28px;
+}
+
+.info-bar .icon.interests, .info-bar .icon.send-message {
+    background-color: #ef9696;
+}
+
+.info-bar .icon.phone-number {
+    background-color: #96efa4
+}
+
+.info-bar .icon.email {
+    background-color: #96b4ef
+}
+
+.input-container {
+    flex-grow: 1;
+    padding-right: 10px;
+}
+
+.info-bar input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.contact-info-container .big-text {
+    font-size: 20px;
+    font-weight: 600;
+    color: black;
+}
+
+.contact-info-container span {
+    color: #58A8F7;
+    font-size: 16px;
+    margin: 7px 0 7px 15px;
+}
+
+.contact-info-container span.icon {
+    color: black;
+    margin-right: 8px;
+}
+
+.big-container-text {
+    font-size: 40px;
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+}
+
+/* Bio container */
+
+.bio-container {
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+}
+
+.bio-container .textarea-container {
+    flex-grow: 1;
+}
+
+.bio-container textarea {
+    resize: none;
+    min-height: 100%;
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+/* Interests container */
+
+.interests-elements-container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.interests-container {
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+}
+
+.interests-container ul {
+    margin: 0.5em 0 0.5em 28px;
+}
+
+.interests-elements-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    flex-grow: 1;
+}
+
+.interest-element {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    flex-basis: 25%;
+    margin-bottom: 10px;
+}
+
+.interest-element img {
+    width: 85px;
+    height: 85px;
+    border-radius: 50px;
+    margin: 0 auto;
+}
+
+.interest-element span {
+    text-align: center;
+}
+
+.interests-checkboxes-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.interest-checkbox-container {
+    margin: 5px;
+    flex-basis: 31%;
+    flex-grow: 1;
+}
+
+.interest-checkbox-container label {
+}
+
+.interest-checkbox-container input {
+}
+
+/* Checkbox styling */
+
+/* Base for label styling */
+.interest-checkbox-container [type="checkbox"]:not(:checked),
+.interest-checkbox-container [type="checkbox"]:checked {
+    position: absolute;
+    left: 0;
+    opacity: 0.01;
+}
+
+.interest-checkbox-container [type="checkbox"]:not(:checked) + label,
+.interest-checkbox-container [type="checkbox"]:checked + label {
+    position: relative;
+    padding-left: 2.3em;
+    font-size: 1.05em;
+    line-height: 1.7;
+    cursor: pointer;
+}
+
+/* checkbox aspect */
+.interest-checkbox-container [type="checkbox"]:not(:checked) + label:before,
+.interest-checkbox-container [type="checkbox"]:checked + label:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1.4em;
+    height: 1.4em;
+    border: 1px solid #aaa;
+    background: #FFF;
+    border-radius: .2em;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, .1), 0 0 0 rgba(203, 34, 237, .2);
+    -webkit-transition: all .275s;
+    transition: all .275s;
+}
+
+/* checked mark aspect */
+.interest-checkbox-container [type="checkbox"]:not(:checked) + label:after,
+.interest-checkbox-container [type="checkbox"]:checked + label:after {
+    content: '✕';
+    position: absolute;
+    top: .525em;
+    left: .18em;
+    font-size: 1.375em;
+    color: #DB1B1B;
+    line-height: 0;
+    -webkit-transition: all .2s;
+    transition: all .2s;
+}
+
+/* checked mark aspect changes */
+.interest-checkbox-container [type="checkbox"]:not(:checked) + label:after {
+    opacity: 0;
+    -webkit-transform: scale(0) rotate(45deg);
+    transform: scale(0) rotate(45deg);
+}
+
+.interest-checkbox-container [type="checkbox"]:checked + label:after {
+    opacity: 1;
+    -webkit-transform: scale(1) rotate(0);
+    transform: scale(1) rotate(0);
+}
+
+/* Disabled checkbox */
+.interest-checkbox-container [type="checkbox"]:disabled:not(:checked) + label:before,
+.interest-checkbox-container [type="checkbox"]:disabled:checked + label:before {
+    box-shadow: none;
+    border-color: #bbb;
+    background-color: #e9e9e9;
+}
+
+.interest-checkbox-container [type="checkbox"]:disabled:checked + label:after {
+    color: #777;
+}
+
+.interest-checkbox-container [type="checkbox"]:disabled + label {
+    color: #aaa;
+}
+
+/* Accessibility */
+.interest-checkbox-container [type="checkbox"]:checked:focus + label:before,
+.interest-checkbox-container [type="checkbox"]:not(:checked):focus + label:before {
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, .1), 0 0 0 6px rgba(203, 34, 237, .2);
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+}
+
+/* media queries */
+
+@media only screen and (max-width: 1500px) {
+    .profile-page-wrapper {
+        max-width: 950px;
+        height: 100%;
+        margin: 3em;
+    }
+
+    .basic-info-container {
+        padding: 2.5em 2em;
+    }
+
+    .basic-info-text-container {
+        font-size: 16px;
+    }
+
+    .basic-info-text-container > * {
+        margin: 5px 0;
+    }
+
+    .basic-info-text-container span.bold {
+        margin: 5px 0;
+    }
+
+    .info-bar .icon {
+        font-size: 14px;
+        width: 40px;
+        height: 40px;
+    }
+
+    .info-bar .icon i {
+        font-size: 18px;
+    }
+
+    .contact-info-container .big-text {
+        font-size: 14px;
+    }
+
+    .contact-info-container span {
+        font-size: 14px;
+    }
+
+    .big-container-text {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .bio-container {
+        font-size: 14px;
+    }
+
+    .interests-container {
+        font-size: 14px;
+
+    }
+}
+
+@media only screen and (max-width: 1100px) {
+    .profile-page-wrapper {
+        max-width: 40em;
+    }
+
+    .bio-container, .basic-info-container, .interests-container, .contact-info-container {
+        width: 100%;
+        margin-bottom: 2em;
+    }
+
+    /* Keeping this uncommented code here incase the order has to be changed again at a later date */
+
+    /*.bio-container {*/
+    /*    order: 2;*/
+    /*}*/
+    /*.basic-info-container {*/
+    /* order: 1;*/
+    /*}*/
+    /*.interests-container {*/
+    /*    order: 3;*/
+    /*}*/
+    /*.contact-info-container {*/
+    /*    order: 4;*/
+    /*}*/
+}
+
+@media only screen and (max-width: 600px) {
+    main {
+        padding: 0 1em;
+    }
+
+    .bio-container, .basic-info-container, .interests-container {
+        padding: 1em 1em;
+    }
+
+    .basic-info.editable {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+    }
+
+    .basic-info-text-container > * {
+        margin: 5px 0 5px 20px;
+    }
+
+    .basic-info-text-container .change-profile-button-container {
+        display: flex;
+        justify-content: center;
+        margin: 15px 0 0 0;
+    }
+
+    .basic-info-container {
+        padding: 2em 2em;
+    }
+
+    .profile-page-wrapper {
+        max-width: 360px;
+    }
+
+    .basic-info-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .basic-info-container > div {
+        width: 80%;
+    }
+
+    .basic-info-container .profile-picture-container {
+        margin-bottom: 20px;
+    }
+
+}
+
+@media only screen and (max-width: 400px) {
+    .basic-info-container > div {
+        width: 100%;
+        margin-left: 10px;
+    }
+}
