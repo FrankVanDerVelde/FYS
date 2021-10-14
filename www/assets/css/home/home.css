@@ -77,7 +77,8 @@ html{
     color: white;
     align-self: flex-start;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-
+    text-align: center;
+    line-height: 3;
 }
 .text1{
     font-size: 3.5em;
@@ -151,16 +152,9 @@ html{
         width: 166px;
         height: 44px;
         background: rgba(216,30,5,1);
-        opacity: 1;
         margin-top: 25px;
-        border-top-left-radius: 15px;
-        border-top-right-radius: 15px;
-        border-bottom-left-radius: 15px;
-        border-bottom-right-radius: 15px;
         overflow: hidden;
-        color: white;
         align-self: center;
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
     }
     .text1{
@@ -188,14 +182,11 @@ html{
         display: flex;
         flex-direction: column;
         align-items: center;
-
-
         height: 56vh;
         max-width: 100%;
         width: 100% ;
     }
     .rightSection{
-
         max-width: 100% ;
         width: 100% ;
     }
@@ -241,24 +232,15 @@ html{
         max-width: 80%;
         width: 100%;
         align-self: center;
-
     }
-
 
     .subButton{
         width: 166px;
         height: 44px;
         background: rgba(216,30,5,1);
-        opacity: 1;
         margin-top: 25px;
-        border-top-left-radius: 15px;
-        border-top-right-radius: 15px;
-        border-bottom-left-radius: 15px;
-        border-bottom-right-radius: 15px;
         overflow: hidden;
-        color: white;
         align-self: center;
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
     }
     .text1{
@@ -333,16 +315,10 @@ html{
         width: 166px;
         height: 44px;
         background: rgba(216,30,5,1);
-        opacity: 1;
         margin-top: 25px;
-        border-top-left-radius: 15px;
-        border-top-right-radius: 15px;
-        border-bottom-left-radius: 15px;
-        border-bottom-right-radius: 15px;
         overflow: hidden;
-        color: white;
         align-self: center;
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
     }
     .text1{
         font-size: 2.5em;
