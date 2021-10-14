@@ -22,6 +22,7 @@
     --border-color: #f1f1f1;
     --tabs-color: #e7e7e7;
     --tab-color: #F2F2F2;
+    --social-footer-nav: invert(0) ;
 
 }
 
@@ -36,5 +37,6 @@
     --border-color: rgba(0, 0, 0, 0.3);
     --tabs-color: #4C4C4C;
     --tab-color: #696969;
+    --social-footer-nav: invert(1) ;
 }
 

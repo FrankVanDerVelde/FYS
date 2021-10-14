@@ -44,6 +44,9 @@ footer{
     width: 100%;
 
 }
+.right-footer-nav a{
+    filter: var(--social-footer-nav) ;
+}
 .gray-footer-line {
     width: 70%;
     height: 2px;
@@ -72,7 +75,7 @@ footer{
     max-width: 30%;
     flex-grow: 1;
 }
-.right-footer-nav nav a{
+.right-footer-nav a{
     text-decoration: none;
     color: var(--text1) ;
 }
@@ -85,6 +88,9 @@ footer{
 .footer-image{
     width: 100%;
     display: flex;
+}
+.footer-privacy-nav a {
+    color: var(--text1) ;
 }
 .
 @media only screen and (max-width: 600px) {
@@ -107,7 +113,6 @@ footer{
         max-width: 100%;
         margin: auto;
         padding-top: 30px;
-        color: var(--text1) ;
     }
     .footer-text-box{
         flex-direction: column;

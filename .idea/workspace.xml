@@ -4,18 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="70d99db9-d02d-4d25-95af-1c86a1b3bc7b" name="Changes" comment="Footer toegevoegd 1">
+    <list default="true" id="70d99db9-d02d-4d25-95af-1c86a1b3bc7b" name="Changes" comment="privacy en verklaring pdf toegevoegd&#10;en footer links werkend gemaakt">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/assets/css/custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/www/assets/css/custom.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/www/assets/css/footer.css" beforeDir="false" afterPath="$PROJECT_DIR$/www/assets/css/footer.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/assets/views/Matches.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/assets/views/Matches.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/assets/views/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/assets/views/about.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/assets/views/admin/panel.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/assets/views/admin/panel.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/assets/views/auth/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/assets/views/auth/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/assets/views/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/assets/views/contact.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/faq.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/faq.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/profile-edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/profile-edit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/profile-overview.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/profile-overview.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +61,7 @@
       <option name="presentableId" value="Default" />
       <updated>1633420511321</updated>
       <workItem from="1633420516637" duration="13848000" />
-      <workItem from="1634233728328" duration="4021000" />
+      <workItem from="1634233728328" duration="4786000" />
     </task>
     <task id="LOCAL-00001" summary="Footer toegevoegd 1">
       <created>1634235688926</created>
@@ -85,7 +77,14 @@
       <option name="project" value="LOCAL" />
       <updated>1634235754428</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="privacy en verklaring pdf toegevoegd&#10;en footer links werkend gemaakt">
+      <created>1634238277599</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1634238277599</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -106,6 +105,7 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Footer toegevoegd 1" />
-    <option name="LAST_COMMIT_MESSAGE" value="Footer toegevoegd 1" />
+    <MESSAGE value="privacy en verklaring pdf toegevoegd&#10;en footer links werkend gemaakt" />
+    <option name="LAST_COMMIT_MESSAGE" value="privacy en verklaring pdf toegevoegd&#10;en footer links werkend gemaakt" />
   </component>
 </project>
