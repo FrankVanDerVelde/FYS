@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="../../img/favicon-32x32.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
+    <link rel="stylesheet" href="../../css/navbar.css">
+    <link rel="stylesheet" href="../../css/home/home.css">
+    <link rel="stylesheet" href="../../css/admin/userPanel.css">
+    <link rel="stylesheet" href="../../css/custom.css">
+</head>
+<body class="light-theme">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+<script src="../../js/admin/table.js"></script>
+<header class="navbar">
+    <div class="logo">
+        <a href="">
+            <img src="../../img/corendon-logo.svg" alt="Logo">
+        </a>
+    </div>
+    <nav class="nav-list" id="nav-list">
+        <ul>
+            <li><a href="../../../index.html" class="active">Home</a></li>
+            <li><a href="panel.html">Overzicht paneel</a></li>
+        </ul>
+    </nav>
+    <div class="theme-switch-box">
+        <div class="switch">
+            <div>
+                <input type="checkbox" class="checkbox" id="checkbox">
+                <label for="checkbox" class="label">
+                    <i class="fas fa-sun"></i>
+                    <i class="fas fa-moon"></i>
+                    <span class="ball"></span>
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="burger-menu" id="toggle-btn">
+        <div class="menu-line"></div>
+        <div class="menu-line"></div>
+        <div class="menu-line"></div>
+    </div>
+</header>
+<main>
+    <div class="card">
+        <h1>Gebruikers</h1>
+        <div class="search">
+            <img src="../../img/search.png" alt="gebruiker foto" onclick="test()">
+            <input type="text">
+            <p>Zoeken: </p>
+        </div>
+        <table>
+            <tr>
+                <th>Voornaam</th>
+                <th>Achternaam</th>
+                <th>Email</th>
+                <th>Woonplaats</th>
+                <th>Opties</th>
+            </tr>
+            <tr>
+                <td>x</td>
+                <td>x</td>
+                <td>x</td>
+                <td>x</td>
+                <td>
+                    <button class="edit-button" onclick="openEditDialog()">Edit</button>
+                    <button class="delete-button" onclick="openDeleteDialog()">Delete</button>
+                </td>
+            </tr>
+            <tr>
+                <td>x</td>
+                <td>x</td>
+                <td>x</td>
+                <td>x</td>
+                <td>
+                    <button class="edit-button" onclick="openEditDialog()">Edit</button>
+                    <button class="delete-button" onclick="openDeleteDialog()">Delete</button>
+                </td>
+            </tr>
+            <tr>
+                <td>x</td>
+                <td>x</td>
+                <td>x</td>
+                <td>x</td>
+                <td>
+                    <button class="edit-button" onclick="openEditDialog()">Edit</button>
+                    <button class="delete-button" onclick="openDeleteDialog()">Delete</button>
+                </td>
+            </tr>
+            <tr>
+                <td>x</td>
+                <td>x</td>
+                <td>x</td>
+                <td>x</td>
+                <td>
+                    <button class="edit-button" onclick="openEditDialog()">Edit</button>
+                    <button class="delete-button" onclick="openDeleteDialog()">Delete</button>
+                </td>
+            </tr>
+            <tr>
+                <td>x</td>
+                <td>x</td>
+                <td>x</td>
+                <td>x</td>
+                <td>
+                    <button class="edit-button" onclick="openEditDialog()">Edit</button>
+                    <button class="delete-button" onclick="openDeleteDialog()">Delete</button>
+                </td>
+            </tr>
+            <tr>
+                <td>x</td>
+                <td>x</td>
+                <td>x</td>
+                <td>x</td>
+                <td>
+                    <button class="edit-button" onclick="openEditDialog()">Edit</button>
+                    <button class="delete-button" onclick="openDeleteDialog()">Delete</button>
+                </td>
+            </tr>
+            <tr>
+                <td>x</td>
+                <td>x</td>
+                <td>x</td>
+                <td>x</td>
+                <td>
+                    <button class="edit-button" onclick="openEditDialog()">Edit</button>
+                    <button class="delete-button" onclick="openDeleteDialog()">Delete</button>
+                </td>
+            </tr>
+            <tr>
+                <td>x</td>
+                <td>x</td>
+                <td>x</td>
+                <td>x</td>
+                <td>
+                    <button class="edit-button" onclick="openEditDialog()">Edit</button>
+                    <button class="delete-button" onclick="openDeleteDialog()">Delete</button>
+                </td>
+            </tr>
+        </table>
+        <div class="delete-dialog" id="deleteDialog">
+            <i class="fas fa-trash fa-6x"></i>
+            <h2>Weet u het zeker?</h2>
+            <p>Voer de gebruikers naam in, van de te verwijderen gebruiker.</p>
+            <input type="text">
+            <div class="buttons">
+                <button class="cancel-delete" id="closeDeleteDialog" onclick="closeDelelteDialog()">Cancel</button>
+                <button class="delete-user"  onclick="deleteUser()">Delete</button>
+            </div>
+        </div>
+        <div class="edit-dialog" id="editDialog">
+            <div class="left-side">
+                <p>Afbeelding: </p>
+                <img src="../../img/user.png" id="user-image" onload="getUserImage()" alt="">
+                <div class="edit-buttons">
+                    <button class="cancel-delete" id="closeDeleteDialog" onclick="editUserImage()">
+                        <i class="fas fa-images"></i>
+                        Wijzig
+                    </button>
+                    <button class="delete-user"  onclick="deleteUser()">
+                        <i class="fas fa-trash"></i>
+                        Verwijder
+                    </button>
+                </div>
+                <div class="left-inputs">
+                    <p>Voornaam:</p>
+                    <input type="text" placeholder="Jhon">
+                </div>
+                <div class="left-inputs">
+                    <p>Achternaam:</p>
+                    <input type="text" placeholder="Doe">
+                </div>
+                <div class="left-inputs">
+                    <p>Geboortedatum:</p>
+                    <input type="date">
+                </div>
+                <div class="left-inputs">
+                    <button onclick="closeEditDialog()" id="close-button">Sluiten</button>
+                </div>
+            </div>
+            <div class="right-side">
+                <div class="right-inputs">
+                    <p>Bio:</p>
+                    <textarea name="bio" cols="15" rows="8"></textarea>
+                </div>
+                <div class="right-inputs">
+                    <p id="type">Gebruikers Typen:</p>
+                    <select name="userType" id="userTpe">
+                        <option value="user">User</option>
+                        <option value="admin">Admin</option>
+                    </select>
+                </div>
+                <div class="right-inputs">
+                    <p>Email:</p>
+                    <input type="text" placeholder="jhon@doe.com">
+                </div>
+                <div class="right-inputs">
+                    <p>Wachtwoord:</p>
+                    <input type="password" placeholder="********">
+                </div>
+                <button onclick="saveUserSettingsAdmin()" id="save-button">Opslaan</button>
+            </div>
+        </div>
+        <script src="../../js/admin/table.js"></script>
+
+        <div class="pagination">
+            <button class="pagination-btn-left" onclick="decrementPage()" onchange="getMaxPages()">&lt;</button>
+            <input type="text" class="pagination-input" id="page" value="1"> <span id="pages">\<script>getMaxPages()</script></span>
+            <button class="pagination-btn-right" onclick="incrementPage()" onchange="getMaxPages()">></button>
+        </div>
+    </div>
+</main>
+
+<footer></footer>
+
+<script src="../../js/menu.js"></script>
+<script>
+    function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+    }
+</script>
+</body>
+</html>

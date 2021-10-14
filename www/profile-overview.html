@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>$Title$</title>
+    <link href="./assets/css/profile/profile-overview.css" rel="stylesheet"/>
+    <link href="./assets/css/navbar.css" rel="stylesheet">
+    <link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+          integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" rel="stylesheet">
+</head>
+<body class="light-theme">
+<header class="navbar">
+    <div class="logo">
+        <a href="">
+            <img alt="Logo" src="./assets/img/corendon-logo.svg">
+        </a>
+    </div>
+    <nav class="navList" id="navList">
+        <ul>
+            <li><a class="active" href="./index.html">Home</a></li>
+            <li><a href="../www/assets/views/about.html">About</a></li>
+            <li><a href="../www/assets/views/contact.html">Contact</a></li>
+            <li class="dropdown-box">
+                <div class="dropdown">
+                    <button class="dropbtn">
+                        <i class="fa fa-caret-down"></i>
+                        <i class="fa fa-caret-up"></i>
+                    </button>
+                    <div class="dropdown-content" id="dropdown-content">
+                        <a href="./assets/views/auth/login.html">Inloggen</a>
+                        <a href="#">Registreren</a>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </nav>
+    <div class="theme-switch-box">
+        <div class="switch">
+            <div>
+                <input class="checkbox" id="checkbox" type="checkbox">
+                <label class="label" for="checkbox">
+                    <i class='fas fa-sun'></i>
+                    <i class="fas fa-moon"></i>
+                </label>
+                <div class='ball'></div>
+            </div>
+        </div>
+    </div>
+    <div class="burgerMenu" id="toggleBtn">
+        <div class="menuLine"></div>
+        <div class="menuLine"></div>
+        <div class="menuLine"></div>
+    </div>
+</header>
+<main>
+    <div class="profile-page-wrapper">
+
+        <div class="basic-info-container">
+            <div class="profile-picture-container">
+                <img alt="Profile picture" class="profile-picture"
+                     src="./assets/img/placeholder-images/profile-picture.png">
+            </div>
+
+            <div class="basic-info-text-container">
+                <span class="basic-info"><span class="bold">Naam:</span>John Doe</span>
+                <span class="basic-info"><span class="bold">Leeftijd:</span>35</span>
+                <span class="basic-info"><span class="bold">Location:</span>Amsterdam</span>
+                <div class="change-profile-button-container">
+                    <span class="edit-profile-button">wijzig profiel</span>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="contact-info-container">
+            <!--            <div class="info-bar">-->
+            <!--                <span class="icon interesses"><i class="far fa-heart"></i></span>-->
+            <!--                <span>Verander Interesses</span>-->
+            <!--            </div>-->
+
+            <div class="info-bar">
+                <span class="icon send-message"><i class="far fa-comment-dots"></i></span>
+                <span>Stuur een bericht</span>
+            </div>
+
+            <div class="info-bar">
+                <span class="icon phone-number"><i class="fas fa-phone-alt"></i></span>
+                <span>061234568</span>
+            </div>
+
+            <div class="info-bar">
+                <span class="icon email"><i class="far fa-envelope"></i></span>
+                <span>johndoe@mail.com</span>
+            </div>
+        </div>
+
+
+        <div class="bio-container">
+ <span class="big-container-text">
+            Bio
+        </span>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi maximus egestas sapien sed varius. Nam
+                euismod efficitur sapien nec condimentum. Pellentesque habitant morbi tristique senectus et netus et
+                malesuada fames ac turpis egestas. Ut luctus suscipit volutpat. Duis accumsan viverra tellus vitae
+                posuere. Curabitur commodo arcu vel massa ultricies, non tempus augue dapibus. Praesent sem ex, accumsan
+                eget rhoncus vel, consequat nec lectus. Cras eu massa fermentum erat tincidunt dignissim et nec
+                lacus.</p>
+        </div>
+
+        <div class="interests-container">
+        <span class="big-container-text">
+            Interesses
+        </span>
+            <div class="interests-elements-container">
+                <!-- https://images.google.com/?q=cat&tbs=iar:s&gws_rd=ssl -->
+                <div class="interest-element">
+                    <img src="assets/img/placeholder-images/place-holder.png" alt="interest">
+                    <span>Sports</span>
+                </div>
+
+                <div class="interest-element">
+                    <img src="assets/img/placeholder-images/place-holder.png" alt="interest">
+                    <span>Nature</span>
+                </div>
+
+                <div class="interest-element">
+                    <img src="assets/img/placeholder-images/place-holder.png" alt="interest">
+                    <span>Drinking</span>
+                </div>
+
+                <div class="interest-element">
+                    <img src="assets/img/placeholder-images/place-holder.png" alt="interest">
+                    <span>Swimming</span>
+                </div>
+
+                <div class="interest-element">
+                    <img src="assets/img/placeholder-images/place-holder.png" alt="interest">
+                    <span>Beach</span>
+                </div>
+
+                <div class="interest-element">
+                    <img src="assets/img/placeholder-images/place-holder.png" alt="interest">
+                    <span>Eating</span>
+                </div>
+
+                <div class="interest-element">
+                    <img src="assets/img/placeholder-images/place-holder.png" alt="interest">
+                    <span>Sight seeing</span>
+                </div>
+
+                <div class="interest-element">
+                    <img src="assets/img/placeholder-images/place-holder.png" alt="interest">
+                    <span>Shopping</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</main>
+
+<footer>footer</footer>
+</body>
+</html>
