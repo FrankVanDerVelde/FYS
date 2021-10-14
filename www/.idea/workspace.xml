@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a911a13d-24f4-42d7-bd4a-f28f421dd4c6" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/home/home.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/home/home.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-    </list>
+    <list default="true" id="a911a13d-24f4-42d7-bd4a-f28f421dd4c6" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -24,7 +20,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../Hogeschool van Amsterdam/Startopdracht FYS JavaScript" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -38,10 +34,9 @@
       <workItem from="1633513255258" duration="2294000" />
       <workItem from="1633595079054" duration="45000" />
       <workItem from="1633600237322" duration="89000" />
-      <workItem from="1633600345906" duration="5260000" />
-      <workItem from="1633607469590" duration="1437000" />
-      <workItem from="1634120655767" duration="521000" />
-      <workItem from="1634209647533" duration="17000" />
+      <workItem from="1633600345906" duration="5114000" />
+      <workItem from="1634212383223" duration="12000" />
+      <workItem from="1634212423664" duration="774000" />
     </task>
     <servers />
   </component>
