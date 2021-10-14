@@ -22,9 +22,7 @@ main {
 
 main::after {
     content: "";
-    background: url(../../img/red-background-blob.png);
-    background-repeat: no-repeat;
-    background-position: center;
+    background: url(../../img/red-background-blob.png) no-repeat center;
     width: 100%;
     height: 100%;
     position: fixed;
@@ -44,7 +42,7 @@ main::after {
 
 .bio-container, .basic-info-container, .interests-container, .contact-info-container {
     padding: 1.5em 2em;
-    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
     border-radius: 15px;
     width: 49%;
     background-color: white;
@@ -62,6 +60,9 @@ main::after {
 
 .basic-info input {
     display: block;
+    border-radius: 5px;
+    border: 1px solid gray;
+    padding-left: 4px;
 }
 
 .basic-info-container > div {
@@ -70,11 +71,14 @@ main::after {
 
 .basic-info-text-container {
     font-size: 18px;
-    /*margin: 7px 0;*/
     display: flex;
     flex-direction: column;
-    /*margin-left: 40px;*/
     justify-content: center;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
 }
 
 .basic-info-text-container > * {
@@ -104,10 +108,8 @@ main::after {
 }
 
 .profile-picture-container div {
-    /*background-color: white;*/
     border-radius: 100px;
-    font-size: 18px;
-
+    font-size: 21px;
 }
 
 .profile-picture-container input {
@@ -126,14 +128,14 @@ main::after {
     position: absolute;
     z-index: 1;
     top: 15px;
-    left: 15px;
+    left: 18px;
 }
 
 .profile-picture-delete-button-container {
     position: absolute;
     z-index: 1;
     top: 15px;
-    right: 15px;
+    right: 16px;
 }
 
 .custom-file-upload-button {
@@ -154,10 +156,10 @@ main::after {
     min-width: 197px;
     object-fit: cover;
     border-radius: 15px;
-    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
 }
 
-.wijzig-profiel-button-container {
+.change-profile-button-container {
     width: 100%;
 }
 
@@ -165,7 +167,7 @@ main::after {
     font-size: 14px;
     background-color: #DB1B1B;
     color: white;
-    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
     padding: 5px 18px;
     border-radius: 10px;
     font-weight: 100;
@@ -188,9 +190,8 @@ main::after {
 }
 
 .info-bar {
-    box-shadow: 0 3px 10px rgb(0 0 0 / 20%);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
     border-radius: 15px;
-    /*height: 72px;*/
     display: flex;
     align-items: center;
     margin: 5px 0;
@@ -212,7 +213,7 @@ main::after {
     font-size: 28px;
 }
 
-.info-bar .icon.interesses, .info-bar .icon.send-message {
+.info-bar .icon.interests, .info-bar .icon.send-message {
     background-color: #ef9696;
 }
 
@@ -248,8 +249,7 @@ main::after {
 .contact-info-container span {
     color: #58A8F7;
     font-size: 16px;
-    margin: 7px 0;
-    margin-left: 15px;
+    margin: 7px 0 7px 15px;
 }
 
 .contact-info-container span.icon {
@@ -270,7 +270,6 @@ main::after {
     font-size: 18px;
     display: flex;
     flex-direction: column;
-    /*margin-bottom: 125px;*/
 }
 
 .bio-container .textarea-container {
@@ -279,9 +278,10 @@ main::after {
 
 .bio-container textarea {
     resize: none;
-    min-height:100%;
+    min-height: 100%;
     width: 100%;
-    resize: none;
+    padding: 10px;
+    border-radius: 10px;
 }
 
 /* Interests container */
@@ -329,21 +329,112 @@ main::after {
 }
 
 .interests-checkboxes-container {
-    display:flex;
+    display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    height: 100%;
 }
 
 .interest-checkbox-container {
     margin: 5px;
+    flex-basis: 31%;
+    flex-grow: 1;
 }
 
 .interest-checkbox-container label {
-
 }
 
 .interest-checkbox-container input {
-    background-color: red;
+}
+
+/* Checkbox styling */
+
+/* Base for label styling */
+.interest-checkbox-container [type="checkbox"]:not(:checked),
+.interest-checkbox-container [type="checkbox"]:checked {
+    position: absolute;
+    left: 0;
+    opacity: 0.01;
+}
+
+.interest-checkbox-container [type="checkbox"]:not(:checked) + label,
+.interest-checkbox-container [type="checkbox"]:checked + label {
+    position: relative;
+    padding-left: 2.3em;
+    font-size: 1.05em;
+    line-height: 1.7;
+    cursor: pointer;
+}
+
+/* checkbox aspect */
+.interest-checkbox-container [type="checkbox"]:not(:checked) + label:before,
+.interest-checkbox-container [type="checkbox"]:checked + label:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1.4em;
+    height: 1.4em;
+    border: 1px solid #aaa;
+    background: #FFF;
+    border-radius: .2em;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, .1), 0 0 0 rgba(203, 34, 237, .2);
+    -webkit-transition: all .275s;
+    transition: all .275s;
+}
+
+/* checked mark aspect */
+.interest-checkbox-container [type="checkbox"]:not(:checked) + label:after,
+.interest-checkbox-container [type="checkbox"]:checked + label:after {
+    content: '✕';
+    position: absolute;
+    top: .525em;
+    left: .18em;
+    font-size: 1.375em;
+    color: #DB1B1B;
+    line-height: 0;
+    -webkit-transition: all .2s;
+    transition: all .2s;
+}
+
+/* checked mark aspect changes */
+.interest-checkbox-container [type="checkbox"]:not(:checked) + label:after {
+    opacity: 0;
+    -webkit-transform: scale(0) rotate(45deg);
+    transform: scale(0) rotate(45deg);
+}
+
+.interest-checkbox-container [type="checkbox"]:checked + label:after {
+    opacity: 1;
+    -webkit-transform: scale(1) rotate(0);
+    transform: scale(1) rotate(0);
+}
+
+/* Disabled checkbox */
+.interest-checkbox-container [type="checkbox"]:disabled:not(:checked) + label:before,
+.interest-checkbox-container [type="checkbox"]:disabled:checked + label:before {
+    box-shadow: none;
+    border-color: #bbb;
+    background-color: #e9e9e9;
+}
+
+.interest-checkbox-container [type="checkbox"]:disabled:checked + label:after {
+    color: #777;
+}
+
+.interest-checkbox-container [type="checkbox"]:disabled + label {
+    color: #aaa;
+}
+
+/* Accessibility */
+.interest-checkbox-container [type="checkbox"]:checked:focus + label:before,
+.interest-checkbox-container [type="checkbox"]:not(:checked):focus + label:before {
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, .1), 0 0 0 6px rgba(203, 34, 237, .2);
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
 }
 
 /* media queries */
@@ -394,41 +485,14 @@ main::after {
         margin-bottom: 10px;
     }
 
-    /* Bio container */
     .bio-container {
         font-size: 14px;
     }
 
-    /* Interests container */
     .interests-container {
         font-size: 14px;
 
     }
-
-    /*.interests-elements-container {*/
-    /*    display: flex;*/
-    /*    flex-wrap: wrap;*/
-    /*    justify-content: space-evenly;*/
-    /*}*/
-
-    /*.interest-element {*/
-    /*    display: flex;*/
-    /*    flex-direction: column;*/
-    /*    justify-content: center;*/
-    /*    align-content: center;*/
-    /*}*/
-
-    /*.interest-element img {*/
-    /*    width: 85px;*/
-    /*    height: 85px;*/
-    /*    border-radius: 50px;*/
-    /*}*/
-
-    /*.interest-element span {*/
-    /*    text-align: center;*/
-    /*}*/
-
-
 }
 
 @media only screen and (max-width: 1100px) {
@@ -440,6 +504,8 @@ main::after {
         width: 100%;
         margin-bottom: 2em;
     }
+
+    /* Keeping this uncommented code here incase the order has to be changed again at a later date */
 
     /*.bio-container {*/
     /*    order: 2;*/
@@ -473,15 +539,13 @@ main::after {
     }
 
     .basic-info-text-container > * {
-        margin: 5px 0;
-        margin-left: 20px;
+        margin: 5px 0 5px 20px;
     }
 
-    .basic-info-text-container .wijzig-profiel-button-container {
+    .basic-info-text-container .change-profile-button-container {
         display: flex;
         justify-content: center;
-        margin: 0;
-        margin-top: 15px;
+        margin: 15px 0 0 0;
     }
 
     .basic-info-container {
@@ -514,9 +578,4 @@ main::after {
         width: 100%;
         margin-left: 10px;
     }
-}
-
-footer {
-    text-align: center;
-    padding: 10px;
 }
