@@ -525,7 +525,6 @@ filtertext{
 }
 .page_selector{
     display: flex;
-    position: absolute;
     flex: 1;
     height: 100px;
     z-index: 1;
