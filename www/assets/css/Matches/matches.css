@@ -340,6 +340,7 @@ h4{
     position: relative;
     height: 200px;
     border-radius: 5px;
+    background-color: white;
 }
 .arrow-matches{
     height: 200px;
