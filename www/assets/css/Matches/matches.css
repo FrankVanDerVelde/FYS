@@ -338,7 +338,7 @@ h4{
     justify-content: space-between;
     flex: 1;
     position: relative;
-    height: 200px;
+    height: 284px;
     border-radius: 5px;
     background-color: white;
 }
@@ -504,7 +504,7 @@ toegepastefilters{
  }
 .filtermenu{
     width: 100vw;
-    margin-top: -30px;
+    margin-top: -137px;
         position: relative;
     height: 100px;
     border-radius: 5px;
