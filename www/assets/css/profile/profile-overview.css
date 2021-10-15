@@ -1,3 +1,5 @@
+@import url("../custom.css");
+
 * {
     box-sizing: border-box;
 }
@@ -45,7 +47,8 @@ main::after {
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
     border-radius: 15px;
     width: 49%;
-    background-color: white;
+    background-color: var(--bg);
+    color: var(--text1);
 }
 
 /* Basic info container */
@@ -195,7 +198,8 @@ input::-webkit-inner-spin-button {
     display: flex;
     align-items: center;
     margin: 5px 0;
-    background-color: white;
+    background-color: var(--bg);
+    color: var(--text1);
 }
 
 .info-bar .icon {
