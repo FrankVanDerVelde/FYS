@@ -23,15 +23,15 @@
                     </div>
 
                     <div class="form-box">
-                        <form method="POST" action="" autocomplete="off">
+                        <form method="POST" action="" name="loginForm" autocomplete="off">
                             <div class="email-box">
                                 <label>Email:</label>
-                                <input type="email" name="email" placeholder="johndoe@example.com" required autofocus>
+                                <input type="email" name="uid" placeholder="johndoe@example.com" required autofocus>
                             </div>
 
                             <div class="wachtwoord-box">
                                 <label>Wachtwoord:</label>
-                                <input type="password" name="password" placeholder="*******" required>
+                                <input type="password" name="pwd" placeholder="*******" required>
                             </div>
 
                             <div class="form-footer">
@@ -40,7 +40,7 @@
                                 </a>
 
                                 <!-- Temp inline javascript to redirect in mockup -->
-                                <button type="submit" class="submit-btn" onClick="javascript:window.location.href='../Matches.html'">
+                                <button type="submit" class="submit-btn" onClick="login()">
                                     Login
                                 </button>
                             </div>
@@ -52,6 +52,6 @@
     </div>
 </main>
 
-
+<script src="../../js/auth/login.js"></script>
 </body>
 </html>
