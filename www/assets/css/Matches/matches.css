@@ -1,3 +1,5 @@
+@import url("../custom.css");
+
 body, html {
     background-color: var(--bg);
 }
@@ -288,6 +290,7 @@ width: auto;
     border-radius: 15px;
     font-size: larger;
     color: white;
+    border: none;
 }
 
 .card-img{
@@ -326,206 +329,164 @@ h4{
 .filter{
     display: flex;
     justify-content: center;
-    flex: 1;
-    margin: 35px;
-    margin-top: 20px;
-    margin-bottom: 50px;
+    margin: 20px 35px 0 35px;
+
     z-index: 1;
     background-color: var(--filter);
+    height: 28vh;
+}
+
+.entry-section{
+    display: flex;
+    flex:1;
+    height: 28vh;
+    flex-direction: column;
+    background-image: url("../../img/arrow_matches.png");
+    background-size: 90% 100%;
+    background-repeat: no-repeat;
 }
 .filter-card {
     max-width: 100vw;
-    justify-content: space-between;
-    flex: 1;
+    display: flex;
+    flex-direction: column;
+    flex: 0.4;
     position: relative;
-    height: 284px;
     border-radius: 5px;
     background-color: var(--bg);
     color: var(--text1);
 }
-.arrow-matches{
-    height: 200px;
-    width: 600px;
-    position: absolute;
-    z-index: 1;
+.textBox{
+    z-index: 1  ;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    margin:15px 0 0 30px;
+    gap:2.5%;
 }
-bannertext {
-    font-size: 40px;
-    padding-top: 10px;
-    position: absolute;
-    padding-left: 30px;
+
+.bannertext {
+    font-size: 2em;
     z-index: 2;
     color: var(--text2);
 }
-bannertext2{
-    position: absolute;
-    padding-top: 50px;
-    padding-left: 30px;
-    font-size: 50px;
+.bannertext2{
+    font-size: 3em;
     font-weight: bold;
     z-index: 2;
     color: var(--text2);
 }
-bannertext3{
-    position: absolute;
-    padding-top: 130px;
-    padding-left: 30px;
-    font-size: 15px;
+.bannertext3{
+    font-size: 1em;
     z-index: 2;
     color: var(--text2);
 }
-toegepastefilters{
-    position: absolute;
-    padding-top: 80px;
-    padding-left: 50vw;
-    font-weight: bold;
+
+.filterOption{
+    flex:3;
+    text-align: center;
+}
+
+.toegepaste-filters > div{
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 5px;
+    background-color: var(--filter);
     color: var(--text2);
-    z-index: 2;
+    border-color: var(--filterborder);
+    display: flex;
+    flex-direction: row;
+}
+.toegepaste-filters{
+    display: flex;
+    flex-direction: row;
+
+    width: 80%;
+    height: 100%;
+    gap:1.5%;
+    align-items: center;
+}
+.toegepastefiltersText{
+    text-align: center;
+    font-size: 1.5em;
+    margin-right: 60px;
 }
 .gekozenradius{
-    border-style: solid;
-    border-width: 1px;
-    margin-left: 780px;
-    margin-top: 120px;
-    padding-left: 10px;
-    padding-bottom: 22px;
     width: 80px;
-    position: absolute;
-    height: 20px;
-    border-radius: 5px;
-    background-color: var(--filter);
-    color: var(--text2);
-    border-color: var(--filterborder);
+    height: 22.5px;
+    min-width: 8%;
+
+
 }
 .gekozengeslacht{
+    width: 80px;
+    height:22.5px;
+    min-width: 8%;
+
+}
+
+
+.filtermenu{
+    position: relative;
+    border-radius: 5px;
+    color: var(--text1);
+    background-color: white;
+    margin: 0 35px 0 0;
+
+    width: 100%;
+    display:flex;
+    flex-wrap: wrap;
+    padding: 2em 4em;
+}
+.filtermenu > div {
     border-style: solid;
     border-width: 1px;
-    margin-left: 870px;
-    margin-top: 120px;
-    padding-left: 10px;
-    padding-bottom: 22px;
-    width: 80px;
-    position: absolute;
-    height: 20px;
+
+    /*width: 160px;*/
+    margin-left: 5px;
+    height: 30px;
     border-radius: 5px;
     background-color: var(--filter);
     color: var(--text2);
     border-color: var(--filterborder);
+    display: flex;
+    flex-direction:row;
+    padding:2px 2px 2px 2px;
 }
 .interessesfilter{
-    border-style: solid;
-    border-width: 1px;
-    margin-left: 100px;
-    margin-top: 10px;
-    padding-left: 10px;
-    padding-bottom: 22px;
-    width: 160px;
-    position: absolute;
-    height: 30px;
-    border-radius: 5px;
-    background-color: var(--filter);
-    color: var(--text2);
-    border-color: var(--filterborder);
+
 }
 .leeftijdsgroepfilter{
-    border-style: solid;
-    border-width: 1px;
-    margin-left: 300px;
-    margin-top: 10px;
-    padding-left: 10px;
-    padding-bottom: 22px;
-    width: 200px;
-    position: absolute;
-    height: 30px;
-    border-radius: 5px;
-    background-color: var(--filter);
-    color: var(--text2);
-    border-color: var(--filterborder);
 
 }
 .geslachtfilter{
-    border-style: solid;
-    border-width: 1px;
-    margin-left: 550px;
-    margin-top: 10px;
-    padding-left: 10px;
-    padding-bottom: 22px;
-    width: 160px;
-    position: absolute;
-    height: 30px;
-    border-radius: 5px;
-    background-color: var(--filter);
-    color: var(--text2);
-    border-color: var(--filterborder);
+
 }
 .gewenstebestemmingenfilter{
-    border-style: solid;
-    border-width: 1px;
-    margin-left: 100px;
-    margin-top: 50px;
-    padding-left: 10px;
-    padding-bottom: 22px;
-    width: 290px;
-    position: absolute;
-    height: 30px;
-    border-radius: 5px;
-    background-color: var(--filter);
-    color: var(--text2);
-    border-color: var(--filterborder);
+
 }
 .gebruikerzoekenfilter{
-    border-style: solid;
-    border-width: 1px;
-    margin-left: 460px;
-    margin-top: 50px;
-    padding-left: 10px;
-    padding-bottom: 22px;
-    width: 330px;
-    position: absolute;
-    height: 30px;
-    border-radius: 5px;
-    background-color: var(--filter);
-    color: var(--text2);
-    border-color: var(--filterborder);
+
 }
 .radiusfilter{
-    border-style: solid;
-    border-width: 1px;
-     margin-left: 800px;
-     margin-top: 10px;
-     padding-left: 10px;
-     padding-bottom: 22px;
-     width: 190px;
-     position: absolute;
-     height: 30px;
-     border-radius: 5px;
-    background-color: var(--filter);
-    color: var(--text2);
-    border-color: var(--filterborder);
- }
-.filtermenu{
-    width: 100vw;
-    margin-top: -137px;
-        position: relative;
-    height: 100px;
-    border-radius: 5px;
-    color: var(--text1);
+
+}
+.pullDown{
+    width: 15px;
+    height: auto;
+    margin: auto;
+    flex:1;
 }
 .close{
     width: 15px;
     height: auto;
     margin-left: 5px;
+    flex:1;
 }
 .search{
-    width: 15px;
-    margin-top: 5px;
+    width: 25px;
     height: auto;
-    margin-left: 5px;
 }
-filtertext{
-    opacity: 60%;
-    height: 50px;
-}
+
 .page_selector{
     display: flex;
     flex: 1;
@@ -644,8 +605,55 @@ pagetext10{
     margin-top: 4px;
     margin-left: 6px;
 }
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+    .bannertext {
+        font-size: 1.5em;
+        z-index: 2;
+        color: var(--text2);
+    }
+    .toegepaste-filters{
+        align-self: center;
+    }
+    .bannertext2{
+        font-size: 2.5em;
+        font-weight: bold;
+        z-index: 2;
+        color: var(--text2);
+    }
+    .bannertext3{
+        font-size: 1em;
+        z-index: 2;
+        color: var(--text2);
+        max-width: 90%;
+    }
+    .entry-section{
+        background-size: 100% 100%;
+    }
+}
+
 @media all and (max-width: 768px) {
     .flex-grid{
         flex-direction: column;
     }
+    .bannertext {
+        font-size: 1.5em;
+        z-index: 2;
+        color: var(--text2);
+    }
+    .bannertext2{
+        font-size: 2em;
+        font-weight: bold;
+        z-index: 2;
+        color: var(--text2);
+    }
+    .bannertext3{
+        font-size: 0.8em;
+        z-index: 2;
+        color: var(--text2);
+    }
+    .entry-section{
+        background-size: 100% 100%;
+    }
+
 }

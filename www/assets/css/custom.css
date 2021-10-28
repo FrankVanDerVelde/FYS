@@ -15,6 +15,7 @@
     --bg: #FFFFFF;
     --nav-bg:#FFFFFF;
     --text1:#000000;
+    --text2:#000000;
     --burger-bg:#000000;
     --nav-shadow:  rgba(83, 83, 83, 0.15);
     --border-color-prio-dark: rgba(0, 0, 0, 0.20);
@@ -25,13 +26,15 @@
     --tabs-color: #e7e7e7;
     --tab-color: #F2F2F2;
     --social-footer-nav: invert(0);
-
+    --filter:#FFFFFF;
+    --filterborder:#636b6f;
 }
 
 .dark-theme {
     --bg: rgb(36, 36, 38);
     --nav-bg:rgb(36, 36, 38);
     --text1: #FFF;
+    --text2: #ffffff;
     --burger-bg:#FFFFFF;
     --nav-shadow: rgba(0, 0, 0, 0.3);
     --border-color-prio-dark:rgba(0, 0, 0, 0.5) ;
@@ -42,5 +45,8 @@
     --tabs-color: #4C4C4C;
     --tab-color: #696969;
     --social-footer-nav: invert(1) ;
+    --filter: rgb(36, 36, 38);
+    --filterborder: #ffffff;
+
 }
 

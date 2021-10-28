@@ -79,7 +79,7 @@
 
                     </div>
                     <div class="footer">
-                        <a href="" class="show-more-btn">Meer zien</a>
+                        <button type="submit" class="show-more-btn" onClick="javascript:window.location.href='../../../profile-overview.html'">Meer zien</button>
                     </div>
                 </div>
             </div>
@@ -95,7 +95,7 @@
 
                     </div>
                     <div class="footer">
-                        <a href="" class="show-more-btn">Meer zien</a>
+                        <button type="submit" class="show-more-btn" onClick="javascript:window.location.href='../../../profile-overview.html'">Meer zien</button>
                     </div>
                 </div>
             </div>
@@ -111,7 +111,7 @@
 
                     </div>
                     <div class="footer">
-                        <a href="" class="show-more-btn">Meer zien</a>
+                        <button type="submit" class="show-more-btn" onClick="javascript:window.location.href='../../../profile-overview.html'">Meer zien</button>
                     </div>
                 </div>
             </div>
@@ -119,59 +119,74 @@
 
         <!--Filters-->
         <div class="filter">
-            <div class= "entry-section">
-                <img class="arrow-matches" src="../img/arrow_matches.png" alt="">
-                <bannertext>Vind jouw </bannertext>
-                <p></p>
-                <bannertext2>Reispartner!</bannertext2>
-                <bannertext3>Vind jouw match door te zoeken met je eigen gekozen filters.
-                    <p></p>
-                    Wij zetten de beste matches bovenaan.</bannertext3>
-            </div>
-            <div class="filter-card">
-                <div class="gekozenradius">
-                    <radius>0-30</radius>
-                    <img class="close" src="../img/close.png" alt=" "/>
-                </div>
-                <div class ="gekozengeslacht">
-                    <geslacht>Man</geslacht>
-                    <img class="close" src="../img/close.png" alt=" "/>
+            <div class="entry-section">
+                <div class="textBox">
+                    <p class="bannertext">Vind jouw </p>
+
+                    <p class="bannertext2">Reispartner!</p>
+                    <p class="bannertext3">Vind jouw match door te zoeken met je eigen gekozen filters.</p>
+                    <p class="bannertext3"> Wij zetten de beste matches bovenaan.</p>
                 </div>
 
-                <toegepastefilters>Toegepaste filter(s):</toegepastefilters>
+
+            </div>
+            <div class="filter-card">
+                <div class="toegepastefiltersText">Toegepaste filter(s):</div>
+                <div class="toegepaste-filters">
+                   <div class="gekozenradius">
+                        <p class="filterOption">0-30</p>
+                       <img class="close" src="../img/close.png" alt=" "/>
+                    </div>
+                    <div class="gekozengeslacht">
+                        <p class="filterOption">Man</p>
+                        <img class="close" src="../img/close.png" alt=" "/>
+                    </div>
+                    <div class="gekozengeslacht">
+                        <p class="filterOption">Man</p>
+                        <img class="close" src="../img/close.png" alt=" "/>
+                    </div>
+                    <div class="gekozengeslacht">
+                        <p class="filterOption">Man</p>
+                        <img class="close" src="../img/close.png" alt=" "/>
+                    </div>
+                    <div class="gekozengeslacht">
+                        <p class="filterOption">Man</p>
+                        <img class="close" src="../img/close.png" alt=" "/>
+                    </div>
+                </div>
             </div>
         </div>
 
         <!--Filters onder de banner-->
         <div class="filtermenu">
             <div class="interessesfilter">
-                <filtertext>Interesses</filtertext>
-                <filtertext2>Alle</filtertext2>
-                <img class="close" src="../img/arrow_down.png" alt=" "/>
+                <p>Interesses</p>
+                <p>Alle</p>
+                <img class="pullDown" src="../img/arrow_down.png" alt=" "/>
             </div>
             <div class="leeftijdsgroepfilter">
-                <filtertext>Leeftijdsgroep</filtertext>
-                <filtertext2>Alle</filtertext2>
-                <img class="close" src="../img/arrow_down.png" alt=" "/>
+                <p>Leeftijdsgroep</p>
+                <p>Alle</p>
+                <img class="pullDown" src="../img/arrow_down.png" alt=" "/>
             </div>
             <div class="geslachtfilter">
-                <filtertext>Geslacht</filtertext>
-                <filtertext2>Man</filtertext2>
-                <img class="close" src="../img/arrow_down.png" alt=" "/>
+                <p>Geslacht</p>
+                <p>Man</p>
+                <img class="pullDown" src="../img/arrow_down.png" alt=" "/>
             </div>
             <div class="radiusfilter">
-                <filtertext>Radius (km)</filtertext>
-                <filtertext2>0-30</filtertext2>
-                <img class="close" src="../img/arrow_down.png" alt=" "/>
+                <p>Radius (km)</p>
+                <p>0-30</p>
+                <img class="pullDown" src="../img/arrow_down.png" alt=" "/>
             </div>
             <div class="gewenstebestemmingenfilter">
-                <filtertext>Gewenste bestemmingen</filtertext>
-                <filtertext2>Alle</filtertext2>
-                <img class="close" src="../img/arrow_down.png" alt=" "/>
+                <p>Gewenste bestemmingen</p>
+                <p>Alle</p>
+                <img class="pullDown" src="../img/arrow_down.png" alt=" "/>
             </div>
             <div class="gebruikerzoekenfilter">
-                <filtertext>Gebruiker zoeken</filtertext>
-                <filtertext2>____________</filtertext2>
+                <p>Gebruiker zoeken</p>
+                <input type="text" id="username" name="fname"><br><br>
                 <img class="search" src="../img/search.png" alt=" "/>
             </div>
         </div>
@@ -189,7 +204,7 @@
 
                     </div>
                     <div class="footer">
-                        <a href="" class="show-more-btn">Meer zien</a>
+                        <button type="submit" class="show-more-btn" onClick="javascript:window.location.href='../../../profile-overview.html'">Meer zien</button>
                     </div>
                 </div>
             </div>
@@ -205,7 +220,7 @@
 
                     </div>
                     <div class="footer">
-                        <a href="" class="show-more-btn">Meer zien</a>
+                        <button type="submit" class="show-more-btn" onClick="javascript:window.location.href='../../../profile-overview.html'">Meer zien</button>
                     </div>
                 </div>
             </div>
@@ -221,7 +236,7 @@
 
                     </div>
                     <div class="footer">
-                        <a href="" class="show-more-btn">Meer zien</a>
+                        <button type="submit" class="show-more-btn" onClick="javascript:window.location.href='../../../profile-overview.html'">Meer zien</button>
                     </div>
                 </div>
             </div>
@@ -241,7 +256,7 @@
 
                     </div>
                     <div class="footer">
-                        <a href="" class="show-more-btn">Meer zien</a>
+                        <button type="submit" class="show-more-btn" onClick="javascript:window.location.href='../../../profile-overview.html'">Meer zien</button>
                     </div>
                 </div>
             </div>
@@ -257,7 +272,7 @@
 
                     </div>
                     <div class="footer">
-                        <a href="" class="show-more-btn">Meer zien</a>
+                        <button type="submit" class="show-more-btn" onClick="javascript:window.location.href='../../../profile-overview.html'">Meer zien</button>
                     </div>
                 </div>
             </div>
@@ -273,7 +288,7 @@
 
                     </div>
                     <div class="footer">
-                        <a href="" class="show-more-btn">Meer zien</a>
+                        <button type="submit" class="show-more-btn" onClick="javascript:window.location.href='../../../profile-overview.html'">Meer zien</button>
                     </div>
                 </div>
             </div>
