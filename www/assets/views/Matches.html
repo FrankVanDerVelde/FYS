@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="../css/navbar.css">
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/Matches/matches.css">
+    <link rel="stylesheet" href="../css/chat/chat.css">
+
 </head>
 <body class="light-theme">
 <header class="navbar">
@@ -161,27 +163,27 @@
         <div class="filtermenu">
             <div class="interessesfilter">
                 <p>Interesses</p>
-                <p>Alle</p>
+                <p class="boldText">Alle</p>
                 <img class="pullDown" src="../img/arrow_down.png" alt=" "/>
             </div>
             <div class="leeftijdsgroepfilter">
                 <p>Leeftijdsgroep</p>
-                <p>Alle</p>
+                <p class="boldText">Alle</p>
                 <img class="pullDown" src="../img/arrow_down.png" alt=" "/>
             </div>
             <div class="geslachtfilter">
                 <p>Geslacht</p>
-                <p>Man</p>
+                <p class="boldText">Man</p>
                 <img class="pullDown" src="../img/arrow_down.png" alt=" "/>
             </div>
             <div class="radiusfilter">
                 <p>Radius (km)</p>
-                <p>0-30</p>
+                <p class="boldText">0-30</p>
                 <img class="pullDown" src="../img/arrow_down.png" alt=" "/>
             </div>
             <div class="gewenstebestemmingenfilter">
                 <p>Gewenste bestemmingen</p>
-                <p>Alle</p>
+                <p class="boldText">Alle</p>
                 <img class="pullDown" src="../img/arrow_down.png" alt=" "/>
             </div>
             <div class="gebruikerzoekenfilter">
@@ -288,30 +290,30 @@
 
                     </div>
                     <div class="footer">
-                        <button type="submit" class="show-more-btn" onClick="javascript:window.location.href='../../../profile-overview.html'">Meer zien</button>
+                        <button type="submit" class="show-more-btn" onClick="javascript:window.location.href='/www/profile-overview.html'">Meer zien</button>
                     </div>
                 </div>
             </div>
         </div>
         <div class="matches-page-navigation">
             <div class="resultaten">
-                <resultaten>84 resultaten weergegeven</resultaten>
+                <div>84 resultaten weergegeven</div>
             </div>
             <div class="pagination">
             <div class="pagination-box">
-                <pagetext1>1</pagetext1>
+                <div>1</div>
             </div>
             <div class="pagination-box">
-                <pagetext2>2</pagetext2>
+                <div>2</div>
             </div>
             <div class="pagination-box">
-                <pagetextskip>...</pagetextskip>
+                <div>...</div>
             </div>
             <div class="pagination-box">
-                <pagetext9>9</pagetext9>
+                <div>9</div>
             </div>
             <div class="pagination-box">
-                <pagetext10>10</pagetext10>
+                <div>10</div>
             </div>
             <div class="arrow-right-box">
                 <img class="arrow-right" src="../img/arrow-right.png" alt=""/>
@@ -319,6 +321,112 @@
             </div>
         </div>
     </section>
+    <div class="chat-modal" id="main-chat-box">
+        <div class="chat-box">
+            <div class="chat-header">
+                <div class="profile-img">
+                    <img src="https://ui-avatars.com/api/?name=John+Doe?background=random" alt="Profile Photo">
+                </div>
+                <div class="close-btn-box">
+                    <button class="close-chat close-btn">
+                        <i class="fas fa-times-circle close-icon"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="chat-contacts">
+                <ul>
+                    <li class="message-list-item">
+                        <div class="message-overview">
+                            <div class="message-overview-img">
+                                <img src="https://ui-avatars.com/api/?name=John+Doe?background=random" alt="Message img">
+                                <div class="notification">
+                                    <p>2</p>
+                                </div>
+                            </div>
+                            <div class="message-overview-text">
+                                <div class="messages-overview-name">
+                                    <h3>Jane Doe</h3>
+                                </div>
+                                <div class="messages-text">
+                                    <p>Lorem ipsum dolor...</p>
+                                    <p class="messages-time">20:57 07/10/21</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="message-list-item">
+                        <div class="message-overview">
+                            <div class="message-overview-img">
+                                <img src="https://ui-avatars.com/api/?name=John+Doe?background=random" alt="Message img">
+                                <div class="notification">
+                                    <p>2</p>
+                                </div>
+                            </div>
+                            <div class="message-overview-text">
+                                <div class="messages-overview-name">
+                                    <h3>Jane Doe</h3>
+                                </div>
+                                <div class="messages-text">
+                                    <p>Lorem ipsum dolor...</p>
+                                    <p class="messages-time">20:57 07/10/21</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="message-list-item">
+                        <div class="message-overview">
+                            <div class="message-overview-img">
+                                <img src="https://ui-avatars.com/api/?name=John+Doe?background=random" alt="Message img">
+                            </div>
+                            <div class="message-overview-text">
+                                <div class="messages-overview-name">
+                                    <h3>Jane Doe</h3>
+                                </div>
+                                <div class="messages-text">
+                                    <p>Lorem ipsum dolor...</p>
+                                    <p class="messages-time">20:57 07/10/21</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="chat-modal detail-chat-box" id="detail-chat-box">
+        <div class="chat-box">
+            <div class="chat-header">
+                <div class="back-btn-box">
+                    <i class="fas fa-chevron-left back-btn-chat"></i>
+                </div>
+                <div class="detail-person-header">
+                    <img src="https://ui-avatars.com/api/?name=John+Doe?background=random" alt="Message img">
+                    <p>John doe</p>
+                </div>
+                <div class="close-btn-box">
+                    <button class="close-detail-chat close-btn">
+                        <i class="fas fa-times-circle close-icon"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="chat-content">
+                <ul class="messages right-chat"></ul>
+            </div>
+            <div class="chat-footer">
+                <form class="chat-form">
+                    <div class="input-box">
+                        <input type="text" class="chat-input" placeholder="Verstuur bericht...">
+                    </div>
+                    <div class="btn-box">
+                        <button class="send-msg-btn" type="submit"><i class="fas fa-arrow-circle-right form-box-icon"></i></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <button id="chat-btn" class="chat-btn"><i class="far fa-comment chat-icon"></i></button>
 </main>
 
 <footer>
@@ -356,6 +464,7 @@
         <img src="../svg/corendon-logo%203.svg" alt=""/>
     </div>
 </footer>
+<script src="../js/chat.js"></script>
 
 <script src="../js/menu.js"></script>
 </body>
