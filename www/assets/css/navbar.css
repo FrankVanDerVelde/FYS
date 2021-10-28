@@ -144,11 +144,11 @@ a {
 }
 
 .ball {
-    width: 19px;
-    height: 19px;
+    width: 20px;
+    height: 20px;
     background-color: white;
     position: absolute;
-    top: 2px;
+    top: 1px;
     left: 2px;
     border-radius: 50%;
     transition: transform 0.2s linear;

@@ -338,8 +338,10 @@ h4{
     justify-content: space-between;
     flex: 1;
     position: relative;
-    height: 200px;
+    height: 284px;
     border-radius: 5px;
+    background-color: var(--bg);
+    color: var(--text1);
 }
 .arrow-matches{
     height: 200px;
@@ -503,10 +505,11 @@ toegepastefilters{
  }
 .filtermenu{
     width: 100vw;
-    margin-top: -30px;
+    margin-top: -137px;
         position: relative;
     height: 100px;
     border-radius: 5px;
+    color: var(--text1);
 }
 .close{
     width: 15px;
@@ -525,7 +528,6 @@ filtertext{
 }
 .page_selector{
     display: flex;
-    position: absolute;
     flex: 1;
     height: 100px;
     z-index: 1;
