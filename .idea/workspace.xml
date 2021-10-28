@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="70d99db9-d02d-4d25-95af-1c86a1b3bc7b" name="Changes" comment="footer darkmode fix">
+    <list default="true" id="70d99db9-d02d-4d25-95af-1c86a1b3bc7b" name="Changes" comment="Chat in de about pagina, chat (zonder icons) in de FAQ pagina.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/assets/views/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/assets/views/about.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/www/faq.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/faq.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/profile-edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/profile-edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/profile-overview.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/profile-overview.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +66,7 @@
       <workItem from="1633420516637" duration="13848000" />
       <workItem from="1634233728328" duration="5089000" />
       <workItem from="1634240904464" duration="223000" />
-      <workItem from="1635428812610" duration="1324000" />
+      <workItem from="1635428812610" duration="2055000" />
     </task>
     <task id="LOCAL-00001" summary="Footer toegevoegd 1">
       <created>1634235688926</created>
@@ -101,7 +103,14 @@
       <option name="project" value="LOCAL" />
       <updated>1634239765769</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Chat in de about pagina, chat (zonder icons) in de FAQ pagina.">
+      <created>1635439626054</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1635439626054</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -124,6 +133,7 @@
     <MESSAGE value="Footer toegevoegd 1" />
     <MESSAGE value="privacy en verklaring pdf toegevoegd&#10;en footer links werkend gemaakt" />
     <MESSAGE value="footer darkmode fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="footer darkmode fix" />
+    <MESSAGE value="Chat in de about pagina, chat (zonder icons) in de FAQ pagina." />
+    <option name="LAST_COMMIT_MESSAGE" value="Chat in de about pagina, chat (zonder icons) in de FAQ pagina." />
   </component>
 </project>
