@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a911a13d-24f4-42d7-bd4a-f28f421dd4c6" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/css/Matches/matches.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/Matches/matches.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/custom.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/views/Matches.html" beforeDir="false" afterPath="$PROJECT_DIR$/assets/views/Matches.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -43,7 +43,7 @@
       <workItem from="1634212383223" duration="12000" />
       <workItem from="1634212423664" duration="774000" />
       <workItem from="1635416594237" duration="11645000" />
-      <workItem from="1635450366332" duration="2750000" />
+      <workItem from="1635450366332" duration="4652000" />
     </task>
     <servers />
   </component>
