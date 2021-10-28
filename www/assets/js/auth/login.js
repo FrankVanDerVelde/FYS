@@ -6,5 +6,6 @@ function login() {
     if(uid === "admin@admin.com")
         window.location.href = "../admin/panel.html";
     else
-        window.location.href = "../Matches.html"
+        window.location.href = "../../../profile-edit.html";
+
 }
