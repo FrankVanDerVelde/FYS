@@ -66,6 +66,8 @@ main::after {
     border-radius: 5px;
     border: 1px solid gray;
     padding-left: 4px;
+    max-width: 100%;
+    -moz-appearance: textfield;
 }
 
 .basic-info-container > div {
@@ -77,11 +79,6 @@ main::after {
     display: flex;
     flex-direction: column;
     justify-content: center;
-}
-
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
 }
 
 .basic-info-text-container > * {
