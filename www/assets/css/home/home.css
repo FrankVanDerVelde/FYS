@@ -300,8 +300,8 @@ html{
     .mainSection{
         display: flex;
         flex-direction: column;
-        height: 93vh;
-        max-height:93vh;
+        height: 100vh;
+        max-height:100vh;
     }
     .mainText{
         display: flex;
