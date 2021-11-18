@@ -392,7 +392,7 @@ margin:auto 0;
     height: 100%;
     display: flex;
     flex-direction: column;
-    margin: 15px 0 0 30px;
+    margin: 7.5px 0 7.5px 30px;
     gap: 2.5%;
 }
 
@@ -494,7 +494,11 @@ margin:auto 0;
     flex-direction: row;
     padding: 2px 2px 2px 2px;
 }
-.boldText{
+
+.filtermenu > div > p{
+    color:rgb(148, 148, 148);
+}
+.endSection > p{
     font-weight: bold;
 }
 .interessesfilter {
@@ -520,12 +524,15 @@ margin:auto 0;
 .radiusfilter {
 
 }
+.endSection{
 
+}
 .pullDown {
     width: 15px;
     height: auto;
     margin: auto;
     flex: 1;
+    fill:var(--text1);
 }
 
 .close {
@@ -642,6 +649,7 @@ margin:auto 0;
 
     .matchesHeader > h2{
         padding-top: 0;
+        padding-left: 0;
     }
 
     .bannertext {
