@@ -2,15 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>$Title$</title>
-    <link href="./assets/css/profile/profile-overview.css" rel="stylesheet"/>
-    <link href="./assets/css/navbar.css" rel="stylesheet">
-    <link rel="stylesheet" href="./assets/css/footer.css">
-    <link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
-          integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" rel="stylesheet">
-    <link rel="stylesheet" href="./assets/css/chat/chat.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/img/favicon-32x32.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
+    <link rel="stylesheet" href="./assets/css/navbar.css">
+    <link rel="stylesheet" href="./assets/css/footer.css">
+    <link rel="stylesheet" href="./assets/css/home/home.css">
+    <link rel="stylesheet" href="./assets/css/chat/chat.css">
 </head>
 <body class="light-theme">
 <header class="navbar">
@@ -24,7 +24,7 @@
             <li><a href="./index.html" class="active">Home</a></li>
             <li><a href="./assets/views/about.html">About</a></li>
             <li><a href="./assets/views/contact.html">Contact</a></li>
-            <li><a href="./assets/views/Matches.html">Matches</a></li>
+            <li><a href="./assets/views/matches.html">Matches</a></li>
             <li class="dropdown-box">
                 <div class="dropdown">
                     <button class="drop-btn">
@@ -34,7 +34,7 @@
                     <div class="dropdown-content" id="dropdown-content">
                         <a href="./assets/views/auth/login.html">Inloggen</a>
                         <a href="./assets/views/auth/register.html">Registreren</a>
-                    </div>
+                    </div> 
                 </div>
             </li>
         </ul>
@@ -57,109 +57,30 @@
         <div class="menu-line"></div>
     </div>
 </header>
+
 <main>
-    <div class="profile-page-wrapper">
-
-        <div class="basic-info-container">
-            <div class="profile-picture-container">
-                <img alt="Profile picture" class="profile-picture"
-                     src="./assets/img/placeholder-images/profile-picture.png">
-            </div>
-
-            <div class="basic-info-text-container">
-                <span class="basic-info"><span class="bold">Naam:</span>John Doe</span>
-                <span class="basic-info"><span class="bold">Leeftijd:</span>35</span>
-                <span class="basic-info"><span class="bold">Location:</span>Amsterdam</span>
-                <div class="change-profile-button-container">
-                    <span class="edit-profile-button">wijzig profiel</span>
+    <div class="mainSection">
+        <div class="leftSection">
+            <div class="top"> </div>
+            <div class="items-left">
+                <div class="mainText">
+                    <div class="text1">Vind jouw</div>
+                    <div class="text2">Reispartner!</div>
                 </div>
+                <div class="subText">Wij helpen u een reispartner te vinden voor u eerst volgende vakantie!</div>
+                <a href="./assets/views/auth/login.html" class="subButton">Vind match</a>
             </div>
+            <img class="image-red-arrow" src="../wwwroot/assets/img/arrow.png" alt="backgroundart">
+            <img class="image-red-ipad-phone" src="../wwwroot/assets/img/arrowdown.png" alt="backgroundart">
 
+            <div class="bottom">   </div>
         </div>
 
-        <div class="contact-info-container">
-            <!--            <div class="info-bar">-->
-            <!--                <span class="icon interesses"><i class="far fa-heart"></i></span>-->
-            <!--                <span>Verander Interesses</span>-->
-            <!--            </div>-->
+        <div class="rightSection">
+            <img class="image-people" src="../wwwroot/assets/img/people.svg" alt="backgroundart">
+            <img class="image-people-phone" src="../wwwroot/assets/img/peoplephone.png" alt="backgroundart">
 
-            <div class="info-bar">
-                <span class="icon send-message"><i class="far fa-comment-dots"></i></span>
-                <span>Stuur een bericht</span>
-            </div>
-
-            <div class="info-bar">
-                <span class="icon phone-number"><i class="fas fa-phone-alt"></i></span>
-                <span>061234568</span>
-            </div>
-
-            <div class="info-bar">
-                <span class="icon email"><i class="far fa-envelope"></i></span>
-                <span>johndoe@mail.com</span>
-            </div>
         </div>
-
-
-        <div class="bio-container">
- <span class="big-container-text">
-            Bio
-        </span>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi maximus egestas sapien sed varius. Nam
-                euismod efficitur sapien nec condimentum. Pellentesque habitant morbi tristique senectus et netus et
-                malesuada fames ac turpis egestas. Ut luctus suscipit volutpat. Duis accumsan viverra tellus vitae
-                posuere. Curabitur commodo arcu vel massa ultricies, non tempus augue dapibus. Praesent sem ex, accumsan
-                eget rhoncus vel, consequat nec lectus. Cras eu massa fermentum erat tincidunt dignissim et nec
-                lacus.</p>
-        </div>
-
-        <div class="interests-container">
-        <span class="big-container-text">
-            Interesses
-        </span>
-            <div class="interests-elements-container">
-                <!-- https://images.google.com/?q=cat&tbs=iar:s&gws_rd=ssl -->
-                <div class="interest-element">
-                    <img src="./assets/img/placeholder-images/place-holder.png" alt="interest">
-                    <span>Sports</span>
-                </div>
-
-                <div class="interest-element">
-                    <img src="./assets/img/placeholder-images/place-holder.png" alt="interest">
-                    <span>Nature</span>
-                </div>
-
-                <div class="interest-element">
-                    <img src="./assets/img/placeholder-images/place-holder.png" alt="interest">
-                    <span>Drinking</span>
-                </div>
-
-                <div class="interest-element">
-                    <img src="./assets/img/placeholder-images/place-holder.png" alt="interest">
-                    <span>Swimming</span>
-                </div>
-
-                <div class="interest-element">
-                    <img src="./assets/img/placeholder-images/place-holder.png" alt="interest">
-                    <span>Beach</span>
-                </div>
-
-                <div class="interest-element">
-                    <img src="./assets/img/placeholder-images/place-holder.png" alt="interest">
-                    <span>Eating</span>
-                </div>
-
-                <div class="interest-element">
-                    <img src="./assets/img/placeholder-images/place-holder.png" alt="interest">
-                    <span>Sight seeing</span>
-                </div>
-
-                <div class="interest-element">
-                    <img src="./assets/img/placeholder-images/place-holder.png" alt="interest">
-                    <span>Shopping</span>
-                </div>
-            </div>
-        </div>
-
     </div>
 
     <div class="chat-modal" id="main-chat-box">
@@ -270,6 +191,7 @@
     </div>
 
     <button id="chat-btn" class="chat-btn"><i class="far fa-comment chat-icon"></i></button>
+
 </main>
 
 <footer>
@@ -279,7 +201,7 @@
                 <a href="./index.html">Home</a>
                 <a href="./assets/views/about.html">Over Ons</a>
                 <a href="./assets/views/auth/login.html">login</a>
-                <a href="./faq.html">FAQ</a>
+                <a href="assets/views/faq.html">FAQ</a>
             </nav>
         </div>
         <div class="right-footer-nav">
@@ -298,8 +220,8 @@
         </div>
         <div class="footer-privacy-nav">
             <nav>
-                <a href="./AV_Corendon_NL_20200108.pdf">Terms of service </a>
-                <a href="./Corendon-Privacy-Verklaring-NL.pdf">Privacy Policy</a>
+                <a href="./assets/pdf/AV_Corendon_NL_20200108.pdf">Terms of service </a>
+                <a href="./assets/pdf/Corendon-Privacy-Verklaring-NL.pdf">Privacy Policy</a>
             </nav>
         </div>
     </div>
@@ -307,6 +229,7 @@
         <img src="./assets/svg/corendon-logo%203.svg" alt=""/>
     </div>
 </footer>
+
 <script src="./assets/js/menu.js"></script>
 <script src="./assets/js/chat.js"></script>
 </body>

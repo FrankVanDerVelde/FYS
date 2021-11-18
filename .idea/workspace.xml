@@ -4,12 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="70d99db9-d02d-4d25-95af-1c86a1b3bc7b" name="Changes" comment="Chat in de about pagina, chat (zonder icons) in de FAQ pagina.">
+    <list default="true" id="70d99db9-d02d-4d25-95af-1c86a1b3bc7b" name="Changes" comment="Fixed space">
+      <change afterPath="$PROJECT_DIR$/wwwroot/assets/css/default.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wwwroot/assets/js/config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/faq.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/faq.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/profile-edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/profile-edit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/profile-overview.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/profile-overview.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wwwroot/assets/views/profile-edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/wwwroot/assets/views/profile-edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wwwroot/assets/views/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/wwwroot/assets/views/profile.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,6 +67,8 @@
       <workItem from="1634233728328" duration="5089000" />
       <workItem from="1634240904464" duration="223000" />
       <workItem from="1635428812610" duration="2055000" />
+      <workItem from="1637172222067" duration="12000" />
+      <workItem from="1637178624512" duration="180000" />
     </task>
     <task id="LOCAL-00001" summary="Footer toegevoegd 1">
       <created>1634235688926</created>
