@@ -139,58 +139,77 @@
             <div class="filter-card">
                 <div class="toegepastefiltersText">Toegepaste filter(s):</div>
                 <div class="toegepaste-filters">
-                   <div class="gekozenradius">
-                        <p class="filterOption">0-30</p>
-                       <img class="close" src="../img/close.png" alt=" "/>
+                    <div class="gekozen" id="radius">
+                        <p class="filterOption">0km-30km</p>
+
                     </div>
-                    <div class="gekozengeslacht">
+                    <div class="gekozen" id="geslacht">
                         <p class="filterOption">Man</p>
-                        <img class="close" src="../img/close.png" alt=" "/>
+
                     </div>
-                    <div class="gekozengeslacht">
-                        <p class="filterOption">Man</p>
-                        <img class="close" src="../img/close.png" alt=" "/>
-                    </div>
-                    <div class="gekozengeslacht">
-                        <p class="filterOption">Man</p>
-                        <img class="close" src="../img/close.png" alt=" "/>
-                    </div>
-                    <div class="gekozengeslacht">
-                        <p class="filterOption">Man</p>
-                        <img class="close" src="../img/close.png" alt=" "/>
-                    </div>
+
                 </div>
             </div>
         </div>
 
         <!--Filters onder de banner-->
         <div class="filtermenu">
-            <div class="interessesfilter">
-                <p>Interesses</p>
-                <p class="boldText">Alle</p>
-                <img class="pullDown" src="../img/arrow_down.png" alt=" "/>
+            <div class="interessesfilter dropdown-filters">
+                <button class="dropdown-button">
+                    <p>Interesses</p>
+                    <img class="pullDown" src="../img/arrow_down.png" alt=" "/>
+                </button>
+
+
             </div>
-            <div class="leeftijdsgroepfilter">
+            <div class="leeftijdsgroepfilter dropdown-filters">
+                <button class="dropdown-button">
+
+
                 <p>Leeftijdsgroep</p>
-                <p class="boldText">Alle</p>
                 <img class="pullDown" src="../img/arrow_down.png" alt=" "/>
+                </button>
+                <div class="dropdown-content-filter">
+                    <a href="javascript:void(0)" class="optionLeeftijd" onclick="changeFilter(this)">20-30</a>
+                    <a href="javascript:void(0)" class="optionLeeftijd" onclick="changeFilter(this)">30-50</a>
+                    <a href="javascript:void(0)" class="optionLeeftijd" onclick="changeFilter(this)">50+</a>
+                </div>
             </div>
-            <div class="geslachtfilter">
+            <div class="geslachtfilter dropdown-filters">
+                <button class="dropdown-button">
                 <p>Geslacht</p>
-                <p class="boldText">Man</p>
                 <img class="pullDown" src="../img/arrow_down.png" alt=" "/>
+                </button>
+                <div class="dropdown-content-filter">
+                    <a href="javascript:void(0)" class="optionGeslacht" onclick="changeFilter(this)">Man</a>
+                    <a href="javascript:void(0)" class="optionGeslacht" onclick="changeFilter(this)">Vrouw</a>
+                    <a href="javascript:void(0)" class="optionGeslacht" onclick="changeFilter(this)">Overig</a>
+                </div>
             </div>
-            <div class="radiusfilter">
+            <div class="radiusfilter dropdown-filters">
+                <button class="dropdown-button">
                 <p>Radius (km)</p>
-                <p class="boldText">0-30</p>
                 <img class="pullDown" src="../img/arrow_down.png" alt=" "/>
+                </button>
+                <div class="dropdown-content-filter">
+                    <a href="javascript:void(0)" class="optionRadius" onclick="changeFilter(this)">0km-30km</a>
+                    <a href="javascript:void(0)" class="optionRadius" onclick="changeFilter(this)">30km-60km</a>
+                    <a href="javascript:void(0)" class="optionRadius" onclick="changeFilter(this)">60km+</a>
+                </div>
             </div>
-            <div class="gewenstebestemmingenfilter">
+            <div class="gewenstebestemmingenfilter dropdown-filters">
+                <button class="dropdown-button">
                 <p>Gewenste bestemmingen</p>
-                <p class="boldText">Alle</p>
+
                 <img class="pullDown" src="../img/arrow_down.png" alt=" "/>
+                </button>
+                <div class="dropdown-content-filter">
+                    <a href="javascript:void(0)" class="optionBestemming" onclick="changeFilter(this)">Link 1</a>
+                    <a href="javascript:void(0)" class="optionBestemming" onclick="changeFilter(this)">Link 2</a>
+                    <a href="javascript:void(0)" class="optionBestemming" onclick="changeFilter(this)">Link 3</a>
+                </div>
             </div>
-            <div class="gebruikerzoekenfilter">
+            <div class="gebruikerzoekenfilter ">
                 <p>Gebruiker zoeken</p>
                 <input type="text" id="username" name="fname"><br><br>
                 <img class="search" src="../img/search.png" alt=" "/>
@@ -421,5 +440,7 @@
 <script src="../js/chat.js"></script>
 
 <script src="../js/menu.js"></script>
+<script src="../js/matches/filters.js"></script>
+<script src="https://cdn.fys.cloud/fyscloud/0.0.4/fyscloud.min.js"></script>
 </body>
 </html>

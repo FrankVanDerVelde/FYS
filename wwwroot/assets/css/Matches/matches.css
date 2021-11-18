@@ -450,21 +450,12 @@ margin:auto 0;
     margin-right: 60px;
 }
 
-.gekozenradius {
-    width: 80px;
+.gekozen {
+    width: auto;
     height: 22.5px;
-    min-width: 8%;
-
+    min-width: 15%;
 
 }
-
-.gekozengeslacht {
-    width: 80px;
-    height: 22.5px;
-    min-width: 8%;
-
-}
-
 
 .filtermenu {
     position: relative;
@@ -494,10 +485,35 @@ margin:auto 0;
     flex-direction: row;
     padding: 2px 2px 2px 2px;
 }
-
-.filtermenu > div > p{
-    color:rgb(148, 148, 148);
+.dropdown-button{
+    display: flex;
+    flex-direction: row;
+    gap:10px;
+    color: black;
+    font-size: 16px;
+    border: none;
+    width: 100%;
 }
+.filtermenu > div > p{
+    font-weight: bold;
+}
+
+.dropdown-content-filter{
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    margin-top:2.9vh;
+}
+.dropdown-content-filter a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+.dropdown-filters:hover .dropdown-content-filter {display: block;}
 .endSection > p{
     font-weight: bold;
 }
