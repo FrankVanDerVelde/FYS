@@ -493,25 +493,29 @@ margin:auto 0;
     font-size: 16px;
     border: none;
     width: 100%;
+    background-color: var(--filter);
 }
 .filtermenu > div > p{
     font-weight: bold;
 }
+.dropdown-button > p{
 
+    color: var(--text1);
+}
 .dropdown-content-filter{
     display: none;
     position: absolute;
-    background-color: #f1f1f1;
+    background-color: var(--filter);
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
     margin-top:2.9vh;
 }
 .dropdown-content-filter a {
-    color: black;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
+    color: var(--text1);
 }
 .dropdown-filters:hover .dropdown-content-filter {display: block;}
 .endSection > p{

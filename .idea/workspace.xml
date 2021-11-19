@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="70d99db9-d02d-4d25-95af-1c86a1b3bc7b" name="Changes" comment="Fixed space">
-      <change afterPath="$PROJECT_DIR$/wwwroot/assets/js/matches/filters.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wwwroot/assets/css/Matches/matches.css" beforeDir="false" afterPath="$PROJECT_DIR$/wwwroot/assets/css/Matches/matches.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wwwroot/assets/js/matches/filters.js" beforeDir="false" afterPath="$PROJECT_DIR$/wwwroot/assets/js/matches/filters.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wwwroot/assets/views/matches.html" beforeDir="false" afterPath="$PROJECT_DIR$/wwwroot/assets/views/matches.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -78,6 +77,7 @@
       <workItem from="1637172222067" duration="12000" />
       <workItem from="1637178624512" duration="180000" />
       <workItem from="1637259719914" duration="8908000" />
+      <workItem from="1637312435207" duration="1333000" />
     </task>
     <task id="LOCAL-00001" summary="Footer toegevoegd 1">
       <created>1634235688926</created>
