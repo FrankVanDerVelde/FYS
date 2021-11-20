@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="70d99db9-d02d-4d25-95af-1c86a1b3bc7b" name="Changes" comment="Fixed space">
+      <change afterPath="$PROJECT_DIR$/wwwroot/assets/js/config.mockup.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wwwroot/assets/css/Matches/matches.css" beforeDir="false" afterPath="$PROJECT_DIR$/wwwroot/assets/css/Matches/matches.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wwwroot/assets/js/matches/filters.js" beforeDir="false" afterPath="$PROJECT_DIR$/wwwroot/assets/js/matches/filters.js" afterDir="false" />
@@ -81,6 +82,9 @@
       <workItem from="1637312435207" duration="2336000" />
       <workItem from="1637317813078" duration="297000" />
       <workItem from="1637340500872" duration="4054000" />
+      <workItem from="1637355288533" duration="1284000" />
+      <workItem from="1637418552403" duration="34000" />
+      <workItem from="1637419146052" duration="1489000" />
     </task>
     <task id="LOCAL-00001" summary="Footer toegevoegd 1">
       <created>1634235688926</created>

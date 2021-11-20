@@ -1,3 +1,23 @@
+document.addEventListener("DOMContentLoaded", async function (){
+
+
+  try{
+      var interests = await FYSCloud.API.queryDatabase("SELECT * FROM fys_is109_4_harmohat_chattest.interestscategory; ")
+        console.log(interests);
+  }
+  catch(e){
+        console.error(e);
+  }
+
+})
+
+
+
+
+
+
+
+
 function changeFilter(item) {
 
     var result;
