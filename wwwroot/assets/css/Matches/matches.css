@@ -434,6 +434,8 @@ margin:auto 0;
 .filterOption {
     flex: 3;
     text-align: center;
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
 .toegepaste-filters > div {
