@@ -74,7 +74,6 @@ async function changeFilter(item) {
     if(amountOfInterestFilters === 5)
     {
         const parentDiv = document.getElementsByClassName('toegepaste-filters')[0];
-        console.log(" je hebt nu 5 filters");
     }
     //if filter doesnt exist or the parent has no filters, create filter.
     if (exists === false || parentDiv.children.length === 0 ) {
