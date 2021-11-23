@@ -1,0 +1,69 @@
+<div class="chat-modal" id="main-chat-box">
+    <div class="chat-box">
+        <div class="chat-header">
+            <div class="profile-img">
+                <img src="https://ui-avatars.com/api/?name=John+Doe?background=random" alt="Profile Photo">
+            </div>
+            <h2 class="chat-header-title">Contacten</h2>
+            <div class="close-btn-box">
+                <button class="close-chat close-btn">
+                    <i class="fas fa-times-circle close-icon"></i>
+                </button>
+            </div>
+        </div>
+        <div class="chat-contacts">
+            <ul class="chat-list">
+                <template id="chat-template">
+                    <li class="message-list-item">
+                        <div class="message-overview">
+                            <div class="message-overview-img">
+                                <img src="" class="message-profile-pic" alt="Message img">
+                            </div>
+                            <div class="message-overview-text">
+                                <div class="messages-overview-name">
+                                    <h3 class="chat-title"></h3>
+                                </div>
+                                <div class="messages-text">
+                                    <p class="chat-text"></p>
+                                    <p class="messages-time"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </template>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="chat-modal detail-chat-box" id="detail-chat-box">
+    <div class="chat-box">
+        <div class="chat-header">
+            <div class="back-btn-box">
+                <i class="fas fa-chevron-left back-btn-chat"></i>
+            </div>
+            <div class="detail-person-header">
+                <img src="" class="detail-chat-photo" alt="Message img">
+                <p class="detail-chat-header"></p>
+            </div>
+            <div class="close-btn-box">
+                <button class="close-detail-chat close-btn">
+                    <i class="fas fa-times-circle close-icon"></i>
+                </button>
+            </div>
+        </div>
+        <div class="chat-content">
+            <ul class="messages-list"></ul>
+        </div>
+        <div class="chat-footer">
+            <form class="chat-form">
+                <div class="input-box">
+                    <input type="text" class="chat-input" placeholder="Verstuur bericht...">
+                </div>
+                <div class="btn-box">
+                    <button class="send-msg-btn" type="submit"><i class="fas fa-arrow-circle-right form-box-icon"></i></button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
