@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", async function () {
     // if (FYSCloud.Session.get("loggedin")) {
-
+    const detailChatBox = document.querySelector("#detail-chat-box");
+    const chatBox = document.querySelector("#main-chat-box");
     //Getting the whole [#chat-template] html piece
     const template = document.querySelector("#chat-template").innerHTML;
     const userChatContact = await getHistoryList(1);
