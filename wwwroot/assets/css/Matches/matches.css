@@ -501,6 +501,8 @@ margin:auto 0;
     padding: 2px 2px 2px 2px;
 }
 .dropdown-button{
+    cursor: pointer;
+
     display: flex;
     flex-direction: row;
     gap:10px;
@@ -532,7 +534,8 @@ margin:auto 0;
     display: block;
     color: var(--text1);
 }
-.dropdown-filters:hover .dropdown-content-filter {display: block;}
+.dropdown-content-filter.active {
+    display: block;}
 .endSection > p{
     font-weight: bold;
 }

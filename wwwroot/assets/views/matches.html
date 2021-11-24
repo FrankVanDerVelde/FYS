@@ -155,7 +155,7 @@
         <!--Filters onder de banner-->
         <div class="filtermenu">
             <div class="interessesfilter dropdown-filters">
-                <button class="dropdown-button">
+                <button class="dropdown-button" onclick="openFilter(this)">
                     <p>Interesses</p>
                     <img class="pullDown" src="../img/arrow_down.png" alt=" "/>
                 </button>
@@ -165,7 +165,7 @@
 
             </div>
             <div class="leeftijdsgroepfilter dropdown-filters">
-                <button class="dropdown-button">
+                <button class="dropdown-button" onclick="openFilter(this)">
 
 
                     <p>Leeftijdsgroep</p>
@@ -178,7 +178,7 @@
                 </div>
             </div>
             <div class="geslachtfilter dropdown-filters">
-                <button class="dropdown-button">
+                <button class="dropdown-button" onclick="openFilter(this)">
                     <p>Geslacht</p>
                     <img class="pullDown" src="../img/arrow_down.png" alt=" "/>
                 </button>
@@ -189,7 +189,7 @@
                 </div>
             </div>
             <div class="radiusfilter dropdown-filters">
-                <button class="dropdown-button">
+                <button class="dropdown-button" onclick="openFilter(this)">
                     <p>Radius (km)</p>
                     <img class="pullDown" src="../img/arrow_down.png" alt=" "/>
                 </button>
@@ -200,7 +200,7 @@
                 </div>
             </div>
             <div class="gewenstebestemmingenfilter dropdown-filters">
-                <button class="dropdown-button">
+                <button class="dropdown-button" onclick="openFilter(this)">
                     <p>Gewenste bestemmingen</p>
 
                     <img class="pullDown" src="../img/arrow_down.png" alt=" "/>
@@ -455,6 +455,7 @@
 <script src="../js/menu.js"></script>
 <script src="../js/matches/filters.js"></script>
 <script src="../js/matches/loadResult.js"></script>
+<script src="../js/matches/toggleFilters.js"></script>
 
 </body>
 </html>

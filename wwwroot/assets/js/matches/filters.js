@@ -1,37 +1,84 @@
-document.addEventListener("DOMContentLoaded", async function (){
+document.addEventListener("DOMContentLoaded", async function () {
 
 
-  try{
-      fillInterestFilter();
-  }
-  catch(e){
+    try {
+        fillInterestFilter();
+        getDetailedInterests();
+    } catch (e) {
         console.error(e);
-  }
+    }
 
 })
 
+
+// 'Technology': [
+//         { 'description': "software" },
+//         { 'description': "hardware" },
+//         { 'description': "smartphones" },
+//         { 'description': "televisions" },
+//         { 'description': "cameras" },
+//
+//     ],
+//     'Sport': [
+//         { 'description': "software" },
+//         { 'description': "hardware" },
+//         { 'description': "smartphones" },
+//         { 'description': "televisions" },
+//         { 'description': "cameras" },
+//
+//     ],
+var xxxx = [];
+
 var amountOfInterestFilters = 0;
 
-async function fillInterestFilter()
-{
-    var interests = await FYSCloud.API.queryDatabase("SELECT * FROM fys_is109_4_harmohat_chattest.interestscategory; ")
-    await createFilterOption(interests);
-    console.log(interests);
+var detaildInterests;
+var headInterests;
+async function getDetailedInterests() {
+    detaildInterests = await FYSCloud.API.queryDatabase("SELECT * FROM fys_is109_4_harmohat_chattest.intrestdetail; ")
+    console.log(detaildInterests);
+
+
+    await fillArray(headInterests, detaildInterests);
 }
 
-async function createFilterOption(interests)
+async function fillInterestFilter() {
+    headInterests = await FYSCloud.API.queryDatabase("SELECT * FROM fys_is109_4_harmohat_chattest.interestscategory; ")
+    await createFilterOption(headInterests);
+
+
+
+
+}
+
+async function fillArray(HeadInterests, detaildInterests)
 {
+    for (let i = 0; i < HeadInterests.length; i++) {
+        xxxx.push({headInterest: HeadInterests[i].description})
+
+
+    }
+    for (let i = 0; i < HeadInterests.length; i++) {
+        console.log(xxxx[i])
+
+        //xxxx[i].push({subInterest: detaildInterests[i].description});
+    }
+//// ADD ANOTHER LAYER INTO ARRAY.
+    console.log(xxxx);
+}
+
+
+async function createFilterOption(interests) {
     const parentDiv = document.getElementsByClassName('dropdown-content-filter')[0]; //<-- first dro
 
 
-    for (let i = 0; i < interests.length ; i++) {
+    for (let i = 0; i < interests.length; i++) {
         var childdiv = document.createElement("a");
         childdiv.setAttribute("class", "optionInterest");
-        childdiv.setAttribute("href",  "javascript:void(0)") ;
+        childdiv.setAttribute("href", "javascript:void(0)");
         childdiv.setAttribute("onclick", "changeFilter(this)");
         childdiv.setAttribute("id", interests[i].description);
 
-        childdiv.innerHTML =  interests[i].description;
+        childdiv.innerHTML = interests[i].description;
         parentDiv.appendChild(childdiv);
 
     }
@@ -53,8 +100,7 @@ async function changeFilter(item) {
 
         //check if filter already exists, if yes then delete that filter. and set wantToRemove to true.
         if (item.innerHTML === parentDiv.children[i].innerText) {
-            if(parentDiv.children[i].id.includes("interest"))
-            {
+            if (parentDiv.children[i].id.includes("interest")) {
                 amountOfInterestFilters--;
             }
             await deleteFilter(parentDiv.children[i].id);
@@ -71,16 +117,14 @@ async function changeFilter(item) {
 
     }
     //todo, remove first added interest filter
-    if(amountOfInterestFilters === 5)
-    {
+    if (amountOfInterestFilters === 5) {
         const parentDiv = document.getElementsByClassName('toegepaste-filters')[0];
     }
     //if filter doesnt exist or the parent has no filters, create filter.
-    if (exists === false || parentDiv.children.length === 0 ) {
+    if (exists === false || parentDiv.children.length === 0) {
 
 
-        if(wantToRemove === true)
-        {
+        if (wantToRemove === true) {
             return;
         }
         switch (item.className) {
@@ -104,8 +148,7 @@ async function changeFilter(item) {
                 break;
             case "optionInterest":
 
-                if(amountOfInterestFilters === 5)
-                {
+                if (amountOfInterestFilters === 5) {
                     console.log("Too many filters");
                     return;
                 }
@@ -133,12 +176,13 @@ function createFilter(typeFilter, valueFilter) {
     document.getElementsByClassName("toegepaste-filters")[0].appendChild(parentDiv);
     console.log("added standard filter");
 }
+
 //create div, give classname and id and create child in that div.
 function createFilterInterests(typeFilter, valueFilter) {
 
     var parentDiv = document.createElement("div");
     parentDiv.className = "chose";
-    parentDiv.id = typeFilter +valueFilter;
+    parentDiv.id = typeFilter + valueFilter;
     var childDiv = document.createElement("p");
     childDiv.className = "filterOption";
 
