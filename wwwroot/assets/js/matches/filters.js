@@ -2,14 +2,82 @@ document.addEventListener("DOMContentLoaded", async function () {
 
 
     try {
-        fillInterestFilter();
-        getDetailedInterests();
+        getInterests();
     } catch (e) {
         console.error(e);
     }
 
 })
 
+var bluePrintArray = {
+    id: 0,
+    headCategory: "",
+    subCategorys: [],
+}
+var bluePrintSubArray =
+    {
+        id: 0,
+        interest: ""
+    }
+
+;
+
+var amountOfInterestFilters = 0;
+var xxx = [];
+var detaildInterests;
+var headInterests;
+
+async function getInterests() {
+    intresses = await FYSCloud.API.queryDatabase("SELECT interestscategory.id AS parent_id, interestscategory.description AS parent_description, intrestdetail.description AS child_description, intrestdetail.intrestId AS child_id\n" +
+        "FROM interestscategory\n" +
+        "INNER JOIN intrestdetail ON interestscategory.id = intrestdetail.catgoryId ");
+
+    console.log(intresses);
+
+   // await createFilterOption(intresses);
+    await createExtraFilter(intresses);
+
+}
+
+async function fillInterestFilter() {
+    headInterests = await FYSCloud.API.queryDatabase("SELECT * FROM fys_is109_4_harmohat_chattest.interestscategory; ")
+
+}
+
+async function fillArray(intrest) {
+    xxx.push(bluePrintArray);
+    xxx[0].id = intrest[0].parent_id;
+    xxx[0].headCategory = intrest[0].parent_description;
+    console.log(xxx);
+    var customI = 1;
+    for (let i = 0; i < intrest.length; i++) {
+
+
+        if (xxx[customI].id === intrest[i].parent_id) {
+            console.log("test");
+            //xxx[customI].subCategorys.push(bluePrintSubArray);
+
+
+        }
+        else{
+            xxx.push(bluePrintArray);
+            customI++;
+            xxx[customI].id = intrest[i].parent_id;
+            xxx[customI].headCategory = intrest[i].parent_description;
+            console.log( intrest[i].parent_description);
+            console.log( intrest[i].parent_id);
+            console.log( customI);
+
+
+        }
+
+
+    }
+
+    //console.log(xxx);
+
+//// ADD ANOTHER LAYER INTO ARRAY.
+}
 
 // 'Technology': [
 //         { 'description': "software" },
@@ -27,64 +95,55 @@ document.addEventListener("DOMContentLoaded", async function () {
 //         { 'description': "cameras" },
 //
 //     ],
-var xxxx = [];
-
-var amountOfInterestFilters = 0;
-
-var detaildInterests;
-var headInterests;
-async function getDetailedInterests() {
-    detaildInterests = await FYSCloud.API.queryDatabase("SELECT * FROM fys_is109_4_harmohat_chattest.intrestdetail; ")
-    console.log(detaildInterests);
-
-
-    await fillArray(headInterests, detaildInterests);
-}
-
-async function fillInterestFilter() {
-    headInterests = await FYSCloud.API.queryDatabase("SELECT * FROM fys_is109_4_harmohat_chattest.interestscategory; ")
-    await createFilterOption(headInterests);
-
-
-
-
-}
-
-async function fillArray(HeadInterests, detaildInterests)
-{
-    for (let i = 0; i < HeadInterests.length; i++) {
-        xxxx.push({headInterest: HeadInterests[i].description})
-
-
-    }
-    for (let i = 0; i < HeadInterests.length; i++) {
-        console.log(xxxx[i])
-
-        //xxxx[i].push({subInterest: detaildInterests[i].description});
-    }
-//// ADD ANOTHER LAYER INTO ARRAY.
-    console.log(xxxx);
-}
-
 
 async function createFilterOption(interests) {
     const parentDiv = document.getElementsByClassName('dropdown-content-filter')[0]; //<-- first dro
+    var madeIntrests = [];
 
 
     for (let i = 0; i < interests.length; i++) {
-        var childdiv = document.createElement("a");
-        childdiv.setAttribute("class", "optionInterest");
-        childdiv.setAttribute("href", "javascript:void(0)");
-        childdiv.setAttribute("onclick", "changeFilter(this)");
-        childdiv.setAttribute("id", interests[i].description);
 
-        childdiv.innerHTML = interests[i].description;
-        parentDiv.appendChild(childdiv);
+
+        if (!madeIntrests.includes(interests[i].parent_id)) {
+            var childdiv = document.createElement("a");
+            childdiv.setAttribute("class", "optionInterest");
+            childdiv.setAttribute("href", "javascript:void(0)");
+            childdiv.setAttribute("onclick", "changeFilter(this)");
+            childdiv.setAttribute("id", interests[i].parent_description);
+
+            childdiv.innerHTML = interests[i].parent_description;
+            parentDiv.appendChild(childdiv);
+            madeIntrests.push(interests[i].parent_id);
+        }
+
 
     }
 
 }
+async function createExtraFilter(interests) {
+    const parentDiv = document.getElementsByClassName('dropdown-content-filter')[0]; //<-- first dro
+    var madeIntrests = [];
 
+
+    for (let i = 0; i < interests.length; i++) {
+
+
+        if (!madeIntrests.includes(interests[i].parent_id)) {
+            var childdiv = document.createElement("button");
+            childdiv.setAttribute("class", "dropdown-button-filter");
+
+            childdiv.setAttribute("onclick", "openFilter(this)");
+            childdiv.setAttribute("id", interests[i].parent_description);
+
+            childdiv.innerHTML = interests[i].parent_description;
+            parentDiv.appendChild(childdiv);
+            madeIntrests.push(interests[i].parent_id);
+        }
+
+
+    }
+
+}
 async function changeFilter(item) {
 
     var exists;
