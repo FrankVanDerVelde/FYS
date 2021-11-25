@@ -7,6 +7,7 @@
     <title>Login</title>
     <link rel="icon" type="image/png" sizes="32x32" href="../../img/favicon-32x32.png">
     <link rel="stylesheet" href="../../css/auth/login.css">
+    <script src="https://cdn.fys.cloud/fyscloud/0.0.4/fyscloud.min.js"></script>
 </head>
 <body>
 
@@ -23,7 +24,7 @@
                     </div>
 
                     <div class="form-box">
-                        <form method="POST" action="" name="loginForm" autocomplete="off">
+                        <form method="POST" action="" id="email-login" name="loginForm" autocomplete="off">
                             <div class="email-box">
                                 <label>Email:</label>
                                 <input type="email" name="uid" placeholder="johndoe@example.com" required autofocus>
@@ -31,7 +32,7 @@
 
                             <div class="wachtwoord-box">
                                 <label>Wachtwoord:</label>
-                                <input type="password" name="pwd" placeholder="*******" required>
+                                <input type="password" id="password-login" name="pwd" placeholder="*******" required>
                             </div>
 
                             <div class="form-footer">
@@ -39,7 +40,7 @@
                                     Wachtwoord vergeten?
                                 </a>
 
-                                <button type="submit" class="submit-btn" onClick="login()">
+                                <button type="submit" id="login-btn" class="submit-btn" onclick="login()">
                                     Login
                                 </button>
                             </div>
@@ -50,8 +51,7 @@
         </div>
     </div>
 </main>
-<script src="assets/js/config.js"></script>
-<script src="https://cdn.fys.cloud/fyscloud/0.0.4/fyscloud.min.js"></script>
+<script src="../../js/config.js"></script>
 <script src="../../js/auth/login.js"></script>
 </body>
 </html>

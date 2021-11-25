@@ -16,21 +16,19 @@ async function register() {
     const usertype = 1; //gaat weg
 
     // temp dummy data to try inserts
-    const username = "testusername" + Math.random(2000);
+    const username = "testusername" + Math.random(2000); //Hier komt een goede manier voor het aanmaken van username
 
     //aanmaken profielfoto.
     let userPhotoId = name.replace(/\s+/g, '+').toLowerCase();
     let profilePhoto = `https://ui-avatars.com/api/?name=${userPhotoId}?background=random`;
-    // let profilePhoto = "https://ui-avatars.com/api/?name="+ userPhotoId +"?background=random";
 
     //laat de gebruiker alleen aanmelden als het wachtwoord het zelfde is.
     if (password === passwordVerify) {
         try {
             //verstuur data naar database
-            let log = await FYSCloud.API.queryDatabase("INSERT INTO account (email, password, username, profilePhoto," +
+            await FYSCloud.API.queryDatabase("INSERT INTO account (email, password, username, profilePhoto," +
                 " usertypeFk, createdAt) VALUES (?, SHA2(?, 256), ?, ?, ?, ?)",[email, password, username,
                 profilePhoto, usertype, registerDate]);
-            console.log(log);
             //hier komt sessie functie
 
             //doorlinken naar profile page (als er geen error is).
