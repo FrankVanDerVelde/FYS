@@ -25,7 +25,7 @@ async function register() {
 
     //laat de gebruiker alleen aanmelden als het wachtwoord het zelfde is.
     if (password === passwordVerify) {
-        //try {
+        try {
             //verstuur data naar database
             let log = await FYSCloud.API.queryDatabase("INSERT INTO account (email, password, username, profilePhoto," +
                 " usertypeFk, createdAt) VALUES (?, SHA2(?, 256), ?, ?, ?, ?)",[email, password, username,
@@ -34,12 +34,12 @@ async function register() {
             //hier komt sessie functie
 
             //doorlinken naar profile page (als er geen error is).
-            //window.location.replace("../../views/profile-edit.html");
-        //}
-        //catch {
+            window.location.replace("../../views/profile-edit.html");
+        }
+        catch {
             //laat de gebruiker weten als er iets niet goed ging, of de email al is gebruikt
-            //window.alert("Er is iets mis gegaan. :( \n Het kan zijn dat dit email address al in gebruik is.")
-        //}
+            window.alert("Er is iets mis gegaan. :( \n Het kan zijn dat dit email address al in gebruik is.")
+        }
     }
     else {
         //laat de gebruiker weten dat het wachtwoord niet klopt.
