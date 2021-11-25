@@ -1,12 +1,13 @@
-document.addEventListener("DOMContentLoaded", async function () {
+window.addEventListener("load", async function () {
     // if (FYSCloud.Session.get("loggedin")) {
+
     const detailChatBox = document.querySelector("#detail-chat-box");
     const chatBox = document.querySelector("#main-chat-box");
+
     //Getting the whole [#chat-template] html piece
     const template = document.querySelector("#chat-template").innerHTML;
-    const userChatContact = await getHistoryList(1);
+    const userChatContact = await getHistoryList();
 
-    // TODO: Group the chats instead of seperates tabs
     for (let i = 0; i < userChatContact.length; i++) {
         const chatTemplate = FYSCloud.Utils.parseHtml(template)[0];
         const chatContacts = userChatContact[i];
@@ -34,6 +35,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                 }
             });
 
+            //Sort chats on datetime
             const arrayChats = arrayDate.sort(function(a,b){
                 if (a.createdAt > b.createdAt) return 1;
                 if (a.createdAt < b.createdAt) return -1;
@@ -79,7 +81,6 @@ document.addEventListener("DOMContentLoaded", async function () {
 
                 document.querySelectorAll(".right-chat").forEach(function(element) {
                     if (element.getAttribute('data-reciever') != null) {
-                        console.log(reciever.id);
                         if (element.getAttribute('data-reciever') !=  recieverId) {
                             element.style.display = "none";
                         }else{
@@ -105,9 +106,18 @@ document.addEventListener("DOMContentLoaded", async function () {
                     document.querySelector(".messages-list").innerHTML += msg;
                 }
             }
+
+            document.querySelector(".chat-form").addEventListener("submit", async function(e){
+                e.preventDefault();
+                let message = document.forms["chat-form"]["msg-input"].value;
+                console.log(message);
+                if (message != "") {
+                    insertMessage(1, recieverId, message);
+                    document.querySelector(".chat-form").reset();
+                }
+            });
         });
     }
-
 
     /**
      *
@@ -130,7 +140,7 @@ document.addEventListener("DOMContentLoaded", async function () {
      * @param {int} userId
      * @returns JSON with messages which interacted with the current user
      */
-    async function getHistoryList(userId){
+    async function getHistoryList(){
         try {
             // const query = FYSCloud.API.queryDatabase("SELECT person.firstname, person.lastname, t1.id AS senderId, t2.profilePhoto, messages.message, t2.id as recieverId, t2.username AS reciever, t1.createdAt FROM messages INNER JOIN account t1 ON messages.senderFk = t1.id INNER JOIN account t2 ON messages.recieverFk = t2.id INNER JOIN person ON person.id = messages.recieverFk WHERE t2.id = ? OR t1.id = ?;", [userId, userId]);
             const query = FYSCloud.API.queryDatabase("SELECT * FROM account INNER JOIN person ON person.accountFk = account.id");
@@ -141,6 +151,28 @@ document.addEventListener("DOMContentLoaded", async function () {
         }
     }
 
+    /**
+     *
+     * @param {int} senderId
+     * @param {int} recieverId
+     * @param {string} message
+     */
+    async function insertMessage(senderId, recieverId, message){
+        try {
+            // const query = FYSCloud.API.queryDatabase("SELECT person.firstname, person.lastname, t1.id AS senderId, t2.profilePhoto, messages.message, t2.id as recieverId, t2.username AS reciever, t1.createdAt FROM messages INNER JOIN account t1 ON messages.senderFk = t1.id INNER JOIN account t2 ON messages.recieverFk = t2.id INNER JOIN person ON person.id = messages.recieverFk WHERE t2.id = ? OR t1.id = ?;", [userId, userId]);
+            const query = FYSCloud.API.queryDatabase("INSERT INTO messages (id, senderFk, recieverFk, message, createdAt) VALUES(NULL, ?, ?, ?, CURRENT_TIMESTAMP())",[senderId, recieverId, message]);
+            const results = await query;
+            return await results;
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    /**
+     *
+     * @param {int} recieverId
+     * @returns the data from message reciever
+     */
     async function getReciever(recieverId){
         try {
             const query = FYSCloud.API.queryDatabase("SELECT * FROM person INNER JOIN account ON person.accountFk = account.id WHERE account.id = ?;", [recieverId]);
