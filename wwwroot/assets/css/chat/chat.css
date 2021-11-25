@@ -68,6 +68,10 @@
     border-bottom: 1px solid rgba(227, 227, 227, 0.25);
 }
 
+.chat-header-title{
+    color: var(--text1);
+}
+
 .detail-person-header{
     display: flex;
     align-items: center;
@@ -187,31 +191,35 @@
     cursor: pointer;
 }
 
-ul.right-chat, ul.left-chat{
+.message-list{
     list-style: none;
     display: flex;
     flex-direction: column;
 }
 
+.message-list li{
+    list-style: none;
+}
+
 /*right chat for 'myself'*/
-.right-chat li{
-    width: fit-content;
+.right-chat{
+    width: 94%;
     height: fit-content;
     background: rgba(82, 86, 95, 0.33);
     border-radius: 16px 16px 0 16px;
     margin: 10px;
     padding: 10px;
-    float: right;
+    color: var(--text1);
 }
-/*left chat for other person*/
-.left-chat li{
-    width: fit-content;
+
+/*left chat for recipient person*/
+.left-chat{
+    width: 94%;
     height: fit-content;
-    background: rgba(0, 76, 255, 0.33);
+    background: #2196f3;
     border-radius: 16px 16px 16px 0;
     margin: 10px;
     padding: 10px;
-    float: right;
 }
 
 li p{
@@ -277,17 +285,4 @@ li p{
     font-weight: lighter;
     font-size: 12px;
     color: #7A7A7A;
-}
-
-.notification{
-    position: absolute;
-    width: 18px;
-    height: 18px;
-    background-color: var(--red);
-    text-align: center;
-    color: white;
-    border-radius: 50%;
-    font-size: 14px;
-    left: 36px;
-    top: 10px;
 }
