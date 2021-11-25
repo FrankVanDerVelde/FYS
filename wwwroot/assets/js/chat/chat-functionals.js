@@ -35,6 +35,7 @@ window.addEventListener("load", async function () {
                 }
             });
 
+            //Sort chats on datetime
             const arrayChats = arrayDate.sort(function(a,b){
                 if (a.createdAt > b.createdAt) return 1;
                 if (a.createdAt < b.createdAt) return -1;
