@@ -105,7 +105,8 @@
     font-size: 30px;
 }
 
-.chat-content, .chat-contacts{
+.chat-content, 
+.chat-contacts{
     box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08);
     overflow: auto;
     height: 380px;
@@ -201,7 +202,7 @@
     list-style: none;
 }
 
-/*right chat for 'myself'*/
+/*right chat for current user*/
 .right-chat{
     width: 94%;
     height: fit-content;
