@@ -9,23 +9,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
 })
 
-var bluePrintArray = {
-    id: 0,
-    headCategory: "",
-    subCategorys: [],
-}
-var bluePrintSubArray =
-    {
-        id: 0,
-        interest: ""
-    }
-
-;
-
 var amountOfInterestFilters = 0;
-var xxx = [];
-var detaildInterests;
-var headInterests;
 
 async function getInterests() {
     intresses = await FYSCloud.API.queryDatabase("SELECT interestscategory.id AS parent_id, interestscategory.description AS parent_description, intrestdetail.description AS child_description, intrestdetail.intrestId AS child_id\n" +
@@ -34,115 +18,69 @@ async function getInterests() {
 
     console.log(intresses);
 
-   // await createFilterOption(intresses);
-    await createExtraFilter(intresses);
+    await createInterestFilter(intresses);
 
 }
 
-async function fillInterestFilter() {
-    headInterests = await FYSCloud.API.queryDatabase("SELECT * FROM fys_is109_4_harmohat_chattest.interestscategory; ")
-
-}
-
-async function fillArray(intrest) {
-    xxx.push(bluePrintArray);
-    xxx[0].id = intrest[0].parent_id;
-    xxx[0].headCategory = intrest[0].parent_description;
-    console.log(xxx);
-    var customI = 1;
-    for (let i = 0; i < intrest.length; i++) {
-
-
-        if (xxx[customI].id === intrest[i].parent_id) {
-            console.log("test");
-            //xxx[customI].subCategorys.push(bluePrintSubArray);
-
-
-        }
-        else{
-            xxx.push(bluePrintArray);
-            customI++;
-            xxx[customI].id = intrest[i].parent_id;
-            xxx[customI].headCategory = intrest[i].parent_description;
-            console.log( intrest[i].parent_description);
-            console.log( intrest[i].parent_id);
-            console.log( customI);
-
-
-        }
-
-
-    }
-
-    //console.log(xxx);
-
-//// ADD ANOTHER LAYER INTO ARRAY.
-}
-
-// 'Technology': [
-//         { 'description': "software" },
-//         { 'description': "hardware" },
-//         { 'description': "smartphones" },
-//         { 'description': "televisions" },
-//         { 'description': "cameras" },
-//
-//     ],
-//     'Sport': [
-//         { 'description': "software" },
-//         { 'description': "hardware" },
-//         { 'description': "smartphones" },
-//         { 'description': "televisions" },
-//         { 'description': "cameras" },
-//
-//     ],
-
-async function createFilterOption(interests) {
-    const parentDiv = document.getElementsByClassName('dropdown-content-filter')[0]; //<-- first dro
+//create intrest filter header and sub cat
+async function createInterestFilter(interests) {
+    const parentDiv = document.getElementsByClassName('dropdown-content-filter')[0]; //<-- first dropdown
     var madeIntrests = [];
-
+    var parentElements = [];
 
     for (let i = 0; i < interests.length; i++) {
-
-
-        if (!madeIntrests.includes(interests[i].parent_id)) {
-            var childdiv = document.createElement("a");
-            childdiv.setAttribute("class", "optionInterest");
-            childdiv.setAttribute("href", "javascript:void(0)");
-            childdiv.setAttribute("onclick", "changeFilter(this)");
-            childdiv.setAttribute("id", interests[i].parent_description);
-
-            childdiv.innerHTML = interests[i].parent_description;
-            parentDiv.appendChild(childdiv);
-            madeIntrests.push(interests[i].parent_id);
-        }
-
-
-    }
-
-}
-async function createExtraFilter(interests) {
-    const parentDiv = document.getElementsByClassName('dropdown-content-filter')[0]; //<-- first dro
-    var madeIntrests = [];
-
-
-    for (let i = 0; i < interests.length; i++) {
-
 
         if (!madeIntrests.includes(interests[i].parent_id)) {
             var childdiv = document.createElement("button");
             childdiv.setAttribute("class", "dropdown-button-filter");
 
-            childdiv.setAttribute("onclick", "openFilter(this)");
+            childdiv.setAttribute("onclick", "openInterestFilter(this)");
             childdiv.setAttribute("id", interests[i].parent_description);
 
             childdiv.innerHTML = interests[i].parent_description;
             parentDiv.appendChild(childdiv);
             madeIntrests.push(interests[i].parent_id);
+            parentElements.push(childdiv);
         }
-
 
     }
 
+    for (let i = 0; i < parentElements.length; i++) {
+        var dropDownChild = document.createElement("div");
+        dropDownChild.setAttribute("class", "dropdown-content-filter-interests");
+        insertAfter(parentElements[i],dropDownChild);
+    }
+
+
+    var dropdownParent = document.getElementsByClassName("dropdown-content-filter-interests");
+    /// TODO creeer div ONDER button niet in en voeg daarna dit stuk hieronder toe.
+    var tempNumber = interests[0].parent_id;
+    var counter = 0;
+    for (let i = 0; i < interests.length; i++) {
+
+        if(tempNumber !== interests[i].parent_id)
+        {
+            counter++;
+            tempNumber = interests[i].parent_id;
+        }
+
+       if(interests[i].parent_description === parentElements[counter].id)
+       {
+           var childDivInterest = document.createElement("a");
+           childDivInterest.setAttribute("class", "optionInterest");
+           childDivInterest.setAttribute("href", "javascript:void(0)");
+           childDivInterest.setAttribute("onclick", "changeFilter(this)");
+           childDivInterest.setAttribute("id", interests[i].child_description);
+
+           childDivInterest.innerHTML = interests[i].child_description;
+           dropdownParent[counter].appendChild(childDivInterest);
+       }
+
+    }
+
+}
+function insertAfter(referenceNode, newNode) {
+    referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
 }
 async function changeFilter(item) {
 
@@ -209,6 +147,8 @@ async function changeFilter(item) {
 
                 if (amountOfInterestFilters === 5) {
                     console.log("Too many filters");
+                    //todo add warning
+                    alert("Too many filters");
                     return;
                 }
                 amountOfInterestFilters++;
