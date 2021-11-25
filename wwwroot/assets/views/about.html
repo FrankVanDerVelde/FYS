@@ -25,6 +25,15 @@
             <li><a href="./about.html" class="active">About</a></li>
             <li><a href="./contact.html">Contact</a></li>
             <li><a href="./matches.html">Matches</a></li>
+            <li>
+                <div class="lang-changer-input">
+                    <select id="langSelecter" onchange="checklang()">
+                        <option value="de">Deutsch</option>
+                        <option value="en">English</option>
+                        <option value="nl" selected>Nederlands</option>
+                    </select>
+                </div>
+            </li>
 
             <li class="dropdown-box">
                 <div class="dropdown">
@@ -63,8 +72,9 @@
     <section class="hero">
         <div class="hero-intro">
             <div class="hero-text">
-                <h1>About</h1>
-                <p>Graag in contact komen met ons? We horen graag van u, zie verder op de pagina hoe u ons het beste kunt bereiken</p>
+                <h1 id="title">Over</h1>
+                <p id="opening">Graag in contact komen met ons? We horen graag van u, zie verder op de pagina hoe u ons het beste
+                    kunt bereiken</p>
             </div>
         </div>
         <div class="hero-img">
@@ -73,7 +83,16 @@
     </section>
 
     <svg class="blob" width="1020" height="888" viewBox="0 0 1020 888" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path class="blob-path" d="M112.825 257.545C175.927 185.808 301.815 279.725 483.268 239.889C640.427 205.369 648.971 111.489 774.717 116.819C866.585 120.696 966.955 173.656 1022.46 265.281C1083.66 366.306 1062.17 468.708 1056.11 493.552C1029.08 604.989 947.382 663.412 918.557 683.361C799.794 765.501 665.944 750.279 601.73 743.009C360.522 715.62 101.516 544.113 89.0232 359.09C87.3648 334.867 84.342 289.94 112.825 257.545Z" fill="url(#paint0_linear)"/><defs><linearGradient id="paint0_linear" x1="716.17" y1="-32.1177" x2="476.536" y2="687.902" gradientUnits="userSpaceOnUse"><stop stop-color="#D81E05" stop-opacity="0.25"/><stop offset="0.477083" stop-color="#D81E05" stop-opacity="0.25"/></linearGradient></defs>
+        <path class="blob-path"
+              d="M112.825 257.545C175.927 185.808 301.815 279.725 483.268 239.889C640.427 205.369 648.971 111.489 774.717 116.819C866.585 120.696 966.955 173.656 1022.46 265.281C1083.66 366.306 1062.17 468.708 1056.11 493.552C1029.08 604.989 947.382 663.412 918.557 683.361C799.794 765.501 665.944 750.279 601.73 743.009C360.522 715.62 101.516 544.113 89.0232 359.09C87.3648 334.867 84.342 289.94 112.825 257.545Z"
+              fill="url(#paint0_linear)"/>
+        <defs>
+            <linearGradient id="paint0_linear" x1="716.17" y1="-32.1177" x2="476.536" y2="687.902"
+                            gradientUnits="userSpaceOnUse">
+                <stop stop-color="#D81E05" stop-opacity="0.25"/>
+                <stop offset="0.477083" stop-color="#D81E05" stop-opacity="0.25"/>
+            </linearGradient>
+        </defs>
     </svg>
 
     <section class="row-one row">
@@ -82,10 +101,11 @@
                 <i class="fas fa-plane about-box-icons"></i>
             </div>
             <div class="content">
-                <h2>Corendon.com: vliegtickets tegen de laagst mogelijke prijs!</h2>
+                <h2 id="content-title-1">Corendon.com: vliegtickets tegen de laagst mogelijke prijs!</h2>
                 <div class="red-line"></div>
                 <br>
-                <p>U wilt een losse vlucht boeken, maar niet teveel betalen? Dan bent u bij Corendon.com aan het juiste adres! Bij ons boekt u een vliegticket tegen de laagst mogelijke prijs.</p>
+                <p id="content-1">U wilt een losse vlucht boeken, maar niet teveel betalen? Dan bent u bij Corendon.com aan het juiste
+                    adres! Bij ons boekt u een vliegticket tegen de laagst mogelijke prijs.</p>
             </div>
         </div>
         <div class="gap"></div>
@@ -94,11 +114,13 @@
                 <i class="far fa-clock about-box-icons"></i>
             </div>
             <div class="content">
-                <h2>Corendon.com: 24/7 bereikbaar</h2>
+                <h2 id="content-title-2">Corendon.com: 24/7 bereikbaar</h2>
                 <div class="content-text">
                     <div class="red-line"></div>
                     <br>
-                    <p>U kunt bij ons op ieder gewenst tijdstip uw vliegticket eenvoudig en snel online boeken. U bent dus niet afhankelijk van openingstijden en boekt op een tijdstip dat u het beste uitkomt. Op www.corendon.com ervaart u het gemak van onze volledige en snelle boekingsservice!</p>
+                    <p id="content-2">U kunt bij ons op ieder gewenst tijdstip uw vliegticket eenvoudig en snel online boeken. U bent
+                        dus niet afhankelijk van openingstijden en boekt op een tijdstip dat u het beste uitkomt. Op
+                        www.corendon.com ervaart u het gemak van onze volledige en snelle boekingsservice!</p>
                 </div>
             </div>
         </div>
@@ -110,12 +132,16 @@
                 <i class="fas fa-phone-alt about-box-icons"></i>
             </div>
             <div class="content">
-                <h2>Telefonisch boeken?</h2>
+                <h2 id="content-title-3">Telefonisch boeken?</h2>
                 <div class="red-line"></div>
                 <br>
-                <p>Natuurlijk is telefonisch boeken ook mogelijk. Corendon.com heeft haar eigen reserveringssysteem. Dit zorgt ervoor dat onze ervaren medewerkers direct kunnen nakijken of het door u gewenste vliegticket beschikbaar is. Als een gewenste vertrekdatum niet (meer) boekbaar is, dan kunnen wij u direct via het systeem een alternatieve vertrekdatum bieden waarop het vliegticket wel beschikbaar is.</p>
+                <p id="content-3-1">Natuurlijk is telefonisch boeken ook mogelijk. Corendon.com heeft haar eigen reserveringssysteem. Dit
+                    zorgt ervoor dat onze ervaren medewerkers direct kunnen nakijken of het door u gewenste vliegticket
+                    beschikbaar is. Als een gewenste vertrekdatum niet (meer) boekbaar is, dan kunnen wij u direct via
+                    het systeem een alternatieve vertrekdatum bieden waarop het vliegticket wel beschikbaar is.</p>
                 <br>
-                <p>Onze enthousiaste en servicegerichte medewerkers zijn te bereiken op telefoonnummer +31(0)23 751 06 00</p>
+                <p id="content-3-2">Onze enthousiaste en servicegerichte medewerkers zijn te bereiken op telefoonnummer +31(0)23 751 06
+                    00</p>
             </div>
         </div>
     </section>
@@ -126,14 +152,30 @@
                 <i class="fas fa-check about-box-icons"></i>
             </div>
             <div class="content">
-                <h2>Facts</h2>
+                <h2 id="content-title-4">Feiten</h2>
                 <div class="red-line"></div>
                 <br>
-                <p>Corendon.com is onderdeel van Corendon International Travel BV. De onderneming is in 2000 opgericht in Haarlem, toen Atilay Uslu en zijn zakenpartner Yildiray Karaer besloten hun krachten te bundelen. Voor die tijd had de jonge ondernemer Uslu al zijn eerste stappen in de reisbranche gezet, maar het echte succes komt met de oprichting van Corendon. Het bedrijf begon als Turkije-specialist dat eerst alleen vliegtickets en later ook volledig verzorgde reizen naar Turkije verkocht. In 20 jaar tijd is Corendon uitgegroeid tot een toonaangevende, zeer succesvolle touroperator en dé nummer 1 reisorganisatie als het gaat om veel Turkse en andere populaire bestemmingen binnen en buiten Europa, zoals bijvoorbeeld <a href="https://www.corendon.nl/spanje/balearen/ibiza">ibiza</a>, <a href="https://www.corendon.nl/cyprus">Cyprus</a> en<a href="https://www.corendon.nl/curacao">Curaçao</a>.</p>
+                <p id="content-4-1">Corendon.com is onderdeel van Corendon International Travel BV. De onderneming is in 2000 opgericht
+                    in Haarlem, toen Atilay Uslu en zijn zakenpartner Yildiray Karaer besloten hun krachten te bundelen.
+                    Voor die tijd had de jonge ondernemer Uslu al zijn eerste stappen in de reisbranche gezet, maar het
+                    echte succes komt met de oprichting van Corendon. Het bedrijf begon als Turkije-specialist dat eerst
+                    alleen vliegtickets en later ook volledig verzorgde reizen naar Turkije verkocht. In 20 jaar tijd is
+                    Corendon uitgegroeid tot een toonaangevende, zeer succesvolle touroperator en dé nummer 1
+                    reisorganisatie als het gaat om veel Turkse en andere populaire bestemmingen binnen en buiten
+                    Europa, zoals bijvoorbeeld <a href="https://www.corendon.nl/spanje/balearen/ibiza">ibiza</a>, <a
+                            href="https://www.corendon.nl/cyprus">Cyprus</a> en<a
+                            href="https://www.corendon.nl/curacao">Curaçao</a>.</p>
                 <br>
-                <p>Corendon staat sterk in de markt door de scherpe prijzen, het no-nonsense karakter en de grote ervaring in het inkopen van accommodaties. Hierdoor kan Corendon, in combinatie met de lage overhead kosten, de beste prijs-kwaliteitverhouding aanbieden als het om uw vakantie gaat.</p>
+                <p id="content-4-2">Corendon staat sterk in de markt door de scherpe prijzen, het no-nonsense karakter en de grote
+                    ervaring in het inkopen van accommodaties. Hierdoor kan Corendon, in combinatie met de lage overhead
+                    kosten, de beste prijs-kwaliteitverhouding aanbieden als het om uw vakantie gaat.</p>
                 <br>
-                <p>Naast Corendon Vliegvakanties, Corendon Airlines, Corendon Dutch Airlines, Corendon Hotels & Resorts behoren ook Maris Life, Corendon Artiestenreizen, Corendon Groepsreizen,<a href="https://www.corendon.nl/gofun">GOfun jongerenreizen</a>, Karin’s Choice, <a href="https://www.corendon.nl/stipreizen">Stipreizen</a> tot Corendon. Waarbij het laatste label kleinschalige accommodaties aanbiedt voor de individueel ingestelde reiziger. Ook GoFun is onderdeel van Corendon en biedt de leukste vakanties aan voor jongeren.</p>
+                <p id="content-4-3">Naast Corendon Vliegvakanties, Corendon Airlines, Corendon Dutch Airlines, Corendon Hotels & Resorts
+                    behoren ook Maris Life, Corendon Artiestenreizen, Corendon Groepsreizen,<a
+                            href="https://www.corendon.nl/gofun">GOfun jongerenreizen</a>, Karin’s Choice, <a
+                            href="https://www.corendon.nl/stipreizen">Stipreizen</a> tot Corendon. Waarbij het laatste
+                    label kleinschalige accommodaties aanbiedt voor de individueel ingestelde reiziger. Ook GoFun is
+                    onderdeel van Corendon en biedt de leukste vakanties aan voor jongeren.</p>
             </div>
         </div>
     </section>
@@ -144,12 +186,17 @@
                 <i class="fas fa-plane about-box-icons"></i>
             </div>
             <div class="content">
-                <h2>CORENDON AIRLINES</h2>
+                <h2 id="content-title-5">CORENDON AIRLINES</h2>
                 <div class="red-line"></div>
                 <br>
-                <p>Sinds 2005 heeft Corendon een eigen luchtvaartmaatschappij die jaarlijks ruim 2,5 miljoen passagiers vanuit 28 landen naar 143 luchthavens vliegt. De thuishaven van de luchtvaartmaatschappij is Antalya in Turkije en de code is XC. In 2011 is er een Nederlandse tak toegevoegd, Corendon Dutch Airlines (CD). De allereerste vlucht werd uitgevoerd op de oer-Hollandse dag 30 april (destijds Koninginnedag).</p>
+                <p id="content-5-1">Sinds 2005 heeft Corendon een eigen luchtvaartmaatschappij die jaarlijks ruim 2,5 miljoen passagiers
+                    vanuit 28 landen naar 143 luchthavens vliegt. De thuishaven van de luchtvaartmaatschappij is Antalya
+                    in Turkije en de code is XC. In 2011 is er een Nederlandse tak toegevoegd, Corendon Dutch Airlines
+                    (CD). De allereerste vlucht werd uitgevoerd op de oer-Hollandse dag 30 april (destijds
+                    Koninginnedag).</p>
                 <br>
-                <p>De luchtvaartmaatschappij beschikt over 16 vliegtuigen, waarvan de meeste van het type Boeing 737-800. Dit toestel beschikt over 189 comfortabele stoelen aan boord.</p>
+                <p id="content-5-2">De luchtvaartmaatschappij beschikt over 16 vliegtuigen, waarvan de meeste van het type Boeing
+                    737-800. Dit toestel beschikt over 189 comfortabele stoelen aan boord.</p>
             </div>
         </div>
         <div class="gap"></div>
@@ -158,14 +205,14 @@
                 <i class="fas fa-trophy about-box-icons"></i>
             </div>
             <div class="content">
-                <h2>ZOOVER AWARDS</h2>
+                <h2 id="content-title-6">ZOOVER AWARDS</h2>
                 <div class="content-text">
                     <div class="red-line"></div>
                     <br>
-                    <p>Corendon won in 2015 vijf Zoover-awards:</p>
+                    <p id="content-6-1">Corendon won in 2015 vijf Zoover-awards:</p>
                     <ul class="zoover-list">
-                        <li><p>Populairste luchtvaartmaatschappij</p></li>
-                        <li><p>Beste luchtvaartmaatschappij</p></li>
+                        <li><p id="content-6-2">Populairste luchtvaartmaatschappij</p></li>
+                        <li><p id="content-6-3">Beste luchtvaartmaatschappij</p></li>
                     </ul>
                 </div>
             </div>
@@ -189,7 +236,8 @@
                     <li class="message-list-item">
                         <div class="message-overview">
                             <div class="message-overview-img">
-                                <img src="https://ui-avatars.com/api/?name=John+Doe?background=random" alt="Message img">
+                                <img src="https://ui-avatars.com/api/?name=John+Doe?background=random"
+                                     alt="Message img">
                                 <div class="notification">
                                     <p>2</p>
                                 </div>
@@ -208,7 +256,8 @@
                     <li class="message-list-item">
                         <div class="message-overview">
                             <div class="message-overview-img">
-                                <img src="https://ui-avatars.com/api/?name=John+Doe?background=random" alt="Message img">
+                                <img src="https://ui-avatars.com/api/?name=John+Doe?background=random"
+                                     alt="Message img">
                                 <div class="notification">
                                     <p>2</p>
                                 </div>
@@ -227,7 +276,8 @@
                     <li class="message-list-item">
                         <div class="message-overview">
                             <div class="message-overview-img">
-                                <img src="https://ui-avatars.com/api/?name=John+Doe?background=random" alt="Message img">
+                                <img src="https://ui-avatars.com/api/?name=John+Doe?background=random"
+                                     alt="Message img">
                             </div>
                             <div class="message-overview-text">
                                 <div class="messages-overview-name">
@@ -270,7 +320,8 @@
                         <input type="text" class="chat-input" placeholder="Verstuur bericht...">
                     </div>
                     <div class="btn-box">
-                        <button class="send-msg-btn" type="submit"><i class="fas fa-arrow-circle-right form-box-icon"></i></button>
+                        <button class="send-msg-btn" type="submit"><i
+                                class="fas fa-arrow-circle-right form-box-icon"></i></button>
                     </div>
                 </form>
             </div>
@@ -317,7 +368,9 @@
 </footer>
 
 
-    <script src="../js/menu.js"></script>
-    <script src="../js/chat.js"></script>
+<script src="../js/menu.js"></script>
+<script src="../js/chat.js"></script>
+<script src="../js/langChanger.js"></script>
+
 </body>
 </html>
