@@ -37,14 +37,16 @@ window.addEventListener('load', () => {
         //laat de gebruiker alleen aanmelden als het wachtwoord het zelfde is.
         if (password === passwordVerify) {
             FYSCloud.API.queryDatabase(
-                "INSERT INTO `account`(email`,`password`, 'createdAt', 'profilePhoto', 'usertypeFk') " +
+                "INSERT INTO `account`(`email`,`password`, 'createdAt', 'profilePhoto', 'usertypeFk') " +
                 "VALUES " + "(" + email + ", " + password + ", " + registerDate + ", " +
                 profilePhoto + ", " + usertype + ")"
             ).then(function(data) {
                 console.log(data);
+                event.preventDefault();
             }).catch(function(reason) {
                 console.log(reason);
                 });
+            event.preventDefault();
         }
         else {
             document.querySelector(".error-message").innerHTML = "Je wachtwoord is niet het zelfde!";
