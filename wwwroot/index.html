@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="./assets/css/footer.css">
     <link rel="stylesheet" href="./assets/css/home/home.css">
     <link rel="stylesheet" href="./assets/css/chat/chat.css">
+    <script src="https://cdn.fys.cloud/fyscloud/0.0.4/fyscloud.min.js"></script>
+    <script type="module" src="./assets/js/config.js"></script>
 </head>
 <body class="light-theme">
 <header class="navbar">
@@ -27,7 +29,7 @@
             <li><a href="./assets/views/matches.html">Matches</a></li>
             <li>
                 <div class="lang-changer-input">
-                    <select id="langSelecter" onchange="checklang()">
+                    <select class="custom-select" id="langSelecter" onchange="checklang()">
                         <option value="de">Deutsch</option>
                         <option value="en">English</option>
                         <option value="nl" selected>Nederlands</option>
@@ -245,6 +247,7 @@
 </footer>
 
 <script src="./assets/js/menu.js"></script>
+<script src="./assets/js/utils/ORM.js" ></script>
 <script src="./assets/js/chat.js"></script>
 <script src="./assets/js/langChanger.js"></script>
 </body>
