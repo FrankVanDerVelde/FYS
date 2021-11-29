@@ -9,27 +9,27 @@ async function login() {
     //ophalen van de logindata
     const email = document.querySelector("#email-login").value;
     const password = document.querySelector("#password-login").value;
-
     try {
+
         //verstuur data naar database
         let accountInfo = await FYSCloud.API.queryDatabase("SELECT * FROM account WHERE email = ? AND" +
             " password = SHA2(?, 256)",
             [email, password]);
-        console.log(accountInfo);
         if (accountInfo.length > 0) {
+
             //hier komt sessie functie
-            FYSCloud.Session.set("account", accountInfo);
+            FYSCloud.Session.set("loggedin", accountInfo);
 
             //doorlinken naar profile page (als er geen error is).
-            // window.location.replace("../../views/profile-edit.html");
+            window.location.replace("../../views/profile-edit.html");
 
         } else {
             window.alert("Er is iets mis gegaan. :( \n Het wachtwoord en/of email-address zijn fout. ");
         }
     }
-    catch {
+    catch(error) {
         //laat de gebruiker weten als er iets niet goed ging.
-        window.alert("Er is een server fout opgetreden");
+        window.alert("er ging iets mis :( Probeer het opnieuw.");
+        console.log(error);
     }
 }
-
