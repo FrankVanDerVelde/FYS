@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 .chat-btn {
+    visibility: hidden;
     display: block;
     position: fixed;
     width: 60px;
