@@ -4,6 +4,8 @@ document.querySelector("#submit-btn").addEventListener("click", function (event)
 })
 
 async function register() {
+    //clear de session voor het inloggen
+    FYSCloud.Session.clear()
 
     //registeerdatum aanmaken
     let registerDate = new Date().toISOString().slice(0, 19).replace('T', ' ');
@@ -29,7 +31,16 @@ async function register() {
             await FYSCloud.API.queryDatabase("INSERT INTO account (email, password, username, profilePhoto," +
                 " usertypeFk, createdAt) VALUES (?, SHA2(?, 256), ?, ?, ?, ?)",[email, password, username,
                 profilePhoto, usertype, registerDate]);
+
             //hier komt sessie functie
+            // let accountInfo = await FYSCloud.API.queryDatabase("SELECT * FROM account WHERE email = ? AND" +
+            //     " password = SHA2(?, 256)",
+            //     [email, password]);
+            // console.log(accountInfo);
+            // if (accountInfo.length > 0) {
+            //     //hier komt sessie functie
+            //     FYSCloud.Session.set("account", accountInfo);
+            // }
 
             //doorlinken naar profile page (als er geen error is).
             window.location.replace("../../views/profile-edit.html");
