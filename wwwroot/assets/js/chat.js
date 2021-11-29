@@ -1,20 +1,18 @@
-window.onload = function(){
+window.addEventListener("load",  function () {
     if (FYSCloud.Session.get("loggedin")) {
-        const showChatBtn = document.querySelector("#chat-btn");
         const detailChatBox = document.querySelector("#detail-chat-box");
         const chatBox = document.querySelector("#main-chat-box");
         const closeChatBtn = document.querySelector(".close-chat");
         const closeDetailChatBtn = document.querySelector(".close-detail-chat");
         const goBackBtn = document.querySelector(".back-btn-chat");
-
+        
 
         // show chat modal on click button
-        showChatBtn.addEventListener("click", () => {
+        document.querySelector("#chat-btn").addEventListener("click", () => {
             chatBox.classList.remove("hide-chat");
             chatBox.classList.add("show-chat");
         });
-
-
+    
         // go from detail chat modal to overview contacts messages
         goBackBtn.addEventListener("click", () => {
             detailChatBox.classList.remove("show-chat");
@@ -31,7 +29,7 @@ window.onload = function(){
             detailChatBox.classList.remove("show-chat");
             detailChatBox.classList.add("hide-chat");
         });
-
+    
 
         // check device, if phone make modal width 100%
         const checkdevice =  () => {
@@ -49,4 +47,6 @@ window.onload = function(){
         // on resize add checkdevice function
         window.addEventListener("resize", checkdevice);
     }
-};
+
+});
+
