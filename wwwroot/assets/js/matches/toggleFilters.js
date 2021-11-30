@@ -1,39 +1,41 @@
 function openFilter(button) {
+    closeFilter(button.nextElementSibling, "dropdown-content-filter");
 
-    const currentDropdown = button.nextElementSibling;
-    var allDropdowns = document.getElementsByClassName("dropdown-content-filter");
-    var closeFilter = false;
-
-    for (let i = 0; i < allDropdowns.length; i++) {
-        if (allDropdowns[i].classList.contains("active")) {
-            if (currentDropdown === allDropdowns[i]) {
-                closeFilter = true;
-            }
-            allDropdowns[i].classList.toggle("active");
-        }
-    }
-    if (closeFilter === false) {
-        currentDropdown.classList.toggle("active");
-
-    }
 }
 
 
 function openInterestFilter(button)
 {
-    const currentDropdown = button.nextElementSibling;
-    var allDropdowns = document.getElementsByClassName("dropdown-content-filter-interests");
-    var closeFilter = false;
+    closeFilter(button.nextElementSibling, "dropdown-content-filter-interests");
+}
+
+
+function openFilterList(button)
+{
+
+    var div = button.nextElementSibling;
+   // closeFilter(button.nextElementSibling, "dropdown-content-filter-interests");
+    for (let i = 0; i <div.children.length ; i++) {
+        div.children[i].classList.toggle("active");
+
+    }
+}
+
+function closeFilter(button, dropdown)
+{
+    const currentDropdown = button;
+    var allDropdowns = document.getElementsByClassName(dropdown);
+    var wantToClose = false;
 
     for (let i = 0; i < allDropdowns.length; i++) {
         if (allDropdowns[i].classList.contains("active")) {
             if (currentDropdown === allDropdowns[i]) {
-                closeFilter = true;
+                wantToClose = true;
             }
             allDropdowns[i].classList.toggle("active");
         }
     }
-    if (closeFilter === false) {
+    if (wantToClose === false) {
         currentDropdown.classList.toggle("active");
 
     }

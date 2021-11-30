@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
     <link rel="stylesheet" href="../css/navbar.css">
     <link rel="stylesheet" href="../css/footer.css">
-    <link rel="stylesheet" href="../css/Matches/matches.css">
+    <link rel="stylesheet" href="../css/Matches/matches_other.css">
     <link rel="stylesheet" href="../css/chat/chat.css">
 
 </head>
@@ -76,59 +76,62 @@
     <section class="skills">
         <!--Filters onder de banner-->
         <div class="filtermenuOther">
-            <div class="filters">
-            <div class="interessesfilter dropdown-filters">
-                <button class="dropdown-button" onclick="openFilter(this)">
-                    <p>Interesses</p>
-                    <img class="pullDown" src="../img/arrow_down.png" alt=" "/>
-                </button>
-                <div class="dropdown-content-filter">
+            <div class="filters" onclick="openFilterList(this)">Filters
+                <img class="pullDown" src="../img/arrow_down.png" alt=" "/>
+            </div>
+            <div class="allFilters">
+                <div class="interessesfilter dropdown-filters">
+                    <button class="dropdown-button" onclick="openFilter(this)">
+                        <p>Interesses</p>
+                        <img class="pullDown" src="../img/arrow_down.png" alt=" "/>
+                    </button>
+                    <div class="dropdown-content-filter">
+
+                    </div>
 
                 </div>
+                <div class="leeftijdsgroepfilter dropdown-filters">
+                    <button class="dropdown-button" onclick="openFilter(this)">
+                        <p>Leeftijdsgroep</p>
+                        <img class="pullDown" src="../img/arrow_down.png" alt=" "/>
+                    </button>
+                    <div class="dropdown-content-filter">
+                        <a href="javascript:void(0)" class="optionAge" onclick="changeFilter(this)">20-30</a>
+                        <a href="javascript:void(0)" class="optionAge" onclick="changeFilter(this)">30-50</a>
+                        <a href="javascript:void(0)" class="optionAge" onclick="changeFilter(this)">50+</a>
+                    </div>
+                </div>
+                <div class="geslachtfilter dropdown-filters">
+                    <button class="dropdown-button" onclick="openFilter(this)">
+                        <p>Geslacht</p>
+                        <img class="pullDown" src="../img/arrow_down.png" alt=" "/>
+                    </button>
+                    <div class="dropdown-content-filter">
+                        <a href="javascript:void(0)" class="optionGender" onclick="changeFilter(this)">Man</a>
+                        <a href="javascript:void(0)" class="optionGender" onclick="changeFilter(this)">Vrouw</a>
+                        <a href="javascript:void(0)" class="optionGender" onclick="changeFilter(this)">Overig</a>
+                    </div>
+                </div>
+                <div class="radiusfilter dropdown-filters">
+                    <button class="dropdown-button" onclick="openFilter(this)">
+                        <p>Radius (km)</p>
+                        <img class="pullDown" src="../img/arrow_down.png" alt=" "/>
+                    </button>
+                    <div class="dropdown-content-filter">
+                        <a href="javascript:void(0)" class="optionDistance" onclick="changeFilter(this)">0km-30km</a>
+                        <a href="javascript:void(0)" class="optionDistance" onclick="changeFilter(this)">30km-60km</a>
+                        <a href="javascript:void(0)" class="optionDistance" onclick="changeFilter(this)">60km+</a>
+                    </div>
+                </div>
 
-            </div>
-            <div class="leeftijdsgroepfilter dropdown-filters">
-                <button class="dropdown-button" onclick="openFilter(this)">
-                    <p>Leeftijdsgroep</p>
-                    <img class="pullDown" src="../img/arrow_down.png" alt=" "/>
-                </button>
-                <div class="dropdown-content-filter">
-                    <a href="javascript:void(0)" class="optionAge"  onclick="changeFilter(this)">20-30</a>
-                    <a href="javascript:void(0)" class="optionAge" onclick="changeFilter(this)">30-50</a>
-                    <a href="javascript:void(0)" class="optionAge" onclick="changeFilter(this)">50+</a>
+                <div class="gebruikerzoekenfilter ">
+                    <p>Gebruiker zoeken
+                    <input type="text" id="username" name="fname">
+                    <img class="search" src="../img/search.png" alt=" "/></p>
                 </div>
             </div>
-            <div class="geslachtfilter dropdown-filters">
-                <button class="dropdown-button" onclick="openFilter(this)">
-                    <p>Geslacht</p>
-                    <img class="pullDown" src="../img/arrow_down.png" alt=" "/>
-                </button>
-                <div class="dropdown-content-filter">
-                    <a href="javascript:void(0)" class="optionGender" onclick="changeFilter(this)">Man</a>
-                    <a href="javascript:void(0)" class="optionGender" onclick="changeFilter(this)">Vrouw</a>
-                    <a href="javascript:void(0)" class="optionGender" onclick="changeFilter(this)">Overig</a>
-                </div>
-            </div>
-            <div class="radiusfilter dropdown-filters">
-                <button class="dropdown-button" onclick="openFilter(this)">
-                    <p>Radius (km)</p>
-                    <img class="pullDown" src="../img/arrow_down.png" alt=" "/>
-                </button>
-                <div class="dropdown-content-filter">
-                    <a href="javascript:void(0)" class="optionDistance" onclick="changeFilter(this)">0km-30km</a>
-                    <a href="javascript:void(0)" class="optionDistance" onclick="changeFilter(this)">30km-60km</a>
-                    <a href="javascript:void(0)" class="optionDistance" onclick="changeFilter(this)">60km+</a>
-                </div>
-            </div>
 
-            <div class="gebruikerzoekenfilter ">
-                <p>Gebruiker zoeken</p>
-                <input type="text" id="username" name="fname"><br><br>
-                <img class="search" src="../img/search.png" alt=" "/>
-            </div>
-
-        </div>
-            <div class="filter-card-other">
+            <div class="filter-card">
                 <div class="toegepastefiltersText">Toegepaste filter(s):</div>
                 <div class="toegepaste-filters">
                 </div>
@@ -151,6 +154,7 @@
                         <button type="submit" class="show-more-btn"
                                 onClick="javascript:window.location.href='./profile.html'">Meer zien
                         </button>
+
                     </div>
                 </div>
             </div>
@@ -248,7 +252,6 @@
             </div>
         </div>
         <!--Filters-->
-
 
 
         <!-- Tweede rij -->
