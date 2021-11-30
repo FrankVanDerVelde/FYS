@@ -1,13 +1,54 @@
 document.addEventListener("DOMContentLoaded", async function () {
     const dummyUser1 = {
         "name": "John Doe",
-        "age": "35",
+        "birthdate": "1990-11-28",
         "location": "Amsterdam",
         "email": "johndoe@mail.com",
         "phoneNumber": "061234568",
         "profilePic": "../img/placeholder-images/profile-picture.png",
         "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi maximus egestas sapien sed varius. Nam euismod efficitur sapien nec condimentum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Ut luctus suscipit volutpat. Duis accumsan viverra tellus vitae posuere. Curabitur commodo arcu vel massa ultricies, non tempus augue dapibus. Praesent sem ex, accumsan eget rhoncus vel, consequat nec lectus. Cras eu massa fermentum erat tincidunt dignissim et nec lacus.",
     }
+
+    const dataBaseAllInterests = [{
+        "name": "Sports",
+        "thumb": "place-holder.png"
+    },
+
+    {
+        "name": "Nature",
+        "thumb": "place-holder.png"
+    },
+
+    {
+        "name": "Drinking",
+        "thumb": "place-holder.png"
+    },
+
+    {
+        "name": "Swimming",
+        "thumb": "place-holder.png"
+    },
+
+    {
+        "name": "Beach",
+        "thumb": "place-holder.png"
+    },
+
+    {
+        "name": "Eating",
+        "thumb": "place-holder.png"
+    },
+
+    {
+        "name": "Sight seeing",
+        "thumb": "place-holder.png"
+    },
+
+    {
+        "name": "Shopping",
+        "thumb": "place-holder.png"
+    }
+];
 
     const userOneDummyInterests = [{
             "name": "Sports",
@@ -28,37 +69,20 @@ document.addEventListener("DOMContentLoaded", async function () {
             "name": "Swimming",
             "thumb": "place-holder.png"
         },
-
-        {
-            "name": "Beach",
-            "thumb": "place-holder.png"
-        },
-
-        {
-            "name": "Eating",
-            "thumb": "place-holder.png"
-        },
-
-        {
-            "name": "Sight seeing",
-            "thumb": "place-holder.png"
-        },
-
-        {
-            "name": "Shopping",
-            "thumb": "place-holder.png"
-        }
     ];
 
-    try {
-        const userData = await FYSCloud.API.queryDatabase("SELECT * FROM fys_is109_4_harmohat_chattest.account WHERE id = 1;")
+    const userActiveInterestsNames = userOneDummyInterests.map(interestObject => interestObject.name);
 
-    } catch (e) {
-        console.error(e);
-    }
+    const {name, birthdate, location, email, phoneNumber, profilePic, bio} = dummyUser1;
+
+    // try {
+    //     const userData = await FYSCloud.API.queryDatabase("SELECT * FROM fys_is109_4_harmohat_chattest.account WHERE id = 1;")
+    // } catch (e) {
+    //     console.error(e);
+    // }
 
     const nameInput = document.getElementById("name-input");
-    const ageInput = document.getElementById("age-input");
+    const birthdateInput = document.getElementById("birthdate-input");
     const locationInput = document.getElementById("location-input");
     const phoneNumberInput = document.getElementById("phone-number-input");
     const emailInput = document.getElementById("email-input");
@@ -66,39 +90,83 @@ document.addEventListener("DOMContentLoaded", async function () {
     const profilePicDeleteButton = document.getElementById("delete-profile-picture-input");
     const profilePictureUpdateInput = document.getElementById("profile-picture-upload-input");
     const profilePicElement = document.getElementById("profile-pic");
+    const saveButton = document.getElementById("save-button");
 
-    // Set user data in form fields
-    const {name, age, location, email, profilePic, bio} = dummyUser1;
+    profilePicDeleteButton.addEventListener('click', ()=>{
+        // Remove database entry for profile picture
+    });
 
+    // Set a min and max birthdate on the birthdate picker
+    let minAgeBirthdate = new Date();
+    minAgeBirthdate.setFullYear(minAgeBirthdate.getFullYear() - 16);
+    birthdateInput.min = minAgeBirthdate.toLocaleDateString();
+
+    let maxAgeBirthdate = new Date();
+    maxAgeBirthdate.setFullYear(maxAgeBirthdate.getFullYear() - 120);
+    birthdateInput.max = maxAgeBirthdate.toLocaleDateString();
+
+    // set database values as current values
+    birthdateInput.value = birthdate;
+    nameInput.value = name;
+    locationInput.value = location;
+    phoneNumberInput.value = phoneNumber;
+    emailInput.value = email;
+    bioInput.value = bio;
     profilePicElement.src = profilePic;
-    nameInput.innerHTML = name;
-    ageInput.innerHTML = age;
-    locationInput.innerHTML = location;
-    emailInput.innerHTML = email;
-    bioInput.innerHTML = bio;
 
-    const interestsContainer = document.getElementById("interests-container");
+    // Get all new values to update in the database
+    saveButton.addEventListener('click', ()=>{
+        const newName = nameInput.value;
+        const newBirthdate = birthdateInput.value;
+        const newLocation = locationInput.value;
+        const newPhoneNumber = phoneNumberInput.value;
+        const newEmail = emailInput.value;
+        const newBio = bioInput.value;
+        const newProfilePicture =profilePictureUpdateInput.value;
 
-    userOneDummyInterests.forEach(interest => {
-        const {name, thumb} = interest;
+        const interestsList = [];
 
+        interestsContainer.querySelectorAll(".interest-checkbox-container>input").forEach(checkboxElement => {
+            if (checkboxElement.checked === true) {
+                interestsList.push(checkboxElement.name);
+            }
+        })
+
+        // SQL update here
+    });
+
+    // Fill interest container with checkboxes
+    const interestsContainer = document.getElementById("interest-checkboxes-container");
+    dataBaseAllInterests.forEach(interest => {
+        let {name} = interest;
+
+        // Make checkbox container
         const interestDiv = document.createElement("div");
-        interestDiv.className = "interest-element";
+        interestDiv.className = "interest-checkbox-container";
 
-        const interestThumb = document.createElement("img");
-        interestThumb.src = "../img/placeholder-images/" + thumb;
-        interestThumb.alt = name;
+        // Make checkbox input
+        const interestCheckbox = document.createElement("input");
+        interestCheckbox.type = "checkbox";
+        interestCheckbox.id = name;
+        interestCheckbox.name = name;
 
-        const interestSpan = document.createElement("span");
-        const interestSpanText = document.createTextNode(name);
-        interestSpan.append(interestSpanText);
+        // Check if the user has the interest in the database and if so make the box checked
+        if (userActiveInterestsNames.includes(name)) {
+            interestCheckbox.checked = true;
+        }
+       
+        // Make checkbox label
+        const interestLabel = document.createElement("label");
+        interestLabel.setAttribute("for",name);
+        const interestLabelSpan = document.createTextNode(name);
+        interestLabel.append(interestLabelSpan);
         
+        // Append input and label to checkbox div
+        interestDiv.append(interestCheckbox);
+        interestDiv.append(interestLabel);
 
-        interestDiv.append(interestThumb);
-        interestDiv.append(interestSpan);
+        // Append checkbox div to checkboxes container
+        interestsContainer.append(interestDiv)
+    });
 
-        interestsContainer.append(interestDiv);
-    
-    })
-
-})
+});

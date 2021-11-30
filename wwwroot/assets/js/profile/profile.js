@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", async function () {
     const dummyUser1 = {
         "name": "John Doe",
-        "age": "35",
+        "birthdate": "1990-11-28",
         "location": "Amsterdam",
         "email": "johndoe@mail.com",
         "phoneNumber": "061234568",
@@ -64,11 +64,11 @@ document.addEventListener("DOMContentLoaded", async function () {
     const emailElement = document.getElementById("email");
     const bioElement = document.getElementById("bio");
     
-    const {name, age, location, email, profilePic, bio} = dummyUser1;
+    const {name, birthdate, location, email, profilePic, bio} = dummyUser1;
 
     profilePictureElement.src = profilePic;
     nameElement.innerHTML = name;
-    ageElement.innerHTML = age;
+    ageElement.innerHTML = (new Date).getFullYear() - new Date(birthdate).getFullYear();
     locationElement.innerHTML = location;
     profilePictureElement.innerHTML = profilePic;
     emailElement.innerHTML = email;
