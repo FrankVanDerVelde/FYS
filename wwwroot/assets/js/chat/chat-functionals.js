@@ -2,6 +2,9 @@ window.addEventListener("load", async function () {
     if (FYSCloud.Session.get("loggedin")) {
         const detailChatBox = document.querySelector("#detail-chat-box");
         const chatBox = document.querySelector("#main-chat-box");
+        const userSession = FYSCloud.Session.get("loggedin");
+
+        console.log(userSession[0].id);
 
         //Getting the whole [#chat-template] html piece
         const template = document.querySelector("#chat-template").innerHTML;
@@ -21,8 +24,8 @@ window.addEventListener("load", async function () {
             //When user clicks on a chat from the list it will show the detailed message box
             chatTemplate.addEventListener("click", async function () {
                 const recieverId = chatContacts.id;
-                const currentUser = await getUserMessages(1, recieverId);
-                const recipientUser =  await getUserMessages(recieverId, 1);
+                const currentUser = await getUserMessages(userSession[0].id, recieverId);
+                const recipientUser =  await getUserMessages(recieverId, userSession[0].id);
                 const recieverData = await getReciever(recieverId);
                 let reciever = [];
                 const array = [currentUser, recipientUser];
@@ -33,6 +36,7 @@ window.addEventListener("load", async function () {
                         arrayDate.push(element[i]);
                     }
                 });
+
 
                 const arrayChats = arrayDate.sort(function(a,b){
                     if (a.createdAt > b.createdAt) return 1;
@@ -97,7 +101,7 @@ window.addEventListener("load", async function () {
                     });
 
                     if (!msgExists) {
-                        const msg = (message.recieverFk == 1) ?
+                        const msg = (message.recieverFk == userSession[0].id) ?
                             `<li class="left-chat" data-id="msg-${message.id}" data-sender="${recieverId}"><p><b>${message.username}</b> :  ${message.message}</p></li>`:
                             `<li class="right-chat" data-id="msg-${message.id}" data-reciever="${message.recieverFk}"><p><b>${message.username}</b> :  ${message.message}</p></li>`;
 
@@ -105,12 +109,12 @@ window.addEventListener("load", async function () {
                     }
                 }
 
+
                 document.querySelector(".chat-form").addEventListener("submit", async function(e){
                     e.preventDefault();
                     let message = document.forms["chat-form"]["msg-input"].value;
-                    console.log(message);
                     if (message != "") {
-                        insertMessage(1, recieverId, message);
+                        insertMessage(userSession[0].id, recieverId, message);
                         document.querySelector(".chat-form").reset();
                     }
                 });
