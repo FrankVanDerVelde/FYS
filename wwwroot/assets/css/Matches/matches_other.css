@@ -452,6 +452,7 @@ h4 {
 .toegepastefiltersText {
     text-align: center;
     font-size: 1.5em;
+    min-width: 251px;
 }
 
 .chose {
@@ -502,21 +503,23 @@ h4 {
 }
 .dropdown-button{
     cursor: pointer;
-
     display: flex;
     flex-direction: row;
-    gap:10px;
-    color: black;
-    font-size: 16px;
-    border: none;
+    gap: 10px;
+    color: white;
     width: 100%;
-    background-color: rgba(220,220,220,0.65);
+    background-color: rgba(220,220,220,0.95);
+    padding: 5px 20px 5px 20px;
+    border-radius: 15px;
+    font-size: larger;
+    border-color: rgb(148,148,148);
+    border-width: 1px;
+    border-style: solid;
 }
 .filters{
     min-width: 150px;
     font-weight: bold;
     gap: 10px;
-    margin-left: 15px;
     color: var(--text2);
     display: flex;
     flex-direction: row;
@@ -530,6 +533,22 @@ h4 {
 }
 .allFilters >  div.active{
     display: block;
+
+}
+.allFilters{
+    position: relative;
+
+    border-radius: 5px;
+    color: var(--text1);
+    margin: auto;
+    background-color: rgba(220,220,220,0.65);
+
+    width: 80%;
+    flex-wrap: wrap;
+    padding: 2em 4em;
+    z-index: 5;
+    gap: 2%;
+    left:0;
 }
 .filtermenu > div > p{
     font-weight: bold;
@@ -545,7 +564,7 @@ h4 {
     min-width: 160px;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
     z-index: 1;
-    margin-top:2.9vh;
+
 }
 .dropdown-content-filter-interests{
     display: none;
@@ -728,11 +747,14 @@ h4 {
     .matchesHeader{
         display: flex;
         flex-direction: column;
-        gap:50px;
+        gap:10px;
         align-items: center;
         margin-top: 0;
     }
-
+    .toegepastefiltersText{
+        text-align: left;
+        min-width: 50px;
+    }
     .matchesHeader > h2{
         padding-top: 0;
         padding-left: 0;
@@ -761,6 +783,9 @@ h4 {
         margin: 15px 0 20px 30px;
 
     }
+    .gebruikerzoekenfilter >p{
+        text-align: center;
+    }
     .filtermenu > div {
         justify-content: space-between;
         margin-left: 5px;
@@ -771,7 +796,30 @@ h4 {
         padding: 2em 1em;
         flex-direction: column;
     }
+    .filter-card {
+        max-width: 100vw;
+        display: flex;
+        flex-direction: column;
 
+        position: relative;
+        border-radius: 5px;
+        color: var(--text1);
+        font-weight: bold;
+    }
+    .allFilters{
+        position: relative;
+        border-radius: 5px;
+        color: var(--text1);
+        margin: auto;
+        background-color: rgba(220,220,220,0.65);
+        width: 80%;
+        flex-wrap: wrap;
+        padding: 2em 2em;
+
+        z-index: 5;
+        gap: 2%;
+        left: 0;
+    }
     .pullDown {
         flex: 0;
         width: 15px;
@@ -785,7 +833,7 @@ h4 {
     }
 
     #username {
-        width: 45%;
+        width: 80%;
         margin-left: 3px;
     }
 

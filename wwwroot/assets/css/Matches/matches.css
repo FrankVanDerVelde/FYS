@@ -375,7 +375,7 @@ margin:auto 0;
     margin: 20px 35px 0 35px;
 
     z-index: 1;
-    background-color: var(--filter);
+    background-color: var(--bg);
     height: 28vh;
 }
 
@@ -487,7 +487,7 @@ margin:auto 0;
     position: relative;
     border-radius: 5px;
     color: var(--text1);
-    background-color: var(--filter);
+    background-color: var(--bg);
     margin: 0 35px 0 0;
 
     width: 100%;

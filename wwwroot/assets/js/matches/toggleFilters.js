@@ -13,11 +13,12 @@ function openInterestFilter(button)
 function openFilterList(button)
 {
 
-    var div = button.nextElementSibling;
-   // closeFilter(button.nextElementSibling, "dropdown-content-filter-interests");
-    for (let i = 0; i <div.children.length ; i++) {
-        div.children[i].classList.toggle("active");
-
+    var div = document.getElementsByClassName("allFilters")[0];
+    if (div.style.display !== 'none') {
+        div.style.display = 'none';
+    }
+    else {
+        div.style.display = 'flex';
     }
 }
 
