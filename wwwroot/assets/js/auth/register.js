@@ -1,3 +1,5 @@
+
+// het script wordt uitgevoerd wanner er op de registeer knop wordt gedrukt
 document.querySelector("#submit-btn").addEventListener("click", function (event) {
     event.preventDefault();
     register();
@@ -15,9 +17,9 @@ async function register() {
     const passwordVerify = document.querySelector("#passwordVerify").value;
     const email = document.querySelector("#email").value;
     const name = document.querySelector("#name").value;
-    const usertype = 1; //gaat weg
+    const usertype = 2; //gaat weg
 
-    // temp dummy data to try inserts
+    // tijdelijke dummy data voor het aanmaken van een username
     const username = "testusername" + Math.random(2000); //Hier komt een goede manier voor het aanmaken van username
 
     //aanmaken profielfoto.
