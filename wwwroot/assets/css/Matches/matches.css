@@ -321,8 +321,8 @@ body {
 
 .footer {
     position: relative;
-    left: 65px;
-    top: -50px;
+    left: 25%;
+    top: -15%;
 }
 
 h1 {
@@ -705,7 +705,9 @@ margin:auto 0;
         z-index: 2;
         color: var(--text2);
     }
-
+    .nav-list{
+        flex:5;
+    }
     .toegepaste-filters {
         align-self: center;
     }
@@ -748,6 +750,7 @@ margin:auto 0;
     .matchesHeader > h2{
         padding-top: 0;
         padding-left: 0;
+        text-align: center;
     }
 
     .bannertext {
@@ -808,6 +811,7 @@ margin:auto 0;
     .filter {
         flex-direction: column;
         height: auto;
+        margin:0 0 0 0;
     }
 
     .matches-page-navigation {

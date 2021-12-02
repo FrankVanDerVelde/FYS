@@ -10,18 +10,41 @@ document.addEventListener("DOMContentLoaded", async function () {
 })
 
 var amountOfInterestFilters = 0;
+var selectedFilters = [];
+
+
 
 async function getInterests() {
     intresses = await FYSCloud.API.queryDatabase("SELECT interestscategory.id AS parent_id, interestscategory.description AS parent_description, intrestdetail.description AS child_description, intrestdetail.intrestId AS child_id\n" +
         "FROM interestscategory\n" +
         "INNER JOIN intrestdetail ON interestscategory.id = intrestdetail.catgoryId ");
 
-    console.log(intresses);
+    allFilters = intresses;
+    console.log(allFilters);
 
     await createInterestFilter(intresses);
 
 }
+var target = document.querySelector('.toegepaste-filters')
 
+// Create an observer instance.
+var observer = new MutationObserver(function(mutations) {
+    getPeople();
+});
+
+// Pass in the target node, as well as the observer options.
+observer.observe(target, {
+    attributes:    true,
+    childList:     true,
+    characterData: true
+});
+
+
+
+function getPeople()
+{
+        
+}
 //create intrest filter header and sub cat
 async function createInterestFilter(interests) {
     const parentDiv = document.getElementsByClassName('dropdown-content-filter')[0]; //<-- first dropdown
@@ -108,6 +131,14 @@ async function changeFilter(item) {
         //if standard filter is selected but not the same option, change filter text.
         if (exists && classname !== "interest") {
             parentDiv.children[i].children[0].innerHTML = item.innerHTML;
+
+            for (let j = 0; j < selectedFilters.length; j++) {
+                if(parentDiv.children[i].children[0] === item)
+                {
+                    selectedFilters[i] = item;
+                }
+            }
+            console.log(selectedFilters);
             break;
 
         }
@@ -155,6 +186,7 @@ async function changeFilter(item) {
                 createFilterInterests("interest", item.innerHTML);
                 break;
         }
+
     }
 }
 
@@ -171,9 +203,10 @@ function createFilter(typeFilter, valueFilter) {
     parentDiv.appendChild(childDiv);
 
     //set filter as child under filters.
-
+    selectedFilters.push(childDiv);
     document.getElementsByClassName("toegepaste-filters")[0].appendChild(parentDiv);
     console.log("added standard filter");
+    console.log(selectedFilters);
 }
 
 //create div, give classname and id and create child in that div.
@@ -188,7 +221,8 @@ function createFilterInterests(typeFilter, valueFilter) {
     childDiv.innerHTML = valueFilter;
     parentDiv.appendChild(childDiv);
 
-
+    selectedFilters.push(childDiv);
+    console.log(selectedFilters);
     document.getElementsByClassName("toegepaste-filters")[0].appendChild(parentDiv);
     console.log("added interest filter");
 }
@@ -198,8 +232,12 @@ async function deleteFilter(itemToRemove) {
 
     var parentDiv = document.getElementsByClassName("toegepaste-filters")[0];
     var childToRemove = document.getElementById(itemToRemove);
-    parentDiv.removeChild(childToRemove);
-
     console.log("removed filter");
+
+    const index = selectedFilters.indexOf(childToRemove.firstChild);
+    if (index > -1) {
+        selectedFilters.splice(index, 1);
+    }
+    parentDiv.removeChild(childToRemove);
 
 }
