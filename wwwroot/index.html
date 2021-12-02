@@ -25,6 +25,15 @@
             <li><a href="./assets/views/about.html">About</a></li>
             <li><a href="./assets/views/contact.html">Contact</a></li>
             <li><a href="./assets/views/matches.html">Matches</a></li>
+            <li>
+                <div class="lang-changer-input">
+                    <select id="langSelecter" onchange="checklang()">
+                        <option value="de">Deutsch</option>
+                        <option value="en">English</option>
+                        <option value="nl" selected>Nederlands</option>
+                    </select>
+                </div>
+            </li>
             <li class="dropdown-box">
                 <div class="dropdown">
                     <button class="drop-btn">
@@ -34,7 +43,7 @@
                     <div class="dropdown-content" id="dropdown-content">
                         <a href="./assets/views/auth/login.html">Inloggen</a>
                         <a href="./assets/views/auth/register.html">Registreren</a>
-                    </div> 
+                    </div>
                 </div>
             </li>
         </ul>
@@ -61,19 +70,21 @@
 <main>
     <div class="mainSection">
         <div class="leftSection">
-            <div class="top"> </div>
+            <div class="top"></div>
             <div class="items-left">
                 <div class="mainText">
-                    <div class="text1">Vind jouw</div>
-                    <div class="text2">Reispartner!</div>
+                    <div class="text1" id="title-1">Vind jouw</div>
+                    <div class="text2" id="title-2">Reispartner!</div>
                 </div>
-                <div class="subText">Wij helpen u een reispartner te vinden voor u eerst volgende vakantie!</div>
-                <a href="./assets/views/auth/login.html" class="subButton">Vind match</a>
+                <div class="subText" id="opening">Wij helpen u een reispartner te vinden voor u eerst volgende
+                    vakantie!
+                </div>
+                <a href="./assets/views/auth/login.html" id="matchs-btn" class="subButton">Vind match</a>
             </div>
             <img class="image-red-arrow" src="../wwwroot/assets/img/arrow.png" alt="backgroundart">
             <img class="image-red-ipad-phone" src="../wwwroot/assets/img/arrowdown.png" alt="backgroundart">
 
-            <div class="bottom">   </div>
+            <div class="bottom"></div>
         </div>
 
         <div class="rightSection">
@@ -122,12 +133,13 @@
     </div>
 </footer>
 
-    <!-- Javascript -->
-    <script src="https://cdn.fys.cloud/fyscloud/0.0.4/fyscloud.min.js"></script>
-    <script src="../js/config.mockup.js"></script>
-    <script src="../js/chat/chat-functionals.js"></script>
-    <script src="../js/main.js"></script>
-    <script src="../js/menu.js"></script>
-    <script src="../js/chat.js"></script>
+<!-- Javascript -->
+<script src="https://cdn.fys.cloud/fyscloud/0.0.4/fyscloud.min.js"></script>
+<script src="./assets/js/config.mockup.js"></script>
+<script src="./assets/js/chat/chat-functionals.js"></script>
+<script src="./assets/js/main.js"></script>
+<script src="./assets/js/menu.js"></script>
+<script src="./assets/js/chat.js"></script>
+<script src="./assets/js/langChanger.js"></script>
 </body>
 </html>
