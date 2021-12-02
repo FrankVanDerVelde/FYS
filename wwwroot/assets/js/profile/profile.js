@@ -57,6 +57,9 @@ document.addEventListener("DOMContentLoaded", async function () {
         console.error(e);
     }
 
+//     for (const [key, value] of mySearchParams.entries()) {
+// }
+
     const profilePictureElement = document.getElementById("profile-picture");
     const nameElement = document.getElementById("name");
     const ageElement = document.getElementById("age");
@@ -98,4 +101,4 @@ document.addEventListener("DOMContentLoaded", async function () {
     
     })
 
-})
+});

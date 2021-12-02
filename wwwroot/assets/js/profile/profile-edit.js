@@ -75,11 +75,31 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     const {name, birthdate, location, email, phoneNumber, profilePic, bio} = dummyUser1;
 
-    // try {
-    //     const userData = await FYSCloud.API.queryDatabase("SELECT * FROM fys_is109_4_harmohat_chattest.account WHERE id = 1;")
-    // } catch (e) {
-    //     console.error(e);
-    // }
+    const userSessionData = FYSCloud.Session.get("loggedin") ? FYSCloud.Session.get("loggedin").loggedin[0] : {
+        "loggedin": [
+            {
+                "id": 1,
+                "email": "jndoe@gmail.com",
+                "password": "a98ec5c5044800c88e862f007b98d89815fc40ca155d6ce7909530d792e909ce",
+                "username": "testusername0.14031343450985734",
+                "profilePhoto": "https://ui-avatars.com/api/?name=jndoe?background=random",
+                "usertypeFk": 1,
+                "createdAt": "2021-11-29T17:30:55.000Z",
+                "updatedAt": null,
+                "lastLoggedIn": null
+            }
+        ]
+    };
+
+    try {
+        console.log(userSessionData)
+        const userData = await FYSCloud.API.queryDatabase("SELECT * FROM person WHERE accountFK = ?",
+        [userSessionData.loggedin[0].id]);
+
+        console.log(userData[0]);
+    } catch (e) {
+        console.error(e);
+    }
 
     const nameInput = document.getElementById("name-input");
     const birthdateInput = document.getElementById("birthdate-input");
@@ -131,7 +151,6 @@ document.addEventListener("DOMContentLoaded", async function () {
                 interestsList.push(checkboxElement.name);
             }
         })
-
         // SQL update here
     });
 
