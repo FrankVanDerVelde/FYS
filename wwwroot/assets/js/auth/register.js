@@ -17,10 +17,6 @@ async function register() {
     const passwordVerify = document.querySelector("#passwordVerify").value;
     const email = document.querySelector("#email").value;
     const name = document.querySelector("#name").value;
-    const usertype = 2; //gaat weg
-
-    // tijdelijke dummy data voor het aanmaken van een username
-    const username = "testusername" + Math.random(2000); //Hier komt een goede manier voor het aanmaken van username
 
     //aanmaken profielfoto.
     let userPhotoId = name.replace(/\s+/g, '+').toLowerCase();
@@ -30,9 +26,9 @@ async function register() {
     if (password === passwordVerify) {
         try {
             //verstuur data naar database
-            await FYSCloud.API.queryDatabase("INSERT INTO account (email, password, username, profilePhoto," +
-                " usertypeFk, createdAt) VALUES (?, SHA2(?, 256), ?, ?, ?, ?)",
-                [email, password, username, profilePhoto, usertype, registerDate]);
+            let log = await FYSCloud.API.queryDatabase("INSERT INTO account (name, email, password, profilePhoto, createdAt) " +
+                "VALUES (?, ?, SHA2(?, 256), ?, ?)",
+                [name, email, password, profilePhoto, registerDate]);
 
             //hier komt sessie functie
             let accountInfo = await FYSCloud.API.queryDatabase("SELECT * FROM account WHERE email = ? AND" +
@@ -40,8 +36,27 @@ async function register() {
                 [email, password]);
             FYSCloud.Session.set("loggedin", accountInfo);
 
+            //verstuur de email dat het account is aangemaakt.
+            await FYSCloud.API.sendEmail({
+                from: {
+                    name: "Corendom Reispartner",
+                    address: "group@fys.cloud"
+                },
+                to: [
+                    {
+                        name: "gebruiker",
+                        address: email
+                    }
+                ],
+                subject: "Corendom - Je account is aangemaakt!",
+                html: "<h1>Gefeliciteerd! Je account is aangemaakt!</h1><p>Gefeliciteerd! Je account bij corendom " +
+                    "reispartner is aangemaakt!" +
+                    " <br>Herken je deze actie niet? Neem dan contact met ons op.</p>"
+            })
+
             //doorlinken naar profile page (als er geen error is).
             window.location.replace("../../views/profile-edit.html");
+
         }
         catch {
             //laat de gebruiker weten als er iets niet goed ging, of de email al is gebruikt
