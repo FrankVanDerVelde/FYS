@@ -25,26 +25,7 @@ async function getInterests() {
     await createInterestFilter(intresses);
 
 }
-var target = document.querySelector('.toegepaste-filters')
 
-// Create an observer instance.
-var observer = new MutationObserver(function(mutations) {
-    getPeople();
-});
-
-// Pass in the target node, as well as the observer options.
-observer.observe(target, {
-    attributes:    true,
-    childList:     true,
-    characterData: true
-});
-
-
-
-function getPeople()
-{
-        
-}
 //create intrest filter header and sub cat
 async function createInterestFilter(interests) {
     const parentDiv = document.getElementsByClassName('dropdown-content-filter')[0]; //<-- first dropdown
@@ -101,7 +82,15 @@ async function createInterestFilter(interests) {
 
     }
 
+
 }
+
+
+function returnSelectedFilters()
+{
+    return selectedFilters;
+}
+
 function insertAfter(referenceNode, newNode) {
     referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
 }
@@ -138,7 +127,7 @@ async function changeFilter(item) {
                     selectedFilters[i] = item;
                 }
             }
-            console.log(selectedFilters);
+          //  console.log(selectedFilters);
             break;
 
         }
@@ -206,7 +195,7 @@ function createFilter(typeFilter, valueFilter) {
     selectedFilters.push(childDiv);
     document.getElementsByClassName("toegepaste-filters")[0].appendChild(parentDiv);
     console.log("added standard filter");
-    console.log(selectedFilters);
+   // console.log(selectedFilters);
 }
 
 //create div, give classname and id and create child in that div.
@@ -222,7 +211,7 @@ function createFilterInterests(typeFilter, valueFilter) {
     parentDiv.appendChild(childDiv);
 
     selectedFilters.push(childDiv);
-    console.log(selectedFilters);
+   // console.log(selectedFilters);
     document.getElementsByClassName("toegepaste-filters")[0].appendChild(parentDiv);
     console.log("added interest filter");
 }
