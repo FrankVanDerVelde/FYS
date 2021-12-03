@@ -56,7 +56,6 @@ async function register() {
 
             //doorlinken naar profile page (als er geen error is).
             window.location.replace("../../views/profile-edit.html");
-
         }
         catch {
             //laat de gebruiker weten als er iets niet goed ging, of de email al is gebruikt

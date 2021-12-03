@@ -43,7 +43,7 @@ async function passwordReset() {
                     }
                 ],
                 subject: "Corendom - Je wachtwoord is veranderd.",
-                html: "<h1>Wachtwoord veranderd</h1><p>je wachtwoord is veranderd. Als jij dit niet hebt gedaan" +
+                html: "<h1>Wachtwoord veranderd</h1><p>je wachtwoord is veranderd. Als jij dit niet hebt gedaan," +
                     " neem dan onmiddelijk contact op met ons.<br></p>"
             })
 
@@ -51,7 +51,7 @@ async function passwordReset() {
             window.location.replace("../../../index.html");
 
             //alert dat het wachtwoord is gereset.
-            window.alert("Er is iets mis gegaan. :( Je code is mogelijk niet geldig.");
+            window.alert("Je wachtwoord is aangepast!");
         }
         catch {
             //laat de gebruiker weten als er iets niet goed ging, of de email al is gebruikt
@@ -62,5 +62,4 @@ async function passwordReset() {
         //laat de gebruiker weten dat het wachtwoord niet klopt.
         document.querySelector("#error-message").innerHTML = "Je wachtwoord is niet het zelfde!";
     }
-
 }
