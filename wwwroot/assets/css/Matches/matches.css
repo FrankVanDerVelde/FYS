@@ -681,7 +681,7 @@ margin:auto 0;
 }
 .moreTravelers > button {
     margin-left: -36.5%;
-
+    cursor: pointer;
 }
 
 .pagination-box {

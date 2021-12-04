@@ -105,7 +105,7 @@ async function checkInterests(selectedFilters) {
 
         createPersonCards((wantedUsers.length - (userCountLeftToCreate % 3)) / 3, userCountLeftToCreate % 3);
 
-        console.log(amountOfActiveCards);
+        //console.log(amountOfActiveCards);
         for (let i = 0; i < amountOfActiveCards; i++) {
 
             setPersonCards(allCards[i + 3], wantedUsers[i]);

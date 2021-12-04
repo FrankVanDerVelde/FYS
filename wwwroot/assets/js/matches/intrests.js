@@ -62,7 +62,7 @@ async function getUsersWithIntrests(agesFilter, genderFilter) {
     }
 
     if (genderFilter) {
-        console.log(genderFilter);
+      //  console.log(genderFilter);
         switch (genderFilter) {
             case "Man":
                 genderNumber = 1;
@@ -91,7 +91,7 @@ async function getUsersWithIntrests(agesFilter, genderFilter) {
         }
 
        // await calcPercentage(userIntrests[0].userIntrests, userIntrests[1].userIntrests)
-        console.log(userIntrests);
+       // console.log(userIntrests);
         return userIntrests;
     } catch (e) {
         console.log(queryStrings.join(' '))
