@@ -70,7 +70,6 @@ async function checkInterests(selectedFilters) {
     var age = "";
     var intrests = [];
     var selectedInterestFilter = false;
-    console.log(selectedFilters);
     for (let i = 0; i < selectedFilters.length; i++) {
         if (selectedFilters[i].parentNode.id === "gender") {
             gender = selectedFilters[i].innerHTML;
@@ -87,19 +86,18 @@ async function checkInterests(selectedFilters) {
 
     if (age !== "" || gender !== "") {
         console.log("db call with params");
-        users = await getUsersWithIntrests(age, gender);
+        wantedUsers = await getUsersWithIntrests(age, gender);
 
     } else {
         console.log("db call all users");
-        users = await getAllUsers();
-        console.log(users);
+        wantedUsers = await getAllUsers();
 
     }
 
     //set users left to create equal to the amount of users.
-    userCountLeftToCreate = users.length;
+    userCountLeftToCreate = wantedUsers.length;
 
-    wantedUsers = users;
+
     //everytime someone updates remove all cards, -> to make it prettier, change so object just changes information. FASE 4!
     removeAllCards();
 
@@ -111,8 +109,8 @@ async function checkInterests(selectedFilters) {
 
     //if there are users left to create, first create them all then fill them with data.
     if (userCountLeftToCreate > 0) {
-//check here for filters
 
+        //check if atleast 1 "custom" filter is checked, when it is check all people.
         if (selectedInterestFilter) {
            wantedUsers =  checkPeopleForFilters(wantedUsers, intrests);
         }
@@ -132,11 +130,11 @@ async function checkInterests(selectedFilters) {
 
 
 }
-
+//filter people out without the filter
 function checkPeopleForFilters(users, interests) {
 
 
-
+//loop backwards through array of people and remove elements if they have no interests selected.
     for (let i = users.length; i > 0; i--) {
 
         if (users[i - 1].userIntrests.length === 0) {
@@ -147,6 +145,7 @@ function checkPeopleForFilters(users, interests) {
         }
 
     }
+    //loop backwards through array and check if the filter('s) selected are in their interests otherwise remove the people,
     for (let i = users.length; i > 0; i--) {
 
         for (let j = 0; j < interests.length; j++) {
@@ -156,12 +155,13 @@ function checkPeopleForFilters(users, interests) {
                 if (!users[i-1].userIntrests.includes(interests[j])) {
                     const index = users.indexOf(users[i-1]);
                     if (index > -1) {
-                        wantedUsers.splice(index, 1);
+                        users.splice(index, 1);
                     }
                 }
             }
         }
     }
+    //set new usercount to the length of final amount of people and return users.
     userCountLeftToCreate = users.length;
     return users;
 
