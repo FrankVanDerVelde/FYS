@@ -1,4 +1,3 @@
-var users;
 var baseCard = document.getElementsByClassName("flex-grid")[0].children[0];
 var remainder = 0;
 var amountOfActiveCards = 3;
@@ -6,7 +5,6 @@ var amountOfWantCreateCards = 0;
 var userCountLeftToCreate = 0;
 var amountOfRows = 1;
 var maxAmount = 9;
-
 
 var wantedUsers = {};
 
@@ -49,20 +47,12 @@ async function initalSet() {
     amountOfActiveCards = allCards.length - 3;
 
     for (let i = 0; i < userCountLeftToCreate; i++) {
-
         if (amountOfActiveCards > 0 && userCountLeftToCreate > 0) {
-
-
             setPersonCards(allCards[i + 3], wantedUsers[i]);
         }
-
-
     }
     document.getElementsByClassName("resultaten")[0].innerHTML = wantedUsers.length + " resultaten gevonden";
-
-
 }
-
 
 //check interests, checks given iterests fro mthe user and returns array of people
 async function checkInterests(selectedFilters) {
@@ -100,8 +90,6 @@ async function checkInterests(selectedFilters) {
 
     //everytime someone updates remove all cards, -> to make it prettier, change so object just changes information. FASE 4!
     removeAllCards();
-
-    //check how many we need to create extra if rows are full.
 
 
     var allCards = document.getElementsByClassName('card');
@@ -202,12 +190,18 @@ document.addEventListener('scroll', function (e) {
     // When the user is [modifier]px from the bottom, fire the event.
     let modifier = 50;
     if (currentScroll + modifier > documentHeight) {
+        loadMoreCards();
 
-        if (wantedUsers === undefined || wantedUsers === null)
-            return;
-        checkCardAmount();
     }
 })
+
+
+function loadMoreCards()
+{
+    if (wantedUsers === undefined || wantedUsers === null)
+        return;
+    checkCardAmount();
+}
 //check card amount, if amount of active cards is less then user (that dont have a card), set amount of cards left to create to the amount of users
 // also calculate the remainder to check if extra row is needed.
 function checkCardAmount() {
