@@ -11,7 +11,7 @@ async function getUserIntrests(userId) {
             intrestIds.push(parseInt(userIntrestsList[i].interestsFk));
         }
 
-        intrestIds[0] = 1;
+        //intrestIds[0] = 1;
 
         for (let i = 0; i < intrestIds.length; i++) {
             for (let j = 0; j < instrestList.length; j++) {
@@ -20,7 +20,7 @@ async function getUserIntrests(userId) {
                 }
             }
         }
-        //console.log(intrest)
+        // console.log(intrest)
         return intrest;
     } catch (e) {
         console.log(`Something went wrong: ${e}`)
@@ -83,7 +83,7 @@ async function getUsersWithIntrests(agesFilter, genderFilter) {
     try {
         //`SELECT * FROM account WHERE birthdate BETWEEN ? AND ? AND genderFk = ?`, [dateFloor, dateCeiling, genderNumber]
         const userList = await FYSCloud.API.queryDatabase(queryStrings.join(' '));
-        console.log(queryStrings.join(' '));
+      //  console.log(queryStrings.join(' '));
         let userIntrests = [];
 
         for (let i = 0; i < userList.length; i++) {
@@ -101,19 +101,19 @@ async function getUsersWithIntrests(agesFilter, genderFilter) {
 
 
 
-async function getAllFromInterest()
+async function getAllUsers()
 {
     try {
         //`SELECT * FROM account WHERE birthdate BETWEEN ? AND ? AND genderFk = ?`, [dateFloor, dateCeiling, genderNumber]
-        const instrestList =  await FYSCloud.API.queryDatabase("SELECT * FROM fys_is109_4_harmohat_chattest.account");
+        const userList =  await FYSCloud.API.queryDatabase("SELECT * FROM fys_is109_4_harmohat_chattest.account");
         let userIntrests = [];
 
-        for (let i = 0; i < instrestList.length; i++) {
-            userIntrests.push({user: instrestList[i], userIntrests: await getUserIntrests(instrestList[i].id)});
+        for (let i = 0; i < userList.length; i++) {
+            userIntrests.push({user: userList[i], userIntrests: await getUserIntrests(userList[i].id)});
         }
 
         // await calcPercentage(userIntrests[0].userIntrests, userIntrests[1].userIntrests)
-        console.log(userIntrests);
+      //  console.log(userIntrests);
         return userIntrests;
     } catch (e) {
         console.log(`Something went wrong: ${e}`)
@@ -124,7 +124,7 @@ async function getAllFromInterest()
 function checkAnd(queryStrings) {
     if (!queryStrings[queryStrings.length - 1].includes("WHERE")) {
         queryStrings.push(`AND`);
-        console.log("pushed and");
+     //   console.log("pushed and");
     }
 }
 

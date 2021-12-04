@@ -2,8 +2,24 @@
 
 body, html {
     background-color: var(--bg);
+    height: 100%;
 }
+body{
+    display: flex;
+    flex-flow: column
+}
+header{
+    flex: 0 1 auto;
 
+}
+main{
+    flex: 1 1 auto;
+    background-image: url("/wwwroot/assets/img/blob.png");
+    background-position: center center;
+}
+footer{
+    flex: 0 1 auto;
+}
 .navbar {
     background-color: var(--nav-bg);
     box-shadow: 0 -2px 20px 0 var(--nav-shadow);
@@ -363,10 +379,12 @@ margin:auto 0;
 .personName{
     color: var(--text3);
     font-size: 2em;
+    word-wrap: break-word;
 }
 .personPlace{
     color: var(--text3);
     font-size: 1.1em;
+    word-wrap: break-word;
 
 }
 .filter {
@@ -794,7 +812,10 @@ margin:auto 0;
         display: flex;
         margin:0;
     }
+    .moreTravelers > button {
+        margin-left: 0;
 
+    }
     .pullDown {
         flex: 0;
         width: 15px;
