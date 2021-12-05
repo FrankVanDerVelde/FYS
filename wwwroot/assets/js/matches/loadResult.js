@@ -270,17 +270,7 @@ function setPersonCards(card, user) {
     userCountLeftToCreate--;
 }
 
-//listen if scrollbar is bottom of page, then create more elements
-document.addEventListener('scroll', function (e) {
-    let documentHeight = document.body.scrollHeight;
-    let currentScroll = window.scrollY + window.innerHeight;
-    // When the user is [modifier]px from the bottom, fire the event.
-    let modifier = 50;
-    if (currentScroll + modifier > documentHeight) {
-        loadMoreCards();
 
-    }
-})
 
 
 function loadMoreCards() {
@@ -292,7 +282,7 @@ function loadMoreCards() {
 //check card amount, if amount of active cards is less then user (that dont have a card), set amount of cards left to create to the amount of users
 // also calculate the remainder to check if extra row is needed.
 function checkCardAmount() {
-
+        console.log(wantedUsers);
     if (amountOfActiveCards !== wantedUsers.length) {
         maxAmount = 9;
         amountOfWantCreateCards = userCountLeftToCreate;
@@ -356,3 +346,16 @@ function createParentDiv() {
     gridParent.appendChild(parentDiv);
     amountOfRows++;
 }
+//listen if scrollbar is bottom of page, then create more elements
+window.addEventListener('scroll', function (e) {
+    console.log(e);
+    let documentHeight = document.body.scrollHeight;
+    let currentScroll = window.scrollY + window.innerHeight;
+    // When the user is [modifier]px from the bottom, fire the event.
+    let modifier = 50;
+    console.log(currentScroll);
+    if (currentScroll + modifier > documentHeight) {
+        loadMoreCards();
+
+    }
+}, false)
