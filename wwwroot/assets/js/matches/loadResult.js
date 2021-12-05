@@ -189,18 +189,19 @@ function checkPeopleForFilters(users, interests) {
 }
 
 // search user with name,
-async function searchUser(ele) {
+async function searchUser(searchBar) {
     if(event.key === 'Enter') {
 
-        if(ele.value === "")
+        if(searchBar.value === "")
         {
             wantedUsers = await getAllUsers();
 
         }
         else{
             try {
-                //`SELECT * FROM account WHERE birthdate BETWEEN ? AND ? AND genderFk = ?`, [dateFloor, dateCeiling, genderNumber]
-                const userList = await FYSCloud.API.queryDatabase('SELECT * FROM fys_is109_4_harmohat_chattest.account WHERE name = ?',ele.value);
+                //select all users where part of the name contains given value.
+                const userList = await FYSCloud.API.queryDatabase('SELECT * FROM fys_is109_4_harmohat_chattest.account WHERE name LIKE ' + "'%" + searchBar.value + "%'");
+
                 //  console.log(queryStrings.join(' '));
                 let userIntrests = [];
 
@@ -212,19 +213,16 @@ async function searchUser(ele) {
 
                 wantedUsers =  userIntrests;
             } catch (e) {
-                console.log(queryStrings);
+
                 console.log(`Something went wrong: ${e}`);
             }
         }
+        //check if wanted users isnt 0,
         if(wantedUsers !== 0)
         {
             callCreateFunctions(wantedUsers);
         }
     }
-
-
-   // console.log( document.getElementById('username').value);
-
 }
 
 //remove all cards
