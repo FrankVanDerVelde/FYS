@@ -25,6 +25,15 @@
             <li><a href="./assets/views/about.html">About</a></li>
             <li><a href="./assets/views/contact.html">Contact</a></li>
             <li><a href="./assets/views/matches.html">Matches</a></li>
+            <li>
+                <div class="lang-changer-input">
+                    <select id="langSelecter" onchange="checklang()">
+                        <option value="de">Deutsch</option>
+                        <option value="en">English</option>
+                        <option value="nl" selected>Nederlands</option>
+                    </select>
+                </div>
+            </li>
             <li class="dropdown-box">
                 <div class="dropdown">
                     <button class="drop-btn">
@@ -34,7 +43,7 @@
                     <div class="dropdown-content" id="dropdown-content">
                         <a href="./assets/views/auth/login.html">Inloggen</a>
                         <a href="./assets/views/auth/register.html">Registreren</a>
-                    </div> 
+                    </div>
                 </div>
             </li>
         </ul>
@@ -61,19 +70,21 @@
 <main>
     <div class="mainSection">
         <div class="leftSection">
-            <div class="top"> </div>
+            <div class="top"></div>
             <div class="items-left">
                 <div class="mainText">
-                    <div class="text1">Vind jouw</div>
-                    <div class="text2">Reispartner!</div>
+                    <div class="text1" id="title-1">Vind jouw</div>
+                    <div class="text2" id="title-2">Reispartner!</div>
                 </div>
-                <div class="subText">Wij helpen u een reispartner te vinden voor u eerst volgende vakantie!</div>
-                <a href="./assets/views/auth/login.html" class="subButton">Vind match</a>
+                <div class="subText" id="opening">Wij helpen u een reispartner te vinden voor u eerst volgende
+                    vakantie!
+                </div>
+                <a href="./assets/views/auth/login.html" id="matchs-btn" class="subButton">Vind match</a>
             </div>
             <img class="image-red-arrow" src="../wwwroot/assets/img/arrow.png" alt="backgroundart">
             <img class="image-red-ipad-phone" src="../wwwroot/assets/img/arrowdown.png" alt="backgroundart">
 
-            <div class="bottom">   </div>
+            <div class="bottom"></div>
         </div>
 
         <div class="rightSection">
@@ -83,115 +94,7 @@
         </div>
     </div>
 
-    <div class="chat-modal" id="main-chat-box">
-        <div class="chat-box">
-            <div class="chat-header">
-                <div class="profile-img">
-                    <img src="https://ui-avatars.com/api/?name=John+Doe?background=random" alt="Profile Photo">
-                </div>
-                <div class="close-btn-box">
-                    <button class="close-chat close-btn">
-                        <i class="fas fa-times-circle close-icon"></i>
-                    </button>
-                </div>
-            </div>
-            <div class="chat-contacts">
-                <ul>
-                    <li class="message-list-item">
-                        <div class="message-overview">
-                            <div class="message-overview-img">
-                                <img src="https://ui-avatars.com/api/?name=John+Doe?background=random" alt="Message img">
-                                <div class="notification">
-                                    <p>2</p>
-                                </div>
-                            </div>
-                            <div class="message-overview-text">
-                                <div class="messages-overview-name">
-                                    <h3>Jane Doe</h3>
-                                </div>
-                                <div class="messages-text">
-                                    <p>Lorem ipsum dolor...</p>
-                                    <p class="messages-time">20:57 07/10/21</p>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="message-list-item">
-                        <div class="message-overview">
-                            <div class="message-overview-img">
-                                <img src="https://ui-avatars.com/api/?name=John+Doe?background=random" alt="Message img">
-                                <div class="notification">
-                                    <p>2</p>
-                                </div>
-                            </div>
-                            <div class="message-overview-text">
-                                <div class="messages-overview-name">
-                                    <h3>Jane Doe</h3>
-                                </div>
-                                <div class="messages-text">
-                                    <p>Lorem ipsum dolor...</p>
-                                    <p class="messages-time">20:57 07/10/21</p>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="message-list-item">
-                        <div class="message-overview">
-                            <div class="message-overview-img">
-                                <img src="https://ui-avatars.com/api/?name=John+Doe?background=random" alt="Message img">
-                            </div>
-                            <div class="message-overview-text">
-                                <div class="messages-overview-name">
-                                    <h3>Jane Doe</h3>
-                                </div>
-                                <div class="messages-text">
-                                    <p>Lorem ipsum dolor...</p>
-                                    <p class="messages-time">20:57 07/10/21</p>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-    <div class="chat-modal detail-chat-box" id="detail-chat-box">
-        <div class="chat-box">
-            <div class="chat-header">
-                <div class="back-btn-box">
-                    <i class="fas fa-chevron-left back-btn-chat"></i>
-                </div>
-                <div class="detail-person-header">
-                    <img src="https://ui-avatars.com/api/?name=John+Doe?background=random" alt="Message img">
-                    <p>John doe</p>
-                </div>
-                <div class="close-btn-box">
-                    <button class="close-detail-chat close-btn">
-                        <i class="fas fa-times-circle close-icon"></i>
-                    </button>
-                </div>
-            </div>
-            <div class="chat-content">
-                <ul class="messages right-chat"></ul>
-            </div>
-            <div class="chat-footer">
-                <form class="chat-form">
-                    <div class="input-box">
-                        <label>
-                            <input type="text" class="chat-input" placeholder="Verstuur bericht...">
-                        </label>
-                    </div>
-                    <div class="btn-box">
-                        <button class="send-msg-btn" type="submit"><i class="fas fa-arrow-circle-right form-box-icon"></i></button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-
     <button id="chat-btn" class="chat-btn"><i class="far fa-comment chat-icon"></i></button>
-
 </main>
 
 <footer>
@@ -230,7 +133,13 @@
     </div>
 </footer>
 
+<!-- Javascript -->
+<script src="https://cdn.fys.cloud/fyscloud/0.0.4/fyscloud.min.js"></script>
+<script src="./assets/js/config.mockup.js"></script>
+<script src="./assets/js/chat/chat-functionals.js"></script>
+<script src="./assets/js/main.js"></script>
 <script src="./assets/js/menu.js"></script>
 <script src="./assets/js/chat.js"></script>
+<script src="./assets/js/langChanger.js"></script>
 </body>
 </html>
