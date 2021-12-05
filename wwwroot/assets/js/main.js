@@ -6,8 +6,15 @@ if (FYSCloud.Session.get("loggedin")) {
 }
 
 async function loadChat(){
+    const urlSplitted = window.location.href.split("/"); 
+    const checkFilename = urlSplitted.includes('index.html');
+    let chat = await FYSCloud.Utils.fetchAndParseHtml("../views/components/_chat.html");
+
+    if (checkFilename) {
+         chat = await FYSCloud.Utils.fetchAndParseHtml("./assets/views/components/_chat.html");
+    }
+
     //Add the chat modals to the page
-    const chat = await FYSCloud.Utils.fetchAndParseHtml("../views/components/_chat.html");
     addChat(chat);
 
     function addChat(data) {
