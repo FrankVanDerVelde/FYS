@@ -2,6 +2,28 @@
 
 body, html {
     background-color: var(--bg);
+    height: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    display: flex;
+    flex-flow: column
+}
+
+header {
+    flex: 0 1 auto;
+
+}
+
+main {
+    flex: 1 1 auto;
+    background-image: url("/wwwroot/assets/img/blob.png");
+    background-position: center center;
+}
+
+footer {
+    flex: 0 1 auto;
 }
 
 .navbar {
@@ -29,12 +51,14 @@ body, html {
     display: flex;
     justify-content: center;
     flex: 2;
+
 }
 
 .nav-list li {
     display: inline-block;
     padding: 20px 10px;
 }
+
 
 .nav-list li a {
     color: var(--text1);
@@ -265,6 +289,8 @@ body {
     position: relative;
     height: 350px;
     border-radius: 15px;
+    display: flex;
+    flex-direction: column;
 }
 
 .flex-grid {
@@ -286,7 +312,7 @@ body {
     position: relative;
     width: 135px;
     top: -65px;
-    border-radius: 15px;
+    border-radius: 70px;
 }
 
 .show-more-btn {
@@ -296,7 +322,10 @@ body {
     font-size: larger;
     color: white;
     border: none;
+    width: 70%;
+    margin-bottom: 10px;
 }
+
 /*.subButton{*/
 /*    !*background: #E56C5D;*!*/
 /*    padding: 5px 20px 5px 20px;*/
@@ -321,9 +350,10 @@ body {
 
 .footer {
     position: relative;
-    left: 65px;
-    top: -50px;
+    justify-content: center;
+    display: flex;
 }
+
 
 h1 {
     color: white;
@@ -345,37 +375,62 @@ h4 {
     padding-bottom: 40px;
     color: var(--text1);
 }
-.matchesHeader{
+
+.matchesHeader {
     display: flex;
     flex-direction: row;
-    gap:50px;
+    gap: 50px;
     margin-top: 25px;
 }
 
-.matchesHeader > h2{
+.matchesHeader > h2 {
     font-size: 3em;
     padding-left: 50px;
 }
-.matchesHeader > h3{
+
+.matchesHeader > h3 {
     font-size: 1.5em;
-margin:auto 0;
+    margin: auto 0;
 }
-.personName{
+
+.card-img > p {
     color: var(--text3);
+    word-wrap: break-word;
+    position: relative;
+    top: -40px;
+}
+
+.personName {
+
     font-size: 2em;
+
+
 }
-.personPlace{
-    color: var(--text3);
+
+.personAge {
     font-size: 1.1em;
 
 }
+
+.personGender {
+    font-size: 1.1em;
+
+}
+
+.personPlace {
+
+    font-size: 1.1em;
+
+
+}
+
 .filter {
     display: flex;
     justify-content: center;
     margin: 20px 35px 0 35px;
 
     z-index: 1;
-    background-color: var(--filter);
+    background-color: var(--bg);
     height: 28vh;
 }
 
@@ -389,11 +444,26 @@ margin:auto 0;
     background-repeat: no-repeat;
 }
 
+.filters {
+    display: none;
+}
+
 .filter-card {
     max-width: 100vw;
     display: flex;
     flex-direction: column;
     flex: 0.4;
+    position: relative;
+    border-radius: 5px;
+    background-color: var(--bg);
+    color: var(--text1);
+}
+
+.filter-card-other {
+    max-width: 100vw;
+    display: flex;
+    flex-direction: column;
+
     position: relative;
     border-radius: 5px;
     background-color: var(--bg);
@@ -434,6 +504,8 @@ margin:auto 0;
 .filterOption {
     flex: 3;
     text-align: center;
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
 .toegepaste-filters > div {
@@ -474,7 +546,7 @@ margin:auto 0;
     position: relative;
     border-radius: 5px;
     color: var(--text1);
-    background-color: var(--filter);
+    background-color: var(--bg);
     margin: 0 35px 0 0;
 
     width: 100%;
@@ -483,11 +555,23 @@ margin:auto 0;
     padding: 2em 4em;
 }
 
-.filtermenu > div {
+.filtermenuOther {
+    position: relative;
+    border-radius: 5px;
+    color: var(--text1);
+    background-color: rgba(220, 220, 220, 0.65);
+    margin: auto;
+
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2em 4em;
+}
+
+.filtermenuOther > div {
     border-style: solid;
     border-width: 1px;
     gap: 10px;
-    /*width: 160px;*/
     margin-left: 15px;
     height: 30px;
     border-radius: 5px;
@@ -498,42 +582,97 @@ margin:auto 0;
     flex-direction: row;
     padding: 2px 2px 2px 2px;
 }
-.dropdown-button{
+
+.filtermenu > div {
+    border-style: solid;
+    border-width: 1px;
+    gap: 10px;
+    margin-left: 15px;
+    height: 30px;
+    border-radius: 5px;
+    background-color: var(--filter);
+    color: var(--text2);
+    border-color: var(--filterborder);
     display: flex;
     flex-direction: row;
-    gap:10px;
+    padding: 2px 2px 2px 2px;
+}
+
+.dropdown-button {
+    cursor: pointer;
+
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
     color: black;
     font-size: 16px;
     border: none;
     width: 100%;
     background-color: var(--filter);
 }
-.filtermenu > div > p{
+
+.filtermenu > div > p {
     font-weight: bold;
 }
-.dropdown-button > p{
+
+.dropdown-button > p {
 
     color: var(--text1);
 }
-.dropdown-content-filter{
+
+.dropdown-content-filter {
     display: none;
     position: absolute;
     background-color: var(--filter);
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
     z-index: 1;
-    margin-top:2.9vh;
+    margin-top: 2.9vh;
 }
+
+.dropdown-content-filter-interests {
+    display: none;
+    position: absolute;
+    background-color: var(--filter);
+    min-width: 160px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
 .dropdown-content-filter a {
     padding: 12px 16px;
     text-decoration: none;
     display: block;
     color: var(--text1);
 }
-.dropdown-filters:hover .dropdown-content-filter {display: block;}
-.endSection > p{
+
+.dropdown-content-filter.active {
+    display: block;
+}
+
+.dropdown-content-filter-interests.active {
+    display: block;
+    margin-left: 100%;
+    margin-top: -30%;
+}
+
+.dropdown-button-filter {
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    color: var(--text1);
+    border: none;
+    background-color: var(--text3);
+    width: 100%;
+    text-align: left;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.endSection > p {
     font-weight: bold;
 }
+
 .interessesfilter {
 
 }
@@ -557,15 +696,17 @@ margin:auto 0;
 .radiusfilter {
 
 }
-.endSection{
+
+.endSection {
 
 }
+
 .pullDown {
     width: 15px;
     height: auto;
     margin: auto;
     flex: 1;
-    fill:var(--text1);
+    fill: var(--text1);
 }
 
 .close {
@@ -592,9 +733,14 @@ margin:auto 0;
     color: var(--text2);
 }
 
-.pagination {
+.moreTravelers {
     display: flex;
-    margin:30px;
+    margin: 30px;
+}
+
+.moreTravelers > button {
+    margin-left: -25%;
+    cursor: pointer;
 }
 
 .pagination-box {
@@ -611,11 +757,13 @@ margin:auto 0;
     align-content: center;
     display: flex;
 }
-.pagination-box > div{
+
+.pagination-box > div {
 
     margin: auto;
 
 }
+
 .arrow-right-box {
     background-color: var(--filter);
     height: 50px;
@@ -641,6 +789,10 @@ margin:auto 0;
         color: var(--text2);
     }
 
+    .nav-list {
+        flex: 5;
+    }
+
     .toegepaste-filters {
         align-self: center;
     }
@@ -663,8 +815,29 @@ margin:auto 0;
         background-size: 100% 100%;
     }
 
-    .footer {
-        left: 33px;
+    .filter {
+        margin: 0;
+    }
+    .moreTravelers > button {
+        margin-left: -22.5%;
+
+    }
+    .nav-list li {
+        display: inline-block;
+        padding: 20px 8px 20px 10px;
+
+    }
+}
+
+@media only screen
+and (min-device-width: 768px) and (max-device-width: 1080px) and (orientation: landscape){
+    .nav-list li {
+        display: inline-block;
+        padding: 20px 8px 20px 10px;
+
+    }
+    .filter{
+        margin: 0;
     }
 }
 
@@ -672,17 +845,21 @@ margin:auto 0;
     .flex-grid {
         flex-direction: column;
     }
-    .matchesHeader{
+    main{
+        margin-top: -20px;
+    }
+    .matchesHeader {
         display: flex;
         flex-direction: column;
-        gap:50px;
+        gap: 50px;
         align-items: center;
         margin-top: 0;
     }
 
-    .matchesHeader > h2{
+    .matchesHeader > h2 {
         padding-top: 0;
         padding-left: 0;
+        text-align: center;
     }
 
     .bannertext {
@@ -708,15 +885,27 @@ margin:auto 0;
         margin: 15px 0 20px 30px;
 
     }
+
     .filtermenu > div {
         justify-content: space-between;
         margin-left: 5px;
         gap: 0;
     }
+
     .filtermenu {
         background-color: transparent;
         padding: 2em 1em;
         flex-direction: column;
+    }
+
+    .moreTravelers {
+        display: flex;
+        margin: 0;
+    }
+
+    .moreTravelers > button {
+        margin-left: 14%;
+
     }
 
     .pullDown {
@@ -729,10 +918,11 @@ margin:auto 0;
     .toegepaste-filters {
         width: 100%;
         justify-content: space-evenly;
+        min-height: 25px;
     }
 
     #username {
-        width: 50%;
+        width: 45%;
         margin-left: 3px;
     }
 
@@ -743,6 +933,7 @@ margin:auto 0;
     .filter {
         flex-direction: column;
         height: auto;
+        margin: 0 0 0 0;
     }
 
     .matches-page-navigation {
