@@ -80,7 +80,8 @@ a {
     justify-content: center;
 }
 
-.dropdown .drop-btn {
+.dropdown .drop-btn,
+.chat-options-drop-btn {
     cursor: pointer;
     font-size: 16px;
     border: none;
