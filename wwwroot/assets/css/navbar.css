@@ -74,6 +74,11 @@ a {
     text-decoration: none;
 }
 
+#langSelecter{
+    background: var(--bg);
+    color: var(--text1);
+}
+
 /*Dropdown navbar*/
 .dropdown-box {
     display: inline-block;
