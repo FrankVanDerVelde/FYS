@@ -175,20 +175,26 @@ window.addEventListener('load', async function () {
             });
         }
 
-
+        /*
+         When user accepts the match the program calls the `updatePendingRequests` function and 
+         updates the field `status` in the DB to accepted
+        */
         document.querySelectorAll('.accept-request-btn').forEach(function(button) {
-            button.addEventListener('click', async function (){
-                console.log(button.dataset.id);
-                const update = await updatePendingRequests('accepted', userSession[0].id, button.dataset.id); 
-                console.log(update);
+            button.addEventListener('click', async function () {
+                await updatePendingRequests('accepted', userSession[0].id, button.dataset.id); 
             });
         });
 
+        /*
+         When user declines the match the program calls the `updatePendingRequests` function and 
+         updates the field `status` in the DB to declined
+        */
         document.querySelectorAll('.decline-request-btn').forEach(function(button) {
-            button.addEventListener('click', () => {
-                await updatePendingRequests(userSession[0].id, button.dataset.id, 'declined');
+            button.addEventListener('click', async function () {
+                await updatePendingRequests('declined', userSession[0].id, button.dataset.id); 
             });
         });
+
 
         /**
          * @param {int} userId 
