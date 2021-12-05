@@ -20,7 +20,7 @@ async function getInterests() {
         "INNER JOIN intrestdetail ON interestscategory.id = intrestdetail.catgoryId ");
 
     allFilters = intresses;
-    console.log(allFilters);
+    //console.log(allFilters);
 
     await createInterestFilter(intresses);
 
