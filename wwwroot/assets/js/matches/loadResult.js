@@ -9,7 +9,7 @@ var maxAmount = 9;
 var wantedUsers = {};
 
 const targetNode = document.getElementsByClassName('toegepaste-filters')[0];
-MutationObersver();
+
 
 //check for mutations in div.
 function MutationObersver() {
@@ -23,6 +23,7 @@ function MutationObersver() {
         // Use traditional 'for loops' for IE 11
         for (const mutation of mutationsList) {
             if (mutation.type === 'childList') {
+                console.log(mutation.type);
                 var selectedFilters = returnSelectedFilters();
                 checkInterests(selectedFilters);
             }
@@ -40,8 +41,12 @@ function MutationObersver() {
 //inital set of values for people
 initalSet();
 
+
+//start observing
+MutationObersver();
 async function initalSet() {
     wantedUsers = await getAllUsers();
+    shuffle(wantedUsers);
     userCountLeftToCreate = wantedUsers.length;
     var allCards = document.getElementsByClassName('card');
     amountOfActiveCards = allCards.length - 3;
@@ -84,9 +89,20 @@ async function checkInterests(selectedFilters) {
 
     }
 
+    //creation and setting of elements.
+    callCreateFunctions(wantedUsers, intrests, selectedInterestFilter);
+
+
+
+
+}
+
+function callCreateFunctions(wantedUsers, interest, selectedInterestFilter)
+{
     //set users left to create equal to the amount of users.
     userCountLeftToCreate = wantedUsers.length;
 
+    shuffle(wantedUsers);
 
     //everytime someone updates remove all cards, -> to make it prettier, change so object just changes information. FASE 4!
     removeAllCards();
@@ -100,7 +116,7 @@ async function checkInterests(selectedFilters) {
 
         //check if atleast 1 "custom" filter is checked, when it is check all people.
         if (selectedInterestFilter) {
-           wantedUsers =  checkPeopleForFilters(wantedUsers, intrests);
+            wantedUsers = checkPeopleForFilters(wantedUsers, interest);
         }
 
         createPersonCards((wantedUsers.length - (userCountLeftToCreate % 3)) / 3, userCountLeftToCreate % 3);
@@ -111,13 +127,31 @@ async function checkInterests(selectedFilters) {
             setPersonCards(allCards[i + 3], wantedUsers[i]);
         }
     }
-
-
     //set bottom text for result amount.
     document.getElementsByClassName("resultaten")[0].innerHTML = wantedUsers.length + " resultaten gevonden";
-
-
 }
+
+
+//shuffle array
+function shuffle(array) {
+    let currentIndex = array.length, randomIndex;
+
+    // While there remain elements to shuffle...
+    while (currentIndex != 0) {
+
+        // Pick a remaining element...
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex--;
+
+        // And swap it with the current element.
+        [array[currentIndex], array[randomIndex]] = [
+            array[randomIndex], array[currentIndex]];
+    }
+
+    return array;
+}
+
+
 //filter people out without the filter
 function checkPeopleForFilters(users, interests) {
 
@@ -138,10 +172,9 @@ function checkPeopleForFilters(users, interests) {
 
         for (let j = 0; j < interests.length; j++) {
 
-            if(users[i-1] !== undefined)
-            {
-                if (!users[i-1].userIntrests.includes(interests[j])) {
-                    const index = users.indexOf(users[i-1]);
+            if (users[i - 1] !== undefined) {
+                if (!users[i - 1].userIntrests.includes(interests[j])) {
+                    const index = users.indexOf(users[i - 1]);
                     if (index > -1) {
                         users.splice(index, 1);
                     }
@@ -152,6 +185,45 @@ function checkPeopleForFilters(users, interests) {
     //set new usercount to the length of final amount of people and return users.
     userCountLeftToCreate = users.length;
     return users;
+
+}
+
+// search user with name,
+async function searchUser(ele) {
+    if(event.key === 'Enter') {
+
+        if(ele.value === "")
+        {
+            wantedUsers = await getAllUsers();
+
+        }
+        else{
+            try {
+                //`SELECT * FROM account WHERE birthdate BETWEEN ? AND ? AND genderFk = ?`, [dateFloor, dateCeiling, genderNumber]
+                const userList = await FYSCloud.API.queryDatabase('SELECT * FROM fys_is109_4_harmohat_chattest.account WHERE name = ?',ele.value);
+                //  console.log(queryStrings.join(' '));
+                let userIntrests = [];
+
+                for (let i = 0; i < userList.length; i++) {
+                    userIntrests.push({user: userList[i], userIntrests: await getUserIntrests(userList[i].id)});
+                }
+
+                // await calcPercentage(userIntrests[0].userIntrests, userIntrests[1].userIntrests)
+
+                wantedUsers =  userIntrests;
+            } catch (e) {
+                console.log(queryStrings);
+                console.log(`Something went wrong: ${e}`);
+            }
+        }
+        if(wantedUsers !== 0)
+        {
+            callCreateFunctions(wantedUsers);
+        }
+    }
+
+
+   // console.log( document.getElementById('username').value);
 
 }
 
@@ -176,10 +248,27 @@ function setPersonCards(card, user) {
     //card.children[0].children[1]<-- name
     //card.children[0].children[2] <-- place
     // card.children[2].children[0] <-- "meer zien" button;
+
+    console.log(card.children[0].children);
     card.children[0].children[0].src = user.user.profilePhoto;
     card.children[0].children[1].innerHTML = user.user.name;
-    card.children[0].children[2].innerHTML = user.user.email;
-    card.children[2].children[0].onclick = "javascript:window.location.href='./profile.html?userid=" + user.user.id + "'";
+
+    var genderText = "";
+    switch (user.user.genderFk) {
+        case 1:
+            genderText = "Man";
+            break;
+        case 2:
+            genderText = "Vrouw";
+            break;
+        case 3:
+            genderText = "Overig";
+            break;
+    }
+
+    card.children[0].children[2].innerHTML = genderText;
+    card.children[0].children[3].innerHTML =user.user.birthdate.split("T")[0];
+    card.children[1].children[0].onclick = "javascript:window.location.href='./profile.html?userid=" + user.user.id + "'";
     userCountLeftToCreate--;
 }
 
@@ -196,12 +285,12 @@ document.addEventListener('scroll', function (e) {
 })
 
 
-function loadMoreCards()
-{
+function loadMoreCards() {
     if (wantedUsers === undefined || wantedUsers === null)
         return;
     checkCardAmount();
 }
+
 //check card amount, if amount of active cards is less then user (that dont have a card), set amount of cards left to create to the amount of users
 // also calculate the remainder to check if extra row is needed.
 function checkCardAmount() {
@@ -230,8 +319,7 @@ function createPersonCards(numberOfRows, remainder) {
     maxAmount = 9;
     //for the numberOfRows wanted,
 
-    if(numberOfRows >= 1)
-    {
+    if (numberOfRows >= 1) {
         for (let i = 0; i < numberOfRows; i++) {
 
             if (maxAmount === 0)
