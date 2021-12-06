@@ -15,9 +15,9 @@ var selectedFilters = [];
 
 
 async function getInterests() {
-    intresses = await FYSCloud.API.queryDatabase("SELECT interestscategory.id AS parent_id, interestscategory.description AS parent_description, intrestdetail.description AS child_description, intrestdetail.intrestId AS child_id\n" +
+    intresses = await FYSCloud.API.queryDatabase("SELECT interestscategory.id AS parent_id, interestscategory.description AS parent_description, interestdetail.description AS child_description, interestdetail.interestId AS child_id\n" +
         "FROM interestscategory\n" +
-        "INNER JOIN intrestdetail ON interestscategory.id = intrestdetail.catgoryId ");
+        "INNER JOIN interestdetail ON interestscategory.id = interestdetail.categoryId ");
 
     allFilters = intresses;
     //console.log(allFilters);

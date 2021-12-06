@@ -1,27 +1,25 @@
 
 async function getUserIntrests(userId) {
     try {
-        const instrestList = await sqlSelectAsync("intrestdetail");
-        const userIntrestsList = await sqlSelectAsync("userinterests", ["accountFk"], userId);
-
-        let intrestIds = [];
-        let intrest = [];
-
-        for (let i = 0; i < userIntrestsList.length; i++) {
-            intrestIds.push(parseInt(userIntrestsList[i].interestsFk));
+        const interestList = await sqlSelectAsync("interestdetail");
+        const userInterestList = await sqlSelectAsync("userinterests", ["accountFk"], userId);
+        let interestIds = [];
+        let interest = [];
+        for (let i = 0; i < userInterestList.length; i++) {
+            interestIds.push(parseInt(userInterestList[i].interestsFk));
         }
 
-        //intrestIds[0] = 1;
+        //interestIds[0] = 1;
 
-        for (let i = 0; i < intrestIds.length; i++) {
-            for (let j = 0; j < instrestList.length; j++) {
-                if (instrestList[j].intrestId === intrestIds[i]) {
-                    intrest.push(instrestList[j].description);
+        for (let i = 0; i < interestIds.length; i++) {
+            for (let j = 0; j < interestList.length; j++) {
+                if (interestList[j].interestId === interestIds[i]) {
+                    interest.push(interestList[j].description);
                 }
             }
         }
-        // console.log(intrest)
-        return intrest;
+        //console.log(interest);
+        return interest;
     } catch (e) {
         console.log(`Something went wrong: ${e}`)
     }
