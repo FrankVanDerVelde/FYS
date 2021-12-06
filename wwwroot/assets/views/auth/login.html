@@ -7,6 +7,10 @@
     <title>Login</title>
     <link rel="icon" type="image/png" sizes="32x32" href="../../img/favicon-32x32.png">
     <link rel="stylesheet" href="../../css/auth/login.css">
+    <script src="https://cdn.fys.cloud/fyscloud/0.0.4/fyscloud.min.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+    <link rel="preconnect" href="https://www.google.com">
+    <link rel="preconnect" href="https://www.gstatic.com" crossorigin>
 </head>
 <body>
 
@@ -16,41 +20,50 @@
     </div>
     <div class="login-box">
         <div class="rood-achterkant-box">
-            <div class="wit-bovenkant-box">
+            <div class="wit-bovenkant-box" id="wit-bovenkant-box">
                 <div class="box-content">
                     <div class="box-logo">
                         <img src="../../img/corendon-logo.svg" alt="Box Logo">
                     </div>
 
                     <div class="form-box">
-                        <form method="POST" action="" name="loginForm" autocomplete="off">
+                        <form autocomplete="off">
                             <div class="email-box">
                                 <label>Email:</label>
-                                <input type="email" name="uid" placeholder="johndoe@example.com" required autofocus>
+                                <input type="email" id="email-login" name="uid" placeholder="johndoe@example.com"
+                                       required autofocus>
                             </div>
 
                             <div class="wachtwoord-box">
                                 <label>Wachtwoord:</label>
-                                <input type="password" name="pwd" placeholder="*******" required>
+                                <input type="password" id="password-login" name="pwd" placeholder="*******" required>
                             </div>
+
+                            <div class="g-recaptcha" id="g-recaptcha"
+                                 data-sitekey="6Lebln0dAAAAALxYbYzgVbIoKRrFUVhhtTIy9nIH"></div>
+                            <br/>
+
 
                             <div class="form-footer">
                                 <a class="ww-vergeten" href="password-forgotten.html">
                                     Wachtwoord vergeten?
                                 </a>
 
-                                <button type="submit" class="submit-btn" onClick="login()">
+                                <button type="submit" id="login-btn" class="submit-btn">
                                     Login
                                 </button>
                             </div>
                         </form>
+                        <div class="error-log"><span id="error-message"></span></div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </main>
-
+<script scr="../../js/auth/recaptcha.js"></script>
+<script src="../../js/config.mockup.js"></script>
 <script src="../../js/auth/login.js"></script>
+<script src="../../js/auth/loggedin-href.js"></script>
 </body>
 </html>
