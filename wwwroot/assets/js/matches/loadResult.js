@@ -45,6 +45,8 @@ initalSet();
 //start observing
 MutationObersver();
 async function initalSet() {
+    let session = FYSCloud.Session.get('loggedin');
+    console.log(session);
     wantedUsers = await getAllUsers();
     shuffle(wantedUsers);
     userCountLeftToCreate = wantedUsers.length;
@@ -315,10 +317,7 @@ function createPersonCards(numberOfRows, remainder) {
             createParentDiv();
             for (let j = 0; j < 3; j++) {
 
-                document.getElementsByClassName("flex-grid")[flexGrids.length - 1].appendChild(baseCard.cloneNode(true));
-                amountOfActiveCards++;
-                amountOfWantCreateCards--;
-                maxAmount--;
+                appendBaseCard(flexGrids);
             }
         }
     }
@@ -330,14 +329,18 @@ function createPersonCards(numberOfRows, remainder) {
             return;
         createParentDiv();
         for (let j = 0; j < remainder; j++) {
-            document.getElementsByClassName("flex-grid")[flexGrids.length - 1].appendChild(baseCard.cloneNode(true));
-            amountOfActiveCards++;
-            amountOfWantCreateCards--;
-            maxAmount--;
+            appendBaseCard(flexGrids);
         }
     }
 }
-
+//append new child to last flex-grid row;
+function appendBaseCard(flexGrids)
+{
+    flexGrids[flexGrids.length - 1].appendChild(baseCard.cloneNode(true));
+    amountOfActiveCards++;
+    amountOfWantCreateCards--;
+    maxAmount--;
+}
 //create flex-grid object.
 function createParentDiv() {
     var gridParent = document.getElementsByClassName("grid-parent")[0];
