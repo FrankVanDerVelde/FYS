@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/chat/chat.css">
     <script src="https://cdn.fys.cloud/fyscloud/0.0.4/fyscloud.min.js"></script>
+    <script src="../js/config.mockup.js"></script>
+    <script src="../js/profile/profile.js"></script>
 </head>
 <body class="light-theme">
 <header class="navbar">
@@ -62,14 +64,14 @@
 
         <div class="basic-info-container">
             <div class="profile-picture-container">
-                <img alt="Profile picture" class="profile-picture"
+                <img alt="Profile picture" class="profile-picture" id="profile-picture"
                      src="../img/placeholder-images/profile-picture.png">
             </div>
 
             <div class="basic-info-text-container">
-                <span class="basic-info"><span class="bold">Naam:</span>John Doe</span>
-                <span class="basic-info"><span class="bold">Leeftijd:</span>35</span>
-                <span class="basic-info"><span class="bold">Location:</span>Amsterdam</span>
+                <span class="basic-info"><span class="bold">Naam:</span><span id="name">John Doe</span></span>
+                <span class="basic-info"><span class="bold">Leeftijd:</span><span><span id="age">35</span></span>
+                <span class="basic-info"><span class="bold">Location:</span><span><span id="location">Amsterdam</span></span>
                 <div class="change-profile-button-container">
                     <span class="edit-profile-button">wijzig profiel</span>
                 </div>
@@ -95,7 +97,7 @@
 
             <div class="info-bar">
                 <span class="icon email"><i class="far fa-envelope"></i></span>
-                <span>johndoe@mail.com</span>
+                <span id="email">johndoe@mail.com</span>
             </div>
         </div>
 
@@ -104,7 +106,7 @@
  <span class="big-container-text">
             Bio
         </span>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi maximus egestas sapien sed varius. Nam
+            <p id="bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi maximus egestas sapien sed varius. Nam
                 euismod efficitur sapien nec condimentum. Pellentesque habitant morbi tristique senectus et netus et
                 malesuada fames ac turpis egestas. Ut luctus suscipit volutpat. Duis accumsan viverra tellus vitae
                 posuere. Curabitur commodo arcu vel massa ultricies, non tempus augue dapibus. Praesent sem ex, accumsan
@@ -116,9 +118,9 @@
         <span class="big-container-text">
             Interesses
         </span>
-            <div class="interests-elements-container">
+            <div class="interests-elements-container" id="interests-container">
                 <!-- https://images.google.com/?q=cat&tbs=iar:s&gws_rd=ssl -->
-                <div class="interest-element">
+                <!-- <div class="interest-element">
                     <img src="../img/placeholder-images/place-holder.png" alt="interest">
                     <span>Sports</span>
                 </div>
@@ -156,7 +158,7 @@
                 <div class="interest-element">
                     <img src="../img/placeholder-images/place-holder.png" alt="interest">
                     <span>Shopping</span>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
@@ -199,11 +201,13 @@
         <img src="../svg/corendon-logo%203.svg" alt=""/>
     </div>
 </footer>
-<script src="../js/auth/loggedout-href.js"></script>
+
+   <!-- Javascript -->
 <script src="../js/config.mockup.js"></script>
 <script src="../js/chat/chat-functionals.js"></script>
 <script src="../js/main.js"></script>
 <script src="../js/menu.js"></script>
 <script src="../js/chat.js"></script>
+   <script type="module" src="../js/chat/chat-functionals.js"></script>
 </body>
 </html>

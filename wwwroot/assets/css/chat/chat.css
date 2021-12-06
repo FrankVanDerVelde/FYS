@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
+/* styling for the chat button which is shown on the right bottom corner of the website */
 .chat-btn {
     visibility: hidden;
     display: block;
@@ -18,10 +19,6 @@
     transition: background-color 400ms ease-in;
 }
 
-.btn-box{
-    margin: auto;
-}
-
 .chat-btn:hover {
     background-color: #555; /* Add a dark-grey background on hover */
     transition: background-color 400ms ease-in;
@@ -32,6 +29,7 @@
     font-size: 30px;
 }
 
+/* styling for the chat modals */
 .chat-modal{
     visibility: hidden;
     position: fixed;
@@ -41,19 +39,21 @@
     background-color: var(--bg);
     width:360px;
     transform:scale(0.1);
-    transform-origin: bottom right;
+    transform-origin: bottom right; /* the scale effect will start from the bottom right */
     transform-style: preserve-3D;
     transition: transform 300ms ease-in-out;
     box-shadow: -3px -3px 17px 0 #79554824;
 }
 
+/* this class is added with javascript, it shows the chat with a scaling effect  */
 .show-chat{
     transform:scale(1);
     visibility: visible;
 }
 
+/* this class is added with javascript, it hides the chat with a scaling effect */
 .hide-chat{
-    transform-origin: bottom right;
+    transform-origin: bottom right; /* the scale effect will shrink to the bottom right */
     transform-style: preserve-3D;
     transition: transform 200ms ease-in-out, visibility 200ms linear;
     transform: scale(0.1);
@@ -73,6 +73,73 @@
     color: var(--text1);
 }
 
+/* styling for the chat tabs on the main modal */
+.chat-tabs{
+    display: flex;
+    position: sticky;
+    top: 0;
+    background-color: var(--bg);
+    z-index: 2;
+}
+
+.contacts-tab,
+.requests-tab{
+    display: flex;
+    justify-content: center;
+    flex: 1;
+}
+
+.chat-tabs-btn{
+    padding: 5px 30px;
+    margin: 10px 0 10px 0;
+    border-radius: 10px;
+}
+
+.contacts-tab button,
+.requests-tab button{
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.contacts-tab button{
+    background-color: rgb(59,130,246);
+}
+
+.requests-tab button{
+    background-color:rgb(16,185,129);
+}
+
+.requests-list{
+    display:none;
+}
+
+.request-options button{
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.request-options .accept-request-btn{
+    background-color: rgb(16,185,129);
+}
+
+.request-options .decline-request-btn{
+    background-color: rgb(206, 7, 0);
+}
+
+.hide-tab{
+    display:none;
+}
+
+.show-tab{
+    display: block;
+}
+
 .detail-person-header{
     display: flex;
     align-items: center;
@@ -82,6 +149,10 @@
 .detail-person-header p{
     font-weight: bold;
     color: var(--text1);
+}
+
+.profile-img{
+    display: contents;
 }
 
 .profile-img img,
@@ -117,6 +188,7 @@
     margin-bottom: 60px;
 }
 
+/* styling for the scrollbar from the chat content */
 .chat-content::-webkit-scrollbar {
     width: 5px;
 }
@@ -187,20 +259,44 @@
     text-align: center;
     font-size: medium;
 }
+
 .send-msg-btn{
     background: none;
     border: none;
     cursor: pointer;
 }
 
-.message-list{
-    list-style: none;
-    display: flex;
-    flex-direction: column;
+/* 3 dots button in chat contacts */
+.contact-option{
+    position: absolute;
+    right: 5px;
+    top: 15px;
 }
 
-.message-list li{
-    list-style: none;
+/* chat contacts dropdown content */
+.contact-dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--nav-bg);
+    z-index: 1;
+    border-radius: 5px;
+}
+
+/* Block user button in chat contacts overview*/
+.block-btn{
+    background-color: rgb(206, 7, 0);
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 4px 10px 4px 10px;
+    margin-left: -18px;
+    border-radius: 10px;
+    border: 0;
+    cursor: pointer;
+}
+
+.show-contact{
+    display: block;
 }
 
 /*right chat for current user*/
@@ -212,6 +308,16 @@
     margin: 10px;
     padding: 10px;
     color: var(--text1);
+}
+
+.right-chat .messages-time{
+    text-align:right;
+    color: #7A7A7A;
+}
+
+.left-chat .messages-time{
+    text-align:left;
+    color: #414141;
 }
 
 /*left chat for recipient person*/
@@ -241,10 +347,11 @@ li p{
     display: flex;
     flex-direction: column;
     height: 100%;
-    flex: 6;
+    flex: 5;
 }
 
-.message-list-item{
+.message-list-item,
+.requests-list-item{
     position: relative;
     display: block;
     width: 100%;
@@ -254,10 +361,15 @@ li p{
     transition: background-color 400ms ease;
 }
 
+.requests-list-item{
+    cursor: default;
+}
+
 .message-list-item:hover{
     background-color: rgba(85, 85, 85, 0.40);
     transition: background-color 400ms ease;
 }
+
 .message-overview-img{
     flex: 1;
 }
@@ -266,6 +378,10 @@ li p{
     max-width: 40px;
     width: 100%;
     border-radius: 50%;
+}
+
+.messages-list li{
+    display: inline-block;
 }
 
 .messages-overview-name h3{
@@ -286,5 +402,5 @@ li p{
     font-style: normal;
     font-weight: lighter;
     font-size: 12px;
-    color: #7A7A7A;
 }
+

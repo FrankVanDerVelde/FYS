@@ -5,7 +5,7 @@
                 <div class="profile-img">
                     <img src="https://ui-avatars.com/api/?name=John+Doe?background=random" alt="Profile Photo">
                 </div>
-                <h2 class="chat-header-title">Contacten</h2>
+                <h2 class="chat-header-title">Contacten</h2> 
                 <div class="close-btn-box">
                     <button class="close-chat close-btn">
                         <i class="fas fa-times-circle close-icon"></i>
@@ -13,6 +13,16 @@
                 </div>
             </div>
             <div class="chat-contacts">
+                <div class="chat-tabs">
+                    <div class="contacts-tab">
+                        <!-- <h4>Contacten</h4> -->
+                        <button type="button" class="chat-tabs-btn contacts-btn">Contacten</button>
+                    </div>
+                    <div class="requests-tab">
+                        <!-- <h4>Verzoeken</h4> -->
+                        <button type="button" class="chat-tabs-btn requests-btn">Verzoeken</button>
+                    </div>
+                </div>
                 <ul class="chat-list">
                     <template id="chat-template">
                         <li class="message-list-item">
@@ -24,12 +34,43 @@
                                     <div class="messages-overview-name">
                                         <h3 class="chat-title"></h3>
                                     </div>
-                                    <div class="messages-text">
-                                        <p class="chat-text"></p>
-                                        <p class="messages-time"></p>
-                                    </div>
                                 </div>
                             </div>
+                            <div class="dropdown contact-option">
+                                <button class="chat-options-drop-btn">
+                                    <i class="fas fa-ellipsis-h"></i>
+                                </button>
+                                <div class="contact-dropdown-content" id="chat-dropdown-options">
+                                    <button type="button" class="block-btn" id="block-btn">Block</button>
+                                </div>
+                            </div>
+                        </li>
+                    </template>
+                </ul>
+
+                <ul class="requests-list">
+                    <template id="requests-template">
+                        <li class="requests-list-item">
+                            <div class="message-overview">
+                                <div class="message-overview-img">
+                                    <img src="" class="request-profile-pic" alt="Request profile img">
+                                </div>
+                                <div class="message-overview-text">
+                                    <div class="messages-overview-name">
+                                        <h3 class="request-title"></h3>
+                                    </div>
+                                </div>
+                                <div class="request-options">
+                                    <button type="button" class="accept-request-btn">
+                                        <i class="fas fa-check"></i>
+                                    </button>    
+                                    <button type="button" class="decline-request-btn">
+                                        <i class="fas fa-times"></i>
+                                    </button>    
+                                </div>
+                            </div>
+                         
+                       
                         </li>
                     </template>
                 </ul>

@@ -5,8 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Matches</title>
+    <title>Vind Reispartners</title>
+
     <script src="https://cdn.fys.cloud/fyscloud/0.0.4/fyscloud.min.js"></script>
+    <script src="../js/config.js"></script>
 
     <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32x32.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
@@ -29,7 +31,7 @@
             <li><a href="../../index.html">Home</a></li>
             <li><a href="./about.html">About</a></li>
             <li><a href="./contact.html">Contact</a></li>
-            <li><a href="./matches.html" class="active">Matches</a></li>
+            <li><a href="./matches.html" class="active">Vind Reispartners</a></li>
             <li class="dropdown-box">
                 <div class="dropdown">
                     <button class="drop-btn">
@@ -63,12 +65,12 @@
     </div>
 </header>
 
-<img class="blobimg" src="../img/blob.png" alt="">
 
 
-<main>
+
+<main >
     <div class="matchesHeader">
-        <h2> Matches</h2>
+        <h2> Vind Reispartners</h2>
         <h3>gebaseerd op uw interesses</h3>
     </div>
 
@@ -81,11 +83,10 @@
                     <div class="card-img">
                         <img src="../img/default-avatar.png" alt=""/>
                         <p class="personName">Henk Krol</p>
-                        <p class="personPlace">Amsterdam</p>
+                        <p class="personGender">Man</p>
+                        <p class="personAge">30</p>
                     </div>
-                    <div class="content">
 
-                    </div>
                     <div class="footer">
                         <button type="submit" class="show-more-btn"
                                 onClick="javascript:window.location.href='./profile.html'">Meer zien
@@ -99,11 +100,10 @@
                     <div class="card-img">
                         <img src="../img/default-avatar.png" alt=""/>
                         <p class="personName">Henk Krol</p>
-                        <p class="personPlace">Amsterdam</p>
+                        <p class="personGender">Man</p>
+                        <p class="personAge">30</p>
                     </div>
-                    <div class="content">
 
-                    </div>
                     <div class="footer">
                         <button type="submit" class="show-more-btn"
                                 onClick="javascript:window.location.href='./profile.html'">Meer zien
@@ -117,11 +117,10 @@
                     <div class="card-img">
                         <img src="../img/default-avatar.png" alt=""/>
                         <p class="personName">Henk Krol</p>
-                        <p class="personPlace">Amsterdam</p>
+                        <p class="personGender">Man</p>
+                        <p class="personAge">30</p>
                     </div>
-                    <div class="content">
 
-                    </div>
                     <div class="footer">
                         <button type="submit" class="show-more-btn"
                                 onClick="javascript:window.location.href='./profile.html'">Meer zien
@@ -154,28 +153,30 @@
         <!--Filters onder de banner-->
         <div class="filtermenu">
             <div class="interessesfilter dropdown-filters">
-                <button class="dropdown-button">
+                <button class="dropdown-button" onclick="openFilter(this)">
                     <p>Interesses</p>
                     <img class="pullDown" src="../img/arrow_down.png" alt=" "/>
                 </button>
+                <div class="dropdown-content-filter">
 
+                </div>
 
             </div>
             <div class="leeftijdsgroepfilter dropdown-filters">
-                <button class="dropdown-button">
+                <button class="dropdown-button" onclick="openFilter(this)">
 
 
                     <p>Leeftijdsgroep</p>
                     <img class="pullDown" src="../img/arrow_down.png" alt=" "/>
                 </button>
                 <div class="dropdown-content-filter">
-                    <a href="javascript:void(0)" class="optionAge" id="20-30" onclick="changeFilter(this)">20-30</a>
+                    <a href="javascript:void(0)" class="optionAge" onclick="changeFilter(this)">20-30</a>
                     <a href="javascript:void(0)" class="optionAge" onclick="changeFilter(this)">30-50</a>
                     <a href="javascript:void(0)" class="optionAge" onclick="changeFilter(this)">50+</a>
                 </div>
             </div>
             <div class="geslachtfilter dropdown-filters">
-                <button class="dropdown-button">
+                <button class="dropdown-button" onclick="openFilter(this)">
                     <p>Geslacht</p>
                     <img class="pullDown" src="../img/arrow_down.png" alt=" "/>
                 </button>
@@ -185,120 +186,189 @@
                     <a href="javascript:void(0)" class="optionGender" onclick="changeFilter(this)">Overig</a>
                 </div>
             </div>
-            <div class="radiusfilter dropdown-filters">
-                <button class="dropdown-button">
-                    <p>Radius (km)</p>
-                    <img class="pullDown" src="../img/arrow_down.png" alt=" "/>
-                </button>
-                <div class="dropdown-content-filter">
-                    <a href="javascript:void(0)" class="optionDistance" onclick="changeFilter(this)">0km-30km</a>
-                    <a href="javascript:void(0)" class="optionDistance" onclick="changeFilter(this)">30km-60km</a>
-                    <a href="javascript:void(0)" class="optionDistance" onclick="changeFilter(this)">60km+</a>
-                </div>
-            </div>
-            <div class="gewenstebestemmingenfilter dropdown-filters">
-                <button class="dropdown-button">
-                    <p>Gewenste bestemmingen</p>
-
-                    <img class="pullDown" src="../img/arrow_down.png" alt=" "/>
-                </button>
-                <div class="dropdown-content-filter">
-                    <a href="javascript:void(0)" class="optionDestination" id="dsa" onclick="changeFilter(this)">Link 1</a>
-                    <a href="javascript:void(0)" class="optionDestination" id="zxc"  onclick="changeFilter(this)">Link 2</a>
-                    <a href="javascript:void(0)" class="optionDestination" id="bcvx" onclick="changeFilter(this)">Link 3</a>
-                </div>
-            </div>
             <div class="gebruikerzoekenfilter ">
                 <p>Gebruiker zoeken</p>
-                <input type="text" id="username" name="fname"><br><br>
+                <input type="text" id="username" name="fname" onkeydown="searchUser(this)"><br><br>
                 <img class="search" src="../img/search.png" alt=" "/>
             </div>
         </div>
         <!-- Tweede rij -->
-        <div class="flex-grid">
+        <div class="grid-parent">
+            <div class="flex-grid">
 
-            <div class="col">
-                <div class="card">
-                    <div class="card-img">
-                        <img src="../img/default-avatar.png" alt=""/>
-                        <p class="personName">Henk Krol</p>
-                        <p class="personPlace">Amsterdam</p>
-                    </div>
-                    <div class="content">
+                <div class="col">
+                    <div class="card">
+                        <div class="card-img">
+                            <img src="../img/default-avatar.png" alt=""/>
+                            <p class="personName">Henk Krol</p>
+                            <p class="personGender">Man</p>
+                            <p class="personAge">30</p>
+                        </div>
 
-                    </div>
-                    <div class="footer">
-                        <button type="submit" class="show-more-btn"
-                                onClick="javascript:window.location.href='./profile.html'">Meer zien
-                        </button>
+                        <div class="footer">
+                            <button type="submit" class="show-more-btn"
+                                    onClick="javascript:window.location.href='./profile.html'">Meer zien
+                            </button>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="col">
-                <div class="card">
-                    <div class="card-img">
-                        <img src="../img/default-avatar.png" alt=""/>
-                        <p class="personName">Henk Krol</p>
-                        <p class="personPlace">Amsterdam</p>
-                    </div>
-                    <div class="content">
+                <div class="col">
+                    <div class="card">
+                        <div class="card-img">
+                            <img src="../img/default-avatar.png" alt=""/>
+                            <p class="personName">Henk Krol</p>
+                            <p class="personGender">Man</p>
+                            <p class="personAge">30</p>
+                        </div>
 
-                    </div>
-                    <div class="footer">
-                        <button type="submit" class="show-more-btn"
-                                onClick="javascript:window.location.href='./profile.html'">Meer zien
-                        </button>
+                        <div class="footer">
+                            <button type="submit" class="show-more-btn"
+                                    onClick="javascript:window.location.href='./profile.html'">Meer zien
+                            </button>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="col">
-                <div class="card">
-                    <div class="card-img">
-                        <img src="../img/default-avatar.png" alt=""/>
-                        <p class="personName">Henk Krol</p>
-                        <p class="personPlace">Amsterdam</p>
-                    </div>
-                    <div class="content">
+                <div class="col">
+                    <div class="card">
+                        <div class="card-img">
+                            <img src="../img/default-avatar.png" alt=""/>
+                            <p class="personName">Henk Krol</p>
+                            <p class="personGender">Man</p>
+                            <p class="personAge">30</p>
+                        </div>
 
-                    </div>
-                    <div class="footer">
-                        <button type="submit" class="show-more-btn"
-                                onClick="javascript:window.location.href='./profile.html'">Meer zien
-                        </button>
+                        <div class="footer">
+                            <button type="submit" class="show-more-btn"
+                                    onClick="javascript:window.location.href='./profile.html'">Meer zien
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
-
         <div class="matches-page-navigation">
-            <div class="resultaten">
-                <div>84 resultaten weergegeven</div>
+            <div class="resultaten">xx resultaten gevonden
+                <div></div>
             </div>
-            <div class="pagination">
-                <div class="pagination-box">
-                    <div>1</div>
-                </div>
-                <div class="pagination-box">
-                    <div>2</div>
-                </div>
-                <div class="pagination-box">
-                    <div>...</div>
-                </div>
-                <div class="pagination-box">
-                    <div>9</div>
-                </div>
-                <div class="pagination-box">
-                    <div>10</div>
-                </div>
-                <div class="arrow-right-box">
-                    <img class="arrow-right" src="../img/arrow-right.png" alt=""/>
-                </div>
+            <div class="moreTravelers">
+                <button class="show-more-btn" onclick="loadMoreCards()">Laad meer resultaten</button>
+            </div>
+            <div>
+
             </div>
         </div>
     </section>
+    <div class="chat-modal" id="main-chat-box">
+        <div class="chat-box">
+            <div class="chat-header">
+                <div class="profile-img">
+                    <img src="https://ui-avatars.com/api/?name=John+Doe?background=random" alt="Profile Photo">
+                </div>
+                <div class="close-btn-box">
+                    <button class="close-chat close-btn">
+                        <i class="fas fa-times-circle close-icon"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="chat-contacts">
+                <ul>
+                    <li class="message-list-item">
+                        <div class="message-overview">
+                            <div class="message-overview-img">
+                                <img src="https://ui-avatars.com/api/?name=John+Doe?background=random"
+                                     alt="Message img">
+                                <div class="notification">
+                                    <p>2</p>
+                                </div>
+                            </div>
+                            <div class="message-overview-text">
+                                <div class="messages-overview-name">
+                                    <h3>Jane Doe</h3>
+                                </div>
+                                <div class="messages-text">
+                                    <p>Lorem ipsum dolor...</p>
+                                    <p class="messages-time">20:57 07/10/21</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="message-list-item">
+                        <div class="message-overview">
+                            <div class="message-overview-img">
+                                <img src="https://ui-avatars.com/api/?name=John+Doe?background=random"
+                                     alt="Message img">
+                                <div class="notification">
+                                    <p>2</p>
+                                </div>
+                            </div>
+                            <div class="message-overview-text">
+                                <div class="messages-overview-name">
+                                    <h3>Jane Doe</h3>
+                                </div>
+                                <div class="messages-text">
+                                    <p>Lorem ipsum dolor...</p>
+                                    <p class="messages-time">20:57 07/10/21</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="message-list-item">
+                        <div class="message-overview">
+                            <div class="message-overview-img">
+                                <img src="https://ui-avatars.com/api/?name=John+Doe?background=random"
+                                     alt="Message img">
+                            </div>
+                            <div class="message-overview-text">
+                                <div class="messages-overview-name">
+                                    <h3>Jane Doe</h3>
+                                </div>
+                                <div class="messages-text">
+                                    <p>Lorem ipsum dolor...</p>
+                                    <p class="messages-time">20:57 07/10/21</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="chat-modal detail-chat-box" id="detail-chat-box">
+        <div class="chat-box">
+            <div class="chat-header">
+                <div class="back-btn-box">
+                    <i class="fas fa-chevron-left back-btn-chat"></i>
+                </div>
+                <div class="detail-person-header">
+                    <img src="https://ui-avatars.com/api/?name=John+Doe?background=random" alt="Message img">
+                    <p>John doe</p>
+                </div>
+                <div class="close-btn-box">
+                    <button class="close-detail-chat close-btn">
+                        <i class="fas fa-times-circle close-icon"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="chat-content">
+                <ul class="messages right-chat"></ul>
+            </div>
+            <div class="chat-footer">
+                <form class="chat-form">
+                    <div class="input-box">
+                        <input type="text" class="chat-input" placeholder="Verstuur bericht...">
+                    </div>
+                    <div class="btn-box">
+                        <button class="send-msg-btn" type="submit"><i
+                                class="fas fa-arrow-circle-right form-box-icon"></i></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 
     <button id="chat-btn" class="chat-btn"><i class="far fa-comment chat-icon"></i></button>
 </main>
@@ -342,11 +412,18 @@
 <script src="../js/auth/loggedout-href.js"></script>
 <script src="../js/chat.js"></script>
 
-<script src="assets/js/config.mockup.js"></script>
-<script src="../js/chat/chat-functionals.js"></script>
+  
 <script src="../js/main.js"></script>
-<script src="../js/menu.js"></script>
 <script src="../js/chat.js"></script>
+<script type="module" src="../js/chat/chat-functionals.js"></script>
+
+<script src="../js/menu.js"></script>
+<script src="../js/matches/sqlWrapper.js"></script>
+<script src="../js/matches/intrests.js"></script>
+
 <script src="../js/matches/filters.js"></script>
+<script src="../js/matches/toggleFilters.js"></script>
+<script src="../js/matches/loadResult.js"></script>
+
 </body>
 </html>
