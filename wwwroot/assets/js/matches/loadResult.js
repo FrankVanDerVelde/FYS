@@ -45,6 +45,8 @@ initalSet();
 //start observing
 MutationObersver();
 async function initalSet() {
+    let session = FYSCloud.Session.get('loggedin');
+    console.log(session);
     wantedUsers = await getAllUsers();
     shuffle(wantedUsers);
     userCountLeftToCreate = wantedUsers.length;
