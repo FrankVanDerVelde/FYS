@@ -26,7 +26,7 @@
             <li><a href="../../index.html">Home</a></li>
             <li><a href="./about.html" class="active">About</a></li>
             <li><a href="./contact.html">Contact</a></li>
-            <li><a href="./matches.html">Matches</a></li>
+            <li><a href="./matches.html" class="matches-link">Matches</a></li>
             <li>
                 <div class="lang-changer-input">
                     <select id="langSelecter" onchange="checklang()">
@@ -44,8 +44,9 @@
                         <i class="fa fa-caret-up"></i>
                     </button>
                     <div class="dropdown-content" id="dropdown-content">
-                        <a href="./auth/login.html">Inloggen</a>
-                        <a href="./auth/register.html">Registreren</a>
+                        <a href="../views/auth/login.html" class="inlog-btn">Inloggen</a>
+                        <a href="../views/auth/register.html" class="registreer-btn">Registreren</a>
+                        <a href="" class="logout-btn">Uitloggen</a>
                     </div>
                 </div>
             </li>
@@ -263,13 +264,15 @@
     </div>
 </footer>
 
-   <!-- Javascript -->
-   <script src="https://cdn.fys.cloud/fyscloud/0.0.4/fyscloud.min.js"></script>
-   <script src="../js/config.mockup.js"></script>
-   <script src="../js/main.js"></script>
-   <script src="../js/menu.js"></script>
-   <script src="../js/chat.js"></script>
-   <script type="module" src="../js/chat/chat-functionals.js"></script>
-   <script src="../js/langChanger.js"></script>
+<!-- Javascript -->
+<script src="https://cdn.fys.cloud/fyscloud/0.0.4/fyscloud.min.js"></script>
+<script src="../js/config.mockup.js"></script>
+<script src="../js/chat/chat-functionals.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/menu.js"></script>
+<script src="../js/chat.js"></script>
+<script src="../js/langChanger.js"></script>
+<script src="../js/inlog-change.js"></script>
+<!--<script src="../js/auth/logout.js"></script>-->
 </body>
 </html>

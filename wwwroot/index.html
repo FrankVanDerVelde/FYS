@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="./assets/css/footer.css">
     <link rel="stylesheet" href="./assets/css/home/home.css">
     <link rel="stylesheet" href="./assets/css/chat/chat.css">
+
+    <script src="https://cdn.fys.cloud/fyscloud/0.0.4/fyscloud.min.js"></script>
 </head>
 <body class="light-theme">
 <header class="navbar">
@@ -24,7 +26,7 @@
             <li><a href="./index.html" class="active">Home</a></li>
             <li><a href="./assets/views/about.html">About</a></li>
             <li><a href="./assets/views/contact.html">Contact</a></li>
-            <li><a href="./assets/views/matches.html">Matches</a></li>
+            <li><a href="./matches.html" class="matches-link">Matches</a></li>
             <li>
                 <div class="lang-changer-input">
                     <select id="langSelecter" onchange="checklang()">
@@ -41,8 +43,10 @@
                         <i class="fa fa-caret-up"></i>
                     </button>
                     <div class="dropdown-content" id="dropdown-content">
-                        <a href="./assets/views/auth/login.html">Inloggen</a>
-                        <a href="./assets/views/auth/register.html">Registreren</a>
+                        <a href="./assets/views/auth/login.html" class="inlog-btn">Inloggen</a>
+                        <a href="./assets/views/auth/register.html" class="registreer-btn">Registreren</a>
+                        <a href="" class="logout-btn">Uitloggen</a>
+
                     </div>
                 </div>
             </li>
@@ -134,12 +138,14 @@
 </footer>
 
 <!-- Javascript -->
-<script src="https://cdn.fys.cloud/fyscloud/0.0.4/fyscloud.min.js"></script>
 <script src="./assets/js/config.mockup.js"></script>
 <script src="./assets/js/chat/chat-functionals.js"></script>
 <script src="./assets/js/main.js"></script>
 <script src="./assets/js/menu.js"></script>
 <script src="./assets/js/chat.js"></script>
 <script src="./assets/js/langChanger.js"></script>
+<script src="./assets/js/inlog-change.js"></script>
+<script src="./assets/js/auth/logout.js"></script>
+
 </body>
 </html>
