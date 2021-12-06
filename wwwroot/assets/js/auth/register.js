@@ -59,7 +59,8 @@ async function register() {
         }
         catch {
             //laat de gebruiker weten als er iets niet goed ging, of de email al is gebruikt
-            window.alert("Er is iets mis gegaan. :( \n Het kan zijn dat dit email address al in gebruik is.");
+            document.querySelector("#error-message").innerHTML = "Er ging iets fout, je wachtwoord is " +
+                "mogelijk al gebruikt.";
         }
     }
     else {

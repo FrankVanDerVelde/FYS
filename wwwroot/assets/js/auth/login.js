@@ -48,14 +48,14 @@ async function login() {
             window.location.replace("../../views/profile-edit.html");
 
         } else {
-            document.querySelector("#error-message").innerHTML = "Er is iets mis gegaan. :(" +
+            document.querySelector("#error-message").innerHTML = "Er is iets mis gegaan." +
                 " Het wachtwoord en/of email-address zijn fout.";
 
         }
     }
     catch(error) {
         //laat de gebruiker weten als er iets niet goed ging.
-        document.querySelector("#error-message").innerHTML = "er ging iets mis :( Probeer het opnieuw.";
+        document.querySelector("#error-message").innerHTML = "er ging iets mis. Probeer het opnieuw.";
     }
 }
 
@@ -99,13 +99,13 @@ async function loginRecaptcha() {
                     window.location.replace("../../views/profile-edit.html");
 
                 } else {
-                    document.querySelector("#error-message").innerHTML = "Er is iets mis gegaan. :(" +
+                    document.querySelector("#error-message").innerHTML = "Er is iets mis gegaan." +
                         " Het wachtwoord en/of email-address zijn fout.";
                 }
         }
         catch(error) {
             //laat de gebruiker weten als er iets niet goed ging.
-            document.querySelector("#error-message").innerHTML = "er ging iets mis :( Probeer het opnieuw.";
+            document.querySelector("#error-message").innerHTML = "er ging iets mis. Probeer het opnieuw.";
         }
     }
 }

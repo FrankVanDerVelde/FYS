@@ -55,7 +55,8 @@ async function passwordReset() {
         }
         catch {
             //laat de gebruiker weten als er iets niet goed ging, of de email al is gebruikt
-            window.alert("Er is iets mis gegaan. :( Je code is mogelijk niet geldig.");
+            document.querySelector("#error-message").innerHTML = "Er is iets mis gegaan." +
+                " Je code is mogelijk niet geldig.";
         }
     }
     else {

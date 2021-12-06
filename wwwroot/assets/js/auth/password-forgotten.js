@@ -47,6 +47,6 @@ async function sendMail() {
     }
     catch {
         //laat de gebruiker weten als er iets niet goed ging, of de email niet is gevonden
-        window.alert("Er is iets mis gegaan. :(\n De email is mogelijk niet gevonden");
+        window.alert("Er is iets mis gegaan. \n De email is mogelijk niet gevonden");
     }
 }
