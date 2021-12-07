@@ -69,15 +69,15 @@
         <div class="rightSection">
             <div class="user-info-card">
                 <div class="search">
-                    <img src="../../img/search.png" alt="gebruiker foto" onclick="test()">
-                    <input type="text">
+                    <img src="../../img/search.png" alt="gebruiker foto" onclick="searchUser()">
+                    <input type="text" id="searchInput">
                     <p>Zoeken: </p>
                 </div>
                 <div class="info">
                     <div class="image">
                         <div class="circle-1"></div>
                         <div class="circle-2"></div>
-                        <img src="../../img/user.png" width="70" height="70" alt="Jessica Potter">
+                        <img src="../../img/user.png" id="userImage" width="70" height="70" alt="Jessica Potter">
                     </div>
                     <h2 id="name">Jhon Doe</h2>
                     <p id="email">jhon@doe.nl</p>
@@ -91,7 +91,7 @@
                         <h3>Aantal Matches</h3>
                         <p id="matchAmount">xxx</p>
                     </div>
-                    <button>Delete</button>
+                    <button onclick="deleteCurrentUser()">Delete</button>
                 </div>
             </div>
         </div>
@@ -103,11 +103,12 @@
 
 <script src="https://cdn.fys.cloud/fyscloud/0.0.4/fyscloud.min.js"></script>
 <script src="../../js/config.mockup.js"></script>
-<script src="../../js/menu.js"></script>
-<script src="../../js/admin/panel.js"></script>
 <script src="../../js/utils/sqlWrapper.js"></script>
+<script src="../../js/menu.js"></script>
+<script src="../../js/intrests.js"></script>
+<script src="../../js/admin/panel.js"></script>
 <script src="../../js/admin/chart.js"></script>
-<!--<script src="../../js/admin/table.js"></script>-->
+
 <script>
     function myFunction() {
         document.getElementById("myDropdown").classList.toggle("show");

@@ -81,7 +81,7 @@ th, td {
     padding: 8px;
 }
 
-tr:nth-child(even) {background-color: #cbcbcb;}
+tbody:nth-child(even) {background-color: #cbcbcb;}
 
 /* Pagination */
 

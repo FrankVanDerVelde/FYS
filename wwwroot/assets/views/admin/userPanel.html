@@ -49,135 +49,49 @@
 <main>
     <div class="card">
         <h1>Gebruikers</h1>
-        <div class="search">
-            <img src="../../img/search.png" alt="gebruiker foto" onclick="test()">
-            <input type="text">
-            <p>Zoeken: </p>
-        </div>
-        <table>
-            <tr>
-                <th>Voornaam</th>
-                <th>Achternaam</th>
-                <th>Email</th>
-                <th>Woonplaats</th>
-                <th>Opties</th>
-            </tr>
-            <tr>
-                <td>x</td>
-                <td>x</td>
-                <td>x</td>
-                <td>x</td>
-                <td>
-                    <button class="edit-button" onclick="openEditDialog()">Edit</button>
-                    <button class="delete-button" onclick="openDeleteDialog()">Delete</button>
-                </td>
-            </tr>
-            <tr>
-                <td>x</td>
-                <td>x</td>
-                <td>x</td>
-                <td>x</td>
-                <td>
-                    <button class="edit-button" onclick="openEditDialog()">Edit</button>
-                    <button class="delete-button" onclick="openDeleteDialog()">Delete</button>
-                </td>
-            </tr>
-            <tr>
-                <td>x</td>
-                <td>x</td>
-                <td>x</td>
-                <td>x</td>
-                <td>
-                    <button class="edit-button" onclick="openEditDialog()">Edit</button>
-                    <button class="delete-button" onclick="openDeleteDialog()">Delete</button>
-                </td>
-            </tr>
-            <tr>
-                <td>x</td>
-                <td>x</td>
-                <td>x</td>
-                <td>x</td>
-                <td>
-                    <button class="edit-button" onclick="openEditDialog()">Edit</button>
-                    <button class="delete-button" onclick="openDeleteDialog()">Delete</button>
-                </td>
-            </tr>
-            <tr>
-                <td>x</td>
-                <td>x</td>
-                <td>x</td>
-                <td>x</td>
-                <td>
-                    <button class="edit-button" onclick="openEditDialog()">Edit</button>
-                    <button class="delete-button" onclick="openDeleteDialog()">Delete</button>
-                </td>
-            </tr>
-            <tr>
-                <td>x</td>
-                <td>x</td>
-                <td>x</td>
-                <td>x</td>
-                <td>
-                    <button class="edit-button" onclick="openEditDialog()">Edit</button>
-                    <button class="delete-button" onclick="openDeleteDialog()">Delete</button>
-                </td>
-            </tr>
-            <tr>
-                <td>x</td>
-                <td>x</td>
-                <td>x</td>
-                <td>x</td>
-                <td>
-                    <button class="edit-button" onclick="openEditDialog()">Edit</button>
-                    <button class="delete-button" onclick="openDeleteDialog()">Delete</button>
-                </td>
-            </tr>
-            <tr>
-                <td>x</td>
-                <td>x</td>
-                <td>x</td>
-                <td>x</td>
-                <td>
-                    <button class="edit-button" onclick="openEditDialog()">Edit</button>
-                    <button class="delete-button" onclick="openDeleteDialog()">Delete</button>
-                </td>
-            </tr>
+<!--        <div class="search">-->
+<!--            <img src="../../img/search.png" alt="gebruiker foto" onclick="test()">-->
+<!--            <input type="text">-->
+<!--            <p>Zoeken: </p>-->
+<!--        </div>-->
+        <table id="tableArray">
         </table>
         <div class="delete-dialog" id="deleteDialog">
             <i class="fas fa-trash fa-6x"></i>
             <h2>Weet u het zeker?</h2>
             <p>Voer de gebruikers naam in, van de te verwijderen gebruiker.</p>
-            <input type="text">
+            <input type="text" id="controlUsername">
             <div class="buttons">
-                <button class="cancel-delete" id="closeDeleteDialog" onclick="closeDelelteDialog()">Cancel</button>
-                <button class="delete-user" onclick="deleteUser()">Delete</button>
+                <button class="cancel-delete" id="closeDeleteDialog" onclick="closeDeleteDialog()">Cancel</button>
+                <button class="delete-user" id="deleteUser">Delete</button>
             </div>
         </div>
         <div class="edit-dialog" id="editDialog">
             <div class="left-side">
                 <p>Afbeelding: </p>
-                <img src="../../img/user.png" id="user-image" onload="getUserImage()" alt="">
+                <img src="../../img/user.png" id="userImage" alt="">
                 <div class="edit-buttons">
                     <button class="cancel-delete" id="closeDeleteDialog" onclick="editUserImage()">
                         <i class="fas fa-images"></i>
                         Wijzig
                     </button>
-                    <button class="delete-user" onclick="deleteUser()">
-                        <i class="fas fa-trash"></i>
-                        Verwijder
+<!--                    Hacky quick fix for style, need redo from ground... :/ -->
+                    <button class="delete-user" style="opacity: 0">
+<!--                        <i class="fas fa-trash"></i>-->
+<!--                        Verwijder-->
                     </button>
                 </div>
                 <div class="left-inputs">
                     <p>Voornaam:</p>
-                    <input type="text" placeholder="Jhon">
+                    <input type="text" placeholder="Jhon Doe" id="name">
                 </div>
-                <div class="left-inputs">
-                    <p>Achternaam:</p>
-                    <input type="text" placeholder="Doe">
-                </div>
+<!--                <div class="left-inputs">-->
+<!--                    <p>Achternaam:</p>-->
+<!--                    <input type="text" placeholder="Doe">-->
+<!--                </div>-->
                 <div class="left-inputs">
                     <p>Geboortedatum:</p>
-                    <input type="date">
+                    <input type="date" id="birthDate" value="">
                 </div>
                 <div class="left-inputs">
                     <button onclick="closeEditDialog()" id="close-button">Sluiten</button>
@@ -186,24 +100,24 @@
             <div class="right-side">
                 <div class="right-inputs">
                     <p>Bio:</p>
-                    <textarea name="bio" cols="15" rows="8"></textarea>
+                    <textarea id="bio" name="bio" cols="15" rows="8"></textarea>
                 </div>
                 <div class="right-inputs">
                     <p id="type">Gebruikers Typen:</p>
-                    <select name="userType" id="userTpe">
-                        <option value="user">User</option>
+                    <select name="userType" id="userType">
+                        <option value="user" selected>User</option>
                         <option value="admin">Admin</option>
                     </select>
                 </div>
                 <div class="right-inputs">
                     <p>Email:</p>
-                    <input type="text" placeholder="jhon@doe.com">
+                    <input type="text" id="email" placeholder="jhon@doe.com">
                 </div>
                 <div class="right-inputs">
                     <p>Wachtwoord:</p>
-                    <input type="password" placeholder="********">
+                    <input type="password" id="pwd" placeholder="********">
                 </div>
-                <button onclick="saveUserSettingsAdmin()" id="save-button">Opslaan</button>
+                <button id="save-button">Opslaan</button>
             </div>
         </div>
         <div class="pagination">

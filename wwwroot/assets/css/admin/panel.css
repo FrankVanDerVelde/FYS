@@ -147,12 +147,9 @@
 }
 
 .info {
-    /*float: right;*/
-
-    left: 40%;
     text-align: center;
-    position: absolute;
-    margin-top: 10%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .app-info {
