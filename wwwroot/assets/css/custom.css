@@ -12,11 +12,10 @@
 }
 
 .light-theme {
-    --bg: #FFFFFF;
+    --bg: #F4F5F7;
     --nav-bg:#FFFFFF;
     --text1:#000000;
     --text2:#000000;
-
     --burger-bg:#000000;
     --nav-shadow:  rgba(83, 83, 83, 0.15);
     --border-color-prio-dark: rgba(0, 0, 0, 0.20);

@@ -132,6 +132,11 @@ input[type=text]:focus {
     background-color: rgba(37, 47, 63, 0.6);
     transition: background-color 500ms ease-in;
 }
+.error-log {
+    color: red;
+    font-weight: bold;
+    margin-top: 20px;
+}
 
 @media all and (max-width: 600px){
     .form-box{
