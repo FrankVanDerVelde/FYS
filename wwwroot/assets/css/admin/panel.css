@@ -18,6 +18,7 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
+
 .center {
     position: absolute;
     top: 50px;
@@ -29,86 +30,11 @@
     overflow: hidden;
     box-shadow: 10px 10px 15px 0 rgba(0, 0, 0, 0.3);
 }
-.profile {
-    float: left;
-    width: 300px;
-    height: 320px;
-    text-align: center;
-}
-.profile .image {
-    position: relative;
-    width: 70px;
-    height: 70px;
-    margin: 38px auto 0 auto;
-}
-.profile .image .circle-1, .profile .image .circle-2 {
-    position: absolute;
-    box-sizing: border-box;
-    width: 76px;
-    height: 76px;
-    top: -3px;
-    left: -3px;
-    border-width: 1px;
-    border-style: solid;
-    border-color: #F50000 #F50000 #F50000 transparent;
-    border-radius: 50%;
-    transition: all 1.5s ease-in-out;
-}
-.profile .image .circle-2 {
-    width: 82px;
-    height: 82px;
-    top: -6px;
-    left: -6px;
-    border-color: #F50000 transparent #F50000 #F50000;
-}
-.profile .image img {
-    display: block;
-    border-radius: 50%;
-    background: #f5e8df;
-}
-.profile .image:hover {
-    cursor: pointer;
-}
-.profile .image:hover .circle-1, .profile .image:hover .image .circle-2, .profile .image .image:hover .circle-2 {
-    transform: rotate(360deg);
-}
-.profile .image:hover .circle-2 {
-    transform: rotate(-360deg);
-}
-.profile .name {
-    font-size: 15px;
-    font-weight: 600;
-    margin-top: 20px;
-}
-.profile .job {
-    font-size: 11px;
-    line-height: 15px;
-}
-.profile .actions {
-    margin-top: 33px;
-}
-.profile .actions .btn {
-    display: block;
-    width: 120px;
-    height: 30px;
-    margin: 0 auto 10px auto;
-    background: none;
-    border: 1px solid #F50000;
-    border-radius: 15px;
-    font-size: 12px;
-    font-weight: 600;
-    box-sizing: border-box;
-    transition: all 0.3s ease-in-out;
-    color: #F50000;
-}
-.profile .actions .btn:hover {
-    background: #F50000;
-    color: #fff;
-}
 
 .stats {
     float: left;
 }
+
 .stats .box {
     box-sizing: border-box;
     width: 120px;
@@ -119,33 +45,33 @@
     box-shadow: 10px 10px 15px 0 rgba(0, 0, 0, 0.3);
     transition: all 0.4s ease-in-out;
 }
+
 .box span {
     margin-top: 10px;
 }
+
 .stats .box:hover {
     background: var(--red);
     cursor: pointer;
 }
+
 .stats .box:nth-child(2) {
     margin: 1px 0;
 }
+
 .stats span {
     display: block;
 }
+
 .stats .value {
     font-size: 18px;
     font-weight: 600;
 }
+
 .stats .parameter {
     font-size: 11px;
 }
 
-.bio {
-    box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, 0.3);
-}
-.bio-content {
-
-}
 /*=====================| Chart Section |=============================================*/
 .chart-background {
     width: 350px;
@@ -178,13 +104,84 @@
 }
 
 .user-info-card {
+    display: flex;
     margin-top: 20%;
-    margin-right: 25%;
     width: 500px;
     height: 70%;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     border-radius: 25px;
     background-color: var(--bg);
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.search {
+    margin-left: 30px;
+    color: var(--text1);
+    max-height: 100px;
+}
+
+.search input {
+    margin-right: 10px;
+    margin-top: 10px;
+    background: rgba(217, 217, 217, 0.5);
+    border: 0.5px solid #000000;
+    border-radius: 25px;
+    float: right;
+    text-indent: 10px;
+}
+
+.search p {
+    margin-top: 10px;
+    float: right;
+    margin-right: 30px;
+    color: var(--text1)
+}
+
+.search img {
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+    margin-top: 10px;
+    float: right;
+}
+
+.info {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.app-info {
+    width: 100%;
+    border: solid 2px var(--red);
+    border-radius: 25px;
     display: flex;
     flex-wrap: wrap;
+}
+
+.actief {
+    float: left;
+    border-top-left-radius: 25px;
+    width: 50%;
+    height: 30%;
+    text-align: center;
+}
+
+.matches {
+    float: right;
+    border-top-right-radius: 25px;
+    width: 50%;
+    height: 30%;
+    text-align: center;
+}
+
+.app-info button {
+    width: 180px;
+    margin-left: auto;
+    margin-top: auto;
+    margin-right: auto;
+    height: 30px;
+    border-radius: 15px;
+    background: var(--red);
 }
