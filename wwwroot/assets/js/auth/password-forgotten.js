@@ -7,7 +7,8 @@ document.querySelector("#reset-password-btn").addEventListener("click", function
 async function sendMail() {
 
     //krijgen email en aanmaken code
-    const email = document.querySelector("#email").value;
+    let email = document.querySelector("#email").value;
+    email = email.toLowerCase();
     const code = Math.floor(Math.random() * 100000) + 10000;
 
     //genereer url voor wachtwoord reset
