@@ -51,13 +51,11 @@ MutationObersver();
 async function initalSet() {
     //get session
     let session = FYSCloud.Session.get('loggedin');
-    console.log(session);
-    console.log("test");
-      if (session === null || session === undefined)
-          return;
+    // if (session === null || session === undefined)
+    //      return;
 
-    console.log(session);
-  //  thisUserID = session[0].id;
+    //console.log(session);
+    // thisUserID = session[0].id;
     thisUserID = 61;
 
     wantedUsers = await getAllUsers();
@@ -67,7 +65,7 @@ async function initalSet() {
 
 
     console.log(wantedUsers);
-
+    //set matches based on intrests
     await setBasedMatches(wantedUsers);
 
 
@@ -87,9 +85,6 @@ async function setBasedMatches(wantedUsers) {
     if (thisUserID === 0)
         return;
     thisInterestList = await getUserIntrests(thisUserID);
-    console.log(await getUserIntrests(thisUserID));
-    console.log(thisInterestList);
-    console.log(wantedUsers.length);
     setBasedCards(wantedUsers, thisInterestList);
 }
 
@@ -132,52 +127,68 @@ async function checkInterests(selectedFilters) {
 //set cards based on your intresses.
 function setBasedCards(wantedUsers, interests) {
     //get temp variable with the wanted users,
-    var tempUsers = Array.from(wantedUsers);
-    try {
-        //loop through array, check if their interests arent 0 if so remove and check if the you dont get yourself.
-        for (let i = tempUsers.length; i > 0; i--) {
-            if (tempUsers[i - 1].userIntrests.length === 0) {
-                const index = tempUsers.indexOf(tempUsers[i - 1]);
-                if (index > -1) {
-                    tempUsers.splice(index, 1);
-                }
-            } else if (tempUsers[i - 1].user.id === thisUserID) {
-                const index = tempUsers.indexOf(tempUsers[i - 1]);
-                if (index > -1) {
-                    tempUsers.splice(index, 1);
-                }
-            }
-
-        }
-    } catch (e) {
-        console.log(e)
-    }
-    var basedMatches = [];
-    for (let i = 0; i < tempUsers.length; i++) {
-        var matchingCount = 0;
-        for (let j = 0; j < tempUsers[i].userIntrests.length; j++) {
-            for (let k = 0; k < interests.length; k++) {
-                if (tempUsers[i].userIntrests[j] === interests[k]) {
-                    matchingCount++;
-                }
-            }
-        }
-        const x = {user: tempUsers[i], matchingInterestCount: matchingCount};
-        if (x.matchingInterestCount !== 0) {
-            basedMatches.push(x);
-        }
-    }
-
-    basedMatches.sort((a, b) => {
-        return a.matchingInterestCount - b.matchingInterestCount;
-    });
-    basedMatches.reverse();
-
     var allCards = document.getElementsByClassName('card');
 
-    for (let i = 0; i < 3; i++) {
-        setPersonCards(allCards[i], basedMatches[i].user, true);
+    if(interests.length === 0)
+    {
+        console.log(wantedUsers);
+        for (let i = 0; i < 3; i++) {
+            setPersonCards(allCards[i], wantedUsers[Math.floor(Math.random() * wantedUsers.length-1)].user, true);
+        }
     }
+    else{
+        var tempUsers = Array.from(wantedUsers);
+        console.log(tempUsers);
+        try {
+            //loop through array, check if their interests arent 0 if so remove and check if the you dont get yourself.
+            for (let i = tempUsers.length; i > 0; i--) {
+                if (tempUsers[i - 1].userIntrests.length === 0) {
+                    const index = tempUsers.indexOf(tempUsers[i - 1]);
+                    if (index > -1) {
+                        tempUsers.splice(index, 1);
+                    }
+                } else if (tempUsers[i - 1].user.id === thisUserID) {
+                    const index = tempUsers.indexOf(tempUsers[i - 1]);
+                    if (index > -1) {
+                        tempUsers.splice(index, 1);
+                    }
+                }
+            }
+        } catch (e) {
+            console.log(e);
+        }
+        var basedMatches = [];
+        for (let i = 0; i < tempUsers.length; i++) {
+            var matchingCount = 0;
+            for (let j = 0; j < tempUsers[i].userIntrests.length; j++) {
+                for (let k = 0; k < interests.length; k++) {
+                    if (tempUsers[i].userIntrests[j] === interests[k]) {
+                        matchingCount++;
+                    }
+                }
+            }
+            const x = {user: tempUsers[i], matchingInterestCount: matchingCount};
+            if (x.matchingInterestCount !== 0) {
+                basedMatches.push(x);
+
+            }
+        }
+
+        basedMatches.sort((a, b) => {
+            return a.matchingInterestCount - b.matchingInterestCount;
+        });
+        basedMatches.reverse();
+
+        console.log(basedMatches);
+
+
+
+        for (let i = 0; i < 3; i++) {
+            setPersonCards(allCards[i], basedMatches[i].user, true);
+        }
+    }
+
+
 }
 
 function callCreateFunctions(wantedUsers, interest, selectedInterestFilter) {
@@ -325,41 +336,20 @@ function setPersonCards(card, user, initalSet) {
 
     if (card === undefined || card === null || user === undefined || user === null)
         return;
-    console.log("set user info");
     // card.children[0].children[0] <-- image
     //card.children[0].children[1]<-- name
     //card.children[0].children[2] <-- place
     // card.children[2].children[0] <-- "meer zien" button;
 
-    // console.log(card.children[0].children);
-
     try {
-        card.children[0].children[0].src = user.user.profilePhoto;
-        card.children[0].children[1].innerHTML = user.user.name;
-        var genderText = "";
-        switch (user.user.genderFk) {
-            case 1:
-                genderText = "Man";
-                break;
-            case 2:
-                genderText = "Vrouw";
-                break;
-            case 3:
-                genderText = "Overig";
-                break;
-            default:
-                genderText = "Onbekend";
-                break;
+        if(!initalSet)
+        {
+           setInfo(user.user, card);
+        }
+        else{
+            setInfo(user,card);
         }
 
-        card.children[0].children[2].innerHTML = genderText;
-
-
-        if (user.user.birthdate !== null)
-            card.children[0].children[3].innerHTML = user.user.birthdate.split("T")[0];
-        else
-            card.children[0].children[3].innerHTML = "xx-x-xxxx";
-        card.children[1].children[0].onclick = "javascript:window.location.href='./profile.html?userid=" + user.user.id + "'";
     } catch (e) {
         console.log(e);
     }
@@ -367,6 +357,37 @@ function setPersonCards(card, user, initalSet) {
         userCountLeftToCreate--;
 }
 
+function setInfo(user, card)
+{
+    card.children[0].children[0].src = user.profilePhoto;
+    card.children[0].children[1].innerHTML = user.name;
+    var genderText = "";
+    switch (user.genderFk) {
+        case 1:
+            genderText = "Man";
+            break;
+        case 2:
+            genderText = "Vrouw";
+            break;
+        case 3:
+            genderText = "Overig";
+            break;
+        default:
+            genderText = "Onbekend";
+            break;
+    }
+
+    card.children[0].children[2].innerHTML = genderText;
+
+    if (user.birthdate !== null)
+        card.children[0].children[3].innerHTML = user.birthdate.split("T")[0];
+    else
+        card.children[0].children[3].innerHTML = "xx-x-xxxx";
+
+
+    card.children[1].children[0].onclick = "javascript:window.location.href='./profile.html?userid=" + user.id + "'";
+    console.log("javascript:window.location.href='./profile.html?userid=" + user.id + "'");
+}
 
 function loadMoreCards() {
     if (wantedUsers === undefined || wantedUsers === null)
@@ -395,13 +416,11 @@ function checkCardAmount() {
     }
 }
 
-
 //duplicate person card and create row.
 function createPersonCards(numberOfRows, remainder) {
     var flexGrids = document.getElementsByClassName("flex-grid");
     maxAmount = 9;
     //for the numberOfRows wanted,
-
     if (numberOfRows >= 1) {
         for (let i = 0; i < numberOfRows; i++) {
 
@@ -409,7 +428,6 @@ function createPersonCards(numberOfRows, remainder) {
                 return;
             createParentDiv();
             for (let j = 0; j < 3; j++) {
-
                 appendBaseCard(flexGrids);
             }
         }
