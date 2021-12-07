@@ -1,105 +1,25 @@
+// SELECT * FROM `intrestdetail` ORDER BY `intrestId` ASC
 document.addEventListener("DOMContentLoaded", async function () {
-    const dummyUser1 = {
-        "name": "John Doe",
-        "birthdate": "1990-11-28",
-        "location": "Amsterdam",
-        "email": "johndoe@mail.com",
-        "phoneNumber": "061234568",
-        "profilePic": "../img/placeholder-images/profile-picture.png",
-        "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi maximus egestas sapien sed varius. Nam euismod efficitur sapien nec condimentum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Ut luctus suscipit volutpat. Duis accumsan viverra tellus vitae posuere. Curabitur commodo arcu vel massa ultricies, non tempus augue dapibus. Praesent sem ex, accumsan eget rhoncus vel, consequat nec lectus. Cras eu massa fermentum erat tincidunt dignissim et nec lacus.",
-    }
+    // Get user id from session here
+    const userId = 51;
 
-    const dataBaseAllInterests = [{
-        "name": "Sports",
-        "thumb": "place-holder.png"
-    },
-
-    {
-        "name": "Nature",
-        "thumb": "place-holder.png"
-    },
-
-    {
-        "name": "Drinking",
-        "thumb": "place-holder.png"
-    },
-
-    {
-        "name": "Swimming",
-        "thumb": "place-holder.png"
-    },
-
-    {
-        "name": "Beach",
-        "thumb": "place-holder.png"
-    },
-
-    {
-        "name": "Eating",
-        "thumb": "place-holder.png"
-    },
-
-    {
-        "name": "Sight seeing",
-        "thumb": "place-holder.png"
-    },
-
-    {
-        "name": "Shopping",
-        "thumb": "place-holder.png"
-    }
-];
-
-    const userOneDummyInterests = [{
-            "name": "Sports",
-            "thumb": "place-holder.png"
-        },
-
-        {
-            "name": "Nature",
-            "thumb": "place-holder.png"
-        },
-
-        {
-            "name": "Drinking",
-            "thumb": "place-holder.png"
-        },
-
-        {
-            "name": "Swimming",
-            "thumb": "place-holder.png"
-        },
-    ];
-
-    const userActiveInterestsNames = userOneDummyInterests.map(interestObject => interestObject.name);
-
-    const {name, birthdate, location, email, phoneNumber, profilePic, bio} = dummyUser1;
-
-    const userSessionData = FYSCloud.Session.get("loggedin") ? FYSCloud.Session.get("loggedin").loggedin[0] : {
-        "loggedin": [
-            {
-                "id": 1,
-                "email": "jndoe@gmail.com",
-                "password": "a98ec5c5044800c88e862f007b98d89815fc40ca155d6ce7909530d792e909ce",
-                "username": "testusername0.14031343450985734",
-                "profilePhoto": "https://ui-avatars.com/api/?name=jndoe?background=random",
-                "usertypeFk": 1,
-                "createdAt": "2021-11-29T17:30:55.000Z",
-                "updatedAt": null,
-                "lastLoggedIn": null
-            }
-        ]
-    };
-
+    let allInterests;
     try {
-        console.log(userSessionData)
-        const userData = await FYSCloud.API.queryDatabase("SELECT * FROM person WHERE accountFK = ?",
-        [userSessionData.loggedin[0].id]);
-
-        console.log(userData[0]);
+        allInterests = await FYSCloud.API.queryDatabase(`SELECT interestId, description, imageLink FROM fys_is109_4_harmohat_chattest.interestdetail`)
     } catch (e) {
         console.error(e);
     }
+    
+    let userData;
+    try {
+        userData = await FYSCloud.API.queryDatabase(`SELECT * FROM fys_is109_4_harmohat_chattest.account WHERE id =${userId};`)
+    } catch (e) {
+        console.error(e);
+    }
+
+    const {name, birthdate, location, email, profilePhoto, bio, phonenumber} = userData[0];
+
+    let userInterests = await getUserInterests(userId);
 
     const nameInput = document.getElementById("name-input");
     const birthdateInput = document.getElementById("birthdate-input");
@@ -126,39 +46,106 @@ document.addEventListener("DOMContentLoaded", async function () {
     birthdateInput.max = maxAgeBirthdate.toLocaleDateString();
 
     // set database values as current values
-    birthdateInput.value = birthdate;
+    birthdateInput.valueAsDate = new Date(birthdate);
     nameInput.value = name;
     locationInput.value = location;
-    phoneNumberInput.value = phoneNumber;
+    phoneNumberInput.value = phonenumber;
     emailInput.value = email;
     bioInput.value = bio;
-    profilePicElement.src = profilePic;
+    profilePicElement.src = profilePhoto;
+
+    let newProfilePicDataUrl;
+    profilePictureUpdateInput.addEventListener('change', async () => {
+        newProfilePicDataUrl = await FYSCloud.Utils.getDataUrl(profilePictureUpdateInput);
+        if(newProfilePicDataUrl.isImage) {
+            profilePicElement.src = newProfilePicDataUrl.url;
+        }
+    })
 
     // Get all new values to update in the database
-    saveButton.addEventListener('click', ()=>{
+    saveButton.addEventListener('click', async ()=>{
         const newName = nameInput.value;
         const newBirthdate = birthdateInput.value;
         const newLocation = locationInput.value;
         const newPhoneNumber = phoneNumberInput.value;
         const newEmail = emailInput.value;
         const newBio = bioInput.value;
-        const newProfilePicture =profilePictureUpdateInput.value;
+        
+        if (newProfilePicDataUrl) {
+            console.log(newProfilePicDataUrl)
+            const newProfilePicUrl = `profile-image-user-${userId}.${newProfilePicDataUrl.extension}`;
+            console.log(newProfilePicUrl)
+            await FYSCloud.API.uploadFile(newProfilePicUrl,newProfilePicDataUrl.url, true);
 
-        const interestsList = [];
+            const hostName = new URL(window.location).hostname ? new URL(window.location).hostname : 'https://mockup-is109-4.fys.cloud';
 
-        interestsContainer.querySelectorAll(".interest-checkbox-container>input").forEach(checkboxElement => {
+            try {
+                await FYSCloud.API.queryDatabase("UPDATE account SET name = ?, birthdate = ?, location = ?, phonenumber = ?, email = ?, bio = ?, profilePhoto = ? WHERE id = ?",
+                [newName, newBirthdate, newLocation, newPhoneNumber, newEmail, newBio, hostName + '/uploads/' + newProfilePicUrl, userId]);
+            } catch (e) {
+                console.error(e);
+            }
+        }
+
+        const newActiveInterestList = [];
+        interestsContainer.querySelectorAll(".interests-checkboxes-container>.interest-checkbox-container>input").forEach(checkboxElement => {
             if (checkboxElement.checked === true) {
-                interestsList.push(checkboxElement.name);
+                newActiveInterestList.push(checkboxElement.name);
             }
         })
-        // SQL update here
+
+        const interestsToRemove = [];
+        const interestsToAdd = [];
+        allInterests.forEach(interest => {
+            const {description:interstName, interestId} = interest;
+            
+            if (userInterests.includes(interstName) && !newActiveInterestList.includes(interstName)){
+                interestsToRemove.push(interestId);
+            } else if (!userInterests.includes(interstName) && newActiveInterestList.includes(interstName)) {
+                interestsToAdd.push(`('${userId}', '${interestId}', '${new Date().toISOString().slice(0, 19).replace('T', ' ')}')`);
+            }
+        })
+        
+        if (interestsToRemove.length != 0) {
+            console.log(interestsToRemove);
+            console.log(`DELETE FROM fys_is109_4_harmohat_chattest.userinterests WHERE accountFk = ${userId} AND interestsFk IN ('${interestsToRemove.join("', '")}');`)
+            try {
+                await FYSCloud.API.queryDatabase(`DELETE FROM fys_is109_4_harmohat_chattest.userinterests WHERE accountFk = ${userId} AND interestsFk IN ('${interestsToRemove.join("', '")}');`);
+            } catch (e) {
+                console.log(e);
+            }
+        }
+        
+        if (interestsToAdd.length != 0) {
+        try {
+            await FYSCloud.API.queryDatabase(`INSERT INTO userinterests (accountFk, interestsFk, createdAt) VALUES ${interestsToAdd.join(',')}`);
+        } catch (e) {
+            console.log(e);
+        }
+    }
+
     });
 
-    // Fill interest container with checkboxes
-    const interestsContainer = document.getElementById("interest-checkboxes-container");
-    dataBaseAllInterests.forEach(interest => {
-        let {name} = interest;
 
+    // Fill interest container with checkboxes
+    const interestsContainer = document.getElementById("interest-containers-holder");
+    
+    let interestCounter = 0;
+    let interestContainerCount = 0;
+    let interestTabDiv;
+    for (i=0; i < allInterests.length; i++) {
+        // If interest count is 0 make a new div
+        if (interestCounter == 0) {
+            interestTabDiv = document.createElement("div");
+            interestTabDiv.id = `interest-tab-${interestContainerCount}`;
+            interestTabDiv.className = "interests-checkboxes-container"
+          
+            if (interestContainerCount == 0) {
+                interestTabDiv.className = "interests-checkboxes-container active";
+            }
+        } 
+
+        const {interestId, description:interestName, imageLink} = allInterests[i];
         // Make checkbox container
         const interestDiv = document.createElement("div");
         interestDiv.className = "interest-checkbox-container";
@@ -166,18 +153,18 @@ document.addEventListener("DOMContentLoaded", async function () {
         // Make checkbox input
         const interestCheckbox = document.createElement("input");
         interestCheckbox.type = "checkbox";
-        interestCheckbox.id = name;
-        interestCheckbox.name = name;
+        interestCheckbox.id = interestName;
+        interestCheckbox.name = interestName;
 
         // Check if the user has the interest in the database and if so make the box checked
-        if (userActiveInterestsNames.includes(name)) {
+        if (userInterests.includes(interestName)) {
             interestCheckbox.checked = true;
         }
        
         // Make checkbox label
         const interestLabel = document.createElement("label");
-        interestLabel.setAttribute("for",name);
-        const interestLabelSpan = document.createTextNode(name);
+        interestLabel.setAttribute("for",interestName);
+        const interestLabelSpan = document.createTextNode(interestName);
         interestLabel.append(interestLabelSpan);
         
         // Append input and label to checkbox div
@@ -185,7 +172,49 @@ document.addEventListener("DOMContentLoaded", async function () {
         interestDiv.append(interestLabel);
 
         // Append checkbox div to checkboxes container
-        interestsContainer.append(interestDiv)
-    });
+        interestTabDiv.append(interestDiv)
+        
+        if (interestCounter == 11 || i == allInterests.length) {
+            
+            interestContainerCount++;
+            // append interest tab
+            // reset to 0
+            interestsContainer.append(interestTabDiv);
+        } 
+        interestCounter++;
 
+        if (interestCounter > 11) {
+            interestCounter = 0;
+        }
+    }
+
+    // Create pagination
+    const paginationContainer = document.getElementById("pagination-container");
+    for (i = 0; i < interestContainerCount; i++) {
+        const paginationElement = document.createElement("span");
+        const paginationText = document.createTextNode(i + 1);
+        paginationElement.className = "pagination-element";
+        paginationElement.setAttribute('number', i);
+        if (i == 0) {
+            paginationElement.className = "pagination-element active";
+        }
+        paginationElement.append(paginationText);
+        paginationContainer.append(paginationElement);
+    }
+
+    document.querySelectorAll(".pagination-element").forEach(paginationElement => {
+        paginationElement.addEventListener('click', function (event) {
+            // Remove active from currently active element
+            document.querySelector(".pagination-element.active").classList.toggle('active');
+
+            // Add active class to clicked button
+            this.classList.toggle('active');
+
+            //  Remove active class from interest container that currently has it
+            document.querySelector(".interests-checkboxes-container.active").classList.toggle('active');
+            
+            // Use number of pagination button to activate the corrosponding checkbox div
+            document.querySelectorAll(".interests-checkboxes-container")[this.getAttribute('number')].classList.toggle('active');
+        })
+    })
 });

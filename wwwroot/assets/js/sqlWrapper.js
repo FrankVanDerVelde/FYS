@@ -1,3 +1,5 @@
+
+
 /**
  * Fetches the user by its userId.
  *
@@ -15,6 +17,8 @@ async function getUserByIdAsync(userId) {
 }
 
 
+
+
 /**
  * /**
  * Fetches the user by its email, if exists.
@@ -26,47 +30,6 @@ async function getUserByEmailAsync(email) {
     try {
         const user = await sqlSelectAsync("account", "email", email);
         return user[0];
-    } catch (e) {
-        console.log(`Something went wrong: ${e}`)
-    }
-}
-
-
-/**
- *
- * Fetches the user by its name, if exists.
- *
- * @param name - name of the user stored in DB.
- * @returns {Promise<string|User:Object>} - User object if exists other wise string with error.
- */
-async function getUserByName(name) {
-    try {
-        const user = await sqlSelectAsync("account", "name", name);
-        return user[0];
-    } catch (e) {
-        console.log(`Something went wrong: ${e}`)
-    }
-}
-
-
-async function getUsertype(userTypeId) {
-    if(userTypeId === 1) {
-        return "admin";
-    } else if (userTypeId === 2) {
-        return "user";
-    } else {
-        return "Unkown user type!";
-    }
-}
-
-/**
- * Fetches all users from the Db.
- *
- * @returns {Promise<array:User>} - Array of user objects.
- */
-async function getAllUsersAsync() {
-    try {
-        return await sqlSelectAsync("account");
     } catch (e) {
         console.log(`Something went wrong: ${e}`)
     }
@@ -101,34 +64,16 @@ async function userExistsByEmailAsync(email) {
     }
 }
 
-async function deleteUserById(userId) {
+/**
+ * Fetches all users from the Db.
+ *
+ * @returns {Promise<array:User>} - Array of user objects.
+ */
+async function getAllUsersAsync() {
     try {
-        await disableFkCheck();
-
-        await deleteUserIntrests(userId);
-        await deleteUserMatch(userId);
-
-        await sqlDeleteAsync("account", ["id"], userId);
-
-        await enableFkChecks();
+        return await sqlSelectAsync("account");
     } catch (e) {
-        console.log(`Something went wrong: ${e}`);
-    }
-}
-
-async function deleteUserIntrests(userId) {
-    try {
-        await sqlDeleteAsync("userinterests", ["accountFk"], userId);
-    } catch (e) {
-        console.log(`Something went wrong: ${e}`);
-    }
-}
-
-async function deleteUserMatch(userId) {
-    try {
-        await sqlDeleteAsync("matches", ["currUserFk"], [userId]);
-    } catch (e) {
-        console.log(`Something went wrong: ${e}`);
+        console.log(`Something went wrong: ${e}`)
     }
 }
 
@@ -164,7 +109,7 @@ async function sqlSelectAsync(table, column = null, params = null) {
             const sqlString = `SELECT *
                                FROM ${table}
                                WHERE ${sqlFields.join('')};`;
-            // console.log(`${sqlString}`);
+            // console.log(`${sqlString} `)
             return await FYSCloud.API.queryDatabase(sqlString, params);
         }
     } catch
@@ -173,7 +118,7 @@ async function sqlSelectAsync(table, column = null, params = null) {
     }
 }
 
-async function sqlInsertAsync(table, column, params, userId) {
+async function sqlInsertAsync(table, column, params) {
     try {
         if (table != "" && column.length != 0 && params.length != 0) {
             let sqlColumns = [];
@@ -202,35 +147,7 @@ async function sqlInsertAsync(table, column, params, userId) {
             const sqlString = `INSERT INTO ${table} (${sqlColumns.join('')})
                                VALUES (${sqlParams.join('')});`;
 
-            // console.log(`${sqlString} `);
-            return await FYSCloud.API.queryDatabase(sqlString, params);
-        }
-    } catch (e) {
-        console.log(`Something went wrong: ${e}`)
-    }
-}
-
-async function sqlUpdateAsync(table, column, params, userId) {
-    try {
-        if (table != "" && column.length != 0 && params.length != 0) {
-            let sqlColumns = [];
-            let sqlParams = [];
-
-            for (let i = 0; i < column.length; i++) {
-                //Increment one to reach maximum
-                if (i + 1 == column.length) {
-                    sqlColumns.push(`${column[i]} = ?`);
-                    break;
-                }
-
-                sqlColumns.push(`${column[i]} = ?, `);
-            }
-
-            const sqlString = `UPDATE ${table} 
-                               SET ${sqlColumns.join('')}
-                               WHERE id = ?;`.replace(/\n/g, '');
-
-            params.push(userId);
+            console.log(`${sqlString} `);
             return await FYSCloud.API.queryDatabase(sqlString, params);
         }
     } catch (e) {
@@ -258,32 +175,10 @@ async function sqlDeleteAsync(table, column, params) {
             const sqlString = `DELETE
                                FROM ${table}
                                WHERE ${sqlFields.join('')};`;
-            // console.log(`${sqlString} `)
+            console.log(`${sqlString} `)
             return await FYSCloud.API.queryDatabase(sqlString, params);
         }
     } catch (e) {
         console.log(`Something went wrong: ${e}`)
     }
-}
-
-async function enableFkChecks() {
-    try {
-        return await FYSCloud.API.queryDatabase(`SET FOREIGN_KEY_CHECKS=?`, [1]);
-    } catch (e) {
-        console.log(`Something went wrong: ${e}`);
-    }
-}
-
-async function disableFkCheck() {
-    try {
-        return await FYSCloud.API.queryDatabase(`SET FOREIGN_KEY_CHECKS=?`, [0]);
-    } catch (e) {
-        console.log(`Something went wrong: ${e}`);
-    }
-}
-
-async function stripTimeFromDate(date) {
-    const isoToStrip = "T00:00:00.000Z";
-
-    return date.toString().replaceAll(isoToStrip, "");
 }
