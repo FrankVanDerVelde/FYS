@@ -139,11 +139,48 @@ main::after {
 }
 
 .custom-file-upload-button {
+    position: absolute;
+    display: inline-block;
+    background-color: white;
+    width: 35px;
+    height: 35px;
+    border-radius: 50px;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 20%);
+    left: -32px;
+    top: -25px;
+    border: 2px solid black;
 
 }
 
-.custom-file-delete-button {
+.custom-file-upload-button i {
+    position: relative;
+    display: inline-block;
+    position: absolute;
+    left: 6px;
+    top: 4px;
+    color: black;
+}
 
+.delete-button {
+    position: absolute;
+    display: inline-block;
+    background-color: white;
+    width: 35px;
+    height: 35px;
+    border-radius: 50px;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 20%);
+    right: -32px;
+    top: -25px;
+    border: 2px solid black;
+}
+
+.delete-button i {
+    position: relative;
+    display: inline-block;
+    position: absolute;
+    right: 6px;
+    top: 4px;
+    color: black;
 }
 
 .basic-info-container .profile-picture {
@@ -160,6 +197,7 @@ main::after {
 }
 
 .change-profile-button-container {
+    margin-top: 10px;
     width: 100%;
 }
 
@@ -446,7 +484,7 @@ main::after {
 }
 
 .pagination-element {
-    background-color: #9a2110;
+    
     width: 25px;
     height: 25px;
     text-align: center;
@@ -454,12 +492,16 @@ main::after {
     margin: 5px 10px;
     cursor: pointer;
     font-size: 18px;
+    border: 1px solid black;
+    line-height: 1.3;
+    background-color: white;
+    color: black;
 }
 
 .pagination-element.active {
     font-weight: bold;
-    background-color: white;
-    color: black;
+    background-color: #9a2110;
+    color: white;
 }
 
 .pagination-element:hover {
