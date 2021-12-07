@@ -1,6 +1,16 @@
 window.onload = async function () {
-    await getMaxPages();
-    await loadTable();
+    const sesInfo = JSON.parse(localStorage.getItem("session"));
+    const userType = sesInfo.loggedin[0].usertypeFk;
+
+    if(userType !== undefined) {
+        if(userType === 1) {
+            await getMaxPages();
+            await loadTable();
+            return 0;
+        }
+    }
+    history.back();
+
 }
 
 async function decrementPage() {
