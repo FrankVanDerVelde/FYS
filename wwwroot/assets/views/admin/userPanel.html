@@ -11,10 +11,11 @@
     <link rel="stylesheet" href="../../css/home/home.css">
     <link rel="stylesheet" href="../../css/admin/userPanel.css">
     <link rel="stylesheet" href="../../css/custom.css">
+    <!--    <script src="https://cdn.fys.cloud/fyscloud/0.0.4/fyscloud.min.js"></script>-->
+    <!--    <script type="module" src="../../js/config.js"></script>-->
 </head>
 <body class="light-theme">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
-<script src="../../js/admin/table.js"></script>
 <header class="navbar">
     <div class="logo">
         <a href="">
@@ -149,7 +150,7 @@
             <input type="text">
             <div class="buttons">
                 <button class="cancel-delete" id="closeDeleteDialog" onclick="closeDelelteDialog()">Cancel</button>
-                <button class="delete-user"  onclick="deleteUser()">Delete</button>
+                <button class="delete-user" onclick="deleteUser()">Delete</button>
             </div>
         </div>
         <div class="edit-dialog" id="editDialog">
@@ -161,7 +162,7 @@
                         <i class="fas fa-images"></i>
                         Wijzig
                     </button>
-                    <button class="delete-user"  onclick="deleteUser()">
+                    <button class="delete-user" onclick="deleteUser()">
                         <i class="fas fa-trash"></i>
                         Verwijder
                     </button>
@@ -205,19 +206,23 @@
                 <button onclick="saveUserSettingsAdmin()" id="save-button">Opslaan</button>
             </div>
         </div>
-        <script src="../../js/admin/table.js"></script>
-
         <div class="pagination">
-            <button class="pagination-btn-left" onclick="decrementPage()" onchange="getMaxPages()">&lt;</button>
-            <input type="text" class="pagination-input" id="page" value="1"> <span id="pages">\<script>getMaxPages()</script></span>
-            <button class="pagination-btn-right" onclick="incrementPage()" onchange="getMaxPages()">></button>
+            <button class="pagination-btn-left" onclick="decrementPage()">&lt;</button>
+            <input type="text" class="pagination-input" id="page" value="1"> <span id="pages">\</span>
+            <button class="pagination-btn-right" onclick="incrementPage()">></button>
         </div>
     </div>
 </main>
 
 <footer></footer>
 
+
+<!-- Javascript -->
+<script src="https://cdn.fys.cloud/fyscloud/0.0.4/fyscloud.min.js"></script>
+<script src="../../js/config.mockup.js"></script>
+<script src="../../js/utils/sqlWrapper.js"></script>
 <script src="../../js/menu.js"></script>
+<script src="../../js/admin/table.js"></script>
 <script>
     function myFunction() {
         document.getElementById("myDropdown").classList.toggle("show");

@@ -1,5 +1,3 @@
-
-
 /**
  * Fetches the user by its userId.
  *

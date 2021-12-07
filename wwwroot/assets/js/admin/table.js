@@ -1,3 +1,7 @@
+window.onload = async function() {
+    await getMaxPages();
+}
+
 function decrementPage() {
     let currentPage = document.getElementById("page").value;
     let newPage = currentPage - 1;
@@ -8,20 +12,21 @@ function decrementPage() {
     document.getElementById("page").value = newPage;
 }
 
-function incrementPage() {
+async function incrementPage() {
     let currentPage = document.getElementById("page").value;
     let newPage = Number(currentPage) + 1;
-    if(newPage > getMaxPages())
-        newPage = getMaxPages()
+    if(newPage > await getMaxPages())
+        newPage = await getMaxPages()
 
     // getMaxPages()
     document.getElementById("page").value = newPage;
 }
 
-function getMaxPages() {
-    // let totalUsers = getTotalUsersAsync();  Needs to be implemented
-    let totalUsers = 40;
-    let totalPages = totalUsers / 8;
+async function getMaxPages() {
+    let totalUsers = await getAllUsersAsync();
+
+    let totalPages = Math.round(totalUsers.length / 8);
+
 
     document.getElementById("pages").innerHTML = "\\" + totalPages;
     return totalPages;
