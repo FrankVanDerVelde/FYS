@@ -24,7 +24,8 @@ async function login() {
     let loginDate = new Date().toISOString().split("T")[0];
 
     //ophalen van de logindata
-    const email = document.querySelector("#email-login").value;
+    let email = document.querySelector("#email-login").value;
+    email = email.toLowerCase();
     const password = document.querySelector("#password-login").value;
 
     try {
