@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="../../css/home/home.css">
     <link rel="stylesheet" href="../../css/admin/panel.css">
     <link rel="stylesheet" href="../../css/custom.css">
+    <script src="https://cdn.fys.cloud/fyscloud/0.0.4/fyscloud.min.js"></script>
+    <script type="module" src="../../js/config.js"></script>
 
 </head>
 <body class="light-theme">
@@ -55,7 +57,7 @@
                 <div class="chart-background">
                     <div class="user-count">
                         <img src="../../img/user.png" alt="">
-                           <p>Aantal Gebruikers: <span id="total-users">1234</span></p>  <!-- Set users with getTotallUsersAsync()-->
+                        <p>Aantal Gebruikers: <span id="total-users">1234</span></p>  <!-- Set users with getTotallUsersAsync()-->
                     </div>
                     <canvas id="chart" style="width:100%;max-width:1000px; height: 300px;"></canvas>
                 </div>
@@ -66,56 +68,47 @@
         </div>
         <div class="rightSection">
             <div class="user-info-card">
-                <div class="frame">
-                    <div class="center">
-
-                        <div class="profile">
-                            <div class="image">
-                                <div class="circle-1"></div>
-                                <div class="circle-2"></div>
-                                <img src="../../img/user.png" width="70" height="70" alt="Jessica Potter">
-                            </div>
-
-                            <div class="name" id="admin-panel-name">Jhon Doe</div>
-                            <div class="email" id="email-panel-name">Jhone@doe.com</div>
-
-                            <div class="actions">
-                                <br>
-                                <div class="bio">
-                                    <h2>Bio: </h2>
-                                    <div class="bio-content">
-                                        <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ad adipisci amet deleniti earum esse et explicabo laudantium minus nisi omnis quam quibusdam, reiciendis, </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="stats">
-                            <div class="box">
-                                <span class="value">523</span>
-                                <span class="parameter">Gekoppelde gebruikers</span>
-                            </div>
-                            <div class="box">
-                                <span class="value">Laasts Actief</span>
-                                <span class="parameter">20-10-2021</span>
-                            </div>
-                            <div class="box">
-                                <span class="value">146</span>
-                                <span class="parameter">Volgers</span>
-                            </div>
-                        </div>
+                <div class="search">
+                    <img src="../../img/search.png" alt="gebruiker foto" onclick="searchUser()">
+                    <input type="text" id="searchInput">
+                    <p>Zoeken: </p>
+                </div>
+                <div class="info">
+                    <div class="image">
+                        <div class="circle-1"></div>
+                        <div class="circle-2"></div>
+                        <img src="../../img/user.png" id="userImage" width="70" height="70" alt="Jessica Potter">
                     </div>
+                    <h2 id="name">Jhon Doe</h2>
+                    <p id="email">jhon@doe.nl</p>
+                </div>
+                <div class="app-info">
+                    <div class="actief">
+                        <h3>Laatst actief</h3>
+                        <p id="lastActive">xx-xx-xxxx</p>
+                    </div>
+                    <div class="matches">
+                        <h3>Aantal Matches</h3>
+                        <p id="matchAmount">xxx</p>
+                    </div>
+                    <button onclick="deleteCurrentUser()">Delete</button>
                 </div>
             </div>
         </div>
     </div>
+
 </main>
 
 <footer></footer>
 
+<script src="https://cdn.fys.cloud/fyscloud/0.0.4/fyscloud.min.js"></script>
+<script src="../../js/config.mockup.js"></script>
+<script src="../../js/sqlWrapper.js"></script>
 <script src="../../js/menu.js"></script>
+<script src="../../js/intrests.js"></script>
+<script src="../../js/admin/panel.js"></script>
 <script src="../../js/admin/chart.js"></script>
-<script src="../../js/admin/table.js"></script>
+
 <script>
     function myFunction() {
         document.getElementById("myDropdown").classList.toggle("show");

@@ -7,7 +7,8 @@ document.querySelector("#reset-password-btn").addEventListener("click", function
 async function sendMail() {
 
     //krijgen email en aanmaken code
-    const email = document.querySelector("#email").value;
+    let email = document.querySelector("#email").value;
+    email = email.toLowerCase();
     const code = Math.floor(Math.random() * 100000) + 10000;
 
     //genereer url voor wachtwoord reset
@@ -47,6 +48,6 @@ async function sendMail() {
     }
     catch {
         //laat de gebruiker weten als er iets niet goed ging, of de email niet is gevonden
-        window.alert("Er is iets mis gegaan. :(\n De email is mogelijk niet gevonden");
+        window.alert("Er is iets mis gegaan. \n De email is mogelijk niet gevonden");
     }
 }

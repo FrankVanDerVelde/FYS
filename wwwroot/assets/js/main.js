@@ -1,6 +1,5 @@
 if (FYSCloud.Session.get("loggedin")) {
     loadChat();
-
 }else{
     document.querySelector("#chat-btn").style.visibility = "hidden";
 }

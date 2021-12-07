@@ -15,7 +15,8 @@ async function register() {
     //aanmaken variabele voor het de inlog
     const password = document.querySelector("#password").value;
     const passwordVerify = document.querySelector("#passwordVerify").value;
-    const email = document.querySelector("#email").value;
+    let email = document.querySelector("#email").value;
+    email = email.toLowerCase();
     const name = document.querySelector("#name").value;
 
     //aanmaken profielfoto.
@@ -59,7 +60,8 @@ async function register() {
         }
         catch {
             //laat de gebruiker weten als er iets niet goed ging, of de email al is gebruikt
-            window.alert("Er is iets mis gegaan. :( \n Het kan zijn dat dit email address al in gebruik is.");
+            document.querySelector("#error-message").innerHTML = "Er ging iets fout, je E-mail is " +
+                "mogelijk al gebruikt.";
         }
     }
     else {

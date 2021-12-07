@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/chat/chat.css">
     <script src="https://cdn.fys.cloud/fyscloud/0.0.4/fyscloud.min.js"></script>
+    <script src="../js/sqlWrapper.js"></script>
+    <script src="../js/interest.js"></script>
     <script src="../js/config.mockup.js"></script>
     <script src="../js/profile/profile.js"></script>
 </head>
@@ -79,23 +81,17 @@
 
         </div>
 
-        <div class="contact-info-container">
-            <!--            <div class="info-bar">-->
-            <!--                <span class="icon interesses"><i class="far fa-heart"></i></span>-->
-            <!--                <span>Verander Interesses</span>-->
-            <!--            </div>-->
-
-            <div class="info-bar">
-                <span class="icon send-message"><i class="far fa-comment-dots"></i></span>
-                <span>Stuur een bericht</span>
+        <div class="contact-info-container" id="contact-info-container">
+            <div class="info-bar" id="match-info-bar">
+               
             </div>
-
-            <div class="info-bar">
+            
+            <div class="info-bar" id="phonenumber-info-bar">
                 <span class="icon phone-number"><i class="fas fa-phone-alt"></i></span>
-                <span>061234568</span>
+                <span id="phone-number">061234568</span>
             </div>
 
-            <div class="info-bar">
+            <div class="info-bar" id="email-info-bar">
                 <span class="icon email"><i class="far fa-envelope"></i></span>
                 <span id="email">johndoe@mail.com</span>
             </div>

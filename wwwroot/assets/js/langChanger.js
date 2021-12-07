@@ -27,18 +27,10 @@ async function translate(jsonLang) {
 
     const currentPage = await getCurrentPageAsync();
 
-    for (var i = 0; i < await jsonLang.length; i++) {
-        // let url = "http://" + window.location.host + "/team-4-new/wwwroot/" + jsonLang[i].page + ".html";
-        // console.log(url);
-        // console.log(currentUrl);
-        // // if (url == currentUrl) {
-        //     changes[i] = jsonLang[i];
-        // // }
+    for (let i = 0; i < await jsonLang.length; i++) {
 
-        if(currentPage == jsonLang[i].page)
-        {
+        if(currentPage == jsonLang[i].page) {
             changes.push(jsonLang[i]);
-            // changes[i] = jsonLang[i];
         }
     }
     await updatePage(changes);
@@ -46,7 +38,7 @@ async function translate(jsonLang) {
 
 async function updatePage(changes) {
 
-    for (var i = 0; i < Object.keys(changes).length; i++) {
+    for (let i = 0; i < Object.keys(changes).length; i++) {
         console.log(`ID: ${changes[i].id}`);
         console.log(`TEXT: ${changes[i].text}`);
 
