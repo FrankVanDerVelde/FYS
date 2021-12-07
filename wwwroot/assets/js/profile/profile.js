@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", async function () {
     // Get user id from session here
-    const userId = 47;
+    const loggedin = FYSCloud.Session.get("loggedin")
+    const userId = loggedin[0].id;
     
     // The id used to get the profile data
     let contentId;
