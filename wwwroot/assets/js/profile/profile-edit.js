@@ -1,7 +1,6 @@
-// SELECT * FROM `intrestdetail` ORDER BY `intrestId` ASC
 document.addEventListener("DOMContentLoaded", async function () {
-    // Get user id from session here
-    const userId = 51;
+    const loggedin = FYSCloud.Session.get("loggedin")
+    const userId = loggedin[0].id;
 
     let allInterests;
     try {
@@ -72,9 +71,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         const newBio = bioInput.value;
         
         if (newProfilePicDataUrl) {
-            console.log(newProfilePicDataUrl)
             const newProfilePicUrl = `profile-image-user-${userId}.${newProfilePicDataUrl.extension}`;
-            console.log(newProfilePicUrl)
             await FYSCloud.API.uploadFile(newProfilePicUrl,newProfilePicDataUrl.url, true);
 
             const hostName = new URL(window.location).hostname ? new URL(window.location).hostname : 'https://mockup-is109-4.fys.cloud';
@@ -107,8 +104,6 @@ document.addEventListener("DOMContentLoaded", async function () {
         })
         
         if (interestsToRemove.length != 0) {
-            console.log(interestsToRemove);
-            console.log(`DELETE FROM fys_is109_4_harmohat_chattest.userinterests WHERE accountFk = ${userId} AND interestsFk IN ('${interestsToRemove.join("', '")}');`)
             try {
                 await FYSCloud.API.queryDatabase(`DELETE FROM fys_is109_4_harmohat_chattest.userinterests WHERE accountFk = ${userId} AND interestsFk IN ('${interestsToRemove.join("', '")}');`);
             } catch (e) {
