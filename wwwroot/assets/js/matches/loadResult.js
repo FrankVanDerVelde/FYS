@@ -384,9 +384,7 @@ function setInfo(user, card)
     else
         card.children[0].children[3].innerHTML = "xx-x-xxxx";
 
-
-    card.children[1].children[0].onclick = "javascript:window.location.href='./profile.html?userid=" + user.id + "'";
-    console.log("javascript:window.location.href='./profile.html?userid=" + user.id + "'");
+    card.children[1].children[0].href = `javascript:window.location.href="./profile.html?userid=${user.id}"`;
 }
 
 function loadMoreCards() {
