@@ -362,7 +362,7 @@ function setPersonCards(card, user, initalSet) {
 
 function setInfo(user, card) {
 
-    const profilePhoto = user.profilePhoto
+    const profilePhoto = user.profilePhoto;
     const name = user.name;
     card.children[0].children[0].src = (profilePhoto ? profilePhoto : `https://ui-avatars.com/api/?name=${name}?background=#e0dcdc`);
 
@@ -390,7 +390,7 @@ function setInfo(user, card) {
     else
         card.children[0].children[3].innerHTML = "xxxx-xx-xx";
 
-    card.children[1].children[0].href = `javascript:window.location.href="./profile.html?userid=${user.id}"`;
+    card.children[1].children[0].href = `javascript:window.location.href="./profile.html?profileid=${user.id}"`;
 
 }
 
