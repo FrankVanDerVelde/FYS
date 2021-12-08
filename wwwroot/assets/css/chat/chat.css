@@ -101,14 +101,24 @@
     border: none;
     cursor: pointer;
     font-size: 1rem;
+
+    transition: 500ms background-color ease-in;
 }
 
 .contacts-tab button{
     background-color: rgb(59,130,246);
 }
 
+.contacts-tab button:hover{
+    background-color: rgb(59 130 246 / 50%);
+}
+
 .requests-tab button{
     background-color:rgb(16,185,129);
+}
+
+.requests-tab button:hover{
+    background-color:rgb(16 185 129 / 50%);
 }
 
 .requests-list{
@@ -223,12 +233,30 @@
     width: 100%;
 }
 
+input[type="file"] {
+    display: none;
+}
+
+.img-upload {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 6px 12px;
+    cursor: pointer;
+    color: white;
+}
+
+.img-upload i{
+    color: #2196f3;
+}
+
 .chat-footer .btn-box{
-    margin-left: auto;
+    flex: 1;
+    text-align: center;
 }
 
 .chat-footer .input-box{
-    margin-left: 75px;
+    margin-left: -10px;
 }
 
 .form-box-icon{
@@ -264,20 +292,57 @@
     background: none;
     border: none;
     cursor: pointer;
+
+    transition: 300ms transform ease-in;
+}
+
+.send-msg-btn:hover{
+    transform: scale(1.2);
 }
 
 /* 3 dots button in chat contacts */
-.contact-option{
+.contact-option,
+.unblock-box{
     position: absolute;
     right: 5px;
     top: 15px;
+}
+
+.unblock-btn{
+    background-color: rgb(5,150,105);
+    color: white;
+    font-weight: 700;
+    padding: 2px 8px 2px 8px;
+    border-radius: 9999px;
+    border: none;
+    cursor: pointer;
+    margin-right: 5px;
+
+    transition: 500ms background-color ease-in;
+}
+
+.unblock-btn:hover{
+   background-color: rgb(5 150 105 / 50%);
+}
+
+.blocked-user-box{
+    background: rgb(254,202,202);
+    padding: 2px 5px 2px 5px;
+    border-radius: 9999px;
+    height: fit-content;
+    position: absolute;
+    left: 65px;
+    bottom: 8px;;
+}
+
+.blocked-user-box p{
+    color: rgb(220,38,38);
 }
 
 /* chat contacts dropdown content */
 .contact-dropdown-content {
     display: none;
     position: absolute;
-    background-color: var(--nav-bg);
     z-index: 1;
     border-radius: 5px;
 }
@@ -301,6 +366,7 @@
 
 /*right chat for current user*/
 .right-chat{
+    position: relative;
     width: 94%;
     height: fit-content;
     background: rgba(82, 86, 95, 0.33);
@@ -311,17 +377,39 @@
 }
 
 .right-chat .messages-time{
-    text-align:right;
     color: #7A7A7A;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
 }
 
 .left-chat .messages-time{
-    text-align:left;
     color: #414141;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+}
+
+.messages-username{
+    font-weight: bold;
+    font-size: smaller;
+}
+
+.left-chat-image{
+    width:80%;
+    float:left;
+    padding: 10px 0 25px 0;
+}
+
+.right-chat-image{
+    width:80%;
+    float:right;
+    padding: 10px 0 25px 0;;
 }
 
 /*left chat for recipient person*/
 .left-chat{
+    position: relative;
     width: 94%;
     height: fit-content;
     background: #2196f3;
@@ -378,6 +466,23 @@ li p{
     max-width: 40px;
     width: 100%;
     border-radius: 50%;
+}
+
+.error-box{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background: var(--red);
+    width: 100%;
+    height: 50px;
+    position: absolute;
+    z-index: 1;
+    top: 60px;
+}
+
+.error-msg{
+    font-weight: bold;
+    color: white;
 }
 
 .messages-list li{
