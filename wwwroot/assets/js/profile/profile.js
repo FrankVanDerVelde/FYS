@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     // Get current profile id from url
     const urlParams = new URLSearchParams(window.location.search);
-    const profileId = urlParams.get('id');
+    const profileId = urlParams.get('profileid');
 
     // Hide change profile button if not own profile
     (profileId != userId && profileId) && (document.getElementById('edit-profile-button').style.display = 'none');
