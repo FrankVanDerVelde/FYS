@@ -26,7 +26,6 @@ function MutationObersver() {
         // Use traditional 'for loops' for IE 11
         for (const mutation of mutationsList) {
             if (mutation.type === 'childList') {
-                console.log(mutation.type);
                 var selectedFilters = returnSelectedFilters();
                 checkInterests(selectedFilters);
             }
@@ -54,7 +53,7 @@ async function initalSet() {
     if (session === null || session === undefined)
         return;
 
-    console.log(session);
+   // console.log(session);
     thisUserID = session[0].id;
     // thisUserID = 61;
 
@@ -65,7 +64,7 @@ async function initalSet() {
             shuffle(wantedUsers);
 
 
-        console.log(wantedUsers);
+   //     console.log(wantedUsers);
 
 
         checkForOwnID(wantedUsers);
@@ -129,11 +128,11 @@ async function checkInterests(selectedFilters) {
     }
 
     if (age !== "" || gender !== "") {
-        console.log("db call with params");
+       // console.log("db call with params");
         wantedUsers = await getUsersWithIntrests(age, gender);
 
     } else {
-        console.log("db call all users");
+     //   console.log("db call all users");
         wantedUsers = await getAllUsers();
 
     }
@@ -155,7 +154,6 @@ function setBasedCards(wantedUsers, interests) {
         }
     } else {
         var tempUsers = Array.from(wantedUsers);
-        console.log(tempUsers);
         try {
             //loop through array, check if their interests arent 0 if so remove and check if the you dont get yourself.
             for (let i = tempUsers.length; i > 0; i--) {
@@ -179,7 +177,6 @@ function setBasedCards(wantedUsers, interests) {
                     }
                 }
             }
-            console.log(tempUsers[i].user);
             const x = {user: tempUsers[i].user, matchingInterestCount: matchingCount};
             basedMatches.push(x);
 
@@ -190,9 +187,6 @@ function setBasedCards(wantedUsers, interests) {
             return a.matchingInterestCount - b.matchingInterestCount;
         });
         basedMatches.reverse();
-
-        console.log(basedMatches);
-
 
         for (let i = 0; i < 3; i++) {
             setPersonCards(allCards[i], basedMatches[i].user, true);
@@ -414,7 +408,7 @@ function checkCardAmount() {
         amountOfWantCreateCards = userCountLeftToCreate;
         remainder = (userCountLeftToCreate % 3);
         //call createPersonCards.
-        console.log(wantedUsers);
+        //console.log(wantedUsers);
         var activeCardsBeforeCreation = amountOfActiveCards;
         createPersonCards((amountOfWantCreateCards - remainder) / 3, remainder);
         var allCards = document.getElementsByClassName('card');
@@ -482,7 +476,6 @@ function createParentDiv() {
 
 //listen if scrollbar is bottom of page, then create more elements
 window.addEventListener('scroll', function (e) {
-    console.log(e);
     let documentHeight = document.body.scrollHeight;
     let currentScroll = window.scrollY + window.innerHeight;
     // When the user is [modifier]px from the bottom, fire the event.
