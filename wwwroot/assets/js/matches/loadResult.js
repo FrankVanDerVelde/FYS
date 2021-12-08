@@ -1,12 +1,12 @@
-var baseCard = document.getElementsByClassName("flex-grid")[0].children[0];
-var remainder = 0;
-var amountOfActiveCards = 3;
-var amountOfWantCreateCards = 0;
-var userCountLeftToCreate = 0;
-var amountOfRows = 1;
-var maxAmount = 9;
+let baseCard = document.getElementsByClassName("flex-grid")[0].children[0];
+let remainder = 0;
+let amountOfActiveCards = 3;
+let amountOfWantCreateCards = 0;
+let userCountLeftToCreate = 0;
+let amountOfRows = 1;
+let maxAmount = 9;
 
-var wantedUsers = {};
+let wantedUsers = {};
 
 const targetNode = document.getElementsByClassName('toegepaste-filters')[0];
 
@@ -24,7 +24,7 @@ function MutationObersver() {
         for (const mutation of mutationsList) {
             if (mutation.type === 'childList') {
                 console.log(mutation.type);
-                var selectedFilters = returnSelectedFilters();
+                let selectedFilters = returnSelectedFilters();
                 checkInterests(selectedFilters);
             }
         }
@@ -50,7 +50,7 @@ async function initalSet() {
     wantedUsers = await getAllUsers();
     shuffle(wantedUsers);
     userCountLeftToCreate = wantedUsers.length;
-    var allCards = document.getElementsByClassName('card');
+    let allCards = document.getElementsByClassName('card');
     amountOfActiveCards = allCards.length - 3;
 
     for (let i = 0; i < userCountLeftToCreate; i++) {
@@ -63,10 +63,10 @@ async function initalSet() {
 
 //check interests, checks given iterests fro mthe user and returns array of people
 async function checkInterests(selectedFilters) {
-    var gender = "";
-    var age = "";
-    var intrests = [];
-    var selectedInterestFilter = false;
+    let gender = "";
+    let age = "";
+    let intrests = [];
+    let selectedInterestFilter = false;
     for (let i = 0; i < selectedFilters.length; i++) {
         if (selectedFilters[i].parentNode.id === "gender") {
             gender = selectedFilters[i].innerHTML;
@@ -110,7 +110,7 @@ function callCreateFunctions(wantedUsers, interest, selectedInterestFilter)
     removeAllCards();
 
 
-    var allCards = document.getElementsByClassName('card');
+    let allCards = document.getElementsByClassName('card');
 
 
     //if there are users left to create, first create them all then fill them with data.
@@ -229,7 +229,7 @@ async function searchUser(searchBar) {
 
 //remove all cards
 function removeAllCards() {
-    var gridParent = document.getElementsByClassName("grid-parent")[0];
+    let gridParent = document.getElementsByClassName("grid-parent")[0];
 
     while (gridParent.firstChild) {
         gridParent.removeChild(gridParent.lastChild);
@@ -253,7 +253,7 @@ function setPersonCards(card, user) {
     card.children[0].children[0].src = user.user.profilePhoto;
     card.children[0].children[1].innerHTML = user.user.name;
 
-    var genderText = "";
+    let genderText = "";
     switch (user.user.genderFk) {
         case 1:
             genderText = "Man";
@@ -292,7 +292,7 @@ function checkCardAmount() {
         remainder = (userCountLeftToCreate % 3);
         //call createPersonCards.
         createPersonCards((amountOfWantCreateCards - remainder) / 3, remainder);
-        var allCards = document.getElementsByClassName('card');
+        let allCards = document.getElementsByClassName('card');
 
         for (let i = 0; i < amountOfActiveCards; i++) {
 
@@ -305,7 +305,7 @@ function checkCardAmount() {
 
 //duplicate person card and create row.
 function createPersonCards(numberOfRows, remainder) {
-    var flexGrids = document.getElementsByClassName("flex-grid");
+    let flexGrids = document.getElementsByClassName("flex-grid");
     maxAmount = 9;
     //for the numberOfRows wanted,
 
@@ -343,8 +343,8 @@ function appendBaseCard(flexGrids)
 }
 //create flex-grid object.
 function createParentDiv() {
-    var gridParent = document.getElementsByClassName("grid-parent")[0];
-    var parentDiv = document.createElement("div");
+    let gridParent = document.getElementsByClassName("grid-parent")[0];
+    let parentDiv = document.createElement("div");
     parentDiv.className = "flex-grid";
     gridParent.appendChild(parentDiv);
     amountOfRows++;

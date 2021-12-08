@@ -9,8 +9,8 @@ document.addEventListener("DOMContentLoaded", async function () {
 
 })
 
-var amountOfInterestFilters = 0;
-var selectedFilters = [];
+let amountOfInterestFilters = 0;
+let selectedFilters = [];
 
 
 
@@ -29,13 +29,13 @@ async function getInterests() {
 //create intrest filter header and sub cat
 async function createInterestFilter(interests) {
     const parentDiv = document.getElementsByClassName('dropdown-content-filter')[0]; //<-- first dropdown
-    var madeIntrests = [];
-    var parentElements = [];
+    let madeIntrests = [];
+    let parentElements = [];
 
     for (let i = 0; i < interests.length; i++) {
 
         if (!madeIntrests.includes(interests[i].parent_id)) {
-            var childdiv = document.createElement("button");
+            let childdiv = document.createElement("button");
             childdiv.setAttribute("class", "dropdown-button-filter");
 
             childdiv.setAttribute("onclick", "openInterestFilter(this)");
@@ -50,16 +50,16 @@ async function createInterestFilter(interests) {
     }
 
     for (let i = 0; i < parentElements.length; i++) {
-        var dropDownChild = document.createElement("div");
+        let dropDownChild = document.createElement("div");
         dropDownChild.setAttribute("class", "dropdown-content-filter-interests");
         insertAfter(parentElements[i],dropDownChild);
     }
 
 
-    var dropdownParent = document.getElementsByClassName("dropdown-content-filter-interests");
+    let dropdownParent = document.getElementsByClassName("dropdown-content-filter-interests");
     /// TODO creeer div ONDER button niet in en voeg daarna dit stuk hieronder toe.
-    var tempNumber = interests[0].parent_id;
-    var counter = 0;
+    let tempNumber = interests[0].parent_id;
+    let counter = 0;
     for (let i = 0; i < interests.length; i++) {
 
         if(tempNumber !== interests[i].parent_id)
@@ -70,7 +70,7 @@ async function createInterestFilter(interests) {
 
        if(interests[i].parent_description === parentElements[counter].id)
        {
-           var childDivInterest = document.createElement("a");
+           let childDivInterest = document.createElement("a");
            childDivInterest.setAttribute("class", "optionInterest");
            childDivInterest.setAttribute("href", "javascript:void(0)");
            childDivInterest.setAttribute("onclick", "changeFilter(this)");
@@ -96,8 +96,8 @@ function insertAfter(referenceNode, newNode) {
 }
 async function changeFilter(item) {
 
-    var exists;
-    var wantToRemove = false;
+    let exists;
+    let wantToRemove = false;
     const parentDiv = document.getElementsByClassName('toegepaste-filters')[0];
     // get all active filters
     for (let i = 0; i < parentDiv.children.length; i++) {
@@ -182,10 +182,11 @@ async function changeFilter(item) {
 //create div, give classname and id and create child in that div.
 function createFilter(typeFilter, valueFilter) {
 
-    var parentDiv = document.createElement("div");
+    const parentDiv = document.createElement("div");
     parentDiv.className = "chose";
     parentDiv.id = typeFilter;
-    var childDiv = document.createElement("p");
+
+    const childDiv = document.createElement("p");
     childDiv.className = "filterOption";
 
     childDiv.innerHTML = valueFilter;
@@ -201,10 +202,11 @@ function createFilter(typeFilter, valueFilter) {
 //create div, give classname and id and create child in that div.
 function createFilterInterests(typeFilter, valueFilter) {
 
-    var parentDiv = document.createElement("div");
+    const parentDiv = document.createElement("div");
     parentDiv.className = "chose";
     parentDiv.id = typeFilter + valueFilter;
-    var childDiv = document.createElement("p");
+
+    const childDiv = document.createElement("p");
     childDiv.className = "filterOption";
 
     childDiv.innerHTML = valueFilter;
@@ -219,8 +221,8 @@ function createFilterInterests(typeFilter, valueFilter) {
 //delete filter.
 async function deleteFilter(itemToRemove) {
 
-    var parentDiv = document.getElementsByClassName("toegepaste-filters")[0];
-    var childToRemove = document.getElementById(itemToRemove);
+    let parentDiv = document.getElementsByClassName("toegepaste-filters")[0];
+    let childToRemove = document.getElementById(itemToRemove);
     console.log("removed filter");
 
     const index = selectedFilters.indexOf(childToRemove.firstChild);

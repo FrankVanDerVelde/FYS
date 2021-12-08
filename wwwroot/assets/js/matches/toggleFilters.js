@@ -13,7 +13,7 @@ function openInterestFilter(button)
 function openFilterList(button)
 {
 
-    var div = document.getElementsByClassName("allFilters")[0];
+    let div = document.getElementsByClassName("allFilters")[0];
     if (div.style.display !== 'none') {
         div.style.display = 'none';
     }
@@ -25,8 +25,8 @@ function openFilterList(button)
 function closeFilter(button, dropdown)
 {
     const currentDropdown = button;
-    var allDropdowns = document.getElementsByClassName(dropdown);
-    var wantToClose = false;
+    let allDropdowns = document.getElementsByClassName(dropdown);
+    let wantToClose = false;
 
     for (let i = 0; i < allDropdowns.length; i++) {
         if (allDropdowns[i].classList.contains("active")) {

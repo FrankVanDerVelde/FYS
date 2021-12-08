@@ -33,7 +33,7 @@ async function getUsersWithIntrests(agesFilter, genderFilter) {
 
     let dateFloor = new Date();
     let dateCeiling = new Date();
-    var genderNumber = 1;
+    let genderNumber = 1;
     if (agesFilter) {
         let ages = [];
         if (agesFilter.includes('+')) {
