@@ -54,7 +54,7 @@ async function initalSet() {
     // if (session === null || session === undefined)
     //      return;
 
-    //console.log(session);
+    console.log(session);
     // thisUserID = session[0].id;
     thisUserID = 61;
 
@@ -135,9 +135,8 @@ function setBasedCards(wantedUsers, interests) {
 
     if(interests.length === 0)
     {
-        console.log(wantedUsers);
         for (let i = 0; i < 3; i++) {
-            setPersonCards(allCards[i], wantedUsers[Math.floor(Math.random() * wantedUsers.length-1)].user, true);
+           setPersonCards(allCards[i], wantedUsers[Math.floor(Math.random() * wantedUsers.length)].user, true);
         }
     }
     else{
