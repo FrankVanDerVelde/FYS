@@ -193,8 +193,6 @@ function setBasedCards(wantedUsers, interests) {
 
 
     }
-    amountOfActiveCards -=3;
-    console.log(amountOfActiveCards);
 }
 
 function callCreateFunctions(wantedUsers, interest, selectedInterestFilter) {
@@ -346,7 +344,6 @@ function setPersonCards(card, user, initalSet) {
     //card.children[0].children[1]<-- name
     //card.children[0].children[2] <-- place
     // card.children[2].children[0] <-- "meer zien" button;
-
     try {
         if(!initalSet)
         {
@@ -361,11 +358,7 @@ function setPersonCards(card, user, initalSet) {
     } catch (e) {
         console.log(e);
     }
-    console.log(maxAmount +" max amount");
-    console.log(userCountLeftToCreate + " users left to create");
-    console.log(amountOfWantCreateCards+ " amount of want to create cards" );
-    console.log(amountOfActiveCards+ " amount of active cards" );
-    console.log(remainder + " remainder");
+
 
 }
 
@@ -408,10 +401,10 @@ function loadMoreCards() {
     checkCardAmount();
 }
 
+
 //check card amount, if amount of active cards is less then user (that dont have a card), set amount of cards left to create to the amount of users
 // also calculate the remainder to check if extra row is needed.
 function checkCardAmount() {
-
 
     if (amountOfActiveCards !== wantedUsers.length) {
         maxAmount = 9;
@@ -424,15 +417,13 @@ function checkCardAmount() {
         createPersonCards((amountOfWantCreateCards - remainder) / 3, remainder);
         var allCards = document.getElementsByClassName('card');
 
-
-
+            // code below might cause a bug.
         for (let i = 0; i < amountOfActiveCards; i++) {
 
-            setPersonCards(allCards[i + 3], wantedUsers[i],false);
+           setPersonCards(allCards[i +  6], wantedUsers[i],false);
         }
 
     }
-    console.log(userCountLeftToCreate + " users left to create");
 
 }
 
