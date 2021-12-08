@@ -2,61 +2,80 @@ document.addEventListener("DOMContentLoaded", async function () {
     // Get user id from session here
     const loggedin = FYSCloud.Session.get("loggedin")
     const userId = loggedin[0].id;
-    
-    // The id used to get the profile data
-    let contentId;
 
+    // Get current profile id from url
     const urlParams = new URLSearchParams(window.location.search);
     const profileId = urlParams.get('id');
 
-    const matchInfoBar = document.getElementById("match-info-bar");
+    // Hide change profile button if not own profile
+    (profileId != userId && profileId) && (document.getElementById('edit-profile-button').style.display = 'none');
 
-    // If someone else's profile add match button
+    // The id used to get the profile data
+    let contentId;
     if (userId == profileId || !profileId) {
         contentId = userId;
     } else {
         contentId = profileId;
 
-        let matchIconClass;
-        let matchBarText;
+        let matchStatus;
+        try {
+            function toggleMatchButtons(newActiveElement) {
+                // Remove active from currently active element
+                document.querySelector('.match-bar.active').classList.toggle('active');
 
-        // SQL query to check if user is a match here
-        if (true) {
-            matchIconClass = "minus";
-            matchBarText = "Verwijder als match";
-        } else {
-            matchIconClass = "plus";
-            matchBarText = "Verstuur match verzoek";
+                // Add active to new element
+                newActiveElement.classList.toggle('active');
+            }
+            matchStatus = await FYSCloud.API.queryDatabase(`SELECT status FROM fys_is109_4_harmohat_chattest.matches WHERE currUserFK = ? AND matchedUserFk = ?`, [userId, profileId]);
+        } catch (e) {
+            console.error(e);
         }
 
-        // Create span to hold the icon
-        const matchIconSpan = document.createElement("span");
-        matchIconSpan.className = "icon send-message";
+        const matchBar = document.getElementById("match-info-bar-match");
+        const unmatchBar = document.getElementById("match-info-bar-unmatch");
+        const cancelBar = document.getElementById("match-info-bar-cancel");
 
-        // Create i element with the font awesome icon class
-        const matchIconI = document.createElement("i");
-        matchIconI.className = `fas fa-user-${matchIconClass}`;
+        matchBar.addEventListener('click', async function () {
+            try {
+                await FYSCloud.API.queryDatabase(`INSERT INTO matches (currUserFK, matchedUserFk, status) VALUES (?, ?, ?)`, [userId, profileId, 'pending']);
+                toggleMatchButtons(cancelBar)
+            } catch (e) {
+                console.error(e);
+            }
+        });
 
-        // Add i to span
-        matchIconSpan.append(matchIconI);
+        unmatchBar.addEventListener('click', async function () {
+            try {
+                await FYSCloud.API.queryDatabase(`DELETE FROM matches WHERE currUserFK = ${userId} AND matchedUserFk = ${profileId}`);
+                toggleMatchButtons(matchBar)
+            } catch (e) {
+                console.error(e);
+            }
+        });
 
-        // Add icon span to div
-        matchInfoBar.append(matchIconSpan);
+        cancelBar.addEventListener('click', async function () {
+            try {
+                await FYSCloud.API.queryDatabase(`DELETE FROM matches WHERE currUserFK = ${userId} AND matchedUserFk = ${profileId}`);
+                toggleMatchButtons(matchBar)
+            } catch (e) {
+                console.error(e);
+            }
+        });
 
-        // Create span to hold the description text
-        const matchTextSpan = document.createElement("span");
-
-        // Add text to text element
-        const matchText = document.createTextNode(matchBarText);
-        matchTextSpan.append(matchText);
-
-        // Add text span to div
-        matchInfoBar.append(matchTextSpan);
+        // Set currently active bar
+        if (matchStatus.length == 0) {
+            matchBar.classList.toggle('active');
+        } else if (matchStatus[0].status === 'pending') {
+            cancelBar.classList.toggle('active');
+        } else if (matchStatus[0].status === 'accepted') {
+            unmatchBar.classList.toggle('active');
+        }
     }
 
     let profileData;
     let userInterests = await getUserInterests(contentId);
     try {
+        // Get user data
         profileData = await FYSCloud.API.queryDatabase(`SELECT * FROM fys_is109_4_harmohat_chattest.account WHERE id =${contentId};`);
 
         // Get the details of the interests the user has
@@ -65,14 +84,22 @@ document.addEventListener("DOMContentLoaded", async function () {
         console.error(e);
     }
 
-    const {name, birthdate, location, email, profilePhoto, bio, phonenumber} = profileData[0];
+    const {
+        name,
+        birthdate,
+        location,
+        email,
+        profilePhoto,
+        bio,
+        phonenumber
+    } = profileData[0];
 
     // Call person on click
-    document.getElementById("phonenumber-info-bar").addEventListener('click', ()=> window.open("tel:0633080830", '_self'));
+    document.getElementById("phonenumber-info-bar").addEventListener('click', () => window.open("tel:0633080830", '_self'));
 
     // Mail person on click
-    document.getElementById("email-info-bar").addEventListener('click', ()=> window.open(`mailto:${email}?subject=Corendon%20Match`, '_self'));
-    
+    document.getElementById("email-info-bar").addEventListener('click', () => window.open(`mailto:${email}?subject=Corendon%20Match`, '_self'));
+
     const profilePictureElement = document.getElementById("profile-picture");
     const nameElement = document.getElementById("name");
     const ageElement = document.getElementById("age");
@@ -93,26 +120,28 @@ document.addEventListener("DOMContentLoaded", async function () {
     const interestsContainer = document.getElementById("interests-container");
 
     userInterests.forEach(interest => {
-        const {description: name, imageLink} = interest;
+        const {
+            description: name,
+            imageLink
+        } = interest;
 
         const interestDiv = document.createElement("div");
         interestDiv.className = "interest-element";
 
         const interestThumb = document.createElement("img");
-        // interestThumb.src = "../img/placeholder-images/" + imageLink;
-        interestThumb.src = "../img/placeholder-images/place-holder.png";
+        interestThumb.src = (imageLink ? `../img/interests/${imageLink}` : "../img/placeholder-images/place-holder.png");
         interestThumb.alt = name;
 
         const interestSpan = document.createElement("span");
         const interestSpanText = document.createTextNode(name);
         interestSpan.append(interestSpanText);
-        
+
 
         interestDiv.append(interestThumb);
         interestDiv.append(interestSpan);
 
         interestsContainer.append(interestDiv);
-    
+
     })
 
 });

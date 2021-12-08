@@ -6,7 +6,7 @@
     <title>$Title$</title>
     <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32x32.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
-    <link href="../css/profile/profile.css" rel="stylesheet"/>
+    <link href="../css/profile/profile.css" rel="stylesheet" />
     <link href="../css/navbar.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/chat/chat.css">
@@ -16,175 +16,174 @@
     <script src="../js/config.mockup.js"></script>
     <script src="../js/profile/profile-edit.js"></script>
 </head>
+
 <body class="light-theme">
-<header class="navbar">
-    <div class="logo">
-        <a href="">
-            <img src="../img/corendon-logo.svg" alt="Logo">
-        </a>
-    </div>
-    <nav class="nav-list" id="nav-list">
-        <ul>
-            <li><a href="../../index.html">Home</a></li>
-            <li><a href="./about.html">About</a></li>
-            <li><a href="./contact.html">Contact</a></li>
-            <li><a href="./matches.html">Matches</a></li>
-            <li class="dropdown-box">
-                <div class="dropdown">
-                    <button class="drop-btn">
-                        <i class="fa fa-caret-down"></i>
-                        <i class="fa fa-caret-up"></i>
-                    </button>
-                    <div class="dropdown-content" id="dropdown-content">
-                        <a href="../views/auth/login.html">Inloggen</a>
-                        <a href="../views/auth/register.html">Registreren</a>
+    <header class="navbar">
+        <div class="logo">
+            <a href="">
+                <img src="../img/corendon-logo.svg" alt="Logo">
+            </a>
+        </div>
+        <nav class="nav-list" id="nav-list">
+            <ul>
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="./about.html">About</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+                <li><a href="./matches.html">Matches</a></li>
+                <li class="dropdown-box">
+                    <div class="dropdown">
+                        <button class="drop-btn">
+                            <i class="fa fa-caret-down"></i>
+                            <i class="fa fa-caret-up"></i>
+                        </button>
+                        <div class="dropdown-content" id="dropdown-content">
+                            <a href="../views/auth/login.html">Inloggen</a>
+                            <a href="../views/auth/register.html">Registreren</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <div class="theme-switch-box">
+            <div class="switch">
+                <div>
+                    <input type="checkbox" class="checkbox" id="checkbox">
+                    <label for="checkbox" class="label">
+                        <i class="fas fa-sun"></i>
+                        <i class="fas fa-moon"></i>
+                        <span class="ball"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="burger-menu" id="toggle-btn">
+            <div class="menu-line"></div>
+            <div class="menu-line"></div>
+            <div class="menu-line"></div>
+        </div>
+    </header>
+    <main>
+        <div class="profile-page-wrapper">
+
+            <div class="basic-info-container">
+                <div class="profile-picture-container">
+                    <div class="profile-picture-edit-button-container">
+                        <label for="profile-picture-upload-input" class="custom-file-upload-button">
+                            <i class="fas fa-edit"></i>
+                        </label>
+                        <input id="profile-picture-upload-input" accept="image/*" type="file" />
+                    </div>
+                    <div class="profile-picture-delete-button-container">
+                        <label for="delete-profile-picture-input" class="delete-button">
+                            <i class="fas fa-trash-alt"></i>
+                        </label>
+                        <input id="delete-profile-picture-input" value="delete" type="button" />
+                    </div>
+                    <img alt="Profile picture" class="profile-picture"
+                        src="../img/placeholder-images/profile-picture-placeholder.png" id="profile-pic">
+                </div>
+
+                <div class="basic-info-text-container">
+                    <span class="basic-info editable"><span class="bold">Naam:</span><input type="text"
+                            placeholder="John Doe" id="name-input" required></span>
+
+                    <span class="basic-info editable"><span class="bold">Leeftijd:</span><input type="date"
+                            id="birthdate-input" name="birthdate-input" placeholder="dd-mm-yyyy"></span>
+
+                    <span class="basic-info editable"><span class="bold">Location:</span><input type="text"
+                            placeholder="Amsterdam" id="location-input"></span>
+
+                    <div class="change-profile-button-container">
+                        <span class="edit-profile-button" id="save-button">Opslaan</span>
                     </div>
                 </div>
-            </li>
-        </ul>
-    </nav>
-    <div class="theme-switch-box">
-        <div class="switch">
-            <div>
-                <input type="checkbox" class="checkbox" id="checkbox">
-                <label for="checkbox" class="label">
-                    <i class="fas fa-sun"></i>
-                    <i class="fas fa-moon"></i>
-                    <span class="ball"></span>
-                </label>
-            </div>
-        </div>
-    </div>
-    <div class="burger-menu" id="toggle-btn">
-        <div class="menu-line"></div>
-        <div class="menu-line"></div>
-        <div class="menu-line"></div>
-    </div>
-</header>
-<main>
-    <div class="profile-page-wrapper">
 
-        <div class="basic-info-container">
-            <div class="profile-picture-container">
-                <div class="profile-picture-edit-button-container">
-                    <label for="profile-picture-upload-input" class="custom-file-upload-button">
-                        <i class="fas fa-edit"></i>
-                    </label>
-                    <input id="profile-picture-upload-input" accept="image/*" type="file" />
-                </div>
-                <div class="profile-picture-delete-button-container">
-                    <label for="delete-profile-picture-input" class="delete-button">
-                        <i class="fas fa-trash-alt"></i>
-                    </label>
-                    <input id="delete-profile-picture-input" value="delete" type="button" />
-                </div>
-                <img alt="Profile picture" class="profile-picture"
-                     src="../img/placeholder-images/profile-picture-placeholder.png" id="profile-pic">
             </div>
 
-            <div class="basic-info-text-container">
-                <span class="basic-info editable"><span class="bold">Naam:</span><input type="text"  placeholder="John Doe" id="name-input" required></span>
-                                                                                        
-                <span class="basic-info editable"><span class="bold">Leeftijd:</span><input type="date" id="birthdate-input" name="birthdate-input" placeholder="dd-mm-yyyy"></span>
-      
-                <span class="basic-info editable"><span class="bold">Location:</span><input type="text" placeholder="Amsterdam" id="location-input"></span>
-                                                                                            
-                <div class="change-profile-button-container">
-                    <span class="edit-profile-button" id="save-button">Opslaan</span>
+            <div class="contact-info-container">
+
+                <div class="info-bar">
+                    <span class="icon phone-number"><i class="fas fa-phone-alt"></i></span>
+                    <div class="input-container">
+                        <input type="number" placeholder="061234568" id="phone-number-input">
+                    </div>
+                </div>
+
+                <div class="info-bar">
+                    <span class="icon email"><i class="far fa-envelope"></i></span>
+                    <div class="input-container">
+                        <input type="email" placeholder="johndoe@mail.com" id="email-input" required>
+                    </div>
                 </div>
             </div>
 
-        </div>
 
-        <div class="contact-info-container">
-
-            <div class="info-bar">
-                <span class="icon phone-number"><i class="fas fa-phone-alt"></i></span>
-                <div class="input-container">
-                    <input type="number" placeholder="061234568" id="phone-number-input">
+            <div class="bio-container">
+                <span class="big-container-text">
+                    Bio
+                </span>
+                <div class="textarea-container">
+                    <textarea id="bio-input"></textarea>
                 </div>
             </div>
 
-            <div class="info-bar">
-                <span class="icon email"><i class="far fa-envelope"></i></span>
-                <div class="input-container">
-                    <input type="email" placeholder="johndoe@mail.com" id="email-input" required>
+            <div class="interests-container">
+                <span class="big-container-text">
+                    Interesses<span>Max: 8</span>
+                </span>
+                <div id="interest-containers-holder">
+
                 </div>
+                <div class="pagination-container" id="pagination-container"></div>
             </div>
         </div>
 
+        <button id="chat-btn" class="chat-btn"><i class="far fa-comment chat-icon"></i></button>
+    </main>
 
-        <div class="bio-container">
- <span class="big-container-text">
-            Bio
-        </span>
-            <div class="textarea-container">
-            <textarea id="bio-input">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi maximus egestas sapien sed varius. Nam
-euismod efficitur sapien nec condimentum. Pellentesque habitant morbi tristique senectus et netus et
-malesuada fames ac turpis egestas. Ut luctus suscipit volutpat. Duis accumsan viverra tellus vitae
-posuere. Curabitur commodo arcu vel massa ultricies, non tempus augue dapibus. Praesent sem ex, accumsan
-eget rhoncus vel, consequat nec lectus. Cras eu massa fermentum erat tincidunt dignissim et nec
-lacus.</textarea>
+    <footer>
+        <div class="footer-nav">
+            <div class="left-footer-nav">
+                <nav>
+                    <a href="../../index.html">Home</a>
+                    <a href="./about.html">Over Ons</a>
+                    <a href="./auth/login.html">login</a>
+                    <a href="./faq.html">FAQ</a>
+                </nav>
+            </div>
+            <div class="right-footer-nav">
+                <nav>
+                    <a href="https://www.youtube.com/user/corendon"><img src="../svg/Youtube.svg" alt="" /></a>
+                    <a href="https://twitter.com/corendon"><img src="../svg/twitter-black.svg" alt="" /></a>
+                    <a href="https://vimeo.com/corendonairlines"><img src="../svg/vimeo-black.svg" alt="" /></a>
+                    <a href="https://www.facebook.com/Corendon.nl/"><img src="../svg/facebook-black.svg" alt="" /></a>
+                </nav>
             </div>
         </div>
-
-        <div class="interests-container">
-        <span class="big-container-text">
-            Interesses
-        </span>
-            <div id="interest-containers-holder">
- 
+        <div class="gray-footer-line"></div>
+        <div class="footer-text-box">
+            <div class="footer-copyright">
+                <span>© 2021 Team Quatro. All rights reserved.</span>
             </div>
-            <div class="pagination-container" id="pagination-container"></div>
+            <div class="footer-privacy-nav">
+                <nav>
+                    <a href="../pdf/AV_Corendon_NL_20200108.pdf">Terms of service </a>
+                    <a href="../pdf/Corendon-Privacy-Verklaring-NL.pdf">Privacy Policy</a>
+                </nav>
+            </div>
         </div>
-    </div>
-    
-    <button id="chat-btn" class="chat-btn"><i class="far fa-comment chat-icon"></i></button>
-</main>
+        <div class="footer-image">
+            <img src="../svg/corendon-logo%203.svg" alt="" />
+        </div>
+    </footer>
 
-<footer>
-    <div class="footer-nav">
-        <div class="left-footer-nav">
-            <nav>
-                <a href="../../index.html">Home</a>
-                <a href="./about.html">Over Ons</a>
-                <a href="./auth/login.html">login</a>
-                <a href="./faq.html">FAQ</a>
-            </nav>
-        </div>
-        <div class="right-footer-nav">
-            <nav>
-                <a href="https://www.youtube.com/user/corendon"><img src="../svg/Youtube.svg" alt=""/></a>
-                <a href="https://twitter.com/corendon"><img src="../svg/twitter-black.svg" alt=""/></a>
-                <a href="https://vimeo.com/corendonairlines"><img src="../svg/vimeo-black.svg" alt=""/></a>
-                <a href="https://www.facebook.com/Corendon.nl/"><img src="../svg/facebook-black.svg" alt=""/></a>
-            </nav>
-        </div>
-    </div>
-    <div class="gray-footer-line"></div>
-    <div class="footer-text-box">
-        <div class="footer-copyright">
-            <span>© 2021 Team Quatro. All rights reserved.</span>
-        </div>
-        <div class="footer-privacy-nav">
-            <nav>
-                <a href="../pdf/AV_Corendon_NL_20200108.pdf">Terms of service </a>
-                <a href="../pdf/Corendon-Privacy-Verklaring-NL.pdf">Privacy Policy</a>
-            </nav>
-        </div>
-    </div>
-    <div class="footer-image">
-        <img src="../svg/corendon-logo%203.svg" alt=""/>
-    </div>
-</footer>
-
-   <!-- Javascript -->
-   <!-- <script src="../js/main.js"></script> -->
-   <script src="../js/menu.js"></script>
-   <!-- <script src="../js/chat.js"></script> -->
-   <!-- <script type="module" src="../js/chat/chat-functionals.js"></script> -->
-<script src="../js/config.mockup.js"></script>
-<script src="../js/auth/loggedout-href.js"></script>
-<script src="../js/scaling-textarea.js"></script>
+    <!-- Javascript -->
+    <!-- <script src="../js/main.js"></script> -->
+    <script src="../js/menu.js"></script>
+    <!-- <script src="../js/chat.js"></script> -->
+    <!-- <script type="module" src="../js/chat/chat-functionals.js"></script> -->
+    <script src="../js/config.mockup.js"></script>
+    <script src="../js/auth/loggedout-href.js"></script>
+    <script src="../js/scaling-textarea.js"></script>
 </body>
 </html>

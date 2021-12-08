@@ -6,7 +6,7 @@
     <title>$Title$</title>
     <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32x32.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
-    <link href="../css/profile/profile.css" rel="stylesheet"/>
+    <link href="../css/profile/profile.css" rel="stylesheet" />
     <link href="../css/navbar.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/chat/chat.css">
@@ -16,154 +16,162 @@
     <script src="../js/config.mockup.js"></script>
     <script src="../js/profile/profile.js"></script>
 </head>
+
 <body class="light-theme">
-<header class="navbar">
-    <div class="logo">
-        <a href="">
-            <img src="../img/corendon-logo.svg" alt="Logo">
-        </a>
-    </div>
-    <nav class="nav-list" id="nav-list">
-        <ul>
-            <li><a href="../../index.html">Home</a></li>
-            <li><a href="../views/about.html">About</a></li>
-            <li><a href="../views/contact.html">Contact</a></li>
-            <li><a href="../views/matches.html">Matches</a></li>
-            <li class="dropdown-box">
-                <div class="dropdown">
-                    <button class="drop-btn">
-                        <i class="fa fa-caret-down"></i>
-                        <i class="fa fa-caret-up"></i>
-                    </button>
-                    <div class="dropdown-content" id="dropdown-content">
-                        <a href="../views/auth/login.html">Inloggen</a>
-                        <a href="../views/auth/register.html">Registreren</a>
+    <header class="navbar">
+        <div class="logo">
+            <a href="">
+                <img src="../img/corendon-logo.svg" alt="Logo">
+            </a>
+        </div>
+        <nav class="nav-list" id="nav-list">
+            <ul>
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../views/about.html">About</a></li>
+                <li><a href="../views/contact.html">Contact</a></li>
+                <li><a href="../views/matches.html">Matches</a></li>
+                <li class="dropdown-box">
+                    <div class="dropdown">
+                        <button class="drop-btn">
+                            <i class="fa fa-caret-down"></i>
+                            <i class="fa fa-caret-up"></i>
+                        </button>
+                        <div class="dropdown-content" id="dropdown-content">
+                            <a href="../views/auth/login.html">Inloggen</a>
+                            <a href="../views/auth/register.html">Registreren</a>
+                        </div>
                     </div>
-                </div>
-            </li>
-        </ul>
-    </nav>
-    <div class="theme-switch-box">
-        <div class="switch">
-            <div>
-                <input type="checkbox" class="checkbox" id="checkbox">
-                <label for="checkbox" class="label">
-                    <i class="fas fa-sun"></i>
-                    <i class="fas fa-moon"></i>
-                    <span class="ball"></span>
-                </label>
-            </div>
-        </div>
-    </div>
-    <div class="burger-menu" id="toggle-btn">
-        <div class="menu-line"></div>
-        <div class="menu-line"></div>
-        <div class="menu-line"></div>
-    </div>
-</header>
-<main>
-    <div class="profile-page-wrapper">
-
-        <div class="basic-info-container">
-            <div class="profile-picture-container">
-                <img alt="Profile picture" class="profile-picture" id="profile-picture" src="../img/placeholder-images/profile-picture-placeholder.png">
-            </div>
-
-            <div class="basic-info-text-container">
-                <span class="basic-info"><span class="bold">Naam:</span><span id="name">John Doe</span></span>
-                <span class="basic-info"><span class="bold">Leeftijd:</span><span><span id="age">35</span></span>
-                <span class="basic-info"><span class="bold">Location:</span><span><span id="location">Amsterdam</span></span>
-                <div class="change-profile-button-container">
-                    <a class="edit-profile-button" href="profile-edit.html">wijzig profiel</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="theme-switch-box">
+            <div class="switch">
+                <div>
+                    <input type="checkbox" class="checkbox" id="checkbox">
+                    <label for="checkbox" class="label">
+                        <i class="fas fa-sun"></i>
+                        <i class="fas fa-moon"></i>
+                        <span class="ball"></span>
+                    </label>
                 </div>
             </div>
-
         </div>
+        <div class="burger-menu" id="toggle-btn">
+            <div class="menu-line"></div>
+            <div class="menu-line"></div>
+            <div class="menu-line"></div>
+        </div>
+    </header>
+    <main>
+        <div class="profile-page-wrapper">
 
-        <div class="contact-info-container" id="contact-info-container">
-            <div class="info-bar" id="match-info-bar">
-               
+            <div class="basic-info-container">
+                <div class="profile-picture-container">
+                    <img alt="Profile picture" class="profile-picture" id="profile-picture"
+                        src="../img/placeholder-images/profile-picture-placeholder.png">
+                </div>
+
+                <div class="basic-info-text-container">
+                    <span class="basic-info"><span class="bold">Naam:</span><span id="name">John Doe</span></span>
+                    <span class="basic-info"><span class="bold">Leeftijd:</span><span><span id="age">35</span></span>
+                        <span class="basic-info"><span class="bold">Location:</span><span><span
+                                    id="location">Amsterdam</span></span>
+                            <div class="change-profile-button-container">
+                                <a class="edit-profile-button" href="profile-edit.html" id="edit-profile-button">wijzig profiel</a>
+                            </div>
+                </div>
             </div>
-            
-            <div class="info-bar" id="phonenumber-info-bar">
-                <span class="icon phone-number"><i class="fas fa-phone-alt"></i></span>
-                <span id="phone-number">061234568</span>
+
+            <div class="contact-info-container" id="contact-info-container">
+                <div class="info-bar match-bar" id="match-info-bar-match">
+                    <span class="icon send-message"><i class="fas fa-user-plus"></i></span>
+                    <span>Verstuur match verzoek</span>
+                </div>
+
+                <div class="info-bar match-bar" id="match-info-bar-cancel">
+                    <span class="icon send-message"><i class="fas fa-user-slash"></i></span>
+                    <span>Annuleer match verzoek</span>
+                </div>
+
+                <div class="info-bar match-bar" id="match-info-bar-unmatch">
+                    <span class="icon send-message"><i class="fas fa-user-minus"></i></span>
+                    <span>Verwijder als match</span>
+                </div>
+
+                <div class="info-bar" id="phonenumber-info-bar">
+                    <span class="icon phone-number"><i class="fas fa-phone-alt"></i></span>
+                    <span id="phone-number">061234568</span>
+                </div>
+
+                <div class="info-bar" id="email-info-bar">
+                    <span class="icon email"><i class="far fa-envelope"></i></span>
+                    <span id="email">johndoe@mail.com</span>
+                </div>
             </div>
 
-            <div class="info-bar" id="email-info-bar">
-                <span class="icon email"><i class="far fa-envelope"></i></span>
-                <span id="email">johndoe@mail.com</span>
+            <div class="bio-container">
+                <span class="big-container-text">
+                    Bio
+                </span>
+                <p id="bio"></p>
+            </div>
+
+            <div class="interests-container">
+                <span class="big-container-text">
+                    Interesses
+                </span>
+                <div class="interests-elements-container" id="interests-container">
+
+                </div>
             </div>
         </div>
 
+        <button id="chat-btn" class="chat-btn"><i class="far fa-comment chat-icon"></i></button>
+    </main>
 
-        <div class="bio-container">
- <span class="big-container-text">
-            Bio
-        </span>
-            <p id="bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi maximus egestas sapien sed varius. Nam
-                euismod efficitur sapien nec condimentum. Pellentesque habitant morbi tristique senectus et netus et
-                malesuada fames ac turpis egestas. Ut luctus suscipit volutpat. Duis accumsan viverra tellus vitae
-                posuere. Curabitur commodo arcu vel massa ultricies, non tempus augue dapibus. Praesent sem ex, accumsan
-                eget rhoncus vel, consequat nec lectus. Cras eu massa fermentum erat tincidunt dignissim et nec
-                lacus.</p>
-        </div>
-
-        <div class="interests-container">
-        <span class="big-container-text">
-            Interesses
-        </span>
-            <div class="interests-elements-container" id="interests-container">
-
+    <footer>
+        <div class="footer-nav">
+            <div class="left-footer-nav">
+                <nav>
+                    <a href="../../index.html">Home</a>
+                    <a href="./about.html">Over Ons</a>
+                    <a href="./auth/login.html">login</a>
+                    <a href="./faq.html">FAQ</a>
+                </nav>
+            </div>
+            <div class="right-footer-nav">
+                <nav>
+                    <a href="https://www.youtube.com/user/corendon"><img src="../svg/Youtube.svg" alt="" /></a>
+                    <a href="https://twitter.com/corendon"><img src="../svg/twitter-black.svg" alt="" /></a>
+                    <a href="https://vimeo.com/corendonairlines"><img src="../svg/vimeo-black.svg" alt="" /></a>
+                    <a href="https://www.facebook.com/Corendon.nl/"><img src="../svg/facebook-black.svg" alt="" /></a>
+                </nav>
             </div>
         </div>
-    </div>
+        <div class="gray-footer-line"></div>
+        <div class="footer-text-box">
+            <div class="footer-copyright">
+                <span>© 2021 Team Quatro. All rights reserved.</span>
+            </div>
+            <div class="footer-privacy-nav">
+                <nav>
+                    <a href="../pdf/AV_Corendon_NL_20200108.pdf">Terms of service </a>
+                    <a href="../pdf/Corendon-Privacy-Verklaring-NL.pdf">Privacy Policy</a>
+                </nav>
+            </div>
+        </div>
+        <div class="footer-image">
+            <img src="../svg/corendon-logo%203.svg" alt="" />
+        </div>
+    </footer>
 
-    <button id="chat-btn" class="chat-btn"><i class="far fa-comment chat-icon"></i></button>
-</main>
-
-<footer>
-    <div class="footer-nav">
-        <div class="left-footer-nav">
-            <nav>
-                <a href="../../index.html">Home</a>
-                <a href="./about.html">Over Ons</a>
-                <a href="./auth/login.html">login</a>
-                <a href="./faq.html">FAQ</a>
-            </nav>
-        </div>
-        <div class="right-footer-nav">
-            <nav>
-                <a href="https://www.youtube.com/user/corendon"><img src="../svg/Youtube.svg" alt=""/></a>
-                <a href="https://twitter.com/corendon"><img src="../svg/twitter-black.svg" alt=""/></a>
-                <a href="https://vimeo.com/corendonairlines"><img src="../svg/vimeo-black.svg" alt=""/></a>
-                <a href="https://www.facebook.com/Corendon.nl/"><img src="../svg/facebook-black.svg" alt=""/></a>
-            </nav>
-        </div>
-    </div>
-    <div class="gray-footer-line"></div>
-    <div class="footer-text-box">
-        <div class="footer-copyright">
-            <span>© 2021 Team Quatro. All rights reserved.</span>
-        </div>
-        <div class="footer-privacy-nav">
-            <nav>
-                <a href="../pdf/AV_Corendon_NL_20200108.pdf">Terms of service </a>
-                <a href="../pdf/Corendon-Privacy-Verklaring-NL.pdf">Privacy Policy</a>
-            </nav>
-        </div>
-    </div>
-    <div class="footer-image">
-        <img src="../svg/corendon-logo%203.svg" alt=""/>
-    </div>
-</footer>
-
-   <!-- Javascript -->
-<script src="../js/config.mockup.js"></script>
-<!-- <script src="../js/chat/chat-functionals.js"></script> -->
-<!-- <script src="../js/main.js"></script>
+    <!-- Javascript -->
+    <script src="../js/config.mockup.js"></script>
+    <!-- <script src="../js/chat/chat-functionals.js"></script> -->
+    <!-- <script src="../js/main.js"></script>
 <script src="../js/menu.js"></script>
 <script src="../js/chat.js"></script> -->
-   <!-- <script type="module" src="../js/chat/chat-functionals.js"></script> -->
+    <!-- <script type="module" src="../js/chat/chat-functionals.js"></script> -->
 </body>
+
 </html>
