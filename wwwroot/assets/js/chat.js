@@ -4,6 +4,8 @@ document.addEventListener('DOMContentLoaded', async function () {
         const chatBox = document.querySelector('#main-chat-box');
         const chatList = document.querySelector('.chat-list');
         const requestList = document.querySelector('.requests-list');
+        const blockedList = document.querySelector('.blocked-list');
+
         
         // show chat modal on click button
         document.querySelector('#chat-btn').addEventListener('click', () => {
@@ -21,12 +23,14 @@ document.addEventListener('DOMContentLoaded', async function () {
         document.querySelector('.requests-btn').addEventListener('click', () => {
             document.querySelector('.chat-header-title').innerHTML = 'Verzoeken';
             chatList.classList.add('hide-tab');
+            blockedList.classList.add('hide-tab');
             requestList.classList.add('show-tab');
         });
 
         document.querySelector('.contacts-btn').addEventListener('click', () => {
             document.querySelector('.chat-header-title').innerHTML = 'Contacten';
             chatList.classList.remove('hide-tab');
+            blockedList.classList.add('show-tab');
             requestList.classList.remove('show-tab');
         });
 

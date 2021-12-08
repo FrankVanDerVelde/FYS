@@ -1,16 +1,21 @@
 if (FYSCloud.Session.get("loggedin")) {
     loadChat();
+
 }else{
     document.querySelector("#chat-btn").style.visibility = "hidden";
 }
 
 async function loadChat(){
-    const urlSplitted = window.location.href.split("/"); 
+    const urlSplitted = window.location.href.split(/[/,?]/);
     const checkFilename = urlSplitted.includes('index.html');
-    let chat = await FYSCloud.Utils.fetchAndParseHtml("../views/components/_chat.html");
+    let chat;
+
+    console.log(urlSplitted)
 
     if (checkFilename) {
-         chat = await FYSCloud.Utils.fetchAndParseHtml("./assets/views/components/_chat.html");
+         chat = await FYSCloud.Utils.fetchAndParseHtml("assets/views/components/_chat.html");
+    }else{
+        chat = await FYSCloud.Utils.fetchAndParseHtml("../views/components/_chat.html");
     }
 
     //Add the chat modals to the page

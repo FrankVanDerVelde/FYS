@@ -51,12 +51,12 @@ MutationObersver();
 async function initalSet() {
     //get session
     let session = FYSCloud.Session.get('loggedin');
-    // if (session === null || session === undefined)
-    //      return;
+    if (session === null || session === undefined)
+        return;
 
     console.log(session);
-    // thisUserID = session[0].id;
-    thisUserID = 61;
+    thisUserID = session[0].id;
+    // thisUserID = 61;
 
     wantedUsers = await getAllUsers();
 
@@ -66,6 +66,10 @@ async function initalSet() {
 
 
         console.log(wantedUsers);
+
+
+        checkForOwnID(wantedUsers);
+
         //set matches based on intrests
         await setBasedMatches(wantedUsers);
 
@@ -77,6 +81,8 @@ async function initalSet() {
         //set users under filter
         for (let i = 0; i < userCountLeftToCreate; i++) {
             if (amountOfActiveCards > 0 && userCountLeftToCreate > 0) {
+
+
                 setPersonCards(allCards[i + 3], wantedUsers[i], false);
             }
         }
@@ -84,7 +90,17 @@ async function initalSet() {
     }
 
 }
-
+function checkForOwnID(wantedUsers)
+{
+    for (let i = wantedUsers.length; i > 0; i--) {
+        if (wantedUsers[i - 1].user.id === thisUserID) {
+            const index = wantedUsers.indexOf(wantedUsers[i - 1]);
+            if (index > -1) {
+                wantedUsers.splice(index, 1);
+            }
+        }
+    }
+}
 async function setBasedMatches(wantedUsers) {
     if (thisUserID === 0)
         return;
@@ -121,7 +137,7 @@ async function checkInterests(selectedFilters) {
         wantedUsers = await getAllUsers();
 
     }
-
+    checkForOwnID(wantedUsers);
     //creation and setting of elements.
     callCreateFunctions(wantedUsers, intrests, selectedInterestFilter);
 
@@ -148,11 +164,6 @@ function setBasedCards(wantedUsers, interests) {
                     if (index > -1) {
                         tempUsers.splice(index, 1);
                     }
-                } else if (tempUsers[i - 1].user.id === thisUserID) {
-                    const index = tempUsers.indexOf(tempUsers[i - 1]);
-                    if (index > -1) {
-                        tempUsers.splice(index, 1);
-                    }
                 }
             }
         } catch (e) {
@@ -168,11 +179,11 @@ function setBasedCards(wantedUsers, interests) {
                     }
                 }
             }
-            const x = {user: tempUsers[i], matchingInterestCount: matchingCount};
-            if (x.matchingInterestCount !== 0) {
-                basedMatches.push(x);
+            console.log(tempUsers[i].user);
+            const x = {user: tempUsers[i].user, matchingInterestCount: matchingCount};
+            basedMatches.push(x);
 
-            }
+
         }
 
         basedMatches.sort((a, b) => {
@@ -186,8 +197,6 @@ function setBasedCards(wantedUsers, interests) {
         for (let i = 0; i < 3; i++) {
             setPersonCards(allCards[i], basedMatches[i].user, true);
         }
-
-
     }
 }
 
@@ -253,11 +262,6 @@ function checkPeopleForFilters(users, interests) {
     for (let i = users.length; i > 0; i--) {
 
         if (users[i - 1].userIntrests.length === 0) {
-            const index = users.indexOf(users[i - 1]);
-            if (index > -1) {
-                users.splice(index, 1);
-            }
-        } else if (users[i - 1].user.id === thisUserID) {
             const index = users.indexOf(users[i - 1]);
             if (index > -1) {
                 users.splice(index, 1);
@@ -384,7 +388,7 @@ function setInfo(user, card) {
     if (user.birthdate !== null)
         card.children[0].children[3].innerHTML = user.birthdate.split("T")[0];
     else
-        card.children[0].children[3].innerHTML = "xx-x-xxxx";
+        card.children[0].children[3].innerHTML = "xxxx-xx-xx";
 
     card.children[1].children[0].href = `javascript:window.location.href="./profile.html?userid=${user.id}"`;
 
@@ -410,14 +414,16 @@ function checkCardAmount() {
         amountOfWantCreateCards = userCountLeftToCreate;
         remainder = (userCountLeftToCreate % 3);
         //call createPersonCards.
-
+        console.log(wantedUsers);
+        var activeCardsBeforeCreation = amountOfActiveCards;
         createPersonCards((amountOfWantCreateCards - remainder) / 3, remainder);
         var allCards = document.getElementsByClassName('card');
+
 
         // code below might cause a bug.
         for (let i = 0; i < amountOfActiveCards; i++) {
 
-            setPersonCards(allCards[i + 6], wantedUsers[i], false);
+            setPersonCards(allCards[i + 3 + activeCardsBeforeCreation], wantedUsers[i + activeCardsBeforeCreation], false);
         }
 
     }
