@@ -60,8 +60,7 @@ async function initalSet() {
 
     wantedUsers = await getAllUsers();
 
-    if(wantedUsers !== undefined)
-    {
+    if (wantedUsers !== undefined) {
         if (wantedUsers.length !== 0)
             shuffle(wantedUsers);
 
@@ -78,7 +77,7 @@ async function initalSet() {
         //set users under filter
         for (let i = 0; i < userCountLeftToCreate; i++) {
             if (amountOfActiveCards > 0 && userCountLeftToCreate > 0) {
-                setPersonCards(allCards[i + 3], wantedUsers[i],false);
+                setPersonCards(allCards[i + 3], wantedUsers[i], false);
             }
         }
         document.getElementsByClassName("resultaten")[0].innerHTML = wantedUsers.length + " resultaten gevonden";
@@ -134,13 +133,11 @@ function setBasedCards(wantedUsers, interests) {
     //get temp variable with the wanted users,
     var allCards = document.getElementsByClassName('card');
 
-    if(interests.length === 0)
-    {
+    if (interests.length === 0) {
         for (let i = 0; i < 3; i++) {
-           setPersonCards(allCards[i], wantedUsers[Math.floor(Math.random() * wantedUsers.length)].user, true);
+            setPersonCards(allCards[i], wantedUsers[Math.floor(Math.random() * wantedUsers.length)].user, true);
         }
-    }
-    else{
+    } else {
         var tempUsers = Array.from(wantedUsers);
         console.log(tempUsers);
         try {
@@ -186,7 +183,6 @@ function setBasedCards(wantedUsers, interests) {
         console.log(basedMatches);
 
 
-
         for (let i = 0; i < 3; i++) {
             setPersonCards(allCards[i], basedMatches[i].user, true);
         }
@@ -221,7 +217,7 @@ function callCreateFunctions(wantedUsers, interest, selectedInterestFilter) {
         //console.log(amountOfActiveCards);
         for (let i = 0; i < amountOfActiveCards; i++) {
 
-            setPersonCards(allCards[i + 3], wantedUsers[i],false);
+            setPersonCards(allCards[i + 3], wantedUsers[i], false);
         }
     }
     //set bottom text for result amount.
@@ -345,14 +341,12 @@ function setPersonCards(card, user, initalSet) {
     //card.children[0].children[2] <-- place
     // card.children[2].children[0] <-- "meer zien" button;
     try {
-        if(!initalSet)
-        {
-           setInfo(user.user, card);
+        if (!initalSet) {
+            setInfo(user.user, card);
             userCountLeftToCreate--;
 
-        }
-        else{
-            setInfo(user,card);
+        } else {
+            setInfo(user, card);
         }
 
     } catch (e) {
@@ -362,10 +356,13 @@ function setPersonCards(card, user, initalSet) {
 
 }
 
-function setInfo(user, card)
-{
-    card.children[0].children[0].src = user.profilePhoto;
-    card.children[0].children[1].innerHTML = user.name;
+function setInfo(user, card) {
+
+    const profilePhoto = user.profilePhoto
+    const name = user.name;
+    card.children[0].children[0].src = (profilePhoto ? profilePhoto : `https://ui-avatars.com/api/?name=${name}?background=#e0dcdc`);
+
+    card.children[0].children[1].innerHTML = name;
     var genderText = "";
     switch (user.genderFk) {
         case 1:
@@ -417,10 +414,10 @@ function checkCardAmount() {
         createPersonCards((amountOfWantCreateCards - remainder) / 3, remainder);
         var allCards = document.getElementsByClassName('card');
 
-            // code below might cause a bug.
+        // code below might cause a bug.
         for (let i = 0; i < amountOfActiveCards; i++) {
 
-           setPersonCards(allCards[i +  6], wantedUsers[i],false);
+            setPersonCards(allCards[i + 6], wantedUsers[i], false);
         }
 
     }
@@ -448,10 +445,9 @@ function createPersonCards(numberOfRows, remainder) {
 
     if (remainder <= 0) {
         console.log("can create equal amount of rows or no people found");
-    }
-    else {
+    } else {
 
-        if(maxAmount === 0)
+        if (maxAmount === 0)
             return;
 
         createParentDiv();
