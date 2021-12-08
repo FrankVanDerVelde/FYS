@@ -37,9 +37,7 @@ async function incrementPage() {
 
 async function getMaxPages() {
     let totalUsers = await getAllUsersAsync();
-
     let totalPages = Math.ceil(totalUsers.length / 8);
-
 
     document.getElementById("pages").innerHTML = "\\" + totalPages;
     return totalPages;
@@ -61,6 +59,7 @@ async function openDeleteDialog(userId) {
             location.reload();
         }
     });
+
 }
 
 function closeDeleteDialog() {
@@ -68,7 +67,6 @@ function closeDeleteDialog() {
 }
 
 async function updateUser(userId) {
-    const image = document.getElementById("userImage").src;
     const name = document.getElementById("name").value;
     const birthDate = document.getElementById("birthDate").value;
     const bio = document.getElementById("bio").value;
@@ -98,6 +96,12 @@ async function openEditDialog(userId) {
     document.getElementById("save-button").addEventListener("click", async function() {
         await updateUser(userId);
         location.reload();
+    });
+
+    document.getElementById("defaultBtn").addEventListener("click", async function () {
+        const userPhotoId = user.name.replace(/\s+/g, '+').toLowerCase();
+        const profilePhoto = `https://ui-avatars.com/api/?name=${userPhotoId}?background=random`;
+        await sqlUpdateAsync("account", ['profilePhoto'], [profilePhoto], userId);
     });
 }
 

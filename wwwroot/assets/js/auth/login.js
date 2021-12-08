@@ -45,8 +45,13 @@ async function login() {
             //hier komt sessie functie
             FYSCloud.Session.set("loggedin", accountInfo);
 
-            //doorlinken naar profile page (als er geen error is).
-            window.location.replace("../../views/profile-edit.html");
+            if(accountInfo[0].usertypeFk === 1) {
+                // Doorlinken naar admin panel als de user admin is.
+                window.location.replace("../../views/admin/panel.html")
+            } else {
+                //doorlinken naar profile page (als er geen error is).
+                window.location.replace("../../views/profile-edit.html");
+            }
 
         } else {
             document.querySelector("#error-message").innerHTML = "Er is iets mis gegaan." +

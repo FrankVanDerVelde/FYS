@@ -82,6 +82,13 @@ document.addEventListener("DOMContentLoaded", async function () {
             } catch (e) {
                 console.error(e);
             }
+        } else {
+            try {
+                await FYSCloud.API.queryDatabase("UPDATE account SET name = ?, birthdate = ?, location = ?, phonenumber = ?, email = ?, bio = ? WHERE id = ?",
+                [newName, newBirthdate, newLocation, newPhoneNumber, newEmail, newBio, userId]);
+            } catch (e) {
+                console.error(e);
+            }
         }
 
         const newActiveInterestList = [];
@@ -118,7 +125,8 @@ document.addEventListener("DOMContentLoaded", async function () {
             console.log(e);
         }
     }
-
+        window.alert('Profile changed');
+        window.location.reload();
     });
 
 

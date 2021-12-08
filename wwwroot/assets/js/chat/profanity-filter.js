@@ -306,8 +306,8 @@ const profanityList = [
     "troelala",
     "trut",
     "tyfuslijder",
-    "variétéhoer",
-    "varken",
+    "letiétéhoer",
+    "letken",
     "vetklep",
     "vetzak",
     "viruswappie",
@@ -343,7 +343,7 @@ export function censorProfanity (message) {
     profanityList.forEach(profanityWord => {
         if (newMessage.includes(profanityWord)) {
             const replacementString = '*'.repeat(profanityWord.length) // Not supported by internet explorer
-            // var str = new Array(len + 1).join( character ); // Full support
+            // let str = new Array(len + 1).join( character ); // Full support
             newMessage = newMessage.split(profanityWord).join(replacementString);
         }
     });
