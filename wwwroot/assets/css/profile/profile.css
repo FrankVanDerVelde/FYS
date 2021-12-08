@@ -346,6 +346,11 @@ main::after {
     flex-direction: column;
 }
 
+.big-container-text {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
 .interests-container ul {
     margin: 0.5em 0 0.5em 28px;
 }
@@ -364,6 +369,36 @@ main::after {
     align-content: center;
     flex-basis: 25%;
     margin-bottom: 10px;
+}
+
+.interests-subtext {
+    margin-left: 20px;
+    color: #6e6e6e;
+    font-size: 16px;
+    display: inline-block;
+}
+
+.interests-subtext.shake{
+    color: red;
+    font-size:20px;
+    -webkit-animation-name: shake;
+    -webkit-animation-duration: 0.5s;
+    -webkit-transform-origin:50% 50%;
+    -webkit-animation-iteration-count: infinite;
+  }
+  
+  @-webkit-keyframes shake {
+    0% { -webkit-transform: translate(2px, 1px) rotate(0deg); } 
+    10% { -webkit-transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { -webkit-transform: translate(-3px, 0px) rotate(1deg); }
+    30% { -webkit-transform: translate(0px, 2px) rotate(0deg); }
+    40% { -webkit-transform: translate(1px, -1px) rotate(1deg); }
+    50% { -webkit-transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { -webkit-transform: translate(-3px, 1px) rotate(0deg); }
+    70% { -webkit-transform: translate(2px, 1px) rotate(-1deg); }
+    80% { -webkit-transform: translate(-1px, -1px) rotate(1deg); }
+    90% { -webkit-transform: translate(2px, 2px) rotate(0deg); }
+    100% { -webkit-transform: translate(1px, -2px) rotate(-1deg); }
 }
 
 .interest-element img {
@@ -565,11 +600,6 @@ footer {
 
     .contact-info-container span {
         font-size: 14px;
-    }
-
-    .big-container-text {
-        font-size: 20px;
-        margin-bottom: 10px;
     }
 
     .bio-container {

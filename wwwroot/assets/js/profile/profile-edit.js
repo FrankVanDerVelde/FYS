@@ -9,8 +9,8 @@ document.addEventListener("DOMContentLoaded", async function () {
         console.error(e);
     }
 
-    let userInterests = await getUserInterests(userId);
-    let activeInterests = userInterests.length;
+    const userInterests = await getUserInterests(userId);
+    const maxInterests = 8;
 
     let userData;
     try {
@@ -28,8 +28,6 @@ document.addEventListener("DOMContentLoaded", async function () {
         bio,
         phonenumber
     } = userData[0];
-
-    console.log(profilePhoto)
 
     const nameInput = document.getElementById("name-input");
     const birthdateInput = document.getElementById("birthdate-input");
@@ -58,6 +56,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     phoneNumberInput.value = phonenumber;
     emailInput.value = email;
     bioInput.value = bio;
+    profilePicElement.src = (profilePhoto ? profilePhoto : `https://ui-avatars.com/api/?name=${name}?background=#e0dcdc`);
 
     let newProfilePicDataUrl;
     profilePictureUpdateInput.addEventListener('change', async () => {
@@ -191,8 +190,8 @@ document.addEventListener("DOMContentLoaded", async function () {
 
         // Check if the user has the interest in the database and if so make the box checked
         if (userInterests.includes(interestName)) {
-            // interestCheckbox.checked = true;
-            interestCheckbox.setAttribute("checked", true);
+            interestCheckbox.checked = true;
+            // interestCheckbox.setAttribute("checked", true);
         }
 
         // Make checkbox label
@@ -214,7 +213,7 @@ document.addEventListener("DOMContentLoaded", async function () {
             // reset to 0
             interestsContainer.append(interestTabDiv);
         }
-        
+
         interestCounter++;
 
         if (interestCounter > 11) {
@@ -252,20 +251,55 @@ document.addEventListener("DOMContentLoaded", async function () {
             document.querySelectorAll(".interests-checkboxes-container")[this.getAttribute('number')].classList.toggle('active');
         })
     })
-    
-    // Add on clicks to interests
-    document.querySelectorAll(".interest-checkbox-container").forEach(element => {
-        const inputElement = element.querySelector('input');
-       
-        element.querySelector('label').addEventListener('click', function (event) {
-            console.log(inputElement)
-            if (activeInterests > 8) {
-                inputElement.setAttribute("checked", false);
+
+    const interestCheckBoxLabels = document.querySelectorAll(".interest-checkbox-container>label");
+    const interestCheckBoxes = document.querySelectorAll('.interest-checkbox-container>input');
+    const maxInterestLabel = document.getElementById("max-interest-label");
+
+    // Checks if max interest reached
+    let initialCall = true;
+
+    function maxInterestCheck() {
+        // Add a micro delay because of a bug where the queryselectall takes the elements before the browser is finished unchecking the one that was clicked
+        setTimeout(function () {
+            const activeInterestCheckBoxes = document.querySelectorAll('.interest-checkbox-container>input:checked');
+            let activeCheckBoxCount = activeInterestCheckBoxes.length;
+            if (activeCheckBoxCount == maxInterests) {
+                if (initialCall == false) {
+                    console.log(initialCall)
+                    // Turn shake on
+                    maxInterestLabel.classList.toggle('shake');
+                    // Turn shake off
+                    setTimeout(function () {
+                        maxInterestLabel.classList.toggle('shake')
+                    }, 1000);
+                }
+
+                interestCheckBoxes.forEach(checkBox => {
+                    if (!checkBox.checked) {
+                        checkBox.disabled = true;
+                    }
+                });
             } else {
-                inputElement.checked ? activeInterests-- : activeInterests++;
+                console.log(maxInterestLabel);
+
+                interestCheckBoxes.forEach(checkBox => {
+                    if (checkBox.disabled) {
+                        checkBox.disabled = false;
+                    }
+                });
+
             }
-            console.log(activeInterests);
+            initialCall = false;
+        }, 25);
+
+    }
+    maxInterestCheck();
+
+    // Add on clicks to interests
+    interestCheckBoxLabels.forEach(element => {
+        element.addEventListener('click', function (event) {
+            maxInterestCheck();
         })
     });
-    console.log(activeInterests);
 });
