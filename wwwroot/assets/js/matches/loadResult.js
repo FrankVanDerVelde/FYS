@@ -60,25 +60,29 @@ async function initalSet() {
 
     wantedUsers = await getAllUsers();
 
-    if (wantedUsers.length !== 0)
-        shuffle(wantedUsers);
+    if(wantedUsers !== undefined)
+    {
+        if (wantedUsers.length !== 0)
+            shuffle(wantedUsers);
 
 
-    console.log(wantedUsers);
-    //set matches based on intrests
-    await setBasedMatches(wantedUsers);
+        console.log(wantedUsers);
+        //set matches based on intrests
+        await setBasedMatches(wantedUsers);
 
 
-    userCountLeftToCreate = wantedUsers.length;
-    var allCards = document.getElementsByClassName('card');
-    amountOfActiveCards = allCards.length - 3;
+        userCountLeftToCreate = wantedUsers.length;
+        var allCards = document.getElementsByClassName('card');
+        amountOfActiveCards = allCards.length - 3;
 
-    for (let i = 0; i < userCountLeftToCreate; i++) {
-        if (amountOfActiveCards > 0 && userCountLeftToCreate > 0) {
-            setPersonCards(allCards[i + 3], wantedUsers[i]);
+        for (let i = 0; i < userCountLeftToCreate; i++) {
+            if (amountOfActiveCards > 0 && userCountLeftToCreate > 0) {
+                setPersonCards(allCards[i + 3], wantedUsers[i]);
+            }
         }
+        document.getElementsByClassName("resultaten")[0].innerHTML = wantedUsers.length + " resultaten gevonden";
     }
-    document.getElementsByClassName("resultaten")[0].innerHTML = wantedUsers.length + " resultaten gevonden";
+
 }
 
 async function setBasedMatches(wantedUsers) {
