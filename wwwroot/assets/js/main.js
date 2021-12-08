@@ -6,9 +6,11 @@ if (FYSCloud.Session.get("loggedin")) {
 }
 
 async function loadChat(){
-    const urlSplitted = window.location.href.split("/"); 
+    const urlSplitted = window.location.href.split(/[/,?]/);
     const checkFilename = urlSplitted.includes('index.html');
     let chat;
+
+    console.log(urlSplitted)
 
     if (checkFilename) {
          chat = await FYSCloud.Utils.fetchAndParseHtml("assets/views/components/_chat.html");
