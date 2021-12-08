@@ -75,9 +75,10 @@ async function initalSet() {
         var allCards = document.getElementsByClassName('card');
         amountOfActiveCards = allCards.length - 3;
 
+        //set users under filter
         for (let i = 0; i < userCountLeftToCreate; i++) {
             if (amountOfActiveCards > 0 && userCountLeftToCreate > 0) {
-                setPersonCards(allCards[i + 3], wantedUsers[i]);
+                setPersonCards(allCards[i + 3], wantedUsers[i],false);
             }
         }
         document.getElementsByClassName("resultaten")[0].innerHTML = wantedUsers.length + " resultaten gevonden";
@@ -189,9 +190,11 @@ function setBasedCards(wantedUsers, interests) {
         for (let i = 0; i < 3; i++) {
             setPersonCards(allCards[i], basedMatches[i].user, true);
         }
+
+
     }
-
-
+    amountOfActiveCards -=3;
+    console.log(amountOfActiveCards);
 }
 
 function callCreateFunctions(wantedUsers, interest, selectedInterestFilter) {
@@ -220,7 +223,7 @@ function callCreateFunctions(wantedUsers, interest, selectedInterestFilter) {
         //console.log(amountOfActiveCards);
         for (let i = 0; i < amountOfActiveCards; i++) {
 
-            setPersonCards(allCards[i + 3], wantedUsers[i]);
+            setPersonCards(allCards[i + 3], wantedUsers[i],false);
         }
     }
     //set bottom text for result amount.
@@ -348,6 +351,8 @@ function setPersonCards(card, user, initalSet) {
         if(!initalSet)
         {
            setInfo(user.user, card);
+            userCountLeftToCreate--;
+
         }
         else{
             setInfo(user,card);
@@ -356,8 +361,12 @@ function setPersonCards(card, user, initalSet) {
     } catch (e) {
         console.log(e);
     }
-    if (!initalSet)
-        userCountLeftToCreate--;
+    console.log(maxAmount +" max amount");
+    console.log(userCountLeftToCreate + " users left to create");
+    console.log(amountOfWantCreateCards+ " amount of want to create cards" );
+    console.log(amountOfActiveCards+ " amount of active cards" );
+    console.log(remainder + " remainder");
+
 }
 
 function setInfo(user, card)
@@ -388,9 +397,12 @@ function setInfo(user, card)
         card.children[0].children[3].innerHTML = "xx-x-xxxx";
 
     card.children[1].children[0].href = `javascript:window.location.href="./profile.html?userid=${user.id}"`;
+
 }
 
 function loadMoreCards() {
+
+
     if (wantedUsers === undefined || wantedUsers === null)
         return;
     checkCardAmount();
@@ -399,27 +411,35 @@ function loadMoreCards() {
 //check card amount, if amount of active cards is less then user (that dont have a card), set amount of cards left to create to the amount of users
 // also calculate the remainder to check if extra row is needed.
 function checkCardAmount() {
-    console.log(wantedUsers);
+
+
     if (amountOfActiveCards !== wantedUsers.length) {
         maxAmount = 9;
-        amountOfWantCreateCards = userCountLeftToCreate;
 
+
+        amountOfWantCreateCards = userCountLeftToCreate;
         remainder = (userCountLeftToCreate % 3);
         //call createPersonCards.
+
         createPersonCards((amountOfWantCreateCards - remainder) / 3, remainder);
         var allCards = document.getElementsByClassName('card');
 
+
+
         for (let i = 0; i < amountOfActiveCards; i++) {
 
-            setPersonCards(allCards[i + 3], wantedUsers[i]);
+            setPersonCards(allCards[i + 3], wantedUsers[i],false);
         }
 
     }
+    console.log(userCountLeftToCreate + " users left to create");
+
 }
 
 //duplicate person card and create row.
 function createPersonCards(numberOfRows, remainder) {
     var flexGrids = document.getElementsByClassName("flex-grid");
+
     maxAmount = 9;
     //for the numberOfRows wanted,
     if (numberOfRows >= 1) {
@@ -434,11 +454,15 @@ function createPersonCards(numberOfRows, remainder) {
         }
     }
 
-    if (remainder === 0) {
+
+    if (remainder <= 0) {
         console.log("can create equal amount of rows or no people found");
-    } else {
-        if (maxAmount === 0)
+    }
+    else {
+
+        if(maxAmount === 0)
             return;
+
         createParentDiv();
         for (let j = 0; j < remainder; j++) {
             appendBaseCard(flexGrids);
