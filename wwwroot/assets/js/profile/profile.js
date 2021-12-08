@@ -43,8 +43,6 @@ document.addEventListener("DOMContentLoaded", async function () {
         // Add icon span to div
         matchInfoBar.append(matchIconSpan);
 
-        
-
         // Create span to hold the description text
         const matchTextSpan = document.createElement("span");
 
@@ -87,10 +85,10 @@ document.addEventListener("DOMContentLoaded", async function () {
     nameElement.innerHTML = name;
     ageElement.innerHTML = (new Date).getFullYear() - new Date(birthdate).getFullYear();
     locationElement.innerHTML = location;
-    profilePictureElement.innerHTML = profilePhoto;
     emailElement.innerHTML = email;
     bioElement.innerHTML = bio;
     phoneNumber.innerHTML = phonenumber;
+    profilePictureElement.src = (profilePhoto ? profilePhoto : `https://ui-avatars.com/api/?name=${name}?background=#e0dcdc`);
 
     const interestsContainer = document.getElementById("interests-container");
 

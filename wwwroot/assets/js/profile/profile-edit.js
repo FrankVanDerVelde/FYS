@@ -31,8 +31,12 @@ document.addEventListener("DOMContentLoaded", async function () {
     const profilePicElement = document.getElementById("profile-pic");
     const saveButton = document.getElementById("save-button");
 
-    profilePicDeleteButton.addEventListener('click', ()=>{
-        // Remove database entry for profile picture
+    profilePicDeleteButton.addEventListener('click', async () => {
+            try {
+                await FYSCloud.API.queryDatabase("UPDATE account SET profilePhoto = '' WHERE id = ?", [userId]);
+            } catch (e) {
+                console.log(e);
+            }
     });
 
     // Set a min and max birthdate on the birthdate picker
@@ -51,8 +55,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     phoneNumberInput.value = phonenumber;
     emailInput.value = email;
     bioInput.value = bio;
-    profilePicElement.src = profilePhoto;
-
+    
     let newProfilePicDataUrl;
     profilePictureUpdateInput.addEventListener('change', async () => {
         newProfilePicDataUrl = await FYSCloud.Utils.getDataUrl(profilePictureUpdateInput);
