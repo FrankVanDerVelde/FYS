@@ -53,7 +53,7 @@ async function initalSet() {
     if (session === null || session === undefined)
         return;
 
-   // console.log(session);
+    // console.log(session);
     thisUserID = session[0].id;
     // thisUserID = 61;
 
@@ -64,10 +64,10 @@ async function initalSet() {
             shuffle(wantedUsers);
 
 
-   //     console.log(wantedUsers);
+        //     console.log(wantedUsers);
 
 
-        checkForOwnID(wantedUsers);
+        checkForOwnIDAndAdmin(wantedUsers);
 
         //set matches based on intrests
         await setBasedMatches(wantedUsers);
@@ -89,8 +89,8 @@ async function initalSet() {
     }
 
 }
-function checkForOwnID(wantedUsers)
-{
+
+function checkForOwnIDAndAdmin(wantedUsers) {
     for (let i = wantedUsers.length; i > 0; i--) {
         if (wantedUsers[i - 1].user.id === thisUserID) {
             const index = wantedUsers.indexOf(wantedUsers[i - 1]);
@@ -98,8 +98,15 @@ function checkForOwnID(wantedUsers)
                 wantedUsers.splice(index, 1);
             }
         }
+        else if (wantedUsers[i - 1].user.usertypeFk === 1) {
+            const index = wantedUsers.indexOf(wantedUsers[i - 1]);
+            if (index > -1) {
+                wantedUsers.splice(index, 1);
+            }
+        }
     }
 }
+
 async function setBasedMatches(wantedUsers) {
     if (thisUserID === 0)
         return;
@@ -128,15 +135,15 @@ async function checkInterests(selectedFilters) {
     }
 
     if (age !== "" || gender !== "") {
-       // console.log("db call with params");
+        // console.log("db call with params");
         wantedUsers = await getUsersWithIntrests(age, gender);
 
     } else {
-     //   console.log("db call all users");
+        //   console.log("db call all users");
         wantedUsers = await getAllUsers();
 
     }
-    checkForOwnID(wantedUsers);
+    checkForOwnIDAndAdmin(wantedUsers);
     //creation and setting of elements.
     callCreateFunctions(wantedUsers, intrests, selectedInterestFilter);
 
@@ -379,10 +386,15 @@ function setInfo(user, card) {
 
     card.children[0].children[2].innerHTML = genderText;
 
-    if (user.birthdate !== null)
-        card.children[0].children[3].innerHTML = user.birthdate.split("T")[0];
-    else
-        card.children[0].children[3].innerHTML = "xxxx-xx-xx";
+    if (user.birthdate !== null){
+        let dateCeiling = new Date();
+        var birthday = dateCeiling.getFullYear() - user.birthdate.split("-")[0];
+        card.children[0].children[3].innerHTML = `Leeftijd: ${birthday}`;
+    }
+    else{
+        card.children[0].children[3].innerHTML = "Leeftijd: ??";
+    }
+
 
     card.children[1].children[0].href = `javascript:window.location.href="./profile.html?profileid=${user.id}"`;
 
