@@ -24,6 +24,11 @@ body, html {
     width: 150px;
 }
 
+.profile-button a img {
+    height: 50px;
+    width: auto;
+}
+
 .nav-list {
     display: flex;
     justify-content: center;
