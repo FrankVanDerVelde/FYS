@@ -11,6 +11,8 @@ document.addEventListener('DOMContentLoaded', async function () {
         const messageMainTemplate = document.querySelector('#message-template').innerHTML;
         const blockedUserMainTemplate = document.querySelector('#blocked-user-template').innerHTML;
 
+        document.querySelector('.profile-photo').src = userSession[0].profilePhoto;
+
         //Adds the match requests in the requests tab/view
         await addRequests();
 
