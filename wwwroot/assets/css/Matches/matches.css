@@ -705,6 +705,7 @@ h4 {
     margin: auto;
     flex: 1;
     fill: var(--text1);
+    filter: var(--filterIcon);
 }
 
 .close {
@@ -717,6 +718,8 @@ h4 {
 .search {
     width: 25px;
     height: auto;
+    filter: var(--filterIcon);
+
 }
 
 .matches-page-navigation {
