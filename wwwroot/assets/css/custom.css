@@ -29,6 +29,7 @@
     --filter:#FFFFFF;
     --filterborder:#636b6f;
     --text3:#FFFFFF;
+    --filterIcon: invert(0);
 
 }
 
@@ -49,6 +50,6 @@
     --social-footer-nav: invert(1) ;
     --filter: rgb(36, 36, 38);
     --filterborder: #ffffff;
-
+    --filterIcon: invert(1);
 }
 
