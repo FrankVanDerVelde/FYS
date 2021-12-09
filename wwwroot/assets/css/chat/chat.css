@@ -167,8 +167,13 @@
 
 .profile-img img,
 .detail-person-header img{
+    width: 45px;
     height: 45px;
     border-radius: 50%;
+}
+
+.detail-person-header img{
+    cursor: pointer;
 }
 
 .close-btn{
@@ -233,22 +238,6 @@
     width: 100%;
 }
 
-input[type="file"] {
-    display: none;
-}
-
-.img-upload {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    padding: 6px 12px;
-    cursor: pointer;
-    color: white;
-}
-
-.img-upload i{
-    color: #2196f3;
-}
 
 .chat-footer .btn-box{
     flex: 1;
@@ -256,7 +245,7 @@ input[type="file"] {
 }
 
 .chat-footer .input-box{
-    margin-left: -10px;
+    margin-left: 75px;
 }
 
 .form-box-icon{
@@ -463,6 +452,7 @@ li p{
 }
 
 .message-overview-img img{
+    height:40px;
     max-width: 40px;
     width: 100%;
     border-radius: 50%;
