@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="ScreenOrientation" content="autoRotate:disabled">
+
     <title>Home</title>
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/img/favicon-32x32.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
@@ -11,71 +13,84 @@
     <link rel="stylesheet" href="./assets/css/footer.css">
     <link rel="stylesheet" href="./assets/css/home/home.css">
     <link rel="stylesheet" href="./assets/css/chat/chat.css">
+
+    <!-- Javascript -->
+    <script type="text/javascript" src="https://cdn.fys.cloud/fyscloud/0.0.4/fyscloud.min.js"></script>
+    <script type="text/javascript" src="./assets/js/config.mockup.js" defer></script>
+
+    <script type="text/javascript" src="./assets/js/main.js" defer></script>
+    <script type="text/javascript" src="./assets/js/menu.js" defer></script>
+    <script type="text/javascript" src="./assets/js/chat.js" defer></script>
+    <script type="text/module" src="./assets/js/chat/chat-functionals.js" defer></script>
+    <script type="text/javascript" src="./assets/js/langChanger.js" defer></script>
+    <script type="text/javascript" src="./assets/js/inlog-change.js" defer></script>
+    <script type="text/javascript" src="./assets/js/auth/logout.js" defer></script>
+
 </head>
 <body class="light-theme">
-    <header class="navbar">
-        <div class="logo">
-            <a href="">
-                <img src="./assets/img/corendon-logo.svg" alt="Logo">
-            </a>
-        </div>
-        <nav class="nav-list" id="nav-list">
-            <ul>
-                <li><a href="./index.html" class="active">Home</a></li>
-                <li><a href="./assets/views/about.html">About</a></li>
-                <li><a href="./assets/views/contact.html">Contact</a></li>
-                <li><a href="./assets/views/matches.html" class="matches-link">Matches</a></li>
-                <li>
-                    <div class="lang-changer-input">
-                        <select id="langSelecter" onchange="checklang()">
-                            <option value="de">Deutsch</option>
-                            <option value="en">English</option>
-                            <option value="nl" selected>Nederlands</option>
-                        </select>
-                    </div>
-                </li>
-                <li class="dropdown-box">
-                    <div class="dropdown">
-                        <button class="drop-btn">
-                            <i class="fa fa-caret-down"></i>
-                            <i class="fa fa-caret-up"></i>
-                        </button>
-                        <div class="dropdown-content" id="dropdown-content">
-                            <a href="./assets/views/auth/login.html" class="inlog-btn">Inloggen</a>
-                            <a href="./assets/views/auth/register.html" class="registreer-btn">Registreren</a>
-                            <a href="" class="logout-btn">Uitloggen</a>
-                        </div>
-                    </div>
-                </li>
-            </ul>
-        </nav>
-    
-        <div class="profile-button">
-            <a href="./assets/views/profile.html">
-                <img id="header-profile-img" src="./assets/img/default-avatar.png" alt="">
-    
-            </a>
-        </div>
-    
-        <div class="theme-switch-box">
-            <div class="switch">
-                <div>
-                    <input type="checkbox" class="checkbox" id="checkbox">
-                    <label for="checkbox" class="label">
-                        <i class="fas fa-sun"></i>
-                        <i class="fas fa-moon"></i>
-                        <span class="ball"></span>
-                    </label>
+<header class="navbar">
+    <div class="logo">
+        <a href="">
+            <img src="./assets/img/corendon-logo.svg" alt="Logo">
+        </a>
+    </div>
+    <nav class="nav-list" id="nav-list">
+        <ul>
+            <li><a href="./index.html" class="active">Home</a></li>
+            <li><a href="./assets/views/about.html">About</a></li>
+            <li><a href="./assets/views/contact.html">Contact</a></li>
+            <li><a href="./assets/views/matches.html" class="matches-link">Vind Reispartners</a></li>
+            <li>
+                <div class="lang-changer-input">
+                    <select id="langSelecter" onchange="checklang()">
+                        <option value="de">Deutsch</option>
+                        <option value="en">English</option>
+                        <option value="nl" selected>Nederlands</option>
+                    </select>
                 </div>
+            </li>
+            <li class="dropdown-box">
+                <div class="dropdown">
+                    <button class="drop-btn">
+                        <i class="fa fa-caret-down"></i>
+                        <i class="fa fa-caret-up"></i>
+                    </button>
+                    <div class="dropdown-content" id="dropdown-content">
+                        <a href="./assets/views/auth/login.html" class="inlog-btn">Inloggen</a>
+                        <a href="./assets/views/auth/register.html" class="registreer-btn">Registreren</a>
+                        <a href="" class="logout-btn">Uitloggen</a>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="profile-button">
+        <a href="./assets/views/profile.html">
+            <img id="header-profile-img" src="./assets/img/default-avatar.png" alt="">
+
+        </a>
+    </div>
+
+    <div class="theme-switch-box">
+        <div class="switch">
+            <div>
+                <input type="checkbox" class="checkbox" id="checkbox">
+                <label for="checkbox" class="label">
+                    <i class="fas fa-sun"></i>
+                    <i class="fas fa-moon"></i>
+                    <span class="ball"></span>
+                </label>
             </div>
         </div>
-        <div class="burger-menu" id="toggle-btn">
-            <div class="menu-line"></div>
-            <div class="menu-line"></div>
-            <div class="menu-line"></div>
-        </div>
-    </header>
-    
+    </div>
+    <div class="burger-menu" id="toggle-btn">
+        <div class="menu-line"></div>
+        <div class="menu-line"></div>
+        <div class="menu-line"></div>
+    </div>
+</header>
+
 <main>
     <div class="mainSection">
         <div class="leftSection">
@@ -117,10 +132,10 @@
         </div>
         <div class="right-footer-nav">
             <nav>
-                <a href="https://www.youtube.com/user/corendon"><img src="./assets/svg/Youtube.svg" alt="" /></a>
-                <a href="https://twitter.com/corendon"><img src="./assets/svg/twitter-black.svg" alt="" /></a>
-                <a href="https://vimeo.com/corendonairlines"><img src="./assets/svg/vimeo-black.svg" alt="" /></a>
-                <a href="https://www.facebook.com/Corendon.nl/"><img src="./assets/svg/facebook-black.svg" alt="" /></a>
+                <a href="https://www.youtube.com/user/corendon"><img src="./assets/svg/Youtube.svg" alt=""/></a>
+                <a href="https://twitter.com/corendon"><img src="./assets/svg/twitter-black.svg" alt=""/></a>
+                <a href="https://vimeo.com/corendonairlines"><img src="./assets/svg/vimeo-black.svg" alt=""/></a>
+                <a href="https://www.facebook.com/Corendon.nl/"><img src="./assets/svg/facebook-black.svg" alt=""/></a>
             </nav>
         </div>
     </div>
@@ -137,19 +152,12 @@
         </div>
     </div>
     <div class="footer-image">
-        <img src="./assets/svg/corendon-logo%203.svg" alt="" />
+        <img src="./assets/svg/corendon-logo%203.svg" alt=""/>
     </div>
 </footer>
 
-<!-- Javascript -->
-<script src="https://cdn.fys.cloud/fyscloud/0.0.4/fyscloud.min.js"></script>
-<script src="./assets/js/config.mockup.js"></script>
-<script src="./assets/js/chat/chat-functionals.js"></script>
-<script src="./assets/js/main.js"></script>
-<script src="./assets/js/menu.js"></script>
-<script src="./assets/js/chat.js"></script>
-<script src="./assets/js/langChanger.js"></script>
-<script src="./assets/js/inlog-change.js"></script>
-<script src="./assets/js/auth/logout.js"></script>
+
+
+
 </body>
 </html>

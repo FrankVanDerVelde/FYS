@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="ScreenOrientation" content="autoRotate:disabled">
+
     <title>About</title>
     <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32x32.png">
 
@@ -13,6 +15,19 @@
     <link rel="stylesheet" href="../css/navbar.css">
     <link rel="stylesheet" href="../css/about/about.css">
     <link rel="stylesheet" href="../css/chat/chat.css">
+
+
+    <!-- Javascript -->
+    <script type="text/javascript" src="https://cdn.fys.cloud/fyscloud/0.0.4/fyscloud.min.js" defer></script>
+    <script type="text/javascript" src="../js/config.mockup.js" defer></script>
+    <script type="text/javascript" src="../js/main.js" defer></script>
+    <script type="text/javascript" src="../js/menu.js" defer></script>
+    <script type="text/javascript" src="../js/chat.js" defer></script>
+    <script type="module" src="../js/chat/chat-functionals.js" defer></script>
+    <script type="text/javascript" src="../js/langChanger.js" defer></script>
+    <script type="text/javascript" src="../js/inlog-change.js" defer></script>
+    <script type="text/javascript" src="../js/auth/logout.js" defer></script>
+
 </head>
 <body class="light-theme">
     <header class="navbar">
@@ -26,7 +41,7 @@
                 <li><a href="../../index.html">Home</a></li>
                 <li><a href="./about.html" class="active">About</a></li>
                 <li><a href="./contact.html">Contact</a></li>
-                <li><a href="./matches.html" class="matches-link">Matches</a></li>
+                <li><a href="./matches.html" class="matches-link">Vind Reispartners</a></li>
                 <li>
                     <div class="lang-changer-input">
                         <select id="langSelecter" onchange="checklang()">
@@ -274,15 +289,6 @@
 </footer>
 
 
-   <!-- Javascript -->
-<script src="https://cdn.fys.cloud/fyscloud/0.0.4/fyscloud.min.js"></script>
-<script src="../js/config.mockup.js"></script>
-<script src="../js/main.js"></script>
-<script src="../js/menu.js"></script>
-<script src="../js/chat.js"></script>
-<script type="module" src="../js/chat/chat-functionals.js"></script>
-<script src="../js/langChanger.js"></script>
-<script src="../js/inlog-change.js"></script>
-<script src="../js/auth/logout.js"></script>
+
 </body>
 </html>
