@@ -154,15 +154,16 @@ async function checkInterests(selectedFilters) {
 function setBasedCards(wantedUsers, interests) {
     //get temp variable with the wanted users,
     var allCards = document.getElementsByClassName('card');
-
+    //if no own interest set 3 random users 
     if (interests.length === 0) {
         for (let i = 0; i < 3; i++) {
             setPersonCards(allCards[i], wantedUsers[Math.floor(Math.random() * wantedUsers.length)].user, true);
         }
     } else {
+        //else, copy wanted users
         var tempUsers = Array.from(wantedUsers);
         try {
-            //loop through array, check if their interests arent 0 if so remove and check if the you dont get yourself.
+            //loop through array, check if their interests arent 0 if so remove
             for (let i = tempUsers.length; i > 0; i--) {
                 if (tempUsers[i - 1].userIntrests.length === 0) {
                     const index = tempUsers.indexOf(tempUsers[i - 1]);
@@ -174,6 +175,7 @@ function setBasedCards(wantedUsers, interests) {
         } catch (e) {
             console.log(e);
         }
+        //loop through users with interest and if user 1 of the interests overlaps add a counter, do this for everyuser and every interest.
         var basedMatches = [];
         for (let i = 0; i < tempUsers.length; i++) {
             var matchingCount = 0;
@@ -184,17 +186,20 @@ function setBasedCards(wantedUsers, interests) {
                     }
                 }
             }
+            //push the users into the basedMatches
             const x = {user: tempUsers[i].user, matchingInterestCount: matchingCount};
             basedMatches.push(x);
 
 
         }
-
+        //sort users based on matching interest count 
         basedMatches.sort((a, b) => {
             return a.matchingInterestCount - b.matchingInterestCount;
         });
+        //reverse the array (array.sort sorts it from 0-1-2...etc)
         basedMatches.reverse();
 
+        //set users 
         for (let i = 0; i < 3; i++) {
             setPersonCards(allCards[i], basedMatches[i].user, true);
         }
@@ -339,6 +344,7 @@ function removeAllCards() {
 //set person info on card,
 function setPersonCards(card, user, initalSet) {
 
+    
     if (card === undefined || card === null || user === undefined || user === null)
         return;
     // card.children[0].children[0] <-- image
