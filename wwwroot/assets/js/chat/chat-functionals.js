@@ -1,6 +1,6 @@
 import * as module from './profanity-filter.js';
 
-window.addEventListener('load', async function () {
+document.addEventListener('DOMContentLoaded', async function () {
     if (FYSCloud.Session.get('loggedin')) {
         const userSession = FYSCloud.Session.get('loggedin');
         const detailChatBox = document.querySelector('#detail-chat-box');
@@ -10,7 +10,6 @@ window.addEventListener('load', async function () {
         const requestsMainTemplate = document.querySelector('#requests-template').innerHTML;
         const messageMainTemplate = document.querySelector('#message-template').innerHTML;
         const blockedUserMainTemplate = document.querySelector('#blocked-user-template').innerHTML;
-
 
         //Adds the match requests in the requests tab/view
         await addRequests();
@@ -42,8 +41,16 @@ window.addEventListener('load', async function () {
         });
 
 
+        document.querySelectorAll('.unblock-btn').forEach(function(button) {
+            button.addEventListener('click', async function () {
+                await updatePendingRequests('accepted', userSession[0].id, button.dataset.id); 
+                document.querySelector('.blocked-list').removeChild(button.parentNode.parentNode);
+                await addContacts();
+            });
+        });
+ 
         async function addContacts(){
-        const userChatContact = await getUserMatches(userSession[0].id, userSession[0].email);
+            const userChatContact = await getUserMatches(userSession[0].id, userSession[0].email);
 
             function removeChats(parent) {
                 while (parent.firstChild) {
@@ -105,7 +112,7 @@ window.addEventListener('load', async function () {
                 });
 
                 //When user clicks on a chat from the list it will show the detailed message box
-                chatTemplate.addEventListener('click', async function () {
+                chatTemplate.addEventListener('click', async function (e) {
                     const recieverId = this.dataset.id;
                     const recieverData = await getReciever(recieverId);
                     let inputRecieverId = document.forms['chat-form']['hidden-id'];
@@ -135,6 +142,11 @@ window.addEventListener('load', async function () {
                     document.querySelector('.detail-chat-header').innerHTML = recieverData[0].name;
                     document.querySelector('.detail-chat-photo').src = recieverData[0].profilePhoto;
 
+                    document.querySelector('.detail-chat-photo').addEventListener('click', function () {
+                        FYSCloud.URL.redirect("profile.html", {
+                            profileid: recieverData[0].id
+                        });
+                    });
                 });
             }
         }
@@ -271,16 +283,7 @@ window.addEventListener('load', async function () {
             }
         }
 
-        document.querySelectorAll('.unblock-btn').forEach(function(button) {
-            button.addEventListener('click', async function () {
-                console.log(this);
-                await updatePendingRequests('accepted', userSession[0].id, button.dataset.id); 
-                document.querySelector('.blocked-list').removeChild(button.parentNode.parentNode);
-                await addContacts();
-            });
-        });
-
-          /**
+        /**
          * Inserts the messages into table `messages`
          * 
          * @param {int} senderId
