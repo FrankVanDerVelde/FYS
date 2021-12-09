@@ -64,18 +64,14 @@ document.addEventListener("DOMContentLoaded", async function () {
         if (newProfilePicDataUrl.isImage) {
             profilePicElement.src = newProfilePicDataUrl.url;
         }
+        deleteProfilePicture = false;
     })
 
     // Delete profile pic
+    let deleteProfilePicture = false;
     profilePicDeleteButton.addEventListener('click', async () => {
-        if (profilePhoto) {
-            try {
-                await FYSCloud.API.queryDatabase("UPDATE account SET profilePhoto = '' WHERE id = ?", [userId]);
-                FYSCloud.API.deleteFile(profilePhoto);
-            } catch (e) {
-                console.log(e);
-            }
-        }
+        profilePicElement.src = `https://ui-avatars.com/api/?name=${name}?background=#e0dcdc`;
+        deleteProfilePicture = true;
     });
 
     // Get all new values to update in the database
@@ -90,6 +86,15 @@ document.addEventListener("DOMContentLoaded", async function () {
             const newPhoneNumber = phoneNumberInput.value;
             const newEmail = emailInput.value;
             const newBio = bioInput.value;
+
+            if (deleteProfilePicture) {
+                try {
+                    await FYSCloud.API.queryDatabase("UPDATE account SET profilePhoto = NULL WHERE id = ?", [userId]);
+                    FYSCloud.API.deleteFile(profilePhoto);
+                } catch (e) {
+                    console.log(e);
+                }
+            }
 
             if (newProfilePicDataUrl) {
                 const newProfilePicUrl = `profile-image-user-${userId}.${newProfilePicDataUrl.extension}`;
