@@ -15,6 +15,8 @@
     <script src="../js/interest.js"></script>
     <script src="../js/config.mockup.js"></script>
     <script src="../js/profile/profile.js"></script>
+    <script src="../js/menu.js"></script>
+
 </head>
 
 <body class="light-theme">
@@ -29,7 +31,7 @@
                 <li><a href="../../index.html">Home</a></li>
                 <li><a href="../views/about.html">About</a></li>
                 <li><a href="../views/contact.html">Contact</a></li>
-                <li><a href="../views/matches.html">Matches</a></li>
+                <li><a href="../views/matches.html" class="matches-link">Matches</a></li>
                 <li class="dropdown-box">
                     <div class="dropdown">
                         <button class="drop-btn">
@@ -37,13 +39,19 @@
                             <i class="fa fa-caret-up"></i>
                         </button>
                         <div class="dropdown-content" id="dropdown-content">
-                            <a href="../views/auth/login.html">Inloggen</a>
-                            <a href="../views/auth/register.html">Registreren</a>
+                            <a href="" class="logout-btn">Uitloggen</a>
                         </div>
                     </div>
                 </li>
             </ul>
         </nav>
+
+        <div class="profile-button">
+            <a href="../views/profile.html">
+                <img id="header-profile-img" src="../img/default-avatar.png" alt="">
+            </a>
+        </div>
+
         <div class="theme-switch-box">
             <div class="switch">
                 <div>
@@ -74,8 +82,8 @@
                 <div class="basic-info-text-container">
                     <span class="basic-info"><span class="bold">Naam:</span><span id="name">John Doe</span></span>
                     <span class="basic-info"><span class="bold">Leeftijd:</span><span><span id="age">35</span></span>
-                        <span class="basic-info"><span class="bold">Location:</span><span><span
-                                    id="location">Amsterdam</span></span>
+                        <span class="basic-info"><span class="bold">Location:</span><span
+                                id="location">Amsterdam</span></span></span>
                             <div class="change-profile-button-container">
                                 <a class="edit-profile-button" href="profile-edit.html" id="edit-profile-button">wijzig profiel</a>
                             </div>
@@ -135,7 +143,6 @@
                 <nav>
                     <a href="../../index.html">Home</a>
                     <a href="./about.html">Over Ons</a>
-                    <a href="./auth/login.html">login</a>
                     <a href="./faq.html">FAQ</a>
                 </nav>
             </div>
@@ -168,6 +175,9 @@
     <!-- Javascript -->
     <script src="../js/menu.js"></script>
     <script src="../js/config.mockup.js"></script>
+    <script src="../js/auth/logout.js"></script>
+    <script src="../js/inlog-change.js"></script>
+
     <!-- <script src="../js/chat/chat-functionals.js"></script> -->
     <!-- <script src="../js/main.js"></script>
 

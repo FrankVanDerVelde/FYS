@@ -26,7 +26,17 @@
                 <li><a href="../../index.html">Home</a></li>
                 <li><a href="./about.html">About</a></li>
                 <li><a href="./contact.html" class="active">Contact</a></li>
-                <li><a href="./matches.html">Matches</a></li>
+                <li><a href="./matches.html" class="matches-link">Matches</a></li>
+                <li>
+                    <div class="lang-changer-input">
+                        <select id="langSelecter" onchange="checklang()">
+                            <option value="de">Deutsch</option>
+                            <option value="en">English</option>
+                            <option value="nl" selected>Nederlands</option>
+                        </select>
+                    </div>
+                </li>
+
                 <li class="dropdown-box">
                     <div class="dropdown">
                         <button class="drop-btn">
@@ -34,13 +44,21 @@
                             <i class="fa fa-caret-up"></i>
                         </button>
                         <div class="dropdown-content" id="dropdown-content">
-                            <a href="../views/auth/login.html">Inloggen</a>
-                            <a href="../views/auth/register.html">Registreren</a>
+                            <a href="../views/auth/login.html" class="inlog-btn">Inloggen</a>
+                            <a href="../views/auth/register.html" class="registreer-btn">Registreren</a>
+                            <a href="" class="logout-btn">Uitloggen</a>
                         </div>
                     </div>
                 </li>
             </ul>
         </nav>
+
+        <div class="profile-button">
+            <a href="../views/profile.html">
+                <img id="header-profile-img" src="../img/default-avatar.png" alt="">
+            </a>
+        </div>
+
         <div class="theme-switch-box">
             <div class="switch">
                 <div>
@@ -315,7 +333,7 @@
                 <nav>
                     <a href="../../index.html">Home</a>
                     <a href="./about.html">Over Ons</a>
-                    <a href="./auth/login.html">login</a>
+                    <a href="./auth/login.html" class="footer-login">login</a>
                     <a href="./faq.html">FAQ</a>
                 </nav>
             </div>
@@ -353,5 +371,7 @@
    <script src="../js/chat.js"></script>
    <script type="module" src="../js/chat/chat-functionals.js"></script>
    <script src="../js/langChanger.js"></script>
+    <script src="../js/inlog-change.js"></script>
+    <script src="../js/auth/logout.js"></script>
 </body>
 </html>
