@@ -19,14 +19,6 @@ document.addEventListener('DOMContentLoaded', async function () {
         
         //Adds the contacts in the main tab/view
         await addContacts();
-
-        document.querySelectorAll('.unblock-btn').forEach(function(button) {
-            button.addEventListener('click', async function () {
-                await updatePendingRequests("accepted", userSession[0].id, button.dataset.id); 
-                document.querySelector('.blocked-list').removeChild(button.parentNode.parentNode);
-                await addContacts();
-            });
-        });
  
         async function addContacts(){
             const userChatContact = await getUserMatches(userSession[0].id, userSession[0].email);
@@ -79,7 +71,8 @@ document.addEventListener('DOMContentLoaded', async function () {
                                 childDiv.style.display = 'block'; 
                                 document.querySelectorAll('.block-btn').forEach(function(button) {
                                     button.addEventListener('click', async () => {
-                                        await updatePendingRequests('blocked', userSession[0].id, button.dataset.id);                                         
+                                        const userId = +button.dataset.id;
+                                        await updatePendingRequests('blocked', userSession[0].id, userId);                                         
                                         await addBlockedUsers();
                                     });         
                                 });
@@ -174,6 +167,13 @@ document.addEventListener('DOMContentLoaded', async function () {
                 blockedUserTemplate.querySelector('.request-title').innerHTML = blockedUser.name;
 
                 document.querySelector('.blocked-list').appendChild(blockedUserTemplate);
+
+                blockedUserTemplate.querySelector('.unblock-btn').addEventListener('click', async function () {
+                    const userId = +blockedUserTemplate.querySelector('.unblock-btn').dataset.id;
+                    await updatePendingRequests("accepted", userSession[0].id, userId); 
+                    document.querySelector('.blocked-list').removeChild( blockedUserTemplate.querySelector('.unblock-btn').parentNode.parentNode);
+                    await addContacts();
+                });
             }
 
             await addContacts();
@@ -192,8 +192,6 @@ document.addEventListener('DOMContentLoaded', async function () {
             
             const messagesList = document.querySelector('.requests-list');
             removeRequests(messagesList);
-
-            console.log(userRequests);
 
 
             for (let i = 0; i < userRequests.length; i++) {
@@ -313,11 +311,10 @@ document.addEventListener('DOMContentLoaded', async function () {
          * @param {int} userId 
          */
         async function updatePendingRequests(status, userId, matchedUserId){
-            console.log(status, userId, matchedUserId);
             try {
                 const query =  FYSCloud.API.queryDatabase(
                     "UPDATE matches SET status = ? WHERE currUserFk = ?  AND matchedUserFk = ?", 
-                    [status, matchedUserId, userId]
+                    [status, userId, matchedUserId]
                 );
                 const results = await query;
                 return await results;
