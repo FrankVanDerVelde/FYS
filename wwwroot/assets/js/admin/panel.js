@@ -37,6 +37,13 @@ async function deleteCurrentUser() {
 
 async function getMatchAmount(userId) {
     const matchArray = await sqlSelectAsync("matches", ["currUserFk "], [userId]);
+    let amount= 0;
 
-    return matchArray.length;
+    for(let i=0; i<matchArray.length; i++) {
+        if(matchArray[i].status === "accepted") {
+            amount += 1;
+        }
+    }
+
+    return amount;
 }
