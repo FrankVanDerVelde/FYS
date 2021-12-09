@@ -99,8 +99,9 @@ document.addEventListener("DOMContentLoaded", async function () {
             if (newProfilePicDataUrl) {
                 const newProfilePicUrl = `profile-image-user-${userId}.${newProfilePicDataUrl.extension}`;
                 await FYSCloud.API.uploadFile(newProfilePicUrl, newProfilePicDataUrl.url, true);
-
-                const hostName = new URL(window.location).hostname ? new URL(window.location).hostname : 'https://mockup-is109-4.fys.cloud';
+                
+                // If host is one of the fys clouds use that hosts url. Otherwise fall back on the mockup
+                const hostName = (new URL(window.location).hostname.includes('is109-4.fys.cloud')) ? new URL(window.location).hostname : 'https://mockup-is109-4.fys.cloud';
 
                 try {
                     await FYSCloud.API.queryDatabase("UPDATE account SET name = ?, birthdate = ?, location = ?, phonenumber = ?, email = ?, bio = ?, profilePhoto = ? WHERE id = ?",
