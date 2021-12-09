@@ -319,6 +319,7 @@ main::after {
     display: flex;
     flex-direction: column;
     min-height: 315px;
+    overflow-wrap: break-word;
 }
 
 .bio-container .textarea-container {
