@@ -13,37 +13,16 @@ document.addEventListener('DOMContentLoaded', async function () {
 
         //Adds the match requests in the requests tab/view
         await addRequests();
+
         //Adds the blocked users in the main tab/view
         await addBlockedUsers();
+        
         //Adds the contacts in the main tab/view
         await addContacts();
 
-        /*
-         When user accepts the match the program calls the `updatePendingRequests` function and 
-         updates the field `status` in the DB to accepted
-        */
-         document.querySelectorAll('.accept-request-btn').forEach(function(button) {
-            button.addEventListener('click', async function () {
-                await updatePendingRequests('accepted', userSession[0].id, button.dataset.id); 
-                await addRequests();
-            });
-        });
-
-        /*
-         When user declines the match the program calls the `updatePendingRequests` function and 
-         updates the field `status` in the DB to declined
-        */
-        document.querySelectorAll('.decline-request-btn').forEach(function(button) {
-            button.addEventListener('click', async function () {
-                await updatePendingRequests('declined', userSession[0].id, button.dataset.id); 
-                await addRequests();
-            });
-        });
-
-
         document.querySelectorAll('.unblock-btn').forEach(function(button) {
             button.addEventListener('click', async function () {
-                await updatePendingRequests('accepted', userSession[0].id, button.dataset.id); 
+                await updatePendingRequests("accepted", userSession[0].id, button.dataset.id); 
                 document.querySelector('.blocked-list').removeChild(button.parentNode.parentNode);
                 await addContacts();
             });
@@ -214,6 +193,9 @@ document.addEventListener('DOMContentLoaded', async function () {
             const messagesList = document.querySelector('.requests-list');
             removeRequests(messagesList);
 
+            console.log(userRequests);
+
+
             for (let i = 0; i < userRequests.length; i++) {
                 const requestsTemplate = FYSCloud.Utils.parseHtml(requestsMainTemplate)[0];
                 const chatRequests = userRequests[i];
@@ -226,6 +208,29 @@ document.addEventListener('DOMContentLoaded', async function () {
                 requestsTemplate.querySelector('.request-title').innerHTML = chatRequests.name;
 
                 document.querySelector('.requests-list').appendChild(requestsTemplate);
+
+                /*
+                    When user accepts the match the program calls the `updatePendingRequests` function and 
+                    updates the field `status` in the DB to accepted
+                */
+                requestsTemplate.querySelector('.accept-request-btn').addEventListener('click', async function () {
+                    const userId = +requestsTemplate.querySelector('.accept-request-btn').dataset.id;
+                    await updatePendingRequests("accepted", userSession[0].id, userId ); 
+                    await addRequests();
+                });
+
+                /*
+                    When user declines the match the program calls the `updatePendingRequests` function and 
+                    updates the field `status` in the DB to declined
+                */
+                requestsTemplate.querySelector('.decline-request-btn').addEventListener('click', async function () {
+                    const userId = +requestsTemplate.querySelector('.accept-request-btn').dataset.id;
+                    await updatePendingRequests("declined", userSession[0].id, userId ); 
+                    await addRequests();
+                });
+
+                
+
             }
         }
 
@@ -308,11 +313,12 @@ document.addEventListener('DOMContentLoaded', async function () {
          * @param {int} userId 
          */
         async function updatePendingRequests(status, userId, matchedUserId){
+            console.log(status, userId, matchedUserId);
             try {
-                const query = FYSCloud.API.queryDatabase(
-                    `UPDATE matches SET status = ? WHERE currUserFk = ?  AND matchedUserFk = ?`, 
-                    [status, userId, matchedUserId]
-                );          
+                const query =  FYSCloud.API.queryDatabase(
+                    "UPDATE matches SET status = ? WHERE currUserFk = ?  AND matchedUserFk = ?", 
+                    [status, matchedUserId, userId]
+                );
                 const results = await query;
                 return await results;
             } catch (error) {
