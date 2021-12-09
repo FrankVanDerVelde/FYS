@@ -113,7 +113,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     ageElement.innerHTML = (new Date).getFullYear() - new Date(birthdate).getFullYear();
     locationElement.innerHTML = location;
     emailElement.innerHTML = email;
-    bioElement.innerHTML = bio;
+    bioElement.innerText = bio;
     phoneNumber.innerHTML = phonenumber;
     profilePictureElement.src = (profilePhoto ? profilePhoto : `https://ui-avatars.com/api/?name=${name}?background=#e0dcdc`);
 
