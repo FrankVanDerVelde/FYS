@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', async function () {
             var parser = new DOMParser();
             var doc = parser.parseFromString(html, 'text/html');
 
-            console.log(doc.querySelectorAll('.nav-list>li>a'));
+            // console.log(doc.querySelectorAll('.nav-list>li>a'));
 
             // Make a copy of splitted path to remove found segment matches from as they are found. To prevent issues with duplicate matches
             let splittedPathCopy = splittedPath;

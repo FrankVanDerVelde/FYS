@@ -11,7 +11,6 @@ let session = FYSCloud.Session.get('loggedin');
         document.querySelector('.profile-button').style.display = 'block';
         document.querySelector('.footer-login').style.display = 'none';
         document.getElementById("header-profile-img").src = profilePhoto;
-
     } else {
         document.querySelector('.matches-link').style.display = 'none';
         document.querySelector('.logout-btn').style.display = 'none';
@@ -19,8 +18,5 @@ let session = FYSCloud.Session.get('loggedin');
         document.querySelector('.registreer-btn').style.display = 'block';
         document.querySelector('.profile-button').style.display = 'none';
         document.querySelector('.footer-login').style.display = 'block';
-
     }
-
-
 });

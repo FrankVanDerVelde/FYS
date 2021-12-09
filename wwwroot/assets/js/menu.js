@@ -6,7 +6,6 @@ const themeSwitch = document.querySelector("#checkbox");
 let ball = document.querySelector(".ball");
 let theme = localStorage.getItem("data-theme");
 
-
 toggleBtn.addEventListener("click", () => {
     navList.classList.toggle("active-menu");
     navList.classList.toggle("animation");

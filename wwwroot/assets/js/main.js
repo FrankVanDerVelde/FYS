@@ -10,7 +10,7 @@ async function loadChat(){
     const checkFilename = urlSplitted.includes('index.html');
     let chat;
 
-    console.log(urlSplitted)
+    // console.log(urlSplitted)
 
     if (checkFilename) {
          chat = await FYSCloud.Utils.fetchAndParseHtml("assets/views/components/_chat.html");
