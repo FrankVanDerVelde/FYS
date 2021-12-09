@@ -26,11 +26,17 @@ async function updatePanel(userObj) {
     }
 
     // To be implemented
-    /*document.getElementById("matchAmount").innerText = await getMatchAmount(); */
+    document.getElementById("matchAmount").innerText = await getMatchAmount(userObj.id);
 }
 
 async function deleteCurrentUser() {
     const user = await getUserByEmailAsync(document.getElementById("email").innerText);
 
     await deleteUserById(user.id);
+}
+
+async function getMatchAmount(userId) {
+    const matchArray = await sqlSelectAsync("matches", ["currUserFk "], [userId]);
+
+    return matchArray.length;
 }
