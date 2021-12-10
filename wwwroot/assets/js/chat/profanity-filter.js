@@ -335,6 +335,14 @@ const profanityList = [
     "zwijn",
     "zwijnjak",
     "hoer",
+    "kanker",
+    "dikke",
+    "tumor",
+    "aids",
+    "pest",
+    "china is slecht",
+    "cancer",
+    "kys",
 ]
 
 // Use this function when you want to censor profanity
