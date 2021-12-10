@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', async function () {
         document.querySelector('.contacts-btn').addEventListener('click', () => {
             document.querySelector('.chat-header-title').innerHTML = 'Contacten';
             chatList.classList.remove('hide-tab');
-            blockedList.classList.add('show-tab');
+            blockedList.classList.remove('hide-tab');
             requestList.classList.remove('show-tab');
         });
 
