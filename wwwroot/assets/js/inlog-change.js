@@ -18,23 +18,27 @@ let session = FYSCloud.Session.get('loggedin');
             document.querySelector('.footer-login').style.display = 'none';
         }
 
-
-        if (session[0].usertypeFk == 2) {
+        if (session[0].usertypeFk == 1) {
+            console.log('admin');
             let userPanel = document.createElement('a');
             let panel = document.createElement('a');
 
             let userPanelLink = document.createTextNode("User Panel"); 
             let panelLink = document.createTextNode("Panel"); 
 
+            userPanel.className = 'admin-links';
+            panel.className = 'admin-links';
 
             userPanel.appendChild(userPanelLink); 
             panel.appendChild(panelLink); 
                   
             // Set the href property
             userPanel.href ="/wwwroot/assets/views/admin/userPanel.html"; 
-            panel.href = "/wwwroot/assets/views/admin/userPanel.html"; 
+            panel.href = "/wwwroot/assets/views/admin/panel.html"; 
 
             document.querySelector('#dropdown-content').prepend(userPanel, panel); 
+        }else{
+            document.querySelectorAll('.admin-link').forEach(link => link.remove());
         }
         
         document.getElementById("header-profile-img").src = profilePhoto;
