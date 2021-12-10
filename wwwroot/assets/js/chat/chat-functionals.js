@@ -42,6 +42,7 @@ document.addEventListener('DOMContentLoaded', async function () {
                 
                 //Sets the id from chatContacts for the data-id of chatTemplate 
                 chatTemplate.dataset.id = chatContacts.id;
+                chatTemplate.dataset.user = chatContacts.matchedUserFk == userSession[0].id ? chatContacts.currUserFk : chatContacts.matchedUserFk;
 
                 //Assigning the data from DB to the template attributes
                 chatTemplate.querySelector('.message-profile-pic').src = chatContacts.profilePhoto;
@@ -88,7 +89,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 
                 //When user clicks on a chat from the list it will show the detailed message box
                 chatTemplate.addEventListener('click', async function (e) {
-                    const recieverId = this.dataset.id;
+                    const recieverId = this.dataset.user;
                     const recieverData = await getReciever(recieverId);
                     let inputRecieverId = document.forms['chat-form']['hidden-id'];
                     
@@ -231,8 +232,8 @@ document.addEventListener('DOMContentLoaded', async function () {
                     updates the field `status` in the DB to declined
                 */
                 requestsTemplate.querySelector('.decline-request-btn').addEventListener('click', async function () {
-                    const userId = +requestsTemplate.querySelector('.accept-request-btn').dataset.id;
-                    await updatePendingRequests("declined", userSession[0].id, userId ); 
+                    const requestId = +requestsTemplate.querySelector('.accept-request-btn').dataset.id;
+                    await updatePendingRequests("declined", requestId); 
                     await addRequests();
                 });
             }
@@ -346,8 +347,6 @@ document.addEventListener('DOMContentLoaded', async function () {
                     'WHERE (matchedUserFk = ? OR currUserFk = ?) AND email != ? AND status = "pending"', 
                     [userId, userId, email]
                 );
-
-                console.log(query);
                 const results = await query;
                 return await results;
             } catch (error) {
@@ -404,7 +403,7 @@ document.addEventListener('DOMContentLoaded', async function () {
         async function getUserMatches(userId, email){
             try {
                 const query = FYSCloud.API.queryDatabase(
-                    'SELECT matches.id, account.name, account.profilePhoto FROM matches ' + 
+                    'SELECT matches.matchedUserFk, matches.currUserFk, matches.id, account.name, account.profilePhoto FROM matches ' + 
                     'INNER JOIN account ' + 
                     'ON matchedUserFk = account.id or currUserFk = account.id ' +
                     'WHERE (matchedUserFk = ? OR currUserFk = ?) AND email != ? AND status = "accepted"', 
