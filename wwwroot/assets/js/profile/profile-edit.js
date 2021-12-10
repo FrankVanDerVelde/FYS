@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     let allInterests;
     try {
-        allInterests = await FYSCloud.API.queryDatabase(`SELECT interestId, description, imageLink FROM fys_is109_4_harmohat_chattest.interestdetail`)
+        allInterests = await FYSCloud.API.queryDatabase(`SELECT interestId, description, imageLink FROM interestdetail`)
     } catch (e) {
         console.error(e);
     }
@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     let userData;
     try {
-        userData = await FYSCloud.API.queryDatabase(`SELECT * FROM fys_is109_4_harmohat_chattest.account WHERE id =${userId};`)
+        userData = await FYSCloud.API.queryDatabase(`SELECT * FROM account WHERE id =${userId};`)
     } catch (e) {
         console.error(e);
     }
@@ -142,7 +142,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
             if (interestsToRemove.length != 0) {
                 try {
-                    await FYSCloud.API.queryDatabase(`DELETE FROM fys_is109_4_harmohat_chattest.userinterests WHERE accountFk = ${userId} AND interestsFk IN ('${interestsToRemove.join("', '")}');`);
+                    await FYSCloud.API.queryDatabase(`DELETE FROM userinterests WHERE accountFk = ${userId} AND interestsFk IN ('${interestsToRemove.join("', '")}');`);
                 } catch (e) {
                     console.log(e);
                 }
@@ -272,7 +272,7 @@ document.addEventListener("DOMContentLoaded", async function () {
             let activeCheckBoxCount = activeInterestCheckBoxes.length;
             if (activeCheckBoxCount == maxInterests) {
                 if (initialCall == false) {
-                    console.log(initialCall)
+                    // console.log(initialCall)
                     // Turn shake on
                     maxInterestLabel.classList.toggle('shake');
                     // Turn shake off
@@ -287,7 +287,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                     }
                 });
             } else {
-                console.log(maxInterestLabel);
+                // console.log(maxInterestLabel);
 
                 interestCheckBoxes.forEach(checkBox => {
                     if (checkBox.disabled) {

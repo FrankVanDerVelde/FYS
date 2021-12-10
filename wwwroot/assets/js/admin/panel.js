@@ -1,7 +1,7 @@
 async function searchUser() {
     const searchParam = document.getElementById("searchInput").value;
 
-    console.log(searchParam)
+    // console.log(searchParam)
 
     const data = [
         await getUserByEmailAsync(searchParam),

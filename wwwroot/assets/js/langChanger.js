@@ -39,10 +39,14 @@ async function translate(jsonLang) {
 async function updatePage(changes) {
 
     for (let i = 0; i < Object.keys(changes).length; i++) {
-        console.log(`ID: ${changes[i].id}`);
-        console.log(`TEXT: ${changes[i].text}`);
+        // console.log(`ID: ${changes[i].id}`);
+        // console.log(`TEXT: ${changes[i].text}`);
 
-        document.getElementById(changes[i].id).innerHTML = changes[i].text;
+        try {
+            document.getElementById(changes[i].id).innerHTML = changes[i].text;
+        } catch {
+            // Fix this later
+        }
     }
 }
 

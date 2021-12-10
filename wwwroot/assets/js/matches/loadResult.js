@@ -306,7 +306,7 @@ async function searchUser(searchBar) {
         } else {
             try {
                 //select all users where part of the name contains given value.
-                const userList = await FYSCloud.API.queryDatabase('SELECT * FROM fys_is109_4_harmohat_chattest.account WHERE name LIKE ' + "'%" + searchBar.value + "%'");
+                const userList = await FYSCloud.API.queryDatabase('SELECT * FROM account WHERE name LIKE ' + "'%" + searchBar.value + "%'");
 
                 //  console.log(queryStrings.join(' '));
                 let userIntrests = [];
@@ -462,7 +462,7 @@ function createPersonCards(numberOfRows, remainder) {
 
 
     if (remainder <= 0) {
-        console.log("can create equal amount of rows or no people found");
+        // console.log("can create equal amount of rows or no people found");
     } else {
 
         if (maxAmount === 0)
@@ -498,7 +498,7 @@ window.addEventListener('scroll', function (e) {
     let currentScroll = window.scrollY + window.innerHeight;
     // When the user is [modifier]px from the bottom, fire the event.
     let modifier = 50;
-    console.log(currentScroll);
+    // console.log(currentScroll);
     if (currentScroll + modifier > documentHeight) {
         loadMoreCards();
 

@@ -39,7 +39,11 @@
             <li><a href="./index.html" class="active">Home</a></li>
             <li><a href="./assets/views/about.html">About</a></li>
             <li><a href="./assets/views/contact.html">Contact</a></li>
-            <li><a href="./assets/views/matches.html" class="matches-link">Vind Reispartners</a></li>
+            <li class="matches-link"><a href="./assets/views/matches.html">Vind Reispartners</a></li>
+
+            <li class="responsive-log-buttons responsive login-btn"><a href="./assets/views/auth/login.html">Inloggen</a></li>
+            <li class="responsive-log-buttons responsive register-btn"><a href="./assets/views/auth/register.html">Registreren</a></li>
+            <li class="responsive-log-buttons responsive logout-btn"><a href="">Uitloggen</a></li>
             <li>
                 <div class="lang-changer-input">
                     <select id="langSelecter" onchange="checklang()">
@@ -49,15 +53,15 @@
                     </select>
                 </div>
             </li>
-            <li class="dropdown-box">
+            <li class="dropdown-box responsive-log-buttons default">
                 <div class="dropdown">
                     <button class="drop-btn">
                         <i class="fa fa-caret-down"></i>
                         <i class="fa fa-caret-up"></i>
                     </button>
                     <div class="dropdown-content" id="dropdown-content">
-                        <a href="./assets/views/auth/login.html" class="inlog-btn">Inloggen</a>
-                        <a href="./assets/views/auth/register.html" class="registreer-btn">Registreren</a>
+                        <a href="./assets/views/auth/login.html" class="login-btn">Inloggen</a>
+                        <a href="./assets/views/auth/register.html" class="register-btn">Registreren</a>
                         <a href="" class="logout-btn">Uitloggen</a>
                     </div>
                 </div>
@@ -126,7 +130,8 @@
             <nav>
                 <a href="../../index.html">Home</a>
                 <a href="./about.html">Over Ons</a>
-                <a href="./auth/login.html" class="footer-login">Log in</a>
+                <a href="./auth/login.html" class="login-btn">Log in</a>
+                <a href="" class="logout-btn">Uitloggen</a>
                 <a href="./faq.html">FAQ</a>
             </nav>
         </div>

@@ -166,7 +166,7 @@ async function changeFilter(item) {
             case "optionInterest":
 
                 if (amountOfInterestFilters === 5) {
-                    console.log("Too many filters");
+                    // console.log("Too many filters");
                     //todo add warning
                     alert("Too many filters");
                     return;
@@ -195,7 +195,7 @@ function createFilter(typeFilter, valueFilter) {
     //set filter as child under filters.
     selectedFilters.push(childDiv);
     document.getElementsByClassName("toegepaste-filters")[0].appendChild(parentDiv);
-    console.log("added standard filter");
+    // console.log("added standard filter");
    // console.log(selectedFilters);
 }
 
@@ -215,7 +215,7 @@ function createFilterInterests(typeFilter, valueFilter) {
     selectedFilters.push(childDiv);
    // console.log(selectedFilters);
     document.getElementsByClassName("toegepaste-filters")[0].appendChild(parentDiv);
-    console.log("added interest filter");
+    // console.log("added interest filter");
 }
 
 //delete filter.
@@ -223,7 +223,7 @@ async function deleteFilter(itemToRemove) {
 
     let parentDiv = document.getElementsByClassName("toegepaste-filters")[0];
     let childToRemove = document.getElementById(itemToRemove);
-    console.log("removed filter");
+    // console.log("removed filter");
 
     const index = selectedFilters.indexOf(childToRemove.firstChild);
     if (index > -1) {

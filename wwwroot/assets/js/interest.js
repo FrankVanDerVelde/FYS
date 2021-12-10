@@ -28,7 +28,7 @@ async function getUserInterests(userId) {
 
 
 async function getUsersWithInterests(agesFilter, genderFilter) {
-    let queryStrings = ["SELECT * FROM fys_is109_4_harmohat_chattest.account WHERE"];
+    let queryStrings = ["SELECT * FROM account WHERE"];
 
     let dateFloor = new Date();
     let dateCeiling = new Date();
@@ -104,7 +104,7 @@ async function getAllUsers()
 {
     try {
         //`SELECT * FROM account WHERE birthdate BETWEEN ? AND ? AND genderFk = ?`, [dateFloor, dateCeiling, genderNumber]
-        const userList =  await FYSCloud.API.queryDatabase("SELECT * FROM fys_is109_4_harmohat_chattest.account");
+        const userList =  await FYSCloud.API.queryDatabase("SELECT * FROM account");
         let userInterests = [];
 
         for (let i = 0; i < userList.length; i++) {
