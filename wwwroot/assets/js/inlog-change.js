@@ -17,6 +17,26 @@ let session = FYSCloud.Session.get('loggedin');
         if(document.querySelector('.footer-login') !== null){
             document.querySelector('.footer-login').style.display = 'none';
         }
+
+
+        if (session[0].usertypeFk == 2) {
+            let userPanel = document.createElement('a');
+            let panel = document.createElement('a');
+
+            let userPanelLink = document.createTextNode("User Panel"); 
+            let panelLink = document.createTextNode("Panel"); 
+
+
+            userPanel.appendChild(userPanelLink); 
+            panel.appendChild(panelLink); 
+                  
+            // Set the href property
+            userPanel.href ="/wwwroot/assets/views/admin/userPanel.html"; 
+            panel.href = "/wwwroot/assets/views/admin/userPanel.html"; 
+
+            document.querySelector('#dropdown-content').prepend(userPanel, panel); 
+        }
+        
         document.getElementById("header-profile-img").src = profilePhoto;
     } else {
       //  document.querySelector('.matches-link').style.display = 'none';
