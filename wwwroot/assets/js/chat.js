@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', async function () {
+window.addEventListener('load', async function () {
     if (FYSCloud.Session.get('loggedin')) {
         const detailChatBox = document.querySelector('#detail-chat-box');
         const chatBox = document.querySelector('#main-chat-box');
