@@ -347,7 +347,7 @@ const profanityList = [
 
 // Use this function when you want to censor profanity
 export function censorProfanity (message) {
-    let newMessage = message;
+    let newMessage = message.toLowerCase();
     profanityList.forEach(profanityWord => {
         if (newMessage.includes(profanityWord)) {
             const replacementString = '*'.repeat(profanityWord.length) // Not supported by internet explorer
