@@ -74,8 +74,8 @@ document.addEventListener('DOMContentLoaded', async function () {
                                 childDiv.style.display = 'block'; 
                                 document.querySelectorAll('.block-btn').forEach(function(button) {
                                     button.addEventListener('click', async () => {
-                                        const userId = +button.dataset.id;
-                                        await updatePendingRequests('blocked', userSession[0].id, userId);                                         
+                                        const requestId = +button.dataset.id;
+                                        await updatePendingRequests('blocked', requestId);                                         
                                         await addBlockedUsers();
                                     });         
                                 });
@@ -178,8 +178,8 @@ document.addEventListener('DOMContentLoaded', async function () {
                 document.querySelector('.blocked-list').appendChild(blockedUserTemplate);
 
                 blockedUserTemplate.querySelector('.unblock-btn').addEventListener('click', async function () {
-                    const userId = +blockedUserTemplate.querySelector('.unblock-btn').dataset.id;
-                    await updatePendingRequests("accepted", userSession[0].id, userId); 
+                    const requestId = +blockedUserTemplate.querySelector('.unblock-btn').dataset.id;
+                    await updatePendingRequests("accepted", requestId); 
                     document.querySelector('.blocked-list').removeChild( blockedUserTemplate.querySelector('.unblock-btn').parentNode.parentNode);
                     await addContacts();
                 });
@@ -221,8 +221,8 @@ document.addEventListener('DOMContentLoaded', async function () {
                     updates the field `status` in the DB to accepted
                 */
                 requestsTemplate.querySelector('.accept-request-btn').addEventListener('click', async function () {
-                    const userId = +requestsTemplate.querySelector('.accept-request-btn').dataset.id;
-                    await updatePendingRequests("accepted", userSession[0].id, userId ); 
+                    const requestId = +requestsTemplate.querySelector('.accept-request-btn').dataset.id;
+                    await updatePendingRequests("accepted", requestId); 
                     await addRequests();
                 });
 
@@ -319,11 +319,11 @@ document.addEventListener('DOMContentLoaded', async function () {
          * 
          * @param {int} userId 
          */
-        async function updatePendingRequests(status, userId, matchedUserId){
+        async function updatePendingRequests(status, requestId){
             try {
                 const query =  FYSCloud.API.queryDatabase(
-                    "UPDATE matches SET status = ? WHERE currUserFk = ?  AND matchedUserFk = ?", 
-                    [status, userId, matchedUserId]
+                    "UPDATE matches SET status = ? WHERE id = ?", 
+                    [status, requestId]
                 );
                 const results = await query;
                 return await results;
@@ -340,12 +340,14 @@ document.addEventListener('DOMContentLoaded', async function () {
         async function getPendingRequests(userId, email){
             try {
                 const query = FYSCloud.API.queryDatabase(
-                    'SELECT * FROM matches ' +
+                    'SELECT matches.id, account.name, account.profilePhoto FROM matches ' +
                     'INNER JOIN account ' +
                     'ON matchedUserFk = account.id or currUserFk = account.id ' +
                     'WHERE (matchedUserFk = ? OR currUserFk = ?) AND email != ? AND status = "pending"', 
                     [userId, userId, email]
                 );
+
+                console.log(query);
                 const results = await query;
                 return await results;
             } catch (error) {
@@ -356,7 +358,7 @@ document.addEventListener('DOMContentLoaded', async function () {
         async function getBlockedUsers(userId) {
             try {
                 const query = FYSCloud.API.queryDatabase(
-                    'SELECT * FROM matches ' + 
+                    'SELECT matches.id, account.name, account.profilePhoto FROM matches ' + 
                     'INNER JOIN account ' +
                     'ON matchedUserFk = account.id ' +
                     'WHERE currUserFk = ? AND status="blocked"',
@@ -402,7 +404,7 @@ document.addEventListener('DOMContentLoaded', async function () {
         async function getUserMatches(userId, email){
             try {
                 const query = FYSCloud.API.queryDatabase(
-                    'SELECT * FROM matches ' + 
+                    'SELECT matches.id, account.name, account.profilePhoto FROM matches ' + 
                     'INNER JOIN account ' + 
                     'ON matchedUserFk = account.id or currUserFk = account.id ' +
                     'WHERE (matchedUserFk = ? OR currUserFk = ?) AND email != ? AND status = "accepted"', 
