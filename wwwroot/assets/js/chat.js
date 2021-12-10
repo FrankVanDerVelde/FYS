@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', async function () {
             chatBox.classList.add('show-chat');
         });
 
+        //When the requests button is clicked the chat + blockedlist will be hidden and requestList will be shown
         document.querySelector('.requests-btn').addEventListener('click', () => {
             document.querySelector('.chat-header-title').innerHTML = 'Verzoeken';
             chatList.classList.add('hide-tab');
@@ -27,6 +28,7 @@ document.addEventListener('DOMContentLoaded', async function () {
             requestList.classList.add('show-tab');
         });
 
+        //When the contacts button is clicked the chat + blockedlist will be show and requestList will be hidden
         document.querySelector('.contacts-btn').addEventListener('click', () => {
             document.querySelector('.chat-header-title').innerHTML = 'Contacten';
             chatList.classList.remove('hide-tab');

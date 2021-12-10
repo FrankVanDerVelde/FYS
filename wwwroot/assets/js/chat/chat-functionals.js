@@ -25,6 +25,7 @@ document.addEventListener('DOMContentLoaded', async function () {
         async function addContacts(){
             const userChatContact = await getUserMatches(userSession[0].id, userSession[0].email);
 
+            //removes the 
             function removeChats(parent) {
                 while (parent.firstChild) {
                     parent.removeChild(parent.firstChild);
@@ -41,6 +42,7 @@ document.addEventListener('DOMContentLoaded', async function () {
                 
                 //Sets the id from chatContacts for the data-id of chatTemplate 
                 chatTemplate.dataset.id = chatContacts.id;
+                chatTemplate.dataset.user = chatContacts.matchedUserFk == userSession[0].id ? chatContacts.currUserFk : chatContacts.matchedUserFk;
 
                 //Assigning the data from DB to the template attributes
                 chatTemplate.querySelector('.message-profile-pic').src = chatContacts.profilePhoto;
@@ -73,8 +75,8 @@ document.addEventListener('DOMContentLoaded', async function () {
                                 childDiv.style.display = 'block'; 
                                 document.querySelectorAll('.block-btn').forEach(function(button) {
                                     button.addEventListener('click', async () => {
-                                        const userId = +button.dataset.id;
-                                        await updatePendingRequests('blocked', userSession[0].id, userId);                                         
+                                        const requestId = +button.dataset.id;
+                                        await updatePendingRequests('blocked', requestId);                                         
                                         await addBlockedUsers();
                                     });         
                                 });
@@ -87,12 +89,13 @@ document.addEventListener('DOMContentLoaded', async function () {
 
                 //When user clicks on a chat from the list it will show the detailed message box
                 chatTemplate.addEventListener('click', async function (e) {
-                    const recieverId = this.dataset.id;
+                    const recieverId = this.dataset.user;
                     const recieverData = await getReciever(recieverId);
                     let inputRecieverId = document.forms['chat-form']['hidden-id'];
                     
                     inputRecieverId.dataset.id = recieverId;
 
+                    //removes the chat contacts
                     function removeChats(parent) {
                         while (parent.firstChild) {
                             parent.removeChild(parent.firstChild);
@@ -116,6 +119,7 @@ document.addEventListener('DOMContentLoaded', async function () {
                     document.querySelector('.detail-chat-header').innerHTML = recieverData[0].name;
                     document.querySelector('.detail-chat-photo').src = recieverData[0].profilePhoto;
 
+                    //redirecting the user to profile.html when the profile img has been clicked
                     document.querySelector('.detail-chat-photo').addEventListener('click', function () {
                         FYSCloud.URL.redirect("profile.html", {
                             profileid: recieverData[0].id
@@ -138,9 +142,11 @@ document.addEventListener('DOMContentLoaded', async function () {
                 document.querySelector('.error-msg').innerHTML = 'Field is empty';
             }else{
                 document.querySelector('.error-box').style.display = 'none';
+
                 //Using the function censorProfanity in `profanity-filter.js` to censor words before the insert
                 message = module.censorProfanity(message);
                 await insertMessage(userSession[0].id, inputRecieverId.dataset.id, message);
+
                 document.querySelector('.chat-form').reset();
                 await addMessages(inputRecieverId.dataset.id);
             }
@@ -150,6 +156,7 @@ document.addEventListener('DOMContentLoaded', async function () {
         async function addBlockedUsers(){
             const blockedUsers = await getBlockedUsers(userSession[0].id);
 
+            //removes the blocked users when the function has been called
             function removeBlockedUsers(parent) {
                 while (parent.firstChild) {
                     parent.removeChild(parent.firstChild);
@@ -159,6 +166,7 @@ document.addEventListener('DOMContentLoaded', async function () {
             const blockedUsersList = document.querySelector('.blocked-list');
             removeBlockedUsers(blockedUsersList);
 
+            //adding the blocked users to the view
             for (let i = 0; i < blockedUsers.length; i++) {
                 const blockedUserTemplate = FYSCloud.Utils.parseHtml(blockedUserMainTemplate)[0];
                 const blockedUser = blockedUsers[i];
@@ -171,8 +179,8 @@ document.addEventListener('DOMContentLoaded', async function () {
                 document.querySelector('.blocked-list').appendChild(blockedUserTemplate);
 
                 blockedUserTemplate.querySelector('.unblock-btn').addEventListener('click', async function () {
-                    const userId = +blockedUserTemplate.querySelector('.unblock-btn').dataset.id;
-                    await updatePendingRequests("accepted", userSession[0].id, userId); 
+                    const requestId = +blockedUserTemplate.querySelector('.unblock-btn').dataset.id;
+                    await updatePendingRequests("accepted", requestId); 
                     document.querySelector('.blocked-list').removeChild( blockedUserTemplate.querySelector('.unblock-btn').parentNode.parentNode);
                     await addContacts();
                 });
@@ -214,8 +222,8 @@ document.addEventListener('DOMContentLoaded', async function () {
                     updates the field `status` in the DB to accepted
                 */
                 requestsTemplate.querySelector('.accept-request-btn').addEventListener('click', async function () {
-                    const userId = +requestsTemplate.querySelector('.accept-request-btn').dataset.id;
-                    await updatePendingRequests("accepted", userSession[0].id, userId ); 
+                    const requestId = +requestsTemplate.querySelector('.accept-request-btn').dataset.id;
+                    await updatePendingRequests("accepted", requestId); 
                     await addRequests();
                 });
 
@@ -224,13 +232,10 @@ document.addEventListener('DOMContentLoaded', async function () {
                     updates the field `status` in the DB to declined
                 */
                 requestsTemplate.querySelector('.decline-request-btn').addEventListener('click', async function () {
-                    const userId = +requestsTemplate.querySelector('.accept-request-btn').dataset.id;
-                    await updatePendingRequests("declined", userSession[0].id, userId ); 
+                    const requestId = +requestsTemplate.querySelector('.accept-request-btn').dataset.id;
+                    await updatePendingRequests("declined", requestId); 
                     await addRequests();
                 });
-
-                
-
             }
         }
 
@@ -241,7 +246,7 @@ document.addEventListener('DOMContentLoaded', async function () {
             const array = [currentUser, recipientUser];
             const arrayDate = [];
 
-
+            //Removes the messages when the functions has been called
             function removeMessages(parent) {
                 while (parent.firstChild) {
                     parent.removeChild(parent.firstChild);
@@ -267,6 +272,7 @@ document.addEventListener('DOMContentLoaded', async function () {
             for (let i = 0; i < arrayChats.length; i++) {
                 const message = arrayChats[i];
 
+                //converting the sql datetime to `toLocaleString`
                 const messageFullDatetime = new Date(message.createdAt);
                 const messageConvertedTime = messageFullDatetime.toLocaleString();
                         
@@ -274,6 +280,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 
                 messageTemplate.dataset.id = message.id;
 
+                //When recieverFk equals the id from session the classname of the message will be set to `left-chat`
                 message.recieverFk == userSession[0].id ? messageTemplate.className = 'left-chat' :
                     messageTemplate.className = 'right-chat';
 
@@ -283,6 +290,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 
                 document.querySelector('.messages-list').appendChild(messageTemplate);
 
+                //scrolls to the bottom of the chat view
                 document.querySelector('.chat-content').scrollTo(0, document.querySelector('.chat-content').scrollHeight);
 
             }
@@ -312,11 +320,11 @@ document.addEventListener('DOMContentLoaded', async function () {
          * 
          * @param {int} userId 
          */
-        async function updatePendingRequests(status, userId, matchedUserId){
+        async function updatePendingRequests(status, requestId){
             try {
                 const query =  FYSCloud.API.queryDatabase(
-                    "UPDATE matches SET status = ? WHERE currUserFk = ?  AND matchedUserFk = ?", 
-                    [status, userId, matchedUserId]
+                    "UPDATE matches SET status = ? WHERE id = ?", 
+                    [status, requestId]
                 );
                 const results = await query;
                 return await results;
@@ -333,7 +341,7 @@ document.addEventListener('DOMContentLoaded', async function () {
         async function getPendingRequests(userId, email){
             try {
                 const query = FYSCloud.API.queryDatabase(
-                    'SELECT * FROM matches ' +
+                    'SELECT matches.id, account.name, account.profilePhoto FROM matches ' +
                     'INNER JOIN account ' +
                     'ON matchedUserFk = account.id or currUserFk = account.id ' +
                     'WHERE (matchedUserFk = ? OR currUserFk = ?) AND email != ? AND status = "pending"', 
@@ -349,7 +357,7 @@ document.addEventListener('DOMContentLoaded', async function () {
         async function getBlockedUsers(userId) {
             try {
                 const query = FYSCloud.API.queryDatabase(
-                    'SELECT * FROM matches ' + 
+                    'SELECT matches.id, account.name, account.profilePhoto FROM matches ' + 
                     'INNER JOIN account ' +
                     'ON matchedUserFk = account.id ' +
                     'WHERE currUserFk = ? AND status="blocked"',
@@ -395,7 +403,7 @@ document.addEventListener('DOMContentLoaded', async function () {
         async function getUserMatches(userId, email){
             try {
                 const query = FYSCloud.API.queryDatabase(
-                    'SELECT * FROM matches ' + 
+                    'SELECT matches.matchedUserFk, matches.currUserFk, matches.id, account.name, account.profilePhoto FROM matches ' + 
                     'INNER JOIN account ' + 
                     'ON matchedUserFk = account.id or currUserFk = account.id ' +
                     'WHERE (matchedUserFk = ? OR currUserFk = ?) AND email != ? AND status = "accepted"', 

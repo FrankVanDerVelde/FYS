@@ -24,6 +24,25 @@ let session = FYSCloud.Session.get('loggedin');
         setVisbility(loginButtons, 'none');
         setVisbility(registerButtons, 'none');
         setVisbility(profileButtons, '');
+
+        if (session[0].usertypeFk == 2) {
+            let userPanel = document.createElement('a');
+            let panel = document.createElement('a');
+
+            let userPanelLink = document.createTextNode("User Panel"); 
+            let panelLink = document.createTextNode("Panel"); 
+
+
+            userPanel.appendChild(userPanelLink); 
+            panel.appendChild(panelLink); 
+                  
+            // Set the href property
+            userPanel.href ="/wwwroot/assets/views/admin/userPanel.html"; 
+            panel.href = "/wwwroot/assets/views/admin/userPanel.html"; 
+
+            document.querySelector('#dropdown-content').prepend(userPanel, panel); 
+        }
+
         document.getElementById("header-profile-img").src = profilePhoto;
     } else {
         setVisbility(logoutButtons, 'none');
