@@ -11,6 +11,12 @@
     <link rel="stylesheet" href="../../css/home/home.css">
     <link rel="stylesheet" href="../../css/admin/userPanel.css">
     <link rel="stylesheet" href="../../css/custom.css">
+
+    <script type="text/javascript" src="https://cdn.fys.cloud/fyscloud/0.0.4/fyscloud.min.js" defer></script>
+    <script type="text/javascript" src="../../js/config.mockup.js" defer></script>
+    <script type="text/javascript"  src="../../js/sqlWrapper.js" defer></script>
+    <script type="text/javascript"  src="../../js/menu.js" defer></script>
+    <script type="text/javascript"  src="../../js/admin/table.js" defer></script>
 </head>
 <body class="light-theme">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
@@ -32,17 +38,10 @@
         </div>
         <div class="edit-dialog" id="editDialog">
             <div class="left-side">
-                <p>Afbeelding: </p>
                 <img src="../../img/user.png" id="userImage" alt="">
                 <div class="edit-buttons">
                     <button class="cancel-delete" id="defaultBtn">
-                        <i class="fas fa-images"></i>
-                        <b>Default</b>
-                    </button>
-                    <!--                    Hacky quick fix for style, need redo from ground... :/ -->
-                    <button class="delete-user" style="opacity: 0">
-                        <!--                        <i class="fas fa-trash"></i>-->
-                        <!--                        Verwijder-->
+                       <b>Standaard</b>
                     </button>
                 </div>
                 <div class="left-inputs">
@@ -60,7 +59,7 @@
             <div class="right-side">
                 <div class="right-inputs">
                     <p>Bio:</p>
-                    <textarea id="bio" name="bio" cols="15" rows="8"></textarea>
+                    <textarea id="bio" name="bio" cols="30" rows="8"></textarea>
                 </div>
                 <div class="right-inputs">
                     <p id="type">Gebruikers Typen:</p>
@@ -77,7 +76,9 @@
                     <p>Wachtwoord:</p>
                     <input type="password" id="pwd" placeholder="********">
                 </div>
-                <button id="save-button">Opslaan</button>
+                <div class="right-inputs">
+                    <button id="save-button">Opslaan</button>
+                </div>
             </div>
         </div>
         <div class="pagination">
@@ -89,13 +90,8 @@
 </main>
 
 <footer></footer>
-<script src="../js/html-include.js"></script>
 <!-- Javascript -->
-<script src="https://cdn.fys.cloud/fyscloud/0.0.4/fyscloud.min.js"></script>
-<script src="../../js/config.mockup.js"></script>
-<script src="../../js/sqlWrapper.js"></script>
-<script src="../../js/menu.js"></script>
-<script src="../../js/admin/table.js"></script>
+
 <script>
     function myFunction() {
         document.getElementById("myDropdown").classList.toggle("show");

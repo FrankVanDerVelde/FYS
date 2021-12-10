@@ -27,7 +27,8 @@ body, html {
 
 .profile-button a img {
     height: 50px;
-    width: auto;
+    width: 50px;
+    border-radius: 70px;
 }
 
 .nav-list {
