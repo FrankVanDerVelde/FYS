@@ -11,6 +11,8 @@ document.addEventListener('DOMContentLoaded', async function () {
         const messageMainTemplate = document.querySelector('#message-template').innerHTML;
         const blockedUserMainTemplate = document.querySelector('#blocked-user-template').innerHTML;
 
+        document.querySelector('.profile-photo').src = userSession[0].profilePhoto;
+
         //Adds the match requests in the requests tab/view
         await addRequests();
 
@@ -23,6 +25,7 @@ document.addEventListener('DOMContentLoaded', async function () {
         async function addContacts(){
             const userChatContact = await getUserMatches(userSession[0].id, userSession[0].email);
 
+            //removes the 
             function removeChats(parent) {
                 while (parent.firstChild) {
                     parent.removeChild(parent.firstChild);
@@ -91,6 +94,7 @@ document.addEventListener('DOMContentLoaded', async function () {
                     
                     inputRecieverId.dataset.id = recieverId;
 
+                    //removes the chat contacts
                     function removeChats(parent) {
                         while (parent.firstChild) {
                             parent.removeChild(parent.firstChild);
@@ -114,6 +118,7 @@ document.addEventListener('DOMContentLoaded', async function () {
                     document.querySelector('.detail-chat-header').innerHTML = recieverData[0].name;
                     document.querySelector('.detail-chat-photo').src = recieverData[0].profilePhoto;
 
+                    //redirecting the user to profile.html when the profile img has been clicked
                     document.querySelector('.detail-chat-photo').addEventListener('click', function () {
                         FYSCloud.URL.redirect("profile.html", {
                             profileid: recieverData[0].id
@@ -136,9 +141,11 @@ document.addEventListener('DOMContentLoaded', async function () {
                 document.querySelector('.error-msg').innerHTML = 'Field is empty';
             }else{
                 document.querySelector('.error-box').style.display = 'none';
+
                 //Using the function censorProfanity in `profanity-filter.js` to censor words before the insert
                 message = module.censorProfanity(message);
                 await insertMessage(userSession[0].id, inputRecieverId.dataset.id, message);
+
                 document.querySelector('.chat-form').reset();
                 await addMessages(inputRecieverId.dataset.id);
             }
@@ -148,6 +155,7 @@ document.addEventListener('DOMContentLoaded', async function () {
         async function addBlockedUsers(){
             const blockedUsers = await getBlockedUsers(userSession[0].id);
 
+            //removes the blocked users when the function has been called
             function removeBlockedUsers(parent) {
                 while (parent.firstChild) {
                     parent.removeChild(parent.firstChild);
@@ -157,6 +165,7 @@ document.addEventListener('DOMContentLoaded', async function () {
             const blockedUsersList = document.querySelector('.blocked-list');
             removeBlockedUsers(blockedUsersList);
 
+            //adding the blocked users to the view
             for (let i = 0; i < blockedUsers.length; i++) {
                 const blockedUserTemplate = FYSCloud.Utils.parseHtml(blockedUserMainTemplate)[0];
                 const blockedUser = blockedUsers[i];
@@ -226,9 +235,6 @@ document.addEventListener('DOMContentLoaded', async function () {
                     await updatePendingRequests("declined", userSession[0].id, userId ); 
                     await addRequests();
                 });
-
-                
-
             }
         }
 
@@ -239,7 +245,7 @@ document.addEventListener('DOMContentLoaded', async function () {
             const array = [currentUser, recipientUser];
             const arrayDate = [];
 
-
+            //Removes the messages when the functions has been called
             function removeMessages(parent) {
                 while (parent.firstChild) {
                     parent.removeChild(parent.firstChild);
@@ -265,6 +271,7 @@ document.addEventListener('DOMContentLoaded', async function () {
             for (let i = 0; i < arrayChats.length; i++) {
                 const message = arrayChats[i];
 
+                //converting the sql datetime to `toLocaleString`
                 const messageFullDatetime = new Date(message.createdAt);
                 const messageConvertedTime = messageFullDatetime.toLocaleString();
                         
@@ -272,6 +279,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 
                 messageTemplate.dataset.id = message.id;
 
+                //When recieverFk equals the id from session the classname of the message will be set to `left-chat`
                 message.recieverFk == userSession[0].id ? messageTemplate.className = 'left-chat' :
                     messageTemplate.className = 'right-chat';
 
@@ -281,6 +289,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 
                 document.querySelector('.messages-list').appendChild(messageTemplate);
 
+                //scrolls to the bottom of the chat view
                 document.querySelector('.chat-content').scrollTo(0, document.querySelector('.chat-content').scrollHeight);
 
             }
