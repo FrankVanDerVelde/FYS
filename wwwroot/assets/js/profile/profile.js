@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                 // Add active to new element
                 newActiveElement.classList.toggle('active');
             }
-            matchStatus = await FYSCloud.API.queryDatabase(`SELECT status FROM fys_is109_4_harmohat_chattest.matches WHERE currUserFK = ? AND matchedUserFk = ?`, [userId, profileId]);
+            matchStatus = await FYSCloud.API.queryDatabase(`SELECT status FROM matches WHERE currUserFK = ? AND matchedUserFk = ?`, [userId, profileId]);
         } catch (e) {
             console.error(e);
         }
@@ -76,10 +76,10 @@ document.addEventListener("DOMContentLoaded", async function () {
     let userInterests = await getUserInterests(contentId);
     try {
         // Get user data
-        profileData = await FYSCloud.API.queryDatabase(`SELECT * FROM fys_is109_4_harmohat_chattest.account WHERE id =${contentId};`);
+        profileData = await FYSCloud.API.queryDatabase(`SELECT * FROM account WHERE id =${contentId};`);
 
         // Get the details of the interests the user has
-        userInterests = await FYSCloud.API.queryDatabase(`SELECT description, imageLink FROM fys_is109_4_harmohat_chattest.interestdetail WHERE description in ('${userInterests.join("', '")}');`);
+        userInterests = await FYSCloud.API.queryDatabase(`SELECT description, imageLink FROM interestdetail WHERE description in ('${userInterests.join("', '")}');`);
     } catch (e) {
         console.error(e);
     }

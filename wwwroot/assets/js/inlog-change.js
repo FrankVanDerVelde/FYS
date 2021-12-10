@@ -8,7 +8,6 @@ let session = FYSCloud.Session.get('loggedin');
     const matchesLink = document.getElementsByClassName('matches-link');
 
     function setVisbility (targets, visibility) {
-        console.log(targets);
         for (i = 0; i < targets.length; i++) {
             targets[i].style.display = visibility;
         }
