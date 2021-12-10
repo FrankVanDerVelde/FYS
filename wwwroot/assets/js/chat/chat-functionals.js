@@ -1,6 +1,6 @@
 import * as module from './profanity-filter.js';
 
-document.addEventListener('DOMContentLoaded', async function () {
+window.addEventListener('load', async function () {
     if (FYSCloud.Session.get('loggedin')) {
         const userSession = FYSCloud.Session.get('loggedin');
         const detailChatBox = document.querySelector('#detail-chat-box');
@@ -121,7 +121,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 
                     //redirecting the user to profile.html when the profile img has been clicked
                     document.querySelector('.detail-chat-photo').addEventListener('click', function () {
-                        FYSCloud.URL.redirect("profile.html", {
+                        FYSCloud.URL.redirect("/wwwroot/assets/views/profile.html", {
                             profileid: recieverData[0].id
                         });
                     });
