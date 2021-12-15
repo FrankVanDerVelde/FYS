@@ -42,8 +42,6 @@ main {
     border-radius: 15px;
 }
 
-
-
 .skeleton{
     animation: loading 1s linear infinite alternate;
 }
@@ -82,7 +80,6 @@ main {
 }
 
 
-
 @keyframes loading{
     0%{
         background-color: hsl(200, 20%, 70%);
@@ -117,8 +114,6 @@ main {
     margin: 35px;
 }
 
-
-
 .show-more-btn {
     background: #D81E05;
     padding: 5px 20px 5px 20px;
@@ -129,6 +124,12 @@ main {
     width: 70%;
     margin-bottom: 15px;
     text-align: center;
+
+    transition: background-color 500ms ease-in-out;
+}
+
+.show-more-btn:hover{
+    background-color:#4c4c4c;
 }
 
 
@@ -156,14 +157,11 @@ h1 {
     color: white;
 }
 
-h2 {
-
-    color: var(--text1);
-}
-
+h2,
 h3 {
     color: var(--text1);
 }
+
 
 h4 {
     position: relative;
@@ -205,23 +203,15 @@ h4 {
     margin: auto;
 }
 
-.personAge {
-    font-size: 1.1em;
-    min-height:25px;
-
-}
-
-.personGender {
+.personAge,
+.personGender  {
     font-size: 1.1em;
     min-height:25px;
 
 }
 
 .personPlace {
-
     font-size: 1.1em;
-
-
 }
 
 .filter {
@@ -467,35 +457,6 @@ h4 {
 
 .endSection > p {
     font-weight: bold;
-}
-
-
-.interessesfilter {
-
-}
-
-.leeftijdsgroepfilter {
-
-}
-
-.geslachtfilter {
-
-}
-
-.gewenstebestemmingenfilter {
-
-}
-
-.gebruikerzoekenfilter {
-
-}
-
-.radiusfilter {
-
-}
-
-.endSection {
-
 }
 
 .pullDown {
