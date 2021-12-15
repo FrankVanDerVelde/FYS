@@ -17,6 +17,15 @@ main {
     background-position: center center;
 }
 
+.card img,
+.img-loader{
+    position: relative;
+    width: 135px;
+    top: -65px;
+    border-radius: 70px;
+    height: 135px;
+}
+
 .card-loader{
     max-width: 260px;
     justify-content: space-between;
@@ -34,6 +43,9 @@ main {
     animation: loading 1s linear infinite alternate;
 }
 
+.skelly-box{
+    margin-top: 140px;
+}
 
 .skeleton-title-box,
 .skeleton-text-box{
@@ -44,10 +56,11 @@ main {
 }
 
 .skeleton-text-box{
-    bottom: 0px;
+    bottom: 0;
 }
 
 .img-loader{
+    position:absolute;
     margin-left: 60px;
 }
 
@@ -112,14 +125,6 @@ main {
 }
 
 
-.card img,
-.img-loader{
-    position: relative;
-    width: 135px;
-    top: -65px;
-    border-radius: 70px;
-    height: 135px;
-}
 
 .show-more-btn {
     background: #D81E05;
