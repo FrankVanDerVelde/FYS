@@ -4,5 +4,3 @@ FYSCloud.API.configure({
     database: "fys_is109_4_harmohat_chattest",
     environment: "mockup"
 });
-
-
