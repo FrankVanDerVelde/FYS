@@ -26,24 +26,29 @@ main {
     height: 135px;
 }
 
-.card-loader{
-    max-width: 260px;
+.card,
+.card-loader {
+    display: flex;
     justify-content: space-between;
-    background-color: #5F5E5D;
-    margin-top: 30px;
+    flex-direction: column;
     flex: 1;
     position: relative;
+    background-color: var(--match-card-bg);
+    filter: drop-shadow(0px 15px 30px var(--box-shadow));
+    color: white;
+    margin-top: 30px;
     height: 350px;
+    max-width: 260px;
     border-radius: 15px;
-    display: flex;
-    flex-direction: column;
 }
+
+
 
 .skeleton{
     animation: loading 1s linear infinite alternate;
 }
 
-.skelly-box{
+.skelly-main{
     margin-top: 140px;
 }
 
@@ -97,18 +102,6 @@ main {
     flex-direction: row;
 }
 
-.card {
-    max-width: 260px;
-    justify-content: space-between;
-    background-color: #5F5E5D;
-    margin-top: 30px;
-    flex: 1;
-    position: relative;
-    height: 350px;
-    border-radius: 15px;
-    display: flex;
-    flex-direction: column;
-}
 
 .flex-grid {
     display: flex;
@@ -134,7 +127,7 @@ main {
     color: white;
     border: none;
     width: 70%;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     text-align: center;
 }
 
@@ -144,6 +137,7 @@ main {
 }
 
 .btn-loader{
+    margin-bottom:25px;
     height: 37px;
 }
 

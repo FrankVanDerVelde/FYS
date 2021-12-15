@@ -17,6 +17,7 @@
     --text1:#000000;
     --text2:#000000;
     --burger-bg:#000000;
+    --match-card-bg:#5F5E5D;
     --nav-shadow:  rgba(83, 83, 83, 0.15);
     --border-color-prio-dark: rgba(0, 0, 0, 0.20);
     --box-shadow: rgba(83, 83, 83, 0.15);
@@ -39,6 +40,7 @@
     --text1: #FFF;
     --text2: #ffffff;
     --burger-bg:#FFFFFF;
+    --match-card-bg:#242426;
     --nav-shadow: rgba(0, 0, 0, 0.3);
     --border-color-prio-dark:rgba(0, 0, 0, 0.5) ;
     --box-shadow: rgba(0, 0, 0, 0.3);
