@@ -1,7 +1,10 @@
 //document.addEventListener('DOMContentLoaded', async function () {
 
 
-var baseCard = document.getElementsByClassName("flex-grid")[0].children[0];
+var baseCard = document.getElementsByClassName("col")[1];
+var skeletonCard = document.getElementsByClassName("col")[0];
+baseCard.remove();
+
 var remainder = 0;
 var amountOfActiveCards = 3;
 var amountOfWantCreateCards = 0;
@@ -97,8 +100,7 @@ function checkForOwnIDAndAdmin(wantedUsers) {
             if (index > -1) {
                 wantedUsers.splice(index, 1);
             }
-        }
-        else if (wantedUsers[i - 1].user.usertypeFk === 1) {
+        } else if (wantedUsers[i - 1].user.usertypeFk === 1) {
             const index = wantedUsers.indexOf(wantedUsers[i - 1]);
             if (index > -1) {
                 wantedUsers.splice(index, 1);
@@ -344,7 +346,7 @@ function removeAllCards() {
 //set person info on card,
 function setPersonCards(card, user, initalSet) {
 
-    
+
     if (card === undefined || card === null || user === undefined || user === null)
         return;
     // card.children[0].children[0] <-- image
@@ -392,12 +394,11 @@ function setInfo(user, card) {
 
     card.children[0].children[2].innerHTML = genderText;
 
-    if (user.birthdate !== null){
+    if (user.birthdate !== null) {
         let dateCeiling = new Date();
         var birthday = dateCeiling.getFullYear() - user.birthdate.split("-")[0];
         card.children[0].children[3].innerHTML = `Leeftijd: ${birthday}`;
-    }
-    else{
+    } else {
         card.children[0].children[3].innerHTML = "Leeftijd: ??";
     }
 
@@ -477,7 +478,7 @@ function createPersonCards(numberOfRows, remainder) {
 
 //append new child to last flex-grid row;
 function appendBaseCard(flexGrids) {
-    flexGrids[flexGrids.length - 1].appendChild(baseCard.cloneNode(true));
+    flexGrids[flexGrids.length - 1].appendChild(skeletonCard.cloneNode(true));
     amountOfActiveCards++;
     amountOfWantCreateCards--;
     maxAmount--;
