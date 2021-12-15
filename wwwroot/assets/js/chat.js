@@ -1,12 +1,8 @@
-document.addEventListener('DOMContentLoaded', async function () {
+window.addEventListener('load', async function () {
     if (FYSCloud.Session.get('loggedin')) {
         const detailChatBox = document.querySelector('#detail-chat-box');
         const chatBox = document.querySelector('#main-chat-box');
-        const chatList = document.querySelector('.chat-list');
-        const requestList = document.querySelector('.requests-list');
-        const blockedList = document.querySelector('.blocked-list');
 
-        
         // show chat modal on click button
         document.querySelector('#chat-btn').addEventListener('click', () => {
             chatBox.classList.remove('hide-chat');
@@ -18,22 +14,6 @@ document.addEventListener('DOMContentLoaded', async function () {
             detailChatBox.classList.remove('show-chat');
             chatBox.classList.remove('hide-chat');
             chatBox.classList.add('show-chat');
-        });
-
-        //When the requests button is clicked the chat + blockedlist will be hidden and requestList will be shown
-        document.querySelector('.requests-btn').addEventListener('click', () => {
-            document.querySelector('.chat-header-title').innerHTML = 'Verzoeken';
-            chatList.classList.add('hide-tab');
-            blockedList.classList.add('hide-tab');
-            requestList.classList.add('show-tab');
-        });
-
-        //When the contacts button is clicked the chat + blockedlist will be show and requestList will be hidden
-        document.querySelector('.contacts-btn').addEventListener('click', () => {
-            document.querySelector('.chat-header-title').innerHTML = 'Contacten';
-            chatList.classList.remove('hide-tab');
-            blockedList.classList.remove('hide-tab');
-            requestList.classList.remove('show-tab');
         });
 
         document.querySelector('.close-chat').addEventListener('click', () => {

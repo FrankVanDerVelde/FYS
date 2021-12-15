@@ -1,17 +1,39 @@
 import * as module from './profanity-filter.js';
 
-document.addEventListener('DOMContentLoaded', async function () {
+window.addEventListener('load', async function () {
     if (FYSCloud.Session.get('loggedin')) {
         const userSession = FYSCloud.Session.get('loggedin');
         const detailChatBox = document.querySelector('#detail-chat-box');
         const chatBox = document.querySelector('#main-chat-box');
 
+        const chatList = document.querySelector('.chat-list');
+        const requestList = document.querySelector('.requests-list');
+        const blockedList = document.querySelector('.blocked-list');
+        
         const template = document.querySelector('#chat-template').innerHTML;
         const requestsMainTemplate = document.querySelector('#requests-template').innerHTML;
         const messageMainTemplate = document.querySelector('#message-template').innerHTML;
         const blockedUserMainTemplate = document.querySelector('#blocked-user-template').innerHTML;
 
         document.querySelector('.profile-photo').src = userSession[0].profilePhoto;
+
+        //When the requests button is clicked the chat + blockedlist will be hidden and requestList will be shown
+        document.querySelector('.requests-btn').addEventListener('click', () => {
+            document.querySelector('.chat-header-title').innerHTML = 'Verzoeken';
+            chatList.classList.add('hide-tab');
+            blockedList.classList.add('hide-tab');
+            requestList.classList.add('show-tab');
+        });
+
+        //When the contacts button is clicked the chat + blockedlist will be show and requestList will be hidden
+        document.querySelector('.contacts-btn').addEventListener('click', async () => {
+            document.querySelector('.chat-header-title').innerHTML = 'Contacten';
+            chatList.classList.remove('hide-tab');
+            blockedList.classList.remove('hide-tab');
+            requestList.classList.remove('show-tab');
+
+            await addContacts();
+        });
 
         //Adds the match requests in the requests tab/view
         await addRequests();
@@ -121,7 +143,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 
                     //redirecting the user to profile.html when the profile img has been clicked
                     document.querySelector('.detail-chat-photo').addEventListener('click', function () {
-                        FYSCloud.URL.redirect("profile.html", {
+                        FYSCloud.URL.redirect("/wwwroot/assets/views/profile.html", {
                             profileid: recieverData[0].id
                         });
                     });

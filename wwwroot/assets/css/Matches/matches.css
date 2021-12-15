@@ -17,6 +17,63 @@ main {
     background-position: center center;
 }
 
+.card-loader{
+    max-width: 260px;
+    justify-content: space-between;
+    background-color: #5F5E5D;
+    margin-top: 30px;
+    flex: 1;
+    position: relative;
+    height: 350px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.skeleton{
+    animation: loading 1s linear infinite alternate;
+}
+
+
+.skeleton-title-box,
+.skeleton-text-box{
+    position: relative;
+    left: 50%;
+    bottom: 40px;
+    transform: translateX(-40%);
+}
+
+.skeleton-text-box{
+    bottom: 0px;
+}
+
+.img-loader{
+    margin-left: 60px;
+}
+
+.skelly-title,
+.skelly-text{
+    height: 12px;
+    width: 80%;
+    margin-bottom: 8px;
+    border-radius: 10px;
+}
+
+.skelly-title:last-child, .skelly-text:last-child{
+    width: 60%;
+}
+
+
+
+@keyframes loading{
+    0%{
+        background-color: hsl(200, 20%, 70%);
+    }
+    100%{
+        background-color: hsl(200, 20%, 95%);
+    }
+}
+
 .matchrow {
     min-width: 90%;
     margin-left: auto;
@@ -55,7 +112,8 @@ main {
 }
 
 
-.card img {
+.card img,
+.img-loader{
     position: relative;
     width: 135px;
     top: -65px;
@@ -76,8 +134,12 @@ main {
 }
 
 
-.card-img {
+.card-img{  
     text-align: center;
+}
+
+.btn-loader{
+    height: 37px;
 }
 
 .content {
@@ -404,6 +466,7 @@ h4 {
 .endSection > p {
     font-weight: bold;
 }
+
 
 .interessesfilter {
 
