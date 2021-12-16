@@ -366,8 +366,8 @@ window.addEventListener('load', async function () {
                     'SELECT matches.id, account.name, account.profilePhoto FROM matches ' +
                     'INNER JOIN account ' +
                     'ON matchedUserFk = account.id or currUserFk = account.id ' +
-                    'WHERE (matchedUserFk = ? OR currUserFk = ?) AND email != ? AND status = "pending"', 
-                    [userId, userId, email]
+                    'WHERE matchedUserFk = ?  AND email != ? AND status = "pending"', 
+                    [userId, email]
                 );
                 const results = await query;
                 return await results;
