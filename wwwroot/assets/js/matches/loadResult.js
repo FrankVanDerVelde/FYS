@@ -375,13 +375,12 @@ function setPersonCards(card, user, initalSet) {
 
 function setInfo(user, card) {
 
-    //card = baseCard;
-    console.log(baseCard);
+    let tempcard = baseCard.cloneNode(true);
     const profilePhoto = user.profilePhoto;
     const name = user.name;
-    baseCard.children[0].children[0].children[0].src = (profilePhoto ? profilePhoto : `https://ui-avatars.com/api/?name=${name}?background=#e0dcdc`);
+    tempcard.children[0].children[0].children[0].src = (profilePhoto ? profilePhoto : `https://ui-avatars.com/api/?name=${name}?background=#e0dcdc`);
 
-    baseCard.children[0].children[0].children[1].innerHTML = name;
+    tempcard.children[0].children[0].children[1].innerHTML = name;
     var genderText = "";
     switch (user.genderFk) {
         case 1:
@@ -398,20 +397,18 @@ function setInfo(user, card) {
             break;
     }
 
-    baseCard.children[0].children[0].children[2].innerHTML = genderText;
+    tempcard.children[0].children[0].children[2].innerHTML = genderText;
 
     if (user.birthdate !== null) {
         let dateCeiling = new Date();
         var birthday = dateCeiling.getFullYear() - user.birthdate.split("-")[0];
-        baseCard.children[0].children[0].children[3].innerHTML = `Leeftijd: ${birthday}`;
+        tempcard.children[0].children[0].children[3].innerHTML = `Leeftijd: ${birthday}`;
     } else {
-        baseCard.children[0].children[0].children[3].innerHTML = "Leeftijd: ??";
+        tempcard.children[0].children[0].children[3].innerHTML = "Leeftijd: ??";
     }
 
-    console.log( card.children)
-    baseCard.children[0].children[1].children[0].href = `javascript:window.location.href="./profile.html?profileid=${user.id}"`;
-    card.replaceWith(baseCard);
-    console.log(card);
+    tempcard.children[0].children[1].children[0].href = `javascript:window.location.href="./profile.html?profileid=${user.id}"`;
+    card.replaceWith(tempcard);
 }
 
 function loadMoreCards() {
@@ -437,7 +434,7 @@ function checkCardAmount() {
         //console.log(wantedUsers);
         var activeCardsBeforeCreation = amountOfActiveCards;
         createPersonCards((amountOfWantCreateCards - remainder) / 3, remainder);
-        var allCards = document.getElementsByClassName('card');
+        var allCards = document.getElementsByClassName('col');
 
 
         // code below might cause a bug.
