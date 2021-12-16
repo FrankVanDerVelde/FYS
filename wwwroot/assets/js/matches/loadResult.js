@@ -1,8 +1,8 @@
 //document.addEventListener('DOMContentLoaded', async function () {
 
-
-var baseCard = document.getElementsByClassName("col")[1];
 var skeletonCard = document.getElementsByClassName("col")[0];
+var baseCard = document.getElementsByClassName("col")[1];
+
 baseCard.remove();
 
 var remainder = 0;
@@ -77,7 +77,7 @@ async function initalSet() {
 
 
         userCountLeftToCreate = wantedUsers.length;
-        var allCards = document.getElementsByClassName('card');
+        var allCards = document.getElementsByClassName('col');
         amountOfActiveCards = allCards.length - 3;
 
         //set users under filter
@@ -155,7 +155,9 @@ async function checkInterests(selectedFilters) {
 //set cards based on your intresses.
 function setBasedCards(wantedUsers, interests) {
     //get temp variable with the wanted users,
-    var allCards = document.getElementsByClassName('card');
+    var allCards = document.getElementsByClassName('col');
+    console.log(allCards);
+
     //if no own interest set 3 random users 
     if (interests.length === 0) {
         for (let i = 0; i < 3; i++) {
@@ -218,7 +220,7 @@ function callCreateFunctions(wantedUsers, interest, selectedInterestFilter) {
     removeAllCards();
 
 
-    var allCards = document.getElementsByClassName('card');
+    var allCards = document.getElementsByClassName('col');
 
 
     //if there are users left to create, first create them all then fill them with data.
@@ -230,11 +232,11 @@ function callCreateFunctions(wantedUsers, interest, selectedInterestFilter) {
         }
 
         createPersonCards((wantedUsers.length - (userCountLeftToCreate % 3)) / 3, userCountLeftToCreate % 3);
-
         //console.log(amountOfActiveCards);
         for (let i = 0; i < amountOfActiveCards; i++) {
 
             setPersonCards(allCards[i + 3], wantedUsers[i], false);
+
         }
     }
     //set bottom text for result amount.
@@ -349,6 +351,8 @@ function setPersonCards(card, user, initalSet) {
 
     if (card === undefined || card === null || user === undefined || user === null)
         return;
+
+
     // card.children[0].children[0] <-- image
     //card.children[0].children[1]<-- name
     //card.children[0].children[2] <-- place
@@ -371,11 +375,13 @@ function setPersonCards(card, user, initalSet) {
 
 function setInfo(user, card) {
 
+    //card = baseCard;
+    console.log(baseCard);
     const profilePhoto = user.profilePhoto;
     const name = user.name;
-    card.children[0].children[0].src = (profilePhoto ? profilePhoto : `https://ui-avatars.com/api/?name=${name}?background=#e0dcdc`);
+    baseCard.children[0].children[0].children[0].src = (profilePhoto ? profilePhoto : `https://ui-avatars.com/api/?name=${name}?background=#e0dcdc`);
 
-    card.children[0].children[1].innerHTML = name;
+    baseCard.children[0].children[0].children[1].innerHTML = name;
     var genderText = "";
     switch (user.genderFk) {
         case 1:
@@ -392,19 +398,20 @@ function setInfo(user, card) {
             break;
     }
 
-    card.children[0].children[2].innerHTML = genderText;
+    baseCard.children[0].children[0].children[2].innerHTML = genderText;
 
     if (user.birthdate !== null) {
         let dateCeiling = new Date();
         var birthday = dateCeiling.getFullYear() - user.birthdate.split("-")[0];
-        card.children[0].children[3].innerHTML = `Leeftijd: ${birthday}`;
+        baseCard.children[0].children[0].children[3].innerHTML = `Leeftijd: ${birthday}`;
     } else {
-        card.children[0].children[3].innerHTML = "Leeftijd: ??";
+        baseCard.children[0].children[0].children[3].innerHTML = "Leeftijd: ??";
     }
 
-
-    card.children[1].children[0].href = `javascript:window.location.href="./profile.html?profileid=${user.id}"`;
-
+    console.log( card.children)
+    baseCard.children[0].children[1].children[0].href = `javascript:window.location.href="./profile.html?profileid=${user.id}"`;
+    card.replaceWith(baseCard);
+    console.log(card);
 }
 
 function loadMoreCards() {
