@@ -328,7 +328,7 @@ window.addEventListener('load', async function () {
            async function insertMessage(senderId, recieverId, message){
             try {
                 const query = FYSCloud.API.queryDatabase(
-                    'INSERT INTO `messages` (id, senderFk, recieverFk, message) VALUES(NULL, ?, ?, ?);',[senderId, recieverId, message]
+                    'SET NAMES utf8mb4; INSERT INTO `messages` (id, senderFk, recieverFk, message) VALUES(NULL, ?, ?, ?);',[senderId, recieverId, message]
                 );
                 const results = await query;
                 return await results;
