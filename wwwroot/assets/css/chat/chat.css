@@ -449,7 +449,8 @@ li p{
     border-radius: 50%;
 }
 
-.error-box{
+.error-box,
+.info-box{
     display: none;
     justify-content: center;
     align-items: center;
@@ -457,11 +458,16 @@ li p{
     width: 100%;
     height: 50px;
     position: absolute;
-    z-index: 1;
+    z-index: 3;
     top: 60px;
 }
 
-.error-msg{
+.info-box{
+    background-color: #2196f3;
+}
+
+.error-msg,
+.info-msg{
     font-weight: bold;
     color: white;
 }

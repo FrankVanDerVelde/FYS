@@ -306,10 +306,10 @@ window.addEventListener('load', async function () {
             });
 
             if (arrayChats <= 0) {
-                document.querySelector('.error-box').style.display = 'flex';
-                document.querySelector('.error-msg').innerHTML = 'Start uw gesprek!';
+                document.querySelector('.info-box').style.display = 'flex';
+                document.querySelector('.info-msg').innerHTML = 'Start uw gesprek!';
             }else{
-                document.querySelector('.error-box').style.display = 'none';
+                document.querySelector('.info-box').style.display = 'none';
             }
 
             for (let i = 0; i < arrayChats.length; i++) {
