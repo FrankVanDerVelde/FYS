@@ -1,7 +1,7 @@
 //document.addEventListener('DOMContentLoaded', async function () {
 
-var skeletonCard = document.getElementsByClassName("col")[0];
-var baseCard = document.getElementsByClassName("col")[1];
+var skeletonCard = document.getElementsByClassName("col")[1];
+var baseCard = document.getElementsByClassName("col")[0];
 
 baseCard.remove();
 
