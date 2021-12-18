@@ -89,12 +89,14 @@
     flex: 1;
 }
 
+/* main box for tab buttons */
 .chat-tabs-btn{
     padding: 5px 30px;
     margin: 10px 0 10px 0;
     border-radius: 10px;
 }
 
+/* contact + request button for the tabs */
 .contacts-tab button,
 .requests-tab button{
     color: white;
@@ -382,18 +384,7 @@
 .messages-username{
     font-weight: bold;
     font-size: smaller;
-}
-
-.left-chat-image{
-    width:80%;
-    float:left;
-    padding: 10px 0 25px 0;
-}
-
-.right-chat-image{
-    width:80%;
-    float:right;
-    padding: 10px 0 25px 0;;
+    font-size: 15px;
 }
 
 /*left chat for recipient person*/
@@ -475,6 +466,12 @@ li p{
     color: white;
 }
 
+.messages-list{
+    position: relative;
+    z-index: 2;
+    background: var(--bg);
+}
+
 .messages-list li{
     display: inline-block;
 }
@@ -484,13 +481,10 @@ li p{
     color: var(--text1);
 }
 
-.messages-text{
-    display: flex;
-    justify-content: space-between;
-}
 
-.messages-text p{
-    color: var(--text1);
+.messages-message{
+    font-size:15px;
+    font-weight:lighter;
 }
 
 .messages-time{
@@ -498,4 +492,44 @@ li p{
     font-weight: lighter;
     font-size: 12px;
 }
+
+.loading-box{
+    display: flex;
+    justify-content:space-between;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20%;
+}
+
+.loading-circle{
+    width:15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color:gray;
+}
+
+.circle-1{
+    animation: loading-pulse-effect 400ms ease-in-out infinite alternate;
+}
+
+.circle-2{
+    animation: loading-pulse-effect 500ms ease-in-out infinite alternate;
+}
+
+.circle-3{
+    animation: loading-pulse-effect 600ms ease-in-out infinite alternate;
+}
+
+
+@keyframes loading-pulse-effect {
+    0% {
+        transform:scale(0.8);
+    }
+    100% {
+        transform:scale(1.2);
+    }
+}
+
 

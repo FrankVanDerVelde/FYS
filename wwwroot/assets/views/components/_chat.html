@@ -123,16 +123,20 @@
             <div class=""></div>
             <div class="error-box"><span class="error-msg"></span></div>
             <div class="chat-content">
-                <ul class="messages-list">
-                    <template id="message-template">
-                        <li>
-                            <b class="messages-username"></b>
-                            <p class="messages-message"></p>
-                            <br>
-                            <p class="messages-time"></p>
-                        </li>
-                    </template>
-                </ul>
+                <template id="message-template">
+                    <li>
+                        <b class="messages-username"></b>
+                        <p class="messages-message"></p>
+                        <br>
+                        <p class="messages-time"></p>
+                    </li>
+                </template>
+                <div class="loading-box">
+                    <div class="loading-circle circle-1"></div>
+                    <div class="loading-circle circle-2"></div>
+                    <div class="loading-circle circle-3"></div>
+                </div>
+                <ul class="messages-list"></ul>
             </div>
             <div class="chat-footer">
                 <form class="chat-form" name="chat-form">

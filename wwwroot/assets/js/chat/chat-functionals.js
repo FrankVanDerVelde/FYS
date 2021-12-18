@@ -15,6 +15,8 @@ window.addEventListener('load', async function () {
         const messageMainTemplate = document.querySelector('#message-template').innerHTML;
         const blockedUserMainTemplate = document.querySelector('#blocked-user-template').innerHTML;
 
+        let interval;
+
         document.querySelector('.profile-photo').src = userSession[0].profilePhoto;
 
         //When the requests button is clicked the chat + blockedlist will be hidden and requestList will be shown
@@ -114,8 +116,11 @@ window.addEventListener('load', async function () {
                     const recieverId = this.dataset.user;
                     const recieverData = await getReciever(recieverId);
                     let inputRecieverId = document.forms['chat-form']['hidden-id'];
-                    
+                    let count = 0;
+
                     inputRecieverId.dataset.id = recieverId;
+
+                    document.querySelector('.loading-box').style.display = 'flex';   
 
                     //removes the chat contacts
                     function removeChats(parent) {
@@ -126,11 +131,18 @@ window.addEventListener('load', async function () {
                     
                     const messagesList = document.querySelector('.messages-list');
                     removeChats(messagesList);
-                    
-                    await addMessages(recieverId);
-                    
-                    document.querySelector('.chat-content').scrollTo(0, document.querySelector('.chat-content').scrollHeight);
-                    
+
+                    clearInterval(interval);
+                                        
+                    interval = setInterval(async function() {
+                        count += 1;
+                        await addMessages(recieverId)
+                        
+                        if (count == 1) {
+                            document.querySelector('.chat-content').scrollTo(0, document.querySelector('.chat-content').scrollHeight);
+                        }
+                    }, 2000);       
+
                     //When clicking on a chat from the list it will hide the chatlist and show the detailed chat
                     detailChatBox.classList.add('show-chat');
                     detailChatBox.classList.remove('hide-chat');
@@ -172,6 +184,8 @@ window.addEventListener('load', async function () {
                 document.querySelector('.chat-form').reset();
                 await addMessages(inputRecieverId.dataset.id);
             }
+
+            document.querySelector('.chat-content').scrollTo(0, document.querySelector('.chat-content').scrollHeight);
         });
            
         //adds the blocked user to the contactlist tab/view
@@ -291,6 +305,13 @@ window.addEventListener('load', async function () {
                 return 0;
             });
 
+            if (arrayChats <= 0) {
+                document.querySelector('.error-box').style.display = 'flex';
+                document.querySelector('.error-msg').innerHTML = 'Start uw gesprek!';
+            }else{
+                document.querySelector('.error-box').style.display = 'none';
+            }
+
             for (let i = 0; i < arrayChats.length; i++) {
                 const message = arrayChats[i];
 
@@ -311,12 +332,14 @@ window.addEventListener('load', async function () {
                 messageTemplate.querySelector('.messages-message').innerHTML = message.message;
 
                 document.querySelector('.messages-list').appendChild(messageTemplate);
+            }
 
-                //scrolls to the bottom of the chat view
-                document.querySelector('.chat-content').scrollTo(0, document.querySelector('.chat-content').scrollHeight);
-
+            
+            if (document.querySelector('.messages-list').hasChildNodes()) {
+                document.querySelector('.loading-box').style.display = 'none';
             }
         }
+    
 
         /**
          * Inserts the messages into table `messages`
