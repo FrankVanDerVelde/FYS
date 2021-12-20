@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="ScreenOrientation" content="autoRotate:disabled">
+
+    <title>Home</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/img/favicon-32x32.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
+    <link rel="stylesheet" href="./assets/css/navbar.css">
+    <link rel="stylesheet" href="./assets/css/footer.css">
+    <link rel="stylesheet" href="./assets/css/home/home.css">
+    <link rel="stylesheet" href="./assets/css/chat/chat.css">
+
+    <!-- Javascript -->
+    <script type="text/javascript" src="https://cdn.fys.cloud/fyscloud/0.0.4/fyscloud.min.js"></script>
+    <script src="../../js/config.js"></script>
+
+    <script type="text/javascript" src="./assets/js/main.js"></script>
+    <script type="text/javascript" src="./assets/js/menu.js" defer></script>
+    <script type="text/javascript" src="./assets/js/chat.js"></script>
+    <script type="module" src="./assets/js/chat/chat-functionals.js" defer></script>
+    <script type="text/javascript" src="./assets/js/langChanger.js" defer></script>
+    <script type="text/javascript" src="./assets/js/inlog-change.js" defer></script>
+    <script type="text/javascript" src="./assets/js/auth/logout.js" defer></script>
+
+</head>
+<body class="light-theme">
+<header class="navbar">
+    <div class="logo">
+        <a href="">
+            <img src="./assets/img/corendon-logo.svg" alt="Logo"> 
+        </a>
+    </div>
+    <nav class="nav-list" id="nav-list">
+        <ul>
+            <li><a href="./index.html" class="active">Home</a></li>
+            <li><a href="./assets/views/about.html">About</a></li>
+            <li><a href="./assets/views/contact.html">Contact</a></li>
+            <li class="matches-link"><a href="./assets/views/matches.html">Vind Reispartners</a></li>
+
+            <li class="responsive-log-buttons responsive login-btn"><a href="./assets/views/auth/login.html">Inloggen</a></li>
+            <li class="responsive-log-buttons responsive register-btn"><a href="./assets/views/auth/register.html">Registreren</a></li>
+            <li class="responsive-log-buttons responsive logout-btn"><a href="">Uitloggen</a></li>
+            <li>
+                <div class="lang-changer-input">
+                    <select id="langSelecter" onchange="checklang()">
+                        <option value="de">Deutsch</option>
+                        <option value="en">English</option>
+                        <option value="nl" selected>Nederlands</option>
+                    </select>
+                </div>
+            </li>
+            <li class="dropdown-box responsive-log-buttons default">
+                <div class="dropdown">
+                    <button class="drop-btn">
+                        <i class="fa fa-caret-down"></i>
+                        <i class="fa fa-caret-up"></i>
+                    </button>
+                    <div class="dropdown-content" id="dropdown-content">
+                        <a href="./assets/views/auth/login.html" class="login-btn">Inloggen</a>
+                        <a href="./assets/views/auth/register.html" class="register-btn">Registreren</a>
+                        <a href="" class="logout-btn">Uitloggen</a>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="profile-button">
+        <a href="./assets/views/profile.html">
+            <img id="header-profile-img" src="./assets/img/default-avatar.png" alt="">
+
+        </a>
+    </div>
+
+    <div class="theme-switch-box">
+        <div class="switch">
+            <div>
+                <input type="checkbox" class="checkbox" id="checkbox">
+                <label for="checkbox" class="label">
+                    <i class="fas fa-sun"></i>
+                    <i class="fas fa-moon"></i>
+                    <span class="ball"></span>
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="burger-menu" id="toggle-btn">
+        <div class="menu-line"></div>
+        <div class="menu-line"></div>
+        <div class="menu-line"></div>
+    </div>
+</header>
+
+<main>
+    <div class="mainSection">
+        <div class="leftSection">
+            <div class="top"></div>
+            <div class="items-left">
+                <div class="mainText">
+                    <div class="text1" id="title-1">Vind jouw</div>
+                    <div class="text2" id="title-2">Reispartner!</div>
+                </div>
+                <div class="subText" id="opening">Wij helpen u een reispartner te vinden voor u eerst volgende
+                    vakantie!
+                </div>
+                <a href="./assets/views/auth/login.html" id="matchs-btn" class="subButton">Vind match</a>
+            </div>
+            <img class="image-red-arrow" src="../wwwroot/assets/img/arrow.png" alt="backgroundart">
+            <img class="image-red-ipad-phone" src="../wwwroot/assets/img/arrowdown.png" alt="backgroundart">
+
+            <div class="bottom"></div>
+        </div>
+
+        <div class="rightSection">
+            <img class="image-people" src="./assets/img/people.svg" alt="backgroundart">
+            <img class="image-people-phone" src="./assets/img/peoplephone.png" alt="backgroundart">
+
+        </div>
+    </div>
+
+    <button id="chat-btn" class="chat-btn"><i class="far fa-comment chat-icon"></i></button>
+</main>
+<footer>
+    <div class="footer-nav">
+        <div class="left-footer-nav">
+            <nav>
+                <a href="../../index.html">Home</a>
+                <a href="./about.html">Over Ons</a>
+                <a href="./auth/login.html" class="login-btn">Log in</a>
+                <a href="" class="logout-btn">Uitloggen</a>
+                <a href="./faq.html">FAQ</a>
+            </nav>
+        </div>
+        <div class="right-footer-nav">
+            <nav>
+                <a href="https://www.youtube.com/user/corendon"><img src="./assets/svg/Youtube.svg" alt=""/></a>
+                <a href="https://twitter.com/corendon"><img src="./assets/svg/twitter-black.svg" alt=""/></a>
+                <a href="https://vimeo.com/corendonairlines"><img src="./assets/svg/vimeo-black.svg" alt=""/></a>
+                <a href="https://www.facebook.com/Corendon.nl/"><img src="./assets/svg/facebook-black.svg" alt=""/></a>
+            </nav>
+        </div>
+    </div>
+    <div class="gray-footer-line"></div>
+    <div class="footer-text-box">
+        <div class="footer-copyright">
+            <span>© 2021 Team Quatro. All rights reserved.</span>
+        </div>
+        <div class="footer-privacy-nav">
+            <nav>
+                <a href="../pdf/AV_Corendon_NL_20200108.pdf">Terms of service </a>
+                <a href="../pdf/Corendon-Privacy-Verklaring-NL.pdf">Privacy Policy</a>
+            </nav>
+        </div>
+    </div>
+    <div class="footer-image">
+        <img src="./assets/svg/corendon-logo%203.svg" alt=""/>
+    </div>
+</footer>
+
+
+
+
+</body>
+</html>
