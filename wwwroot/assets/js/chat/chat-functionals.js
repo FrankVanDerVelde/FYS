@@ -121,6 +121,8 @@ window.addEventListener('load', async function () {
 
                     inputRecieverId.dataset.id = recieverId;
 
+                    document.querySelector('.info-box').style.display = 'none';
+
                     document.querySelector('.loading-box').style.display = 'flex';   
 
                     //removes the chat contacts
@@ -156,7 +158,7 @@ window.addEventListener('load', async function () {
 
                     //redirecting the user to profile.html when the profile img has been clicked
                     document.querySelector('.detail-chat-photo').addEventListener('click', function () {
-                        FYSCloud.URL.redirect("/wwwroot/assets/views/profile.html", {
+                        FYSCloud.URL.redirect("/assets/views/profile.html", {
                             profileid: recieverData[0].id
                         });
                     });
