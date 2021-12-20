@@ -284,7 +284,6 @@
     background: none;
     border: none;
     cursor: pointer;
-
     transition: 300ms transform ease-in;
 }
 

@@ -2,7 +2,8 @@ html{
     overflow:hidden;
 }
 
-.top,.bottom{
+.top,
+.bottom{
     flex:1;
 }
 
