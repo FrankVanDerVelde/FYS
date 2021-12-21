@@ -10,7 +10,7 @@ body {
     margin-right: auto;
     min-height: 80vh;
     align-items: center;
-    margin-top: 50px;
+    margin-top: 80px;
 }
 
 /*hero left column*/
@@ -73,12 +73,21 @@ body {
     padding: 18px;
     width: 90%;
     margin: auto;
+    opacity: 0;
+    transform: translateY(150px);
+    transition: 500ms ease-in;
+}
+
+.show-row{
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .col {
     flex: 1;
     margin-bottom: 30px;
 }
+
 /*gap between the boxes*/
 .gap {
     margin: 2em;
