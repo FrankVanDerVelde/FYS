@@ -118,6 +118,20 @@
 
         <div class="flex-grid">
             <div class="col">
+                <div class="card">
+                    <div class="card-img">
+                        <img src="../img/default-avatar.png" alt=""/>
+                        <p class="personName"></p>
+                        <p class="personGender"></p>
+                        <p class="personAge"></p>
+                    </div>
+
+                    <div class="footer">
+                        <a type="submit" class="show-more-btn" href="">Meer zien</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
                 <div class="card-loader">
                     <div class="card-img">
                         <div class="skeleton img-loader"></div>
@@ -143,20 +157,7 @@
                     </div>
                 </div>
             </div>
-                <div class="col">
-                    <div class="card">
-                        <div class="card-img">
-                            <img src="../img/default-avatar.png" alt=""/>
-                            <p class="personName">Henk Krol</p>
-                            <p class="personGender">Man</p>
-                            <p class="personAge">30</p>
-                        </div>
-    
-                        <div class="footer">
-                            <a type="submit" class="show-more-btn" href="">Meer zien</a>
-                        </div>
-                    </div>
-                </div>
+
 
             <div class="col">
                 <div class="card-loader">
@@ -272,6 +273,11 @@
             <div class="gebruikerzoekenfilter ">
                 <p>Gebruiker zoeken</p>
                 <input type="text" id="username" name="fname" onkeydown="searchUser(this)"><br><br>
+                <img class="search" src="../img/search.png" alt=" "/>
+            </div>
+            <div class="gebruikerzoekenfilter ">
+                <p>Op Locatie zoeken</p>
+                <input type="text" id="location" name="lname" onkeydown="searchLocation(this)"><br><br>
                 <img class="search" src="../img/search.png" alt=" "/>
             </div>
         </div>

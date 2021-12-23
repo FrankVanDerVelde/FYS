@@ -1,29 +1,52 @@
+
+document.addEventListener("click", e => {
+
+
+    switch (e.target.parentElement.parentElement.className) {
+
+        case "interessesfilter dropdown-filters":
+            console.log("aaaaa");
+            break;
+        case "leeftijdsgroepfilter dropdown-filters":
+            console.log("bbbbbb");
+
+            break;
+        case "geslachtfilter dropdown-filters":
+            console.log("cccccc");
+
+            break;
+        default:
+            break;
+    }
+    console.log(e.target);
+    console.log(e.target.parentElement.parentElement.className);
+
+
+})
+
+
 function openFilter(button) {
     closeFilter(button.nextElementSibling, "dropdown-content-filter");
 
 }
 
 
-function openInterestFilter(button)
-{
+function openInterestFilter(button) {
     closeFilter(button.nextElementSibling, "dropdown-content-filter-interests");
 }
 
 
-function openFilterList(button)
-{
+function openFilterList(button) {
 
     let div = document.getElementsByClassName("allFilters")[0];
     if (div.style.display !== 'none') {
         div.style.display = 'none';
-    }
-    else {
+    } else {
         div.style.display = 'flex';
     }
 }
 
-function closeFilter(button, dropdown)
-{
+function closeFilter(button, dropdown) {
     const currentDropdown = button;
     let allDropdowns = document.getElementsByClassName(dropdown);
     let wantToClose = false;
@@ -41,3 +64,5 @@ function closeFilter(button, dropdown)
 
     }
 }
+
+
