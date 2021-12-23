@@ -11,18 +11,81 @@
     <link rel="stylesheet" href="../../css/home/home.css">
     <link rel="stylesheet" href="../../css/admin/panel.css">
     <link rel="stylesheet" href="../../css/custom.css">
-    <script type="text/javascript"  src="https://cdn.fys.cloud/fyscloud/0.0.4/fyscloud.min.js" defer></script>
+
+    <script type="text/javascript" src="https://cdn.fys.cloud/fyscloud/0.0.4/fyscloud.min.js"></script>
     <script src="../../js/config.js"></script>
-    <script type="text/javascript"  src="../../js/auth/loggedin-href.js" defer></script>
+    <script type="text/javascript" src="../../js/auth/loggedout-href.js" defer></script>
     <script type="text/javascript"  src="../../js/sqlWrapper.js" defer></script>
     <script type="text/javascript"  src="../../js/menu.js" defer></script>
-    <script type="text/javascript"  src="../../js/intrests.js" defer></script>
-    <script type="text/javascript"  src="../../js/admin/panel.js" defer></script>
-    <script type="text/javascript"  src="../../js/admin/chart.js" defer></script>
+    <script type="text/javascript"  src="../../js/admin/table.js" defer></script>
 </head>
 <body class="light-theme">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
-<header></header>
+<header class="navbar">
+    <div class="logo">
+        <a href="../../index.html">
+            <img src="../img/corendon-logo.svg" alt="Logo">
+        </a>
+    </div>
+    <nav class="nav-list" id="nav-list">
+        <ul>
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="./about.html">About</a></li>
+            <li><a href="./contact.html">Contact</a></li>
+            <li class="matches-link"><a href="./matches.html">Vind Reispartners</a></li>
+            <li class="responsive-log-buttons responsive login-btn"><a href="./auth/login.html">Inloggen</a></li>
+            <li class="responsive-log-buttons responsive register-btn"><a href="./auth/register.html">Registreren</a></li>
+            <li class="responsive-log-buttons responsive logout-btn"><a href="">Uitloggen</a></li>
+            <li>
+                <div class="lang-changer-input">
+                    <select id="langSelecter" onchange="checklang()">
+                        <option value="de">Deutsch</option>
+                        <option value="en">English</option>
+                        <option value="nl" selected>Nederlands</option>
+                    </select>
+                </div>
+            </li>
+
+            <li class="dropdown-box responsive-log-buttons default">
+                <div class="dropdown">
+                    <button class="drop-btn">
+                        <i class="fa fa-caret-down"></i>
+                        <i class="fa fa-caret-up"></i>
+                    </button>
+                    <div class="dropdown-content" id="dropdown-content">
+                        <a href="./auth/login.html" class="login-btn">Inloggen</a>
+                        <a href="./auth/register.html" class="register-btn">Registreren</a>
+                        <a href="" class="logout-btn">Uitloggen</a>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="profile-button">
+        <a href="../views/profile.html">
+            <img id="header-profile-img" src="../img/default-avatar.png" alt="">
+        </a>
+    </div>
+
+    <div class="theme-switch-box">
+        <div class="switch">
+            <div>
+                <input type="checkbox" class="checkbox" id="checkbox">
+                <label for="checkbox" class="label">
+                    <i class="fas fa-sun"></i>
+                    <i class="fas fa-moon"></i>
+                    <span class="ball"></span>
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="burger-menu" id="toggle-btn">
+        <div class="menu-line"></div>
+        <div class="menu-line"></div>
+        <div class="menu-line"></div>
+    </div>
+</header>
 
 <main>
     <div class="mainSection">
