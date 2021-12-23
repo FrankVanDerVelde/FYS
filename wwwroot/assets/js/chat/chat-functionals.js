@@ -193,7 +193,7 @@ window.addEventListener('load', async function () {
            
         //adds the blocked user to the contactlist tab/view
         async function addBlockedUsers(){
-            const blockedUsers = await getBlockedUsers(userSession[0].id);
+            const blockedUsers = await getBlockedUsers(userSession[0].id, userSession[0].email);
 
             //removes the blocked users when the function has been called
             function removeBlockedUsers(parent) {
@@ -417,14 +417,14 @@ window.addEventListener('load', async function () {
             }
         }
 
-        async function getBlockedUsers(userId) {
+        async function getBlockedUsers(userId, email) {
             try {
                 const query = FYSCloud.API.queryDatabase(
                     'SELECT matches.id, account.name, account.profilePhoto FROM matches ' + 
                     'INNER JOIN account ' +
                     'ON matchedUserFk = account.id ' +
-                    'WHERE currUserFk = ? AND status="blocked"',
-                    [userId]
+                    'WHERE matchedUserFk = ?  AND email != ? AND status = "blocked"',
+                    [userId, email]
                 );
                 const results = await query;
                 return await results;
