@@ -13,7 +13,6 @@ let amountOfInterestFilters = 0;
 let selectedFilters = [];
 
 
-
 async function getInterests() {
     intresses = await FYSCloud.API.queryDatabase("SELECT interestscategory.id AS parent_id, interestscategory.description AS parent_description, interestdetail.description AS child_description, interestdetail.interestId AS child_id\n" +
         "FROM interestscategory\n" +
@@ -52,7 +51,7 @@ async function createInterestFilter(interests) {
     for (let i = 0; i < parentElements.length; i++) {
         let dropDownChild = document.createElement("div");
         dropDownChild.setAttribute("class", "dropdown-content-filter-interests");
-        insertAfter(parentElements[i],dropDownChild);
+        insertAfter(parentElements[i], dropDownChild);
     }
 
 
@@ -62,23 +61,21 @@ async function createInterestFilter(interests) {
     let counter = 0;
     for (let i = 0; i < interests.length; i++) {
 
-        if(tempNumber !== interests[i].parent_id)
-        {
+        if (tempNumber !== interests[i].parent_id) {
             counter++;
             tempNumber = interests[i].parent_id;
         }
 
-       if(interests[i].parent_description === parentElements[counter].id)
-       {
-           let childDivInterest = document.createElement("a");
-           childDivInterest.setAttribute("class", "optionInterest");
-           childDivInterest.setAttribute("href", "javascript:void(0)");
-           childDivInterest.setAttribute("onclick", "changeFilter(this)");
-           childDivInterest.setAttribute("id", interests[i].child_description);
+        if (interests[i].parent_description === parentElements[counter].id) {
+            let childDivInterest = document.createElement("a");
+            childDivInterest.setAttribute("class", "optionInterest");
+            childDivInterest.setAttribute("href", "javascript:void(0)");
+            childDivInterest.setAttribute("onclick", "changeFilter(this)");
+            childDivInterest.setAttribute("id", interests[i].child_description);
 
-           childDivInterest.innerHTML = interests[i].child_description;
-           dropdownParent[counter].appendChild(childDivInterest);
-       }
+            childDivInterest.innerHTML = interests[i].child_description;
+            dropdownParent[counter].appendChild(childDivInterest);
+        }
 
     }
 
@@ -86,14 +83,14 @@ async function createInterestFilter(interests) {
 }
 
 
-function returnSelectedFilters()
-{
+function returnSelectedFilters() {
     return selectedFilters;
 }
 
 function insertAfter(referenceNode, newNode) {
     referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
 }
+
 async function changeFilter(item) {
 
     let exists;
@@ -122,12 +119,11 @@ async function changeFilter(item) {
             parentDiv.children[i].children[0].innerHTML = item.innerHTML;
 
             for (let j = 0; j < selectedFilters.length; j++) {
-                if(parentDiv.children[i].children[0] === item)
-                {
+                if (parentDiv.children[i].children[0] === item) {
                     selectedFilters[i] = item;
                 }
             }
-          //  console.log(selectedFilters);
+            //  console.log(selectedFilters);
             break;
 
         }
@@ -179,6 +175,26 @@ async function changeFilter(item) {
     }
 }
 
+function removeAllFilters() {
+
+    let filters = document.getElementsByClassName("toegepaste-filters")[0];
+    if (filters.children.length === 0)
+        return
+    console.log(filters.children);
+    for (let i = filters.children.length; i > 0; i--) {
+        for (const childeren of filters.children) {
+            filters.removeChild(childeren);
+        }
+    }
+    selectedFilters = [];
+
+
+    console.log(selectedFilters);
+    checkInterests(selectedFilters);
+
+   // console.log(filters.removeChild(filters[0].children));
+}
+
 //create div, give classname and id and create child in that div.
 function createFilter(typeFilter, valueFilter) {
 
@@ -196,7 +212,7 @@ function createFilter(typeFilter, valueFilter) {
     selectedFilters.push(childDiv);
     document.getElementsByClassName("toegepaste-filters")[0].appendChild(parentDiv);
     // console.log("added standard filter");
-   // console.log(selectedFilters);
+    // console.log(selectedFilters);
 }
 
 //create div, give classname and id and create child in that div.
@@ -213,7 +229,7 @@ function createFilterInterests(typeFilter, valueFilter) {
     parentDiv.appendChild(childDiv);
 
     selectedFilters.push(childDiv);
-   // console.log(selectedFilters);
+    // console.log(selectedFilters);
     document.getElementsByClassName("toegepaste-filters")[0].appendChild(parentDiv);
     // console.log("added interest filter");
 }

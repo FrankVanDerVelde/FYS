@@ -135,8 +135,16 @@ main {
 
 .card-img{  
     text-align: center;
+    max-height: 290px;
 }
-
+.personInfo{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+.personFoto{
+    align-self: center;
+}
 .btn-loader{
     margin-bottom:25px;
     height: 37px;
@@ -189,11 +197,11 @@ h4 {
     margin: 50px 0 auto 0;
 }
 
-.card-img > p {
+.card-img > div > p {
     color: var(--text3);
     word-wrap: break-word;
     position: relative;
-    top: -40px;
+    top: -60px;
 }
 
 .personName {
@@ -458,7 +466,17 @@ h4 {
     font-size: 1em;
     cursor: pointer;
 }
+.remove_all_filters{
 
+}
+.removeButton{
+    border: none;
+    padding: 0 20px;
+    background-color: var(--filter);
+    font-size: 16px;
+    cursor: pointer;
+    color: var(--text1);
+}
 .endSection > p {
     font-weight: bold;
 }

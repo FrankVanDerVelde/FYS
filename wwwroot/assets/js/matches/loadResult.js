@@ -4,7 +4,9 @@ var skeletonCard = document.getElementsByClassName("col")[1];
 var baseCard = document.getElementsByClassName("col")[0];
 
 baseCard.remove();
-
+var gender = "";
+var age = "";
+var intrests = [];
 var remainder = 0;
 var amountOfActiveCards = 3;
 var amountOfWantCreateCards = 0;
@@ -27,6 +29,7 @@ function MutationObersver() {
 // Callback function to execute when mutations are observed
     const callback = function (mutationsList, observer) {
         // Use traditional 'for loops' for IE 11
+        console.log(mutationsList);
         for (const mutation of mutationsList) {
             if (mutation.type === 'childList') {
                 var selectedFilters = returnSelectedFilters();
@@ -115,13 +118,17 @@ async function setBasedMatches(wantedUsers) {
     thisInterestList = await getUserIntrests(thisUserID);
     setBasedCards(wantedUsers, thisInterestList);
 }
-
+async function checkLocation(wantedUsers){
+    
+}
 //check interests, checks given iterests fro mthe user and returns array of people
 async function checkInterests(selectedFilters) {
-    var gender = "";
-    var age = "";
-    var intrests = [];
-    var selectedInterestFilter = false;
+
+    gender = "";
+    age = "";
+    intrests = [];
+    console.log(selectedFilters);
+    let selectedInterestFilter = false;
     for (let i = 0; i < selectedFilters.length; i++) {
         if (selectedFilters[i].parentNode.id === "gender") {
             gender = selectedFilters[i].innerHTML;
@@ -135,7 +142,8 @@ async function checkInterests(selectedFilters) {
         }
 
     }
-
+    console.log(gender);
+    console.log(age);
     if (age !== "" || gender !== "") {
         // console.log("db call with params");
         wantedUsers = await getUsersWithIntrests(age, gender);
@@ -143,7 +151,7 @@ async function checkInterests(selectedFilters) {
     } else {
         //   console.log("db call all users");
         wantedUsers = await getAllUsers();
-
+        console.log(wantedUsers);
     }
     checkForOwnIDAndAdmin(wantedUsers);
     //creation and setting of elements.
@@ -156,7 +164,7 @@ async function checkInterests(selectedFilters) {
 function setBasedCards(wantedUsers, interests) {
     //get temp variable with the wanted users,
     var allCards = document.getElementsByClassName('col');
-    console.log(allCards);
+    // console.log(allCards);
 
     //if no own interest set 3 random users 
     if (interests.length === 0) {
@@ -209,6 +217,8 @@ function setBasedCards(wantedUsers, interests) {
         }
     }
 }
+
+
 
 function callCreateFunctions(wantedUsers, interest, selectedInterestFilter) {
     //set users left to create equal to the amount of users.
@@ -378,16 +388,14 @@ function setInfo(user, card) {
     let tempcard = baseCard.cloneNode(true);
     const profilePhoto = user.profilePhoto;
     const name = user.name;
-    try{
-        tempcard.children[0].children[0].children[0].src = (profilePhoto ? profilePhoto : `https://ui-avatars.com/api/?name=${name}?background=#e0dcdc`);
+    try {
+        tempcard.children[0].children[0].children[0].children[0].src = (profilePhoto ? profilePhoto : `https://ui-avatars.com/api/?name=${name}?background=#e0dcdc`);
 
-    }
-    catch (e) {
-        tempcard.children[0].children[0].children[0].src = "../img/default-avatar.png";
+    } catch (e) {
+        tempcard.children[0].children[0].children[0].children[0].src = "../img/default-avatar.png";
         console.log(e);
     }
-
-    tempcard.children[0].children[0].children[1].innerHTML = name;
+    tempcard.children[0].children[0].children[0].children[1].innerHTML = name;
     var genderText = "";
     switch (user.genderFk) {
         case 1:
@@ -404,14 +412,14 @@ function setInfo(user, card) {
             break;
     }
 
-    tempcard.children[0].children[0].children[2].innerHTML = genderText;
+    tempcard.children[0].children[0].children[0].children[2].innerHTML = genderText;
 
     if (user.birthdate !== null) {
         let dateCeiling = new Date();
         var birthday = dateCeiling.getFullYear() - user.birthdate.split("-")[0];
-        tempcard.children[0].children[0].children[3].innerHTML = `Leeftijd: ${birthday}`;
+        tempcard.children[0].children[0].children[0].children[3].innerHTML = `Leeftijd: ${birthday}`;
     } else {
-        tempcard.children[0].children[0].children[3].innerHTML = "Leeftijd: ??";
+        tempcard.children[0].children[0].children[0].children[3].innerHTML = "Leeftijd: ??";
     }
 
     tempcard.children[0].children[1].children[0].href = `javascript:window.location.href="./profile.html?profileid=${user.id}"`;

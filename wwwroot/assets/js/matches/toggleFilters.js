@@ -1,28 +1,5 @@
 
-document.addEventListener("click", e => {
 
-
-    switch (e.target.parentElement.parentElement.className) {
-
-        case "interessesfilter dropdown-filters":
-            console.log("aaaaa");
-            break;
-        case "leeftijdsgroepfilter dropdown-filters":
-            console.log("bbbbbb");
-
-            break;
-        case "geslachtfilter dropdown-filters":
-            console.log("cccccc");
-
-            break;
-        default:
-            break;
-    }
-    console.log(e.target);
-    console.log(e.target.parentElement.parentElement.className);
-
-
-})
 
 
 function openFilter(button) {
@@ -64,5 +41,7 @@ function closeFilter(button, dropdown) {
 
     }
 }
+
+
 
 
