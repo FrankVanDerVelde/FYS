@@ -378,7 +378,14 @@ function setInfo(user, card) {
     let tempcard = baseCard.cloneNode(true);
     const profilePhoto = user.profilePhoto;
     const name = user.name;
-    tempcard.children[0].children[0].children[0].src = (profilePhoto ? profilePhoto : `https://ui-avatars.com/api/?name=${name}?background=#e0dcdc`);
+    try{
+        tempcard.children[0].children[0].children[0].src = (profilePhoto ? profilePhoto : `https://ui-avatars.com/api/?name=${name}?background=#e0dcdc`);
+
+    }
+    catch (e) {
+        tempcard.children[0].children[0].children[0].src = "../img/default-avatar.png";
+        console.log(e);
+    }
 
     tempcard.children[0].children[0].children[1].innerHTML = name;
     var genderText = "";
