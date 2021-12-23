@@ -3,6 +3,7 @@ import * as module from './profanity-filter.js';
 window.addEventListener('load', async function () {
     if (FYSCloud.Session.get('loggedin')) {
         const userSession = FYSCloud.Session.get('loggedin');
+        const currentUser = await getCurrUserData(userSession[0].id);
         const detailChatBox = document.querySelector('#detail-chat-box');
         const chatBox = document.querySelector('#main-chat-box');
 
@@ -17,7 +18,7 @@ window.addEventListener('load', async function () {
 
         let interval;
 
-        document.querySelector('.profile-photo').src = userSession[0].profilePhoto;
+        document.querySelector('.profile-photo').src = currentUser[0].profilePhoto;
 
         //When the requests button is clicked the chat + blockedlist will be hidden and requestList will be shown
         document.querySelector('.requests-btn').addEventListener('click', () => {
@@ -120,6 +121,8 @@ window.addEventListener('load', async function () {
 
                     inputRecieverId.dataset.id = recieverId;
 
+                    document.querySelector('.info-box').style.display = 'none';
+
                     document.querySelector('.loading-box').style.display = 'flex';   
 
                     //removes the chat contacts
@@ -155,7 +158,7 @@ window.addEventListener('load', async function () {
 
                     //redirecting the user to profile.html when the profile img has been clicked
                     document.querySelector('.detail-chat-photo').addEventListener('click', function () {
-                        FYSCloud.URL.redirect("/wwwroot/assets/views/profile.html", {
+                        FYSCloud.URL.redirect("/assets/views/profile.html", {
                             profileid: recieverData[0].id
                         });
                     });
@@ -341,6 +344,21 @@ window.addEventListener('load', async function () {
         }
     
 
+        /**
+         * @param {int} userId 
+         * @returns account data of logged in user (current user)
+         */
+        async function getCurrUserData(userId){
+            try {
+                const query = FYSCloud.API.queryDatabase(
+                    'SELECT * FROM account WHERE id = ?',[userId]
+                );
+                const results = await query;
+                return await results;
+            } catch (error) {
+                console.log(error);
+            }
+        }
         /**
          * Inserts the messages into table `messages`
          * 

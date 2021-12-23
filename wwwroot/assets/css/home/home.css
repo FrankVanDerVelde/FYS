@@ -1,24 +1,30 @@
 html{
     overflow:hidden;
 }
-.top,.bottom{
+
+.top,
+.bottom{
     flex:1;
 }
+
 .mainSection{
     display: flex;
     flex-direction: row;
     height: 100vh;
     max-height:100vh;
 }
+
 .image-red-arrow{
     height: 100%;
     width: 50% ;
     z-index: 0;
     position: absolute;
 }
+
 .image-red-ipad-phone{
     display: none;
 }
+
 .image-people{
     height: auto;
     width: 50vw ;
@@ -26,18 +32,21 @@ html{
     margin: auto auto;
     display: block;
 }
+
 .image-people-phone{
-    display: none   ;
+    display: none;
 }
+
 .leftSection{
     display: flex;
     flex-direction: column;
     align-items: center;
     height: auto;
     max-width: 50%;
-    width: 50vw ;
+    width: 50vw;
 
 }
+
 .rightSection{
     display: flex;
     flex-direction: column;
@@ -46,11 +55,12 @@ html{
     max-width: 50%;
     width: 50vw;
 }
+
 .items-left{
     display: flex;
     flex-direction: column;
     align-items: center;
-   flex:1;
+    flex:1;
     z-index: 1;
 }
 
@@ -62,6 +72,7 @@ html{
     align-self: flex-start;
 
 }
+
 .subButton{
     width: 166px;
     height: 44px;
@@ -80,14 +91,17 @@ html{
     text-align: center;
     line-height: 3;
 }
+
 .text1{
     font-size: 3.5em;
     font-weight: lighter;
 }
+
 .text2{
     font-size: 4em;
     font-weight: bold;
 }
+
 .subText{
     max-width: 80%;
     width: 100%;
@@ -109,6 +123,7 @@ footer {
         max-width: 100%;
         width: 100% ;
     }
+
     .image-red-ipad-phone{
         display: none;
     }
@@ -128,12 +143,14 @@ footer {
         height: 93vh;
         max-height:93vh;
     }
+
     .image-red-arrow{
         height: 100%;
         width: 50% ;
         z-index: 0;
         position: absolute;
     }
+
     .image-people{
         height: auto;
         width: 50vw ;
@@ -141,9 +158,11 @@ footer {
         margin: 50% auto;
         display: block;
     }
+
     .image-people-phone{
-        display: none   ;
+        display: none;
     }
+
     .mainText{
         display: flex;
         flex-direction: column;
@@ -152,6 +171,7 @@ footer {
         align-self: center;
 
     }
+
     .subButton{
         width: 166px;
         height: 44px;
@@ -161,16 +181,19 @@ footer {
         align-self: center;
 
     }
+    
     .text1{
         font-size: 3.5em;
         font-weight: lighter;
         text-align: center;
     }
+
     .text2{
         font-size: 4em;
         font-weight: bold;
         text-align: center;
     }
+
     .subText{
         max-width: 80%;
         width: 100%;
@@ -190,13 +213,16 @@ footer {
         max-width: 100%;
         width: 100% ;
     }
+
     .rightSection{
         max-width: 100% ;
         width: 100% ;
     }
+
     .image-red-arrow{
         display: none;
     }
+
     .image-red-ipad-phone{
         display: block;
         height: auto;
@@ -204,17 +230,19 @@ footer {
         z-index: 0;
         position: absolute;
     }
+
     .image-people{
         height: auto;
         width: 75% ;
         z-index: 0;
         margin: 14% auto;
         display: block;
-
     }
+
     .image-people-phone{
         display: none   ;
     }
+
     .items-left{
         display: flex;
         flex-direction: column;
@@ -230,6 +258,7 @@ footer {
         height: 93vh;
         max-height:93vh;
     }
+
     .mainText{
         display: flex;
         flex-direction: column;
@@ -247,16 +276,19 @@ footer {
         align-self: center;
 
     }
+
     .text1{
         font-size: 3.5em;
         font-weight: lighter;
         text-align: center;
     }
+
     .text2{
         font-size: 4em;
         font-weight: bold;
         text-align: center;
     }
+
     .subText{
         max-width: 80%;
         width: 100%;
@@ -269,6 +301,7 @@ footer {
     html{
         overflow-x:hidden;
     }
+
     .leftSection{
         display: flex;
         flex-direction: column;
@@ -277,6 +310,7 @@ footer {
         max-width: 100%;
         width: 100% ;
     }
+
     .image-red-ipad-phone{
         display: block;
         position: absolute;
@@ -284,37 +318,43 @@ footer {
         width: 100%;
         margin-top: 0;
     }
+
     .image-red-arrow{
         display: none;
 
     }
+
     .image-people-phone{
         display: block;
         width: 100%;
         margin-top: 10%;
     }
+
     .image-people{
         display: none;
     }
+
     .rightSection{
         height: 35vh;
         max-width: 100% ;
         width: 100% ;
     }
+
     .mainSection{
         display: flex;
         flex-direction: column;
         height: 100vh;
         max-height:100vh;
     }
+
     .mainText{
         display: flex;
         flex-direction: column;
         max-width: 80%;
         width: 100%;
         align-self: center;
-
     }
+
     .subButton{
         width: 166px;
         height: 44px;
@@ -322,18 +362,20 @@ footer {
         margin-top: 25px;
         overflow: hidden;
         align-self: center;
-
     }
+
     .text1{
         font-size: 2.5em;
         font-weight: lighter;
         text-align: center;
     }
+
     .text2{
         font-size: 3em;
         font-weight: bold;
         text-align: center;
     }
+    
     .subText{
         max-width: 80%;
         width: 100%;

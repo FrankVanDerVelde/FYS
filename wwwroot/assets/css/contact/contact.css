@@ -1,3 +1,7 @@
+body {
+    overflow-x: hidden;
+}
+
 .hero {
     display: flex;
     width: 90%;
@@ -5,7 +9,7 @@
     margin-right: auto;
     min-height: 80vh;
     align-items: center;
-    margin-top: 50px;
+    margin-top: 80px;
 }
 
 .hero-intro {
@@ -56,6 +60,14 @@
     padding: 18px;
     width: 90%;
     margin: auto;
+    opacity: 0;
+    transform: translateY(150px);
+    transition: 500ms;
+}
+
+.show-row{
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .col {

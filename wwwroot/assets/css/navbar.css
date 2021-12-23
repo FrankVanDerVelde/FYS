@@ -18,10 +18,10 @@ body, html {
 }
 
 .navbar > * {
-display: flex;
- justify-content: center; 
- height: 100%;
- align-items: center;
+    display: flex;
+    justify-content: center; 
+    height: 100%;
+    align-items: center;
 }
 
 .logo {
@@ -42,6 +42,7 @@ display: flex;
     height: 50px;
     width: 50px;
     border-radius: 70px;
+    object-fit: cover;
 }
 
 .nav-list {
@@ -56,8 +57,9 @@ display: flex;
 }
 
 .responsive-log-buttons.responsive {
-display: none;
+    display: none;
 }
+
 .nav-list li a {
     color: var(--text1);
     padding: 8px 8px;
@@ -154,10 +156,6 @@ a {
     position: absolute;
 }
 
-.switch {
-
-}
-
 .label {
     width: 45px;
     height: 22px;
@@ -197,10 +195,6 @@ a {
 /* responsive design */
 @media all and (max-width: 1000px) {
 
-    /* .navbar {
-        flex-direction: column;
-    } */
-
     .responsive-log-buttons.responsive {
         display: block;
     }
@@ -227,7 +221,6 @@ a {
     }
 
     .logo {
-        /* width: 100%; */
         flex: 1;
         padding: 10px;
         justify-content: start;
@@ -245,12 +238,6 @@ a {
         border-bottom: 1px solid rgba(227, 227, 227, 0.25);
     }
 
-    /* .nav-list li:last-child {
-        display: flex;
-        justify-content: flex-end;
-        border-bottom: 0;
-    } */
-
     .active-menu {
         display: block;
         width: 100vw;
@@ -263,9 +250,6 @@ a {
 
     .switch {
         margin-left: 20px;
-        /* position: fixed;
-        right: 50px;
-        top: 14px; */
     }
 
 }
