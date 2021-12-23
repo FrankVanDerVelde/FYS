@@ -422,7 +422,7 @@ window.addEventListener('load', async function () {
                 const query = FYSCloud.API.queryDatabase(
                     'SELECT matches.id, account.name, account.profilePhoto FROM matches ' + 
                     'INNER JOIN account ' +
-                    'ON matchedUserFk = account.id ' +
+                    'ON matchedUserFk = account.id or currUserFk = account.id ' +
                     'WHERE matchedUserFk = ?  AND email != ? AND status = "blocked"',
                     [userId, email]
                 );
