@@ -101,7 +101,7 @@ window.addEventListener('load', async function () {
                                 document.querySelectorAll('.block-btn').forEach(function(button) {
                                     button.addEventListener('click', async () => {
                                         const requestId = +button.dataset.id;
-                                        await updatePendingRequests('blocked', requestId);                                         
+                                        await updatePendingRequests('blocked', userSession[0].id, requestId);                                         
                                         await addBlockedUsers();
                                     });         
                                 });
@@ -193,7 +193,7 @@ window.addEventListener('load', async function () {
            
         //adds the blocked user to the contactlist tab/view
         async function addBlockedUsers(){
-            const blockedUsers = await getBlockedUsers(userSession[0].id);
+            const blockedUsers = await getBlockedUsers(userSession[0].id, userSession[0].email);
 
             //removes the blocked users when the function has been called
             function removeBlockedUsers(parent) {
@@ -219,7 +219,7 @@ window.addEventListener('load', async function () {
 
                 blockedUserTemplate.querySelector('.unblock-btn').addEventListener('click', async function () {
                     const requestId = +blockedUserTemplate.querySelector('.unblock-btn').dataset.id;
-                    await updatePendingRequests("accepted", requestId); 
+                    await updatePendingRequests('accepted', userSession[0].id, requestId);                                         
                     document.querySelector('.blocked-list').removeChild( blockedUserTemplate.querySelector('.unblock-btn').parentNode.parentNode);
                     await addContacts();
                 });
@@ -262,7 +262,7 @@ window.addEventListener('load', async function () {
                 */
                 requestsTemplate.querySelector('.accept-request-btn').addEventListener('click', async function () {
                     const requestId = +requestsTemplate.querySelector('.accept-request-btn').dataset.id;
-                    await updatePendingRequests("accepted", requestId); 
+                    await updatePendingRequests('accepted', userSession[0].id, requestId);                                         
                     await addRequests();
                 });
 
@@ -272,7 +272,7 @@ window.addEventListener('load', async function () {
                 */
                 requestsTemplate.querySelector('.decline-request-btn').addEventListener('click', async function () {
                     const requestId = +requestsTemplate.querySelector('.accept-request-btn').dataset.id;
-                    await updatePendingRequests("declined", requestId); 
+                    await updatePendingRequests('declined', userSession[0].id,requestId);                                         
                     await addRequests();
                 });
             }
@@ -383,11 +383,11 @@ window.addEventListener('load', async function () {
          * 
          * @param {int} userId 
          */
-        async function updatePendingRequests(status, requestId){
+        async function updatePendingRequests(status, userId,requestId){
             try {
                 const query =  FYSCloud.API.queryDatabase(
-                    "UPDATE matches SET status = ? WHERE id = ?", 
-                    [status, requestId]
+                    "UPDATE matches SET status = ?, lastUpdatedBy = ? WHERE id = ?", 
+                    [status, userId, requestId]
                 );
                 const results = await query;
                 return await results;
@@ -417,14 +417,14 @@ window.addEventListener('load', async function () {
             }
         }
 
-        async function getBlockedUsers(userId) {
+        async function getBlockedUsers(userId, email) {
             try {
                 const query = FYSCloud.API.queryDatabase(
                     'SELECT matches.id, account.name, account.profilePhoto FROM matches ' + 
                     'INNER JOIN account ' +
-                    'ON matchedUserFk = account.id ' +
-                    'WHERE currUserFk = ? AND status="blocked"',
-                    [userId]
+                    'ON matchedUserFk = account.id or currUserFk = account.id ' +
+                    'WHERE  status = "blocked" AND email != ? AND  lastUpdatedBy = ?',
+                    [email, userId]
                 );
                 const results = await query;
                 return await results;

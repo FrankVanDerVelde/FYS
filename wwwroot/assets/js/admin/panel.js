@@ -1,8 +1,6 @@
 async function searchUser() {
     const searchParam = document.getElementById("searchInput").value;
 
-    // console.log(searchParam)
-
     const data = [
         await getUserByEmailAsync(searchParam),
         await getUserByName(searchParam)
@@ -13,7 +11,6 @@ async function searchUser() {
             await updatePanel(data[i]);
         }
     }
-
 }
 
 async function updatePanel(userObj) {

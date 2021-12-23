@@ -1,16 +1,5 @@
-window.onload = async function() {
-
-    const sesInfo = JSON.parse(localStorage.getItem("session"));
-    const userType = sesInfo.loggedin[0].usertypeFk;
-
-
-    if(userType !== undefined) {
-        if(userType === 1) {
-            await loadChart();
-            return 0;
-        }
-    }
-    history.back();
+window.onload = async function () {
+    await loadChart();
 }
 
 async function loadChart() {
