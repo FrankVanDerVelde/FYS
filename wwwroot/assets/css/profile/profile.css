@@ -61,12 +61,13 @@ main::after {
     align-items: center;
 }
 
-.basic-info input {
+.basic-info input, .basic-info select {
     display: block;
     border-radius: 5px;
     border: 1px solid gray;
     padding-left: 4px;
     max-width: 100%;
+    min-width:169px;
     -moz-appearance: textfield;
 }
 
@@ -82,7 +83,7 @@ main::after {
 }
 
 .basic-info-text-container > * {
-    margin: 10px 0;
+    margin: 5px 0;
 }
 
 .basic-info-text-container span.bold {

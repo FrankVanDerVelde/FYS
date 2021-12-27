@@ -19,6 +19,13 @@ document.addEventListener("DOMContentLoaded", async function () {
         console.error(e);
     }
 
+    let genders;
+    try {
+        genders = await FYSCloud.API.queryDatabase(`SELECT * FROM gender`);
+    } catch (e) {
+        console.error(e);
+    }
+
     const {
         name,
         birthdate,
@@ -26,13 +33,15 @@ document.addEventListener("DOMContentLoaded", async function () {
         email,
         profilePhoto,
         bio,
-        phonenumber
+        phonenumber,
+        genderFk
     } = userData[0];
 
     const nameInput = document.getElementById("name-input");
     const birthdateInput = document.getElementById("birthdate-input");
     const locationInput = document.getElementById("location-input");
     const phoneNumberInput = document.getElementById("phone-number-input");
+    const genderInput = document.getElementById("gender-select");
     const emailInput = document.getElementById("email-input");
     const bioInput = document.getElementById("bio-input");
     const profilePicDeleteButton = document.getElementById("delete-profile-picture-input");
@@ -86,6 +95,7 @@ document.addEventListener("DOMContentLoaded", async function () {
             const newPhoneNumber = phoneNumberInput.value;
             const newEmail = emailInput.value;
             const newBio = bioInput.value;
+            const newGender = genderInput.value;
 
             if (deleteProfilePicture) {
                 try {
@@ -99,20 +109,19 @@ document.addEventListener("DOMContentLoaded", async function () {
             if (newProfilePicDataUrl) {
                 const newProfilePicUrl = `profile-image-user-${userId}.${newProfilePicDataUrl.extension}`;
                 await FYSCloud.API.uploadFile(newProfilePicUrl, newProfilePicDataUrl.url, true);
-                
+
                 // If host is one of the fys clouds use that hosts url. Otherwise fall back on the mockup
                 const hostName = (new URL(window.location).hostname.includes('is109-4.fys.cloud')) ? new URL(window.location).hostname : 'https://mockup-is109-4.fys.cloud';
-
                 try {
-                    await FYSCloud.API.queryDatabase("UPDATE account SET name = ?, birthdate = ?, location = ?, phonenumber = ?, email = ?, bio = ?, profilePhoto = ? WHERE id = ?",
-                        [newName, newBirthdate, newLocation, newPhoneNumber, newEmail, newBio, hostName + '/uploads/' + newProfilePicUrl, userId]);
+                    await FYSCloud.API.queryDatabase("UPDATE account SET name = ?, birthdate = ?, location = ?, phonenumber = ?, email = ?, bio = ?, profilePhoto = ?, genderFk = ? WHERE id = ?",
+                        [newName, newBirthdate, newLocation, newPhoneNumber, newEmail, newBio, hostName + '/uploads/' + newProfilePicUrl, newGender, userId]);
                 } catch (e) {
                     console.error(e);
                 }
             } else {
                 try {
-                    await FYSCloud.API.queryDatabase("UPDATE account SET name = ?, birthdate = ?, location = ?, phonenumber = ?, email = ?, bio = ? WHERE id = ?",
-                        [newName, newBirthdate, newLocation, newPhoneNumber, newEmail, newBio, userId]);
+                    await FYSCloud.API.queryDatabase("UPDATE account SET name = ?, birthdate = ?, location = ?, phonenumber = ?, email = ?, bio = ?, genderFk = ? WHERE id = ?",
+                        [newName, newBirthdate, newLocation, newPhoneNumber, newEmail, newBio, newGender, userId]);
                 } catch (e) {
                     console.error(e);
                 }
@@ -160,6 +169,18 @@ document.addEventListener("DOMContentLoaded", async function () {
         }
     });
 
+    // Generate gender options
+    genders.forEach(gender => {
+        let genderOption = document.createElement('option');
+        genderOption.value = gender.id;
+        genderOption.innerHTML = gender.name;
+        genderInput.appendChild(genderOption);
+    });
+
+    // check if a gender is set then set it active in the input
+    if (genderFk) {
+        genderInput.value = genderFk;
+    }
 
     // Fill interest container with checkboxes
     const interestsContainer = document.getElementById("interest-containers-holder");

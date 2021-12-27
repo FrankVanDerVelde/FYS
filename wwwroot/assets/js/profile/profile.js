@@ -84,6 +84,13 @@ document.addEventListener("DOMContentLoaded", async function () {
         console.error(e);
     }
 
+    let genders;
+    try {
+        genders = await FYSCloud.API.queryDatabase(`SELECT * FROM gender`);
+    } catch (e) {
+        console.error(e);
+    }
+
     const {
         name,
         birthdate,
@@ -91,7 +98,8 @@ document.addEventListener("DOMContentLoaded", async function () {
         email,
         profilePhoto,
         bio,
-        phonenumber
+        phonenumber,
+        genderFk
     } = profileData[0];
 
     // Call person on click
@@ -103,6 +111,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     const profilePictureElement = document.getElementById("profile-picture");
     const nameElement = document.getElementById("name");
     const ageElement = document.getElementById("age");
+    const genderElement = document.getElementById("gender");
     const locationElement = document.getElementById("location");
     const emailElement = document.getElementById("email");
     const bioElement = document.getElementById("bio");
@@ -111,6 +120,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     profilePictureElement.src = profilePhoto;
     nameElement.innerHTML = name;
     ageElement.innerHTML = (new Date).getFullYear() - new Date(birthdate).getFullYear();
+    genderElement.innerHTML = genders[genderFk].name;
     locationElement.innerHTML = location;
     emailElement.innerHTML = email;
     bioElement.innerText = bio;
