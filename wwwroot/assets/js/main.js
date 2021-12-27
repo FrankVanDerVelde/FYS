@@ -2,7 +2,9 @@ if (FYSCloud.Session.get("loggedin")) {
     loadChat();
 
 }else{
-    document.querySelector("#chat-btn").style.visibility = "hidden";
+    if (document.querySelector("#chat-btn")) {
+        document.querySelector("#chat-btn").style.visibility = "hidden";
+    }
 }
 
 async function loadChat(){

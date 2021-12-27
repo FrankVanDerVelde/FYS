@@ -4,6 +4,12 @@ body, html {
     background-color: var(--bg);
 }
 
+nav ul {
+    display: flex;
+    justify-content: center;
+    flex: 1;
+}
+
 .navbar {
     background-color: var(--nav-bg);
     box-shadow: 0 -2px 20px 0 var(--nav-shadow);
