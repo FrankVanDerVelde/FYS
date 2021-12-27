@@ -12,7 +12,6 @@ async function loadChat(){
     const checkFilename = urlSplitted.includes('index.html');
     let chat;
 
-
     if (checkFilename || window.location.pathname == "/"){
         chat = await FYSCloud.Utils.fetchAndParseHtml("assets/views/components/_chat.html");
     }else{
@@ -29,6 +28,3 @@ async function loadChat(){
 
     document.querySelector("#chat-btn").style.visibility = "visible";
 }
-
-
-
