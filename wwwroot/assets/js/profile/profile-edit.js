@@ -249,6 +249,9 @@ document.addEventListener("DOMContentLoaded", async function () {
         }
     }
 
+    const paginationBackButton = document.getElementById('pagination-back');
+    const paginationForwardButton = document.getElementById('pagination-forward');
+
     // Create pagination
     const paginationContainer = document.getElementById("pagination-container");
     for (i = 0; i < interestContainerCount; i++) {
@@ -260,8 +263,35 @@ document.addEventListener("DOMContentLoaded", async function () {
             paginationElement.className = "pagination-element active";
         }
         paginationElement.append(paginationText);
-        paginationContainer.append(paginationElement);
+        paginationForwardButton.before(paginationElement);
     }
+
+
+    const paginationTabsNum = document.querySelectorAll('.pagination-element').length;
+    paginationBackButton.addEventListener('click', () => {
+        const activePaginationElement = document.querySelector('.pagination-element.active');
+        const activePaginationElementNum = parseInt(activePaginationElement.getAttribute('number'));
+        console.log(activePaginationElementNum !== 0);
+        console.log(activePaginationElementNum + 1 <= paginationTabsNum)
+        if (activePaginationElementNum !== 0 && activePaginationElementNum + 1 <= paginationTabsNum) {
+            document.querySelector(`.pagination-element[number="${activePaginationElementNum - 1}"]`).classList.toggle('active');
+            activePaginationElement.classList.toggle('active');
+            document.querySelector(".interests-checkboxes-container.active").classList.toggle('active');
+            document.querySelectorAll(".interests-checkboxes-container")[activePaginationElementNum - 1].classList.toggle('active');
+        }
+    })
+
+    paginationForwardButton.addEventListener('click', () => {
+        const activePaginationElement = document.querySelector('.pagination-element.active');
+        const activePaginationElementNum = parseInt(activePaginationElement.getAttribute('number'));
+
+        if (activePaginationElementNum + 1 !== paginationTabsNum) {
+            document.querySelector(`.pagination-element[number="${activePaginationElementNum + 1}"]`).classList.toggle('active');
+            activePaginationElement.classList.toggle('active');
+            document.querySelector(".interests-checkboxes-container.active").classList.toggle('active');
+            document.querySelectorAll(".interests-checkboxes-container")[activePaginationElementNum + 1].classList.toggle('active');
+        }
+    })
 
     // Add on clicks to pagination
     document.querySelectorAll(".pagination-element").forEach(paginationElement => {

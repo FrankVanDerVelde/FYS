@@ -532,14 +532,16 @@ main::after {
     margin-top: 5px;
 }
 
+.pagination-container > * {
+    cursor: pointer;
+}
+
 .pagination-element {
-    
     width: 25px;
     height: 25px;
     text-align: center;
     border-radius: 100px;
     margin: 5px 10px;
-    cursor: pointer;
     font-size: 18px;
     border: 1px solid black;
     line-height: 1.3;

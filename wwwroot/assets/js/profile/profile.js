@@ -120,7 +120,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     profilePictureElement.src = profilePhoto;
     nameElement.innerHTML = name;
     ageElement.innerHTML = (new Date).getFullYear() - new Date(birthdate).getFullYear();
-    genderElement.innerHTML = genders[genderFk].name;
+    genderElement.innerHTML = genders[genderFk - 1].name;
     locationElement.innerHTML = location;
     emailElement.innerHTML = email;
     bioElement.innerText = bio;
