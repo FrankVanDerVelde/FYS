@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta http-equiv="ScreenOrientation" content="autoRotate:disabled">
 
     <title>Profile</title>
     <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32x32.png">
@@ -26,7 +25,7 @@
     <script src="../js/main.js"></script>
     <script src="../js/menu.js" defer></script>
     <script src="../js/chat.js"></script>
-    <script type="module" src="../js/chat/chat-functionals.js" defer></script>
+    <script type="module" src="../js/chat/chat-functionals.js"></script>
 
 </head>
 
@@ -103,18 +102,17 @@
 
             <div class="basic-info-container">
                 <div class="profile-picture-container">
-                    <img alt="Profile picture" class="profile-picture" id="profile-picture" src="">
+                    <img alt="Profile picture" class="profile-picture" id="profile-picture" src="data:,">
                 </div>
 
                 <div class="basic-info-text-container">
                     <span class="basic-info"><span class="bold">Naam:    </span><span id="name"></span></span>
-                    <span class="basic-info"><span class="bold">Leeftijd:</span><span id="age"><span></span></span>
+                    <span class="basic-info"><span class="bold">Leeftijd:</span><span id="age"></span></span>
                     <span class="basic-info"><span class="bold">Location:</span><span id="location"></span></span> 
                     <span class="basic-info"><span class="bold">Geslacht:</span><span id="gender"></span></span>
-                    <div class="change-profile-button-container">
-                        <a class="edit-profile-button" href="profile-edit.html" id="edit-profile-button">wijzig
-                            profiel</a>
-                    </div>
+                    <span class="change-profile-button-container">
+                        <a class="edit-profile-button" href="profile-edit.html" id="edit-profile-button">wijzig profiel</a>                    
+                    </span>
                 </div>
             </div>
 

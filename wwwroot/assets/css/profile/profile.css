@@ -88,7 +88,8 @@ main::after {
 
 .basic-info-text-container span.bold {
     font-weight: 600;
-    margin: 10px 0;
+    margin: 10px 0 10px 0;
+    padding-right: 3px;
 }
 
 .profile-picture-container {
@@ -200,6 +201,8 @@ main::after {
 .change-profile-button-container {
     margin-top: 10px;
     width: 100%;
+    margin-top: 7px;
+    display:inline-block;
 }
 
 .edit-profile-button {
@@ -434,11 +437,11 @@ main::after {
     flex-grow: 1;
 }
 
-.interest-checkbox-container label {
+/* .interest-checkbox-container label {
 }
 
 .interest-checkbox-container input {
-}
+} */
 
 /* Checkbox styling */
 
@@ -582,11 +585,11 @@ footer {
     }
 
     .basic-info-text-container > * {
-        margin: 5px 0;
+        margin: 3px 0;
     }
 
     .basic-info-text-container span.bold {
-        margin: 5px 0;
+        margin: 3px 0;
     }
 
     .info-bar .icon {
