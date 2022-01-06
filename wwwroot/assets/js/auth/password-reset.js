@@ -19,11 +19,11 @@ async function passwordReset() {
         try {
 
             //voeg het nieuwe wachtwoord toe aan de database als de code klopt
-            await FYSCloud.API.queryDatabase("UPDATE account SET password = SHA2(?, 256) WHERE pwdReset = ?",
+            await FYSCloud.API.queryDatabase(`UPDATE account SET password = SHA2(?, 256) WHERE pwdReset = ?`,
                 [password, code]);
 
             //zet de password reset in de database weer naar null
-            await FYSCloud.API.queryDatabase("UPDATE account SET pwdReset = NULL WHERE email = ?",
+            await FYSCloud.API.queryDatabase(`UPDATE account SET pwdReset = NULL WHERE email = ?`,
                 [email]);
 
             //haal de naam op van het account.
@@ -48,15 +48,17 @@ async function passwordReset() {
             })
 
             //doorlinken naar home page
-            window.location.replace("../../../index.html");
+            window.location.replace("/../../index.html");
 
             //alert dat het wachtwoord is gereset.
             window.alert("Je wachtwoord is aangepast!");
         }
-        catch {
+        catch (e) {
             //laat de gebruiker weten als er iets niet goed ging, of de email al is gebruikt
             document.querySelector("#error-message").innerHTML = "Er is iets mis gegaan." +
                 " Je code is mogelijk niet geldig.";
+            console.log(`Something went wrong: ${e}`);
+
         }
     }
     else {
