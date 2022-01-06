@@ -28,7 +28,7 @@ async function sendMail() {
         //verstuur de email met de reset link
         await FYSCloud.API.sendEmail({
             from: {
-                name: "Corendom Reispartner",
+                name: "Corendon Reispartner",
                 address: "group@fys.cloud"
             },
             to: [
@@ -37,7 +37,7 @@ async function sendMail() {
                     address: email
                 }
             ],
-            subject: "Corendom - Aanvraag resetten wachtwoord ",
+            subject: "Corendon - Aanvraag resetten wachtwoord ",
             html: "<h1>Reset E-mail</h1><p>Je kan je E-mail resetten via de onderstaande link:<br></p>" + url
         })
 

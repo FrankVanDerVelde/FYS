@@ -33,7 +33,7 @@ async function passwordReset() {
             //verstuur de email dat het wachtwoord is gereset.
             await FYSCloud.API.sendEmail({
                 from: {
-                    name: "Corendom Reispartner",
+                    name: "Corendon Reispartner",
                     address: "group@fys.cloud"
                 },
                 to: [
@@ -42,13 +42,13 @@ async function passwordReset() {
                         address: email
                     }
                 ],
-                subject: "Corendom - Je wachtwoord is veranderd.",
+                subject: "Corendon - Je wachtwoord is veranderd.",
                 html: "<h1>Wachtwoord veranderd</h1><p>je wachtwoord is veranderd. Als jij dit niet hebt gedaan," +
                     " neem dan onmiddelijk contact op met ons.<br></p>"
             })
 
             //doorlinken naar home page
-            window.location.replace("/../../index.html");
+            window.location.replace("../../../index.html");
 
             //alert dat het wachtwoord is gereset.
             window.alert("Je wachtwoord is aangepast!");
