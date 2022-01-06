@@ -118,9 +118,7 @@ async function setBasedMatches(wantedUsers) {
     thisInterestList = await getUserIntrests(thisUserID);
     setBasedCards(wantedUsers, thisInterestList);
 }
-async function checkLocation(wantedUsers){
-    
-}
+
 //check interests, checks given iterests fro mthe user and returns array of people
 async function checkInterests(selectedFilters) {
 
@@ -311,7 +309,7 @@ function checkPeopleForFilters(users, interests) {
 }
 
 // search user with name,
-async function searchUser(searchBar) {
+async function searchWithData(searchBar,number) {
     if (event.key === 'Enter') {
 
         if (searchBar.value === "") {
@@ -319,17 +317,25 @@ async function searchUser(searchBar) {
 
         } else {
             try {
+                let column;
+                switch (number) {
+                    case 0:
+                        column = 'name';
+                        break;
+                    case 1:
+                        column = 'location';
+                        break;
+                }
                 //select all users where part of the name contains given value.
-                const userList = await FYSCloud.API.queryDatabase('SELECT * FROM account WHERE name LIKE ' + "'%" + searchBar.value + "%'");
+                const userList = await FYSCloud.API.queryDatabase(`SELECT * FROM account WHERE ${column} LIKE ` + "'%" + searchBar.value + "%'");
 
+                console.log(userList);
                 //  console.log(queryStrings.join(' '));
                 let userIntrests = [];
 
                 for (let i = 0; i < userList.length; i++) {
                     userIntrests.push({user: userList[i], userIntrests: await getUserIntrests(userList[i].id)});
                 }
-
-                // await calcPercentage(userIntrests[0].userIntrests, userIntrests[1].userIntrests)
 
                 wantedUsers = userIntrests;
             } catch (e) {
