@@ -12,7 +12,7 @@ async function sendMail() {
     const code = Math.floor(Math.random() * 100000) + 10000;
 
     //genereer url voor wachtwoord reset
-    let url = "https://" + new URL(window.location).host + "/wwwroot/assets/views/auth/password-reset.html?email=" +
+    let url = "https://" + new URL(window.location).host + "/assets/views/auth/password-reset.html?email=" +
         email + "&code=" + code;
 
     //zet de reset code in de
