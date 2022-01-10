@@ -354,7 +354,7 @@ main::after {
     flex-direction: column;
 }
 
-.bio-container,
+.show-bio-container,
 .interests-container{
     height: fit-content;
 }
