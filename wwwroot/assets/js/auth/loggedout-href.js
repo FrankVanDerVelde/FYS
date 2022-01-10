@@ -3,5 +3,16 @@
 let loggedin = FYSCloud.Session.get("loggedin");
 
 if (!loggedin) {
-    window.location.replace("../views/auth/login.html");
+    const urlSplitted = window.location.href.split(/[/,?]/);
+
+    if (urlSplitted.includes('panel.html') || urlSplitted.includes('userPanel.html')) {
+        window.location.replace("../../../assets/views/auth/login.html");
+    } else {
+        window.location.replace("../views/auth/login.html");
+    }
+
 }
+
+
+
+
