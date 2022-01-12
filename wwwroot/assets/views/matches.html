@@ -117,22 +117,24 @@
         <!-- Eerste rij -->
 
         <div class="flex-grid">
-            <div class="col">
-                <div class="card">
-                    <div class="card-img">
-                        <div class="personInfo">
-                            <img class="personFoto" src="../img/default-avatar.png" alt=""/>
-                            <p class="personName"></p>
-                            <p class="personGender"></p>
-                            <p class="personAge"></p>
+            <template class="base_card_template">
+                <div class="col">
+                    <div class="card">
+                        <div class="card-img">
+                            <div class="personInfo">
+                                <img class="personFoto" src="../img/default-avatar.png" alt=""/>
+                                <p class="personName"></p>
+                                <p class="personGender"></p>
+                                <p class="personAge"></p>
+                            </div>
+                        </div>
+
+                        <div class="footer">
+                            <a type="submit" class="show-more-btn" href="">Meer zien</a>
                         </div>
                     </div>
-
-                    <div class="footer">
-                        <a type="submit" class="show-more-btn" href="">Meer zien</a>
-                    </div>
                 </div>
-            </div>
+            </template>
             <div class="col">
                 <div class="card-loader">
                     <div class="card-img">
