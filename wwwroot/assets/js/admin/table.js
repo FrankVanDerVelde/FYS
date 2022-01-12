@@ -1,12 +1,15 @@
 window.onload = async () => {
-    let loggedin = await FYSCloud.Session.get("loggedin");
-
-    if(loggedin[0].usertypeFk != 1) {
-        window.location.replace("../../../assets/views/profile-edit.html");
-    }
+    await auth();
 
     await getMaxPages();
     await loadTable();
+}
+
+async function auth() {
+    let loggedin = await FYSCloud.Session.get("loggedin");
+    if(loggedin[0].usertypeFk !== 1) {
+        window.location.replace("../../../assets/views/profile-edit.html");
+    }
 }
 
 async function decrementPage() {

@@ -5,7 +5,7 @@ window.onload = async () => {
 async function auth() {
     let loggedin = await FYSCloud.Session.get("loggedin");
     if(loggedin[0].usertypeFk !== 1) {
-        // window.location.replace("../../../assets/views/profile-edit.html");
+        window.location.replace("../../../assets/views/profile-edit.html");
     }
 }
 
