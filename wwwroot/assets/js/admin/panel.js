@@ -1,3 +1,11 @@
+window.onload = () => {
+    let loggedin = FYSCloud.Session.get("loggedin");
+
+    if(loggedin[0].userTypeFK != 1) {
+        window.location.replace("../../../assets/views/profile-edit.html");
+    }
+}
+
 async function searchUser() {
     const searchParam = document.getElementById("searchInput").value;
     const errPicUri = `https://ui-avatars.com/api/?name=ER?background=random`;

@@ -1,4 +1,10 @@
-window.onload = async function () {
+window.onload = async () => {
+    let loggedin = FYSCloud.Session.get("loggedin");
+
+    if(loggedin[0].userTypeFK != 1) {
+        window.location.replace("../../../assets/views/profile-edit.html");
+    }
+
     await getMaxPages();
     await loadTable();
 }
