@@ -30,6 +30,10 @@ async function deleteCurrentUser() {
     const user = await getUserByEmailAsync(document.getElementById("email").innerText);
 
     await deleteUserById(user.id);
+
+    document.getElementById("searchInput").value = "";
+
+    window.location.reload();
 }
 
 async function getMatchAmount(userId) {
