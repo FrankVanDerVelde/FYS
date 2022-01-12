@@ -2,7 +2,7 @@
 
 var skeletonCard = document.getElementsByClassName("col")[1];
 var baseCard = document.getElementsByClassName("base_card_template")[0];
-
+baseCard = FYSCloud.Utils.parseHtml(baseCard.innerHTML)[0];
 baseCard.remove();
 var gender = "";
 var age = "";
@@ -394,14 +394,16 @@ function setInfo(user, card) {
     let tempcard = baseCard.cloneNode(true);
     const profilePhoto = user.profilePhoto;
     const name = user.name;
+    let tempcard_child = tempcard.children[0].children[0].children[0];
+
     try {
-        tempcard.children[0].children[0].children[0].children[0].src = (profilePhoto ? profilePhoto : `https://ui-avatars.com/api/?name=${name}?background=#e0dcdc`);
+        tempcard_child.children[0].src = (profilePhoto ? profilePhoto : `https://ui-avatars.com/api/?name=${name}?background=#e0dcdc`);
 
     } catch (e) {
-        tempcard.children[0].children[0].children[0].children[0].src = "../img/default-avatar.png";
+        tempcard_child.children[0].src = "../img/default-avatar.png";
         console.log(e);
     }
-    tempcard.children[0].children[0].children[0].children[1].innerHTML = name;
+    tempcard_child.children[1].innerHTML = name;
     var genderText = "";
     switch (user.genderFk) {
         case 1:
@@ -418,14 +420,14 @@ function setInfo(user, card) {
             break;
     }
 
-    tempcard.children[0].children[0].children[0].children[2].innerHTML = genderText;
+    tempcard_child.children[2].innerHTML = genderText;
 
     if (user.birthdate !== null) {
         let dateCeiling = new Date();
         var birthday = dateCeiling.getFullYear() - user.birthdate.split("-")[0];
-        tempcard.children[0].children[0].children[0].children[3].innerHTML = `Leeftijd: ${birthday}`;
+        tempcard_child.children[3].innerHTML = `Leeftijd: ${birthday}`;
     } else {
-        tempcard.children[0].children[0].children[0].children[3].innerHTML = "Leeftijd: ??";
+        tempcard_child.children[3].innerHTML = "Leeftijd: ??";
     }
 
     tempcard.children[0].children[1].children[0].href = `javascript:window.location.href="./profile.html?profileid=${user.id}"`;
