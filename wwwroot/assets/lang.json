@@ -343,6 +343,75 @@
         "id": "content-11-2",
         "text": "Maandag t/m vrijdag 09.00 - 18.00 uur",
         "page": "contact.html"
+      },
+      {
+        "id": "lang-name",
+        "text": "Naam",
+        "page": "profile-edit.html"
+      },
+      {
+        "id": "lang-age",
+        "text": "Leeftijd",
+        "page": "profile-edit.html"
+      },
+      {
+        "id": "lang-location",
+        "text": "Locatie",
+        "page": "profile-edit.html"
+      },
+      {
+        "id": "lang-gender",
+        "text": "Geslacht",
+        "page": "profile-edit.html"
+      },
+      {
+        "id": "save-button",
+        "text": "Opslaan",
+        "page": "profile-edit.html"
+      },
+      {
+        "id": "lang-bio",
+        "text": "Bio",
+        "page": "profile-edit.html"
+      },
+      {
+        "id": "lang-interests",
+        "text": "Interesses",
+        "page": "profile-edit.html"
+      },{
+        "id": "lang-name",
+        "text": "Naam",
+        "page": "profile.html"
+      },
+      {
+        "id": "lang-age",
+        "text": "Leeftijd",
+        "page": "profile.html"
+      },
+      {
+        "id": "lang-location",
+        "text": "Locatie",
+        "page": "profile.html"
+      },
+      {
+        "id": "lang-gender",
+        "text": "Geslacht",
+        "page": "profile.html"
+      },
+      {
+        "id": "edit-profile-button",
+        "text": "Wijzig profile",
+        "page": "profile.html"
+      },
+      {
+        "id": "lang-bio",
+        "text": "Bio",
+        "page": "profile.html"
+      },
+      {
+        "id": "lang-interests",
+        "text": "Interesses",
+        "page": "profile.html"
       }
     ],
     "en": [
@@ -690,9 +759,76 @@
         "id": "content-11-2",
         "text": "Monday to Friday 09.00 - 18.00",
         "page": "contact.html"
+      },
+      {
+        "id": "lang-name",
+        "text": "Name",
+        "page": "profile-edit.html"
+      },
+      {
+        "id": "lang-age",
+        "text": "Age",
+        "page": "profile-edit.html"
+      },
+      {
+        "id": "lang-location",
+        "text": "Location",
+        "page": "profile-edit.html"
+      },
+      {
+        "id": "lang-gender",
+        "text": "Gender",
+        "page": "profile-edit.html"
+      },
+      {
+        "id": "save-button",
+        "text": "Save",
+        "page": "profile-edit.html"
+      },
+      {
+        "id": "lang-bio",
+        "text": "Bio",
+        "page": "profile-edit.html"
+      },
+      {
+        "id": "lang-interests",
+        "text": "Interests",
+        "page": "profile-edit.html"
+      } ,{
+        "id": "lang-name",
+        "text": "Name",
+        "page": "profile.html"
+      },
+      {
+        "id": "lang-age",
+        "text": "Age",
+        "page": "profile.html"
+      },
+      {
+        "id": "lang-location",
+        "text": "Location",
+        "page": "profile.html"
+      },
+      {
+        "id": "lang-gender",
+        "text": "Gender",
+        "page": "profile.html"
+      },
+      {
+        "id": "edit-profile-button",
+        "text": "Edit profile",
+        "page": "profile.html"
+      },
+      {
+        "id": "lang-bio",
+        "text": "Bio",
+        "page": "profile.html"
+      },
+      {
+        "id": "lang-interests",
+        "text": "Interests",
+        "page": "profile.html"
       }
-
-
     ],
     "de": [
       {
@@ -1039,6 +1175,75 @@
         "id": "content-11-2",
         "text": "Montag bis Freitag 09.00 - 18.00 Uhr",
         "page": "contact.html"
+      },
+      {
+        "id": "lang-name",
+        "text": "Name",
+        "page": "profile-edit.html"
+      },
+      {
+        "id": "lang-age",
+        "text": "Das Alter",
+        "page": "profile-edit.html"
+      },
+      {
+        "id": "lang-location",
+        "text": "Ort",
+        "page": "profile-edit.html"
+      },
+      {
+        "id": "lang-gender",
+        "text": "Geschlecht",
+        "page": "profile-edit.html"
+      },
+      {
+        "id": "save-button",
+        "text": "Speichern",
+        "page": "profile-edit.html"
+      },
+      {
+        "id": "lang-bio",
+        "text": "Bio",
+        "page": "profile-edit.html"
+      },
+      {
+        "id": "lang-interests",
+        "text": "Interessen",
+        "page": "profile-edit.html"
+      } ,{
+        "id": "lang-name",
+        "text": "Name",
+        "page": "profile.html"
+      },
+      {
+        "id": "lang-age",
+        "text": "Das Alter",
+        "page": "profile.html"
+      },
+      {
+        "id": "lang-location",
+        "text": "Ort",
+        "page": "profile.html"
+      },
+      {
+        "id": "lang-gender",
+        "text": "Geschlecht",
+        "page": "profile.html"
+      },
+      {
+        "id": "edit-profile-button",
+        "text": "Profil ändern",
+        "page": "profile.html"
+      },
+      {
+        "id": "lang-bio",
+        "text": "Bio",
+        "page": "profile.html"
+      },
+      {
+        "id": "lang-interests",
+        "text": "Interessen",
+        "page": "profile.html"
       }
     ]
   }

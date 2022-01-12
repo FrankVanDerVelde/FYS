@@ -23,6 +23,7 @@
     <script src="../js/menu.js" defer></script>
     <script src="../js/chat.js"></script>
     <script type="module" src="../js/chat/chat-functionals.js"></script>
+    <script src="../js/langChanger.js" defer></script>
     <script src="../js/auth/loggedout-href.js"></script>
     <script src="../js/scaling-textarea.js" defer></script>
     <script src="../js/inlog-change.js" defer></script>
@@ -119,16 +120,16 @@
                 </div>
 
                 <div class="basic-info-text-container">
-                    <span class="basic-info editable"><span class="bold">Naam:</span><input type="text"
+                    <span class="basic-info editable"><span class="bold" id="lang-name">Naam:</span><input type="text"
                             placeholder="naam" id="name-input" required></span>
 
-                    <span class="basic-info editable"><span class="bold">Leeftijd:</span><input type="date"
+                    <span class="basic-info editable"><span class="bold" id="lang-age">Leeftijd:</span><input type="date"
                             id="birthdate-input" name="birthdate-input"></span>
 
-                    <span class="basic-info editable"><span class="bold">Location:</span><input type="text"
-                            placeholder="locatie" id="location-input"></span>
+                    <span class="basic-info editable"><span class="bold" id="lang-location">Locatie:</span><input type="text"
+                            placeholder="locatie" id="location-input" ></span>
 
-                    <span class="basic-info editable"><span class="bold">Gender:</span><select name="gender" id="gender-select">
+                    <span class="basic-info editable"><span class="bold" id="lang-gender">Geslacht:</span><select name="gender" id="gender-select">
                      
                       </select></span>
 
@@ -158,7 +159,7 @@
 
 
             <div class="bio-container">
-                <span class="big-container-text">
+                <span class="big-container-text" id="lang-bio">
                     Bio
                 </span>
                 <div class="textarea-container">
@@ -167,7 +168,7 @@
             </div>
 
             <div class="interests-container">
-                <span class="big-container-text">
+                <span class="big-container-text" id="lang-interests">
                     Interesses<span class="interests-subtext" id="max-interest-label">Max: 8</span>
                 </span>
                 <div id="interest-containers-holder">

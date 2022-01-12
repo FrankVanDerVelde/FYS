@@ -16,6 +16,7 @@
     <script src="../js/config.js"></script>
     <script src="../js/sqlWrapper.js" defer></script>
     <script src="../js/interest.js" defer></script>
+    <script src="../js/langChanger.js" defer></script>
 
     <script src="../js/auth/loggedout-href.js"></script>
 
@@ -108,12 +109,12 @@
                 </div>
 
                 <div class="basic-info-text-container">
-                    <span class="basic-info"><span class="bold">Naam:    </span><span id="name"></span></span>
-                    <span class="basic-info"><span class="bold">Leeftijd:</span><span id="age"></span></span>
-                    <span class="basic-info"><span class="bold">Location:</span><span id="location"></span></span> 
-                    <span class="basic-info"><span class="bold">Geslacht:</span><span id="gender"></span></span>
+                    <span class="basic-info"><span class="bold" id="lang-name">Naam:</span><span id="name"></span></span>
+                    <span class="basic-info"><span class="bold" id="lang-age">Leeftijd:</span><span id="age"></span></span>
+                    <span class="basic-info"><span class="bold" id="lang-location">Location:</span><span id="location"></span></span> 
+                    <span class="basic-info"><span class="bold" id="lang-gender">Geslacht:</span><span id="gender"></span></span>
                     <span class="change-profile-button-container">
-                        <a class="edit-profile-button" href="profile-edit.html" id="edit-profile-button">wijzig profiel</a>                    
+                        <a class="edit-profile-button" href="profile.html" id="edit-profile-button">wijzig profiel</a>                    
                     </span>
                 </div>
             </div>
@@ -146,14 +147,14 @@
             </div>
 
             <div class="bio-container show-bio-container">
-                <span class="big-container-text">
+                <span class="big-container-text" id="lang-bio">
                     Bio
                 </span>
                 <p id="bio"></p>
             </div>
 
             <div class="interests-container">
-                <span class="big-container-text">
+                <span class="big-container-text" id="lang-interests">
                     Interesses
                 </span>
                 <div class="interests-elements-container" id="interests-container">

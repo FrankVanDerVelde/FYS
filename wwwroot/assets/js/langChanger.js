@@ -7,7 +7,6 @@ async function checklang() {
 
 async function getTranslationLang(lang) {
     let json = await getJsonAsync();
-
     switch (lang) {
         case "nl":
             await translate(await json.langs.nl);
@@ -52,17 +51,20 @@ async function updatePage(changes) {
 
 async function getJsonAsync() {
     let uri = "";
-
+    
     switch (await getCurrentPageAsync()) {
         case "index.html":
             uri = "assets/lang.json";
             break;
         case "about.html":
         case "matches.html":
+        case "profile-edit.html":
+        case "profile.html":
         case "contact.html":
             uri = "../lang.json";
             break;
     }
+
     let res = await fetch(uri);
 
     return await res.json();
