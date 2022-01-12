@@ -1,8 +1,11 @@
-window.onload = () => {
-    let loggedin = FYSCloud.Session.get("loggedin");
+window.onload = async () => {
+    await auth();
+}
 
-    if(loggedin[0].usertypeFk != 1) {
-        // window.location.replace("../../../assets/views/profile-edit.html");
+async function auth() {
+    let loggedin = await FYSCloud.Session.get("loggedin");
+    if(loggedin[0].usertypeFK !== 1) {
+        window.location.replace("../../../assets/views/profile-edit.html");
     }
 }
 

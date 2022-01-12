@@ -1,5 +1,5 @@
 window.onload = async () => {
-    let loggedin = FYSCloud.Session.get("loggedin");
+    let loggedin = await FYSCloud.Session.get("loggedin");
 
     if(loggedin[0].usertypeFk != 1) {
         window.location.replace("../../../assets/views/profile-edit.html");
