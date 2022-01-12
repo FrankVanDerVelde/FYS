@@ -41,8 +41,8 @@ document.addEventListener("DOMContentLoaded", async function () {
             panel.appendChild(panelLink); 
                     
             // Set the href property
-            userPanel.href ="/wwwroot/assets/views/admin/userPanel.html"; 
-            panel.href = "/wwwroot/assets/views/admin/panel.html"; 
+            userPanel.href ="/assets/views/admin/userPanel.html"; 
+            panel.href = "/assets/views/admin/panel.html"; 
 
             document.querySelector('#dropdown-content').prepend(userPanel, panel); 
         } else {
