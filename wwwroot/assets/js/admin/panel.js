@@ -1,5 +1,6 @@
 async function searchUser() {
     const searchParam = document.getElementById("searchInput").value;
+    const errPicUri = `https://ui-avatars.com/api/?name=ER?background=random`;
 
     const data = [
         await getUserByEmailAsync(searchParam),
@@ -11,10 +12,11 @@ async function searchUser() {
     if (data[0] == undefined && data[1] == undefined) {
         document.getElementById("name").innerText = "ERROR: Can't Find user!";
         document.getElementById("email").innerText = "Did you type in the exact";
+        document.getElementById("userImage").src = errPicUri;
+
     } else {
         for (let i = 0; i < data.length; i++) {
             if(data[i] != undefined) {
-                
                 await updatePanel(data[i]);
             }
         }
