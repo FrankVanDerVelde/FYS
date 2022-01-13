@@ -413,6 +413,224 @@
         "text": "Interesses",
         "page": "profile.html"
       }
+      ,
+      {
+        "id": "reispartner_h2",
+        "text": " Vind Reispartners",
+        "page": "matches.html"
+      },
+      {
+        "id": "reispartner_h3",
+        "text": "gebaseerd op uw interesses",
+        "page": "matches.html"
+      },
+      {
+        "id": "showmorebuttonid",
+        "text": "Meer zien",
+        "page": "matches.html"
+      },
+      {
+        "id": "bannertext_1_id",
+        "text": "Vind jouw",
+        "page": "matches.html"
+      },
+      {
+        "id": "bannertext_2_id",
+        "text": "Reispartner!",
+        "page": "matches.html"
+      },
+      {
+        "id": "bannertext_3_id",
+        "text": "Vind jouw match door te zoeken met je eigen gekozen filters.",
+        "page": "matches.html"
+      },
+      {
+        "id": "bannertext_4_id",
+        "text": "Wij zetten de beste matches bovenaan.",
+        "page": "matches.html"
+      },
+      {
+        "id": "toegepastefilters_id",
+        "text": "Toegepaste filter(s):",
+        "page": "matches.html"
+      },
+      {
+        "id": "resultatenid",
+        "text": "resultaten gevonden",
+        "page": "matches.html"
+      },
+      {
+        "id": "laadmeerresultaten",
+        "text": "Laad meer resultaten",
+        "page": "matches.html"
+      },
+      {
+        "id": "Technology",
+        "text": "Technology",
+        "page": "matches.html"
+      },
+      {
+        "id": "Smartphones",
+        "text": "Smartphones",
+        "page": "matches.html"
+      },
+      {
+        "id": "Televisies",
+        "text": "Televisies",
+        "page": "matches.html"
+      },
+      {
+        "id": "Cameras",
+        "text": "Cameras",
+        "page": "matches.html"
+      },
+      
+      {
+        "id": "Voetbal",
+        "text": "Voetbal",
+        "page": "matches.html"
+      },
+      {
+        "id": "Vissen",
+        "text": "Vissen",
+        "page": "matches.html"
+      },
+      {
+        "id": "Golf",
+        "text": "Golf",
+        "page": "matches.html"
+      },
+      {
+        "id": "Hockey",
+        "text": "Hockey",
+        "page": "matches.html"
+      },
+      {
+        "id": "Tennis",
+        "text": "Tennis",
+        "page": "matches.html"
+      },
+      {
+        "id": "Skiën",
+        "text": "Skiën",
+        "page": "matches.html"
+      },
+      {
+        "id": "Outdoor",
+        "text": "Buitenhuis",
+        "page": "matches.html"
+      },
+      {
+        "id": "Varen",
+        "text": "Varen",
+        "page": "matches.html"
+      },
+      {
+        "id": "Paard Rijden",
+        "text": "Paard rijden",
+        "page": "matches.html"
+      },
+      {
+        "id": "Wandelen",
+        "text": "Wandelen",
+        "page": "matches.html"
+      },
+      {
+        "id": "Tuinieren",
+        "text": "Tuinieren",
+        "page": "matches.html"
+      },
+      {
+        "id": "Food & Drinks",
+        "text": "Eten & Drinken",
+        "page": "matches.html"
+      },
+      {
+        "id": "Alcholishe dranken",
+        "text": "Alcholishe dranken",
+        "page": "matches.html"
+      },
+      {
+        "id": "Koken",
+        "text": "Koken",
+        "page": "matches.html"
+      },
+      {
+        "id": "Chinese cuisine",
+        "text": "Chinese cuisine",
+        "page": "matches.html"
+      },
+      {
+        "id": "Indische cuisine",
+        "text": "Indische cuisine",
+        "page": "matches.html"
+      },
+      {
+        "id": "Koreaanse cuisine",
+        "text": "Koreaanse cuisine",
+        "page": "matches.html"
+      },
+      {
+        "id": "Koffie",
+        "text": "Koffie",
+        "page": "matches.html"
+      },     
+      {
+        "id": "Entertainment",
+        "text": "Entertainment",
+        "page": "matches.html"
+      },
+      {
+        "id": "Concerten",
+        "text": "Concerten",
+        "page": "matches.html"
+      },
+      {
+        "id": "Films",
+        "text": "Films",
+        "page": "matches.html"
+      },
+      {
+        "id": "Theater",
+        "text": "Theater",
+        "page": "matches.html"
+      },
+      {
+        "id": "Boeken",
+        "text": "Boeken",
+        "page": "matches.html"
+      },
+      {
+        "id": "Tv-shows",
+        "text": "Tv-shows",
+        "page": "matches.html"
+      },
+      {
+        "id": "ageid",
+        "text": "Leeftijdsgroep",
+        "page": "matches.html"
+      },
+      {
+        "id": "genderid",
+        "text": "Geslacht",
+        "page": "matches.html"
+      },
+      {
+        "id": "searchuserid",
+        "text": "Gebruiker zoeken",
+        "page": "matches.html"
+      },
+      {
+        "id": "searchlocationid",
+        "text": "Op Locatie Zoeken",
+        "page": "matches.html"
+      }
+
+
+
+
+
+
     ],
     "en": [
       {
@@ -828,7 +1046,197 @@
         "id": "lang-interests",
         "text": "Interests",
         "page": "profile.html"
+      } ,
+      {
+        "id": "reispartner_h2",
+        "text": " Find your Travelpartner",
+        "page": "matches.html"
+      },
+      {
+        "id": "reispartner_h3",
+        "text": "Based on your interests",
+        "page": "matches.html"
+      },
+      {
+        "id": "showmorebuttonid",
+        "text": "Show more",
+        "page": "matches.html"
+      },
+      {
+        "id": "bannertext_1_id",
+        "text": "Find your",
+        "page": "matches.html"
+      },
+      {
+        "id": "bannertext_2_id",
+        "text": "Travelpartner!",
+        "page": "matches.html"
+      },
+      {
+        "id": "bannertext_3_id",
+        "text": "Find your match by applying a filter",
+        "page": "matches.html"
+      },
+      {
+        "id": "bannertext_4_id",
+        "text": "We put the best candidates at the top",
+        "page": "matches.html"
+      },
+      {
+        "id": "toegepastefilters_id",
+        "text": "Applied filter(s):",
+        "page": "matches.html"
+      },
+      {
+        "id": "resultatenid",
+        "text": "Results found",
+        "page": "matches.html"
+      },
+      {
+        "id": "laadmeerresultaten",
+        "text": "Show more results",
+        "page": "matches.html"
+      },
+      {
+        "id": "Technology",
+        "text": "Technology",
+        "page": "matches.html"
+      },
+      {
+        "id": "Smartphones",
+        "text": "Smartphones",
+        "page": "matches.html"
+      },
+      {
+        "id": "Televisies",
+        "text": "Televisions",
+        "page": "matches.html"
+      },
+      {
+        "id": "Cameras",
+        "text": "Cameras",
+        "page": "matches.html"
+      },
+      {
+        "id": "Voetbal",
+        "text": "Football",
+        "page": "matches.html"
+      },
+      {
+        "id": "Vissen",
+        "text": "Fishing",
+        "page": "matches.html"
+      },
+      {
+        "id": "Skiën",
+        "text": "Ski",
+        "page": "matches.html"
+      },
+      {
+        "id": "Outdoor",
+        "text": "Outdoor",
+        "page": "matches.html"
+      },
+      {
+        "id": "Varen",
+        "text": "Boating",
+        "page": "matches.html"
+      },
+      {
+        "id": "Paard Rijden",
+        "text": "Horseback Riding",
+        "page": "matches.html"
+      },
+      {
+        "id": "Wandelen",
+        "text": "Walking",
+        "page": "matches.html"
+      },
+      {
+        "id": "Tuinieren",
+        "text": "Gardening",
+        "page": "matches.html"
+      },
+      {
+        "id": "Eten & Drinken",
+        "text": "Food & Drinks",
+        "page": "matches.html"
+      },
+      {
+        "id": "Alcholishe dranken",
+        "text": "Alcoholic drinks",
+        "page": "matches.html"
+      },
+      {
+        "id": "Koken",
+        "text": "Cooking",
+        "page": "matches.html"
+      },
+      {
+        "id": "Chinese cuisine",
+        "text": "Chinese cuisine",
+        "page": "matches.html"
+      },
+      {
+        "id": "Indische cuisine",
+        "text": "Indian cuisine",
+        "page": "matches.html"
+      },
+      {
+        "id": "Koreaanse cuisine",
+        "text": "Korean cuisine",
+        "page": "matches.html"
+      },
+      {
+        "id": "Koffie",
+        "text": "Coffee",
+        "page": "matches.html"
+      },
+      {
+        "id": "Concerten",
+        "text": "Concerts",
+        "page": "matches.html"
+      },
+      {
+        "id": "Films",
+        "text": "Movies",
+        "page": "matches.html"
+      },
+      {
+        "id": "Boeken",
+        "text": "Books",
+        "page": "matches.html"
+      },
+      {
+        "id": "Tv-shows",
+        "text": "Tv-show",
+        "page": "matches.html"
+      },
+      {
+        "id": "ageid",
+        "text": "Age group",
+        "page": "matches.html"
+      },
+      {
+        "id": "genderid",
+        "text": "Gender",
+        "page": "matches.html"
+      },
+      {
+        "id": "searchuserid",
+        "text": "Search User",
+        "page": "matches.html"
+      },
+      {
+        "id": "searchlocationid",
+        "text": "Search location",
+        "page": "matches.html"
       }
+
+
+
+
+
     ],
     "de": [
       {
@@ -1244,7 +1652,192 @@
         "id": "lang-interests",
         "text": "Interessen",
         "page": "profile.html"
+      },
+      {
+        "id": "reispartner_h2",
+        "text": "Finde deinen Reisepartner",
+        "page": "matches.html"
+      },
+      {
+        "id": "reispartner_h3",
+        "text": "Basierend auf Ihrem Interesse",
+        "page": "matches.html"
+      },
+      {
+        "id": "showmorebuttonid",
+        "text": "Zeig mehr",
+        "page": "matches.html"
+      },
+      {
+        "id": "bannertext_1_id",
+        "text": "Finde deinen",
+        "page": "matches.html"
+      },
+      {
+        "id": "bannertext_2_id",
+        "text": "Reisepartner!",
+        "page": "matches.html"
+      },
+      {
+        "id": "bannertext_3_id",
+        "text": "Finden Sie Ihre Übereinstimmung, indem Sie einen Filter hinzufügen",
+        "page": "matches.html"
+      },
+      {
+        "id": "bannertext_4_id",
+        "text": "Wir stellen die besten Benutzer an die Spitze.",
+        "page": "matches.html"
+      },
+      {
+        "id": "toegepastefilters_id",
+        "text": "Angewandte filter(s):",
+        "page": "matches.html"
+      },
+      {
+        "id": "resultatenid",
+        "text": "Gefundene Ergebnisse",
+        "page": "matches.html"
+      },
+      {
+        "id": "laadmeerresultaten",
+        "text": "Weitere Ergebnisse laden",
+        "page": "matches.html"
+      },
+      {
+        "id": "Technology",
+        "text": "Technologie",
+        "page": "matches.html"
+      },
+           
+      {
+        "id": "Televisies",
+        "text": "Fernseher",
+        "page": "matches.html"
+      },
+      {
+        "id": "Cameras",
+        "text": "Kameras",
+        "page": "matches.html"
+      },
+      {
+        "id": "Voetbal",
+        "text": "Fußball",
+        "page": "matches.html"
+      },
+      {
+        "id": "Vissen",
+        "text": "Angeln",
+        "page": "matches.html"
+      },
+      {
+        "id": "Skiën",
+        "text": "Ski laufen",
+        "page": "matches.html"
+      },
+      {
+        "id": "Outdoor",
+        "text": "draussen",
+        "page": "matches.html"
+      },
+      {
+        "id": "Varen",
+        "text": "Segel",
+        "page": "matches.html"
+      },
+      {
+        "id": "Paard Rijden",
+        "text": "Pferde-Reiten",
+        "page": "matches.html"
+      },
+      {
+        "id": "Wandelen",
+        "text": "Gehen",
+        "page": "matches.html"
+      },
+      {
+        "id": "Tuinieren",
+        "text": "Gartenarbeit",
+        "page": "matches.html"
+      },
+      {
+        "id": "Eten & Drinken",
+        "text": "Essen & trinken",
+        "page": "matches.html"
+      },
+      {
+        "id": "Alcholishe dranken",
+        "text": "Alkoholische Getränke",
+        "page": "matches.html"
+      },
+      {
+        "id": "Koken",
+        "text": "Koch",
+        "page": "matches.html"
+      },
+      {
+        "id": "Chinese cuisine",
+        "text": "chinesische Küche",
+        "page": "matches.html"
+      },
+      {
+        "id": "Indische cuisine",
+        "text": "indisch Küche",
+        "page": "matches.html"
+      },
+      {
+        "id": "Koreaanse cuisine",
+        "text": "Koreanisch Küche",
+        "page": "matches.html"
+      },
+      {
+        "id": "Koffie",
+        "text": "Kaffee",
+        "page": "matches.html"
+      },
+      {
+        "id": "Concerten",
+        "text": "Konzerte",
+        "page": "matches.html"
+      },
+      {
+        "id": "Films",
+        "text": "Filme",
+        "page": "matches.html"
+      },
+      {
+        "id": "Boeken",
+        "text": "Bücher",
+        "page": "matches.html"
+      },
+      {
+        "id": "Tv-shows",
+        "text": "Fernsehshows",
+        "page": "matches.html"
+      },
+      {
+        "id": "ageid",
+        "text": "Altersgruppe",
+        "page": "matches.html"
+      },
+      {
+        "id": "genderid",
+        "text": "Geschlecht",
+        "page": "matches.html"
+      },
+      {
+        "id": "searchuserid",
+        "text": "Benutzer suchen",
+        "page": "matches.html"
+      },
+      {
+        "id": "searchlocationid",
+        "text": "Standort suchen",
+        "page": "matches.html"
       }
+
+
+
+
     ]
   }
 }
