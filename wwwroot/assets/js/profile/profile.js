@@ -111,7 +111,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     const profilePictureElement = document.getElementById("profile-picture");
     const nameElement = document.getElementById("name");
     const ageElement = document.getElementById("age");
-    const genderElement = document.getElementById("gender");
+    let genderElement = document.getElementById("gender");
     const locationElement = document.getElementById("location");
     const emailElement = document.getElementById("email");
     const bioElement = document.getElementById("bio");
@@ -121,6 +121,11 @@ document.addEventListener("DOMContentLoaded", async function () {
     nameElement.innerHTML = name;
     ageElement.innerHTML = (new Date).getFullYear() - new Date(birthdate).getFullYear();
     genderElement.innerHTML = genders[genderFk - 1].name;
+
+    // Create a specific id to use with the langchanger, and get the element again with the new id
+    genderElement.id = `lang-${genders[genderFk - 1].name.toLowerCase()}`;
+    genderElement = document.getElementById( `lang-${genders[genderFk - 1].name.toLowerCase()}`);
+
     locationElement.innerHTML = location;
     emailElement.innerHTML = email;
     bioElement.innerText = bio;
@@ -144,6 +149,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
         const interestSpan = document.createElement("span");
         const interestSpanText = document.createTextNode(name);
+        interestSpan.id = `lang-${name.toLowerCase().replaceAll(' ', '-') }`;
         interestSpan.append(interestSpanText);
 
 
