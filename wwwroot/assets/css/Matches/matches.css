@@ -601,10 +601,12 @@ h4 {
     .filter {
         margin: 0;
     }
+
     .moreTravelers > button {
         margin-left: -22.5%;
 
     }
+
     .nav-list li {
         display: inline-block;
         padding: 20px 8px 20px 10px;
@@ -612,8 +614,7 @@ h4 {
     }
 }
 
-@media only screen
-and (min-device-width: 768px) and (max-device-width: 1080px) and (orientation: landscape){
+@media only screen and (min-device-width: 768px) and (max-device-width: 1080px) and (orientation: landscape){
     .nav-list li {
         display: inline-block;
         padding: 20px 8px 20px 10px;
@@ -628,9 +629,11 @@ and (min-device-width: 768px) and (max-device-width: 1080px) and (orientation: l
     .flex-grid {
         flex-direction: column;
     }
+
     main{
         margin-top: -20px;
     }
+
     .matchesHeader {
         display: flex;
         flex-direction: column;
@@ -666,7 +669,6 @@ and (min-device-width: 768px) and (max-device-width: 1080px) and (orientation: l
 
     .textBox {
         margin: 15px 0 20px 30px;
-
     }
 
     .filtermenu > div {

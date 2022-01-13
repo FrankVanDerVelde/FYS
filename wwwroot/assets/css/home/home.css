@@ -296,6 +296,7 @@ footer {
         text-align: center;
     }
 }
+
 /* phone */
 @media only screen and (max-width: 600px)  and (orientation: portrait){
     html{

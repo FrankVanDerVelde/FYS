@@ -8,6 +8,7 @@ footer{
     background-color: var(--bg);
     background-size: 100%;
 }
+
 .footer-nav{
     padding-top: 60px;
     display: flex;
@@ -17,17 +18,20 @@ footer{
     justify-content: space-between;
     padding-bottom: 110px;
 }
+
 .left-footer-nav{
     justify-content: space-between;
     flex: 1;
     max-width: 50%;
     flex-grow: 1;
 }
+
 .left-footer-nav nav{
     display: flex;
     justify-content: space-between;
     width: 100%;
 }
+
 .left-footer-nav a{
     text-align: left;
     text-decoration: none;
@@ -40,15 +44,17 @@ footer{
     max-width: 30%;
     flex-grow: 1;
 }
+
 .right-footer-nav nav{
     display: flex;
     justify-content: space-between;
     width: 100%;
-
 }
+
 .right-footer-nav a{
     filter: var(--social-footer-nav) ;
 }
+
 .gray-footer-line {
     width: 70%;
     height: 2px;
@@ -56,6 +62,7 @@ footer{
     display: block;
     margin: auto;
 }
+
 .footer-text-box{
     padding-top: 20px;
     display: flex;
@@ -65,32 +72,38 @@ footer{
     justify-content: space-between;
     padding-bottom: 20px;
 }
+
 .footer-copyright{
     justify-content: space-between;
     flex: 1;
     max-width: 50%;
     flex-grow: 1;
 }
+
 .right-footer-nav{
     justify-content: space-between;
     flex: 1;
     max-width: 30%;
     flex-grow: 1;
 }
+
 .right-footer-nav a{
     text-decoration: none;
-    color: var(--text1) ;
+    color: var(--text1);
 }
+
 .footer-image img{
     margin-left: auto;
     margin-right: auto;
     max-height: 100px;
     padding-bottom: 40px;
 }
+
 .footer-image{
     width: 100%;
     display: flex;
 }
+
 .footer-privacy-nav a {
     color: var(--text1);
 }
@@ -107,22 +120,27 @@ footer{
         padding-top: 33px;
         padding-bottom: 75px;
     }
+
     .left-footer-nav {
         max-width: 100%;
     }
+
     .right-footer-nav {
         max-width: 100%;
         padding-top: 30px;
     }
+
     .footer-copyright{
         max-width: 100%;
         margin: auto;
     }
+
     .footer-privacy-nav{
         max-width: 100%;
         margin: auto;
         padding-top: 30px;
     }
+    
     .footer-text-box{
         flex-direction: column;
     }

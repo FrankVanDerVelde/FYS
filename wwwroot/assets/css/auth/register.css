@@ -84,7 +84,9 @@ label{
     font-weight: 700;
 }
 
-input[type=email], input[type=password], input[type=text]{
+input[type=email], 
+input[type=password], 
+input[type=text]{
     background-color: #f6f6f6;
     color: black;
     padding: 15px;
@@ -132,6 +134,7 @@ input[type=text]:focus {
     background-color: rgba(37, 47, 63, 0.6);
     transition: background-color 500ms ease-in;
 }
+
 .error-log {
     color: red;
     font-weight: bold;
