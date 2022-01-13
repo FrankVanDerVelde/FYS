@@ -541,7 +541,7 @@
         "page": "matches.html"
       },
       {
-        "id": "Food-&-Drinks",
+        "id": "Food-\\&-Drinks",
         "text": "Eten & Drinken",
         "page": "matches.html"
       },
@@ -676,7 +676,7 @@
         "page": "profile.html"
       },
       {
-        "id": "lang-food-&-drinks",
+        "id": "Food-\\&-Drinks",
         "text": "Eten & Drinken",
         "page": "profile.html"
       },
@@ -801,7 +801,7 @@
         "page": "profile-edit.html"
       },
       {
-        "id": "lang-food-&-drinks",
+        "id": "Food-\\&-Drinks",
         "text": "Eten & Drinken",
         "page": "profile-edit.html"
       },
@@ -1401,7 +1401,7 @@
         "page": "matches.html"
       },
       {
-        "id": "Eten-&-Drinken",
+        "id": "Food-\\&-Drinks",
         "text": "Food & Drinks",
         "page": "matches.html"
       },
@@ -1527,7 +1527,7 @@
         "page": "profile.html"
       },
       {
-        "id": "lang-food-&-drinks",
+        "id": "Food-\\&-Drinks",
         "text": "Food & Drinks",
         "page": "profile.html"
       },
@@ -1653,7 +1653,7 @@
         "page": "profile-edit.html"
       },
       {
-        "id": "lang-food-&-drinks",
+        "id": "Food-\\&-Drinks",
         "text": "Food & Drinks",
         "page": "profile-edit.html"
       },
@@ -2249,7 +2249,7 @@
         "page": "matches.html"
       },
       {
-        "id": "Eten-&-Drinken",
+        "id": "Food-\\&-Drinks",
         "text": "Essen & trinken",
         "page": "matches.html"
       },
@@ -2375,7 +2375,7 @@
         "page": "profile.html"
       },
       {
-        "id": "lang-food-&-drinks",
+        "id": "Food-\\&-Drinks",
         "text": "Essen & trinken",
         "page": "profile.html"
       },
@@ -2501,7 +2501,7 @@
         "page": "profile-edit.html"
       },
       {
-        "id": "lang-food-&-drinks",
+        "id": "Food-\\&-Drinks",
         "text": "Essen & trinken",
         "page": "profile-edit.html"
       },

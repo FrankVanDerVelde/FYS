@@ -34,7 +34,7 @@ async function translate(jsonLang) {
 
     for (let i = 0; i < await jsonLang.length; i++) {
 
-        if(currentPage == jsonLang[i].page) {
+        if (currentPage == jsonLang[i].page) {
             changes.push(jsonLang[i]);
         }
     }
@@ -48,12 +48,20 @@ async function translate(jsonLang) {
  */
 function updatePage(changes) {
     for (let i = 0; i < Object.keys(changes).length; i++) {
-            let toChangeItemArr = document.querySelectorAll(`#${changes[i].id}`);
-            
-            // Loop through NodeList and aply update based on above loop
-            for(let y = 0; y< toChangeItemArr.length; y++) {
-                toChangeItemArr[y].innerHTML = changes[i].text;   
+        let toChangeItemArr = document.querySelectorAll(`#${changes[i].id}`);
+
+        if (toChangeItemArr) {
+            // Loop through NodeList and aply update based on above loopø
+
+            for (let y = 0; y < toChangeItemArr.length; y++) {
+
+                if (toChangeItemArr[y].tagName == "button") {
+                    toChangeItemArr[y].textContent = changes[i].text;
+                } else {
+                    toChangeItemArr[y].innerHTML = changes[i].text;
+                }
             }
+        }
     }
 }
 
@@ -65,7 +73,7 @@ function updatePage(changes) {
  */
 async function getJsonAsync() {
     let uri = "";
-    
+
     switch (await getCurrentPageAsync()) {
         case "index.html":
             uri = "assets/lang.json";
