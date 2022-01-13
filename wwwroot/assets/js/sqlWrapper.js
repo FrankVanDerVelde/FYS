@@ -48,17 +48,6 @@ async function getUserByName(name) {
     }
 }
 
-
-async function getUsertype(userTypeId) {
-    if(userTypeId === 1) {
-        return "admin";
-    } else if (userTypeId === 2) {
-        return "user";
-    } else {
-        return "Unkown user type!";
-    }
-}
-
 /**
  * Fetches all users from the Db.
  *
@@ -101,6 +90,12 @@ async function userExistsByEmailAsync(email) {
     }
 }
 
+/**
+ * Deletes an user based on its userId.
+ *
+ * @param userId - Id of the to delete user.
+ * @returns {Promise<void>}
+ */
 async function deleteUserById(userId) {
     try {
         await disableFkCheck();
@@ -116,6 +111,11 @@ async function deleteUserById(userId) {
     }
 }
 
+/**
+ * Deletes user intrests based on userId.
+ * @param userId - id of the to delete intrests of the user
+ * @returns {Promise<void>}
+ */
 async function deleteUserIntrests(userId) {
     try {
         await sqlDeleteAsync("userinterests", ["accountFk"], userId);
@@ -124,6 +124,10 @@ async function deleteUserIntrests(userId) {
     }
 }
 
+/**
+ * Deletes an match between users
+ * @returns {Promise<void>}
+ */
 async function deleteUserMatch(userId) {
     try {
         await sqlDeleteAsync("matches", ["currUserFk"], [userId]);
@@ -173,6 +177,15 @@ async function sqlSelectAsync(table, column = null, params = null) {
     }
 }
 
+/**
+ * Insert data to the db.
+ *
+ * @param table - table to INSERT in
+ * @param column - columns to INSERT in
+ * @param params - the values to insert with corresponding col.
+ * @param userId -
+ * @returns {Promise<*>}
+ */
 async function sqlInsertAsync(table, column, params, userId) {
     try {
         if (table != "" && column.length != 0 && params.length != 0) {
@@ -210,6 +223,14 @@ async function sqlInsertAsync(table, column, params, userId) {
     }
 }
 
+/**
+ * Update data in the db.
+ *
+ * @param table - table to UPDATE
+ * @param column - columns to UPDATE in
+ * @param params - the values to insert with corresponding col.
+ * @returns {Promise<*>}
+ */
 async function sqlUpdateAsync(table, column, params, userId) {
     try {
         if (table != "" && column.length != 0 && params.length != 0) {
@@ -238,6 +259,13 @@ async function sqlUpdateAsync(table, column, params, userId) {
     }
 }
 
+/**
+ * Deletes data in the db.
+ *
+ * @param table - table to DELETE data from
+ * @param column - columns to DELETE from
+ * @param params - Optional params to add a for ex: WHERE clause
+ */
 async function sqlDeleteAsync(table, column, params) {
     try {
         if (params == null) {
@@ -266,6 +294,11 @@ async function sqlDeleteAsync(table, column, params) {
     }
 }
 
+/**
+ * Enables fkChecks in the DB.
+ *
+ * @returns {Promise<*>}
+ */
 async function enableFkChecks() {
     try {
         return await FYSCloud.API.queryDatabase(`SET FOREIGN_KEY_CHECKS=?`, [1]);
@@ -274,6 +307,11 @@ async function enableFkChecks() {
     }
 }
 
+/**
+ * Disables fkChecks in db to make inserting data on table with constraints easier.
+ *
+ * @returns {Promise<*>}
+ */
 async function disableFkCheck() {
     try {
         return await FYSCloud.API.queryDatabase(`SET FOREIGN_KEY_CHECKS=?`, [0]);
@@ -282,8 +320,14 @@ async function disableFkCheck() {
     }
 }
 
-async function stripTimeFromDate(date) {
+/**
+ * Builds DATETIME from sql to DATE.
+ *
+ * @param dateTime - DateTIME to strip
+ * @returns {Promise<string>}
+ */
+async function stripTimeFromDate(dateTime) {
     const isoToStrip = "T00:00:00.000Z";
 
-    return date.toString().replaceAll(isoToStrip, "");
+    return dateTime.toString().replaceAll(isoToStrip, "");
 }
