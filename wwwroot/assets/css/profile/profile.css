@@ -445,12 +445,6 @@ main::after {
     flex-grow: 1;
 }
 
-/* .interest-checkbox-container label {
-}
-
-.interest-checkbox-container input {
-} */
-
 /* Checkbox styling */
 
 /* Base for label styling */
@@ -637,21 +631,6 @@ footer {
         width: 100%;
         margin-bottom: 2em;
     }
-
-    /* Keeping this uncommented code here incase the order has to be changed again at a later date */
-
-    /*.bio-container {*/
-    /*    order: 2;*/
-    /*}*/
-    /*.basic-info-container {*/
-    /* order: 1;*/
-    /*}*/
-    /*.interests-container {*/
-    /*    order: 3;*/
-    /*}*/
-    /*.contact-info-container {*/
-    /*    order: 4;*/
-    /*}*/
 }
 
 @media only screen and (max-width: 600px) {
@@ -659,7 +638,9 @@ footer {
         padding: 0 1em;
     }
 
-    .bio-container, .basic-info-container, .interests-container {
+    .bio-container, 
+    .basic-info-container, 
+    .interests-container {
         padding: 1em 1em;
     }
 

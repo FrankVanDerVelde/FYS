@@ -74,7 +74,8 @@ main{
     padding: 30px 30px;
 }
 
-.email-box, .wachtwoord-box{
+.email-box, 
+.wachtwoord-box{
     display: flex;
     flex-direction: column;
 }
@@ -85,7 +86,8 @@ label{
     font-weight: 700;
 }
 
-input[type=email], input[type=password]{
+input[type=email], 
+input[type=password]{
     background-color: #f6f6f6;
     color: black;
     padding: 15px;
@@ -130,6 +132,7 @@ input[type=password]:focus{
     background-color: rgba(37, 47, 63, 0.6);
     transition: background-color 500ms ease-in;
 }
+
 .g-recaptcha {
     display: none;
     margin-left: auto;
@@ -137,14 +140,17 @@ input[type=password]:focus{
     width: auto;
     padding-top: 30px;
 }
+
 .visble{
     display: block;
 }
+
 .error-log {
     color: red;
     font-weight: bold;
     margin-top: 20px;
 }
+
 @media all and (max-width: 600px){
     .form-box{
         width: fit-content;
