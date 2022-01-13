@@ -1,5 +1,6 @@
 window.onload = async () => {
     await auth();
+    await loadChart();
 }
 
 /**

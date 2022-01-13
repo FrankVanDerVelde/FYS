@@ -1,7 +1,3 @@
-window.onload = async function () {
-    await loadChart();
-}
-
 /**
  * Builds the pie chart on the panel.html to show active/inactive users;
  */
