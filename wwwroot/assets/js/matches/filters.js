@@ -38,7 +38,7 @@ async function createInterestFilter(interests) {
             childdiv.setAttribute("class", "dropdown-button-filter");
 
             childdiv.setAttribute("onclick", "openInterestFilter(this)");
-            childdiv.setAttribute("id", interests[i].parent_description);
+            childdiv.setAttribute("id", interests[i].parent_description.replaceAll(' ', '-'));
 
             childdiv.innerHTML = interests[i].parent_description;
             parentDiv.appendChild(childdiv);
@@ -71,7 +71,7 @@ async function createInterestFilter(interests) {
             childDivInterest.setAttribute("class", "optionInterest");
             childDivInterest.setAttribute("href", "javascript:void(0)");
             childDivInterest.setAttribute("onclick", "changeFilter(this)");
-            childDivInterest.setAttribute("id", interests[i].child_description);
+            childDivInterest.setAttribute("id", interests[i].child_description.replaceAll(' ', '-'));
 
             childDivInterest.innerHTML = interests[i].child_description;
             dropdownParent[counter].appendChild(childDivInterest);
