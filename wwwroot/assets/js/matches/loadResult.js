@@ -368,11 +368,6 @@ function setPersonCards(card, user, initalSet) {
     if (card === undefined || card === null || user === undefined || user === null)
         return;
 
-
-    // card.children[0].children[0] <-- image
-    //card.children[0].children[1]<-- name
-    //card.children[0].children[2] <-- place
-    // card.children[2].children[0] <-- "meer zien" button;
     try {
         if (!initalSet) {
             setInfo(user.user, card);

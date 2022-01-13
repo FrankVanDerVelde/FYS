@@ -1,7 +1,6 @@
-window.onload = async function () {
-    await loadChart();
-}
-
+/**
+ * Builds the pie chart on the panel.html to show active/inactive users;
+ */
 async function loadChart() {
     const xValues = ["Actief", "Inactief (+1 maand)"];
     const users = await getAllUsersAsync();

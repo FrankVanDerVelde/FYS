@@ -109,8 +109,8 @@
 
 <main>
     <div class="matchesHeader">
-        <h2> Vind Reispartners</h2>
-        <h3>gebaseerd op uw interesses</h3>
+        <h2 id="reispartner_h2"> Vind Reispartners</h2>
+        <h3 id="reispartner_h3">gebaseerd op uw interesses</h3>
     </div>
 
     <section class="skills">
@@ -130,7 +130,7 @@
                         </div>
 
                         <div class="footer">
-                            <a type="submit" class="show-more-btn" href="">Meer zien</a>
+                            <a type="submit" class="show-more-btn" id="showmorebuttonid" href="">Meer zien</a>
                         </div>
                     </div>
                 </div>
@@ -222,17 +222,17 @@
         <div class="filter">
             <div class="entry-section">
                 <div class="textBox">
-                    <p class="bannertext">Vind jouw </p>
+                    <p class="bannertext" id="bannertext_1_id">Vind jouw </p>
 
-                    <p class="bannertext2">Reispartner!</p>
-                    <p class="bannertext3">Vind jouw match door te zoeken met je eigen gekozen filters.</p>
-                    <p class="bannertext3"> Wij zetten de beste matches bovenaan.</p>
+                    <p class="bannertext2" id="bannertext_2_id">Reispartner!</p>
+                    <p class="bannertext3" id="bannertext_3_id">Vind jouw match door te zoeken met je eigen gekozen filters.</p>
+                    <p class="bannertext3" id="bannertext_4_id"> Wij zetten de beste matches bovenaan.</p>
                 </div>
 
 
             </div>
             <div class="filter-card">
-                <div class="toegepastefiltersText">Toegepaste filter(s):</div>
+                <div class="toegepastefiltersText" id="toegepastefilters_id">Toegepaste filter(s):</div>
                 <div class="toegepaste-filters">
                 </div>
             </div>
@@ -254,7 +254,7 @@
                 <button class="dropdown-button" onclick="openFilter(this)">
 
 
-                    <p>Leeftijdsgroep</p>
+                    <p id="ageid">Leeftijdsgroep</p>
                     <img class="pullDown" src="../img/arrow_down.png" alt=" "/>
                 </button>
                 <div class="dropdown-content-filter">
@@ -265,7 +265,7 @@
             </div>
             <div class="geslachtfilter dropdown-filters">
                 <button class="dropdown-button" onclick="openFilter(this)">
-                    <p>Geslacht</p>
+                    <p id="genderid">Geslacht</p>
                     <img class="pullDown" src="../img/arrow_down.png" alt=" "/>
                 </button>
                 <div class="dropdown-content-filter">
@@ -275,12 +275,12 @@
                 </div>
             </div>
             <div class="gebruikerzoekenfilter ">
-                <p>Gebruiker zoeken</p>
+                <p id="searchuserid">Gebruiker zoeken</p>
                 <input type="text" id="username" name="fname" onkeydown="searchWithData(this, 0)"><br><br>
                 <img class="search" src="../img/search.png" alt=" "/>
             </div>
             <div class="gebruikerzoekenfilter ">
-                <p>Op Locatie zoeken</p>
+                <p id="searchlocationid">Op Locatie zoeken</p>
                 <input type="text" id="location" name="lname" onkeydown="searchWithData(this, 1)"><br><br>
                 <img class="search" src="../img/search.png" alt=" "/>
             </div>
@@ -376,11 +376,11 @@
         </div>
 
         <div class="matches-page-navigation">
-            <div class="resultaten">xx resultaten gevonden
+            <div class="resultaten" id="resultatenid">xx resultaten gevonden
                 <div></div>
             </div>
             <div class="moreTravelers">
-                <button class="show-more-btn" onclick="loadMoreCards()">Laad meer resultaten</button>
+                <button class="show-more-btn" id="laadmeerresultaten" onclick="loadMoreCards()">Laad meer resultaten</button>
             </div>
             <div>
 
