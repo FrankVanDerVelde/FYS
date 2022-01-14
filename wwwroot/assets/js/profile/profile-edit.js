@@ -3,28 +3,18 @@ document.addEventListener("DOMContentLoaded", async function () {
     const userId = loggedin[0].id;
 
     let allInterests;
+    let userData;
+    let genders;
     try {
-        allInterests = await FYSCloud.API.queryDatabase(`SELECT interestId, description, imageLink FROM interestdetail`)
+        userData = await FYSCloud.API.queryDatabase(`SELECT * FROM account WHERE id =${userId};`)
+        allInterests = await FYSCloud.API.queryDatabase(`SELECT interestId, description, imageLink FROM interestdetail`);
+        genders = await FYSCloud.API.queryDatabase(`SELECT * FROM gender`);
     } catch (e) {
         console.error(e);
     }
 
     const userInterests = await getUserInterests(userId);
     const maxInterests = 8;
-
-    let userData;
-    try {
-        userData = await FYSCloud.API.queryDatabase(`SELECT * FROM account WHERE id =${userId};`)
-    } catch (e) {
-        console.error(e);
-    }
-
-    let genders;
-    try {
-        genders = await FYSCloud.API.queryDatabase(`SELECT * FROM gender`);
-    } catch (e) {
-        console.error(e);
-    }
 
     const {
         name,
