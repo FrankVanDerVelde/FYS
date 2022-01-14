@@ -710,7 +710,13 @@ h4 {
         width: 45%;
         margin-left: 3px;
     }
-
+    #location {
+        width: 45%;
+        margin-left: 3px;
+    }
+    .removeButton{
+       width: 100%;
+    }
     .entry-section {
         background-size: 100% 100%;
     }
