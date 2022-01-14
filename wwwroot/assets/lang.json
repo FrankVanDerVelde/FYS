@@ -1,7 +1,6 @@
 {
   "langs": {
-    "nl": [
-      {
+    "nl": [{
         "id": "title-1",
         "text": "Vind jouw",
         "page": "index.html"
@@ -58,7 +57,8 @@
       },
       {
         "id": "content-3-1",
-        "text": "Natuurlijk is telefonisch boeken ook mogelijk. Corendon.com heeft haar eigen reserveringssysteem. Dit\\n                    zorgt ervoor dat onze ervaren medewerkers direct kunnen nakijken of het door u gewenste vliegticket\\n                    beschikbaar is. Als een gewenste vertrekdatum niet (meer) boekbaar is, dan kunnen wij u direct via\\n het systeem een alternatieve vertrekdatum bieden waarop het vliegticket wel beschikbaar is.",        "page": "about.html"
+        "text": "Natuurlijk is telefonisch boeken ook mogelijk. Corendon.com heeft haar eigen reserveringssysteem. Dit\\n                    zorgt ervoor dat onze ervaren medewerkers direct kunnen nakijken of het door u gewenste vliegticket\\n                    beschikbaar is. Als een gewenste vertrekdatum niet (meer) boekbaar is, dan kunnen wij u direct via\\n het systeem een alternatieve vertrekdatum bieden waarop het vliegticket wel beschikbaar is.",
+        "page": "about.html"
       },
       {
         "id": "content-3-2",
@@ -72,7 +72,8 @@
       },
       {
         "id": "content-4-1",
-        "text": "Corendon.com is onderdeel van Corendon International Travel BV. De onderneming is in 2000 opgericht in Haarlem, toen Atilay Uslu en zijn zakenpartner Yildiray Karaer besloten hun krachten te bundelen. Voor die tijd had de jonge ondernemer Uslu al zijn eerste stappen in de reisbranche gezet, maar het echte succes komt met de oprichting van Corendon. Het bedrijf begon als Turkije-specialist dat eerst alleen vliegtickets en later ook volledig verzorgde reizen naar Turkije verkocht. In 20 jaar tijd is Corendon uitgegroeid tot een toonaangevende, zeer succesvolle touroperator en dé nummer 1 reisorganisatie als het gaat om veel Turkse en andere populaire bestemmingen binnen en buiten\\n                    Europa, zoals bijvoorbeeld <a href='https://www.corendon.nl/spanje/balearen/ibiza'>ibiza</a>, <a href='https://www.corendon.nl/cyprus'>Cyprus</a> en<a href='https://www.corendon.nl/curacao'>Curaçao</a>.",        "page": "about.html"
+        "text": "Corendon.com is onderdeel van Corendon International Travel BV. De onderneming is in 2000 opgericht in Haarlem, toen Atilay Uslu en zijn zakenpartner Yildiray Karaer besloten hun krachten te bundelen. Voor die tijd had de jonge ondernemer Uslu al zijn eerste stappen in de reisbranche gezet, maar het echte succes komt met de oprichting van Corendon. Het bedrijf begon als Turkije-specialist dat eerst alleen vliegtickets en later ook volledig verzorgde reizen naar Turkije verkocht. In 20 jaar tijd is Corendon uitgegroeid tot een toonaangevende, zeer succesvolle touroperator en dé nummer 1 reisorganisatie als het gaat om veel Turkse en andere populaire bestemmingen binnen en buiten\\n                    Europa, zoals bijvoorbeeld <a href='https://www.corendon.nl/spanje/balearen/ibiza'>ibiza</a>, <a href='https://www.corendon.nl/cyprus'>Cyprus</a> en<a href='https://www.corendon.nl/curacao'>Curaçao</a>.",
+        "page": "about.html"
       },
       {
         "id": "content-4-2",
@@ -154,12 +155,12 @@
         "text": "Zondag: 10.00 - 18.00 uur",
         "page": "contact.html"
       },
-      {   
+      {
         "id": "content-title-2",
         "text": "Social Media",
         "page": "contact.html"
       },
-      {   
+      {
         "id": "content-2",
         "text": "Ook de medewerkers van het webcare team zijn u graag van dienst. Via <a href='https://www.facebook.com/Corendon.nl/'>Facebook</a>,<a href='https://twitter.com/corendon'>Twitter</a> en <a href='https://www.instagram.com/corendon/'>Instagram</a> staan zij 7 dagen per week voor u klaar om al uw vragen te beantwoorden. ",
         "page": "contact.html"
@@ -184,32 +185,32 @@
         "text": "Zondag: 10.00 - 18.00 uur",
         "page": "contact.html"
       },
-      {   
+      {
         "id": "content-title-3",
         "text": "Corendon Groepsreizen & Incentives",
         "page": "contact.html"
       },
-      {   
+      {
         "id": "content-3-1",
         "text": "Het ervaren team van Corendon Groepsreizen regelt alle denkbare personeelsuitjes, groeps-, incentive- en congresreizen. De vakkundige, inventieve en bereisde medewerkers staan u graag te woord.",
         "page": "contact.html"
       },
-      {   
+      {
         "id": "content-3-2",
         "text": "Corendon Groepsreizen is 5 dagen per week bereikbaar op <br> <b>+31 (0)23 5307583</b>",
         "page": "contact.html"
       },
-      {   
+      {
         "id": "content-3-3",
         "text": "Maandag t/m vrijdag: 09.00 - 18.00 uur E-mail: <a href='mailto:group@corendon.nl'>group@corendon.nl</a>",
         "page": "contact.html"
       },
-      {   
+      {
         "id": "content-title-4",
         "text": "GOfun jongerenvakanties",
         "page": "contact.html"
       },
-      {   
+      {
         "id": "content-4",
         "text": "Het GOfun reserveringsteam is er helemaal klaar voor om samen met jou de vakantie van je leven te boeken!",
         "page": "contact.html"
@@ -234,112 +235,112 @@
         "text": "Telefoonnummer GOfun: <b>+31 (0)23 7510 610</b>",
         "page": "contact.html"
       },
-      {   
+      {
         "id": "content-title-5",
         "text": "Corendon servicebalie op Brussel Zaventem",
         "page": "contact.html"
       },
-      {   
+      {
         "id": "content-5-1",
         "text": "Bij de Corendon servicebalie op de luchthaven Brussel Zaventem kunt u terecht met vragen / opmerkingen voor aanvang van uw vlucht. Indien afgesproken heeft u hier ook de mogelijkheid om uw vliegtickets af te halen.",
         "page": "contact.html"
       },
-      {   
+      {
         "id": "content-5-2",
         "text": "De servicebalie op Brussel Zaventem vindt u in vertrekhal 1 (rij 11) en is geopend van maandag t/m vrijdag: 09.00 - 17.00 uur.",
         "page": "contact.html"
       },
-      {   
+      {
         "id": "content-5-3",
         "text": "Bij de balie kunt u geen reizen boeken.",
         "page": "contact.html"
       },
-      {   
+      {
         "id": "content-title-6",
         "text": "Cliëntenservice",
         "page": "contact.html"
       },
-      {   
+      {
         "id": "content-6-1",
         "text": "De afdeling Cliëntenservice is 5 dagen per week telefonisch bereikbaar op +31 (0)23 5307596. Maandag t/m vrijdag: van 10.00-17.00 uur",
         "page": "contact.html"
       },
-      {   
+      {
         "id": "content-6-2",
         "text": "Voor bezwaren en problemen verwijzen wij u naar <a href='https:\\www.corendon.nl/klachtenafhandeling'>corendon.nl/klachtenafhandeling</a>. Klachten dienen uiterlijk binnen 2 maanden na terugkomst schriftelijk ingediend te worden. Vermeld altijd uw 7-cijferig reserveringsnummer.",
         "page": "contact.html"
       },
-      {   
+      {
         "id": "content-6-3",
         "text": "Wanneer u heeft gereserveerd bij een reisbureau verzoeken wij u vriendelijk contact op te nemen met het desbetreffende reisbureau voor de afhandeling van uw klacht.",
         "page": "contact.html"
       },
-      {   
+      {
         "id": "content-title-7",
         "text": "Sales & Marketing",
         "page": "contact.html"
       },
-      {   
+      {
         "id": "content-7-1",
         "text": "De medewerkers van Sales & Marketing zijn bereikbaar via: <a href='mailto:sales@corendon.nl'>sales@corendon.nl</a>",
         "page": "contact.html"
       },
-      {   
+      {
         "id": "content-7-2",
         "text": "Online Marketing  De medewerkers van Sales & Marketing zijn bereikbaar via: <a href='mailto:aftersales@corendon.nl'>aftersales@corendon.nl</a>",
         "page": "contact.html"
       },
-      {   
+      {
         "id": "content-title-8",
         "text": "Administratie",
         "page": "contact.html"
       },
-      {   
+      {
         "id": "content-8-1",
         "text": "Voor vragen over de betaling van uw vakantie belt u",
         "page": "contact.html"
       },
-      {   
+      {
         "id": "content-8-2",
         "text": "Maandag t/m vrijdag 09.00 - 18.00 uur <br>E-mail: <a href='mailto:administratie@corendon.nl'>administratie@corendon.nl</a>",
         "page": "contact.html"
       },
-      {   
+      {
         "id": "content-title-9",
         "text": "Persvoorlichter",
         "page": "contact.html"
       },
-      {   
+      {
         "id": "content-9-1",
         "text": "Newsroom; blijf op de hoogte van al het Corendon nieuws",
         "page": "contact.html"
       },
-      {   
+      {
         "id": "content-9-2",
         "text": "Wilt u in contact komen met onze persvoorlichter. Stuurt u dan een mail naar <a href='mailto:Lpers@corendon.nl'>pers@corendon.nl</a>",
         "page": "contact.html"
       },
-      {   
+      {
         "id": "content-10-1",
         "text": "Vacatures van Corendon kun je vinden op <a href='https:\\www.werkenbijcorendon.nl'>www.werkenbijcorendon.nl</a>",
         "page": "contact.html"
       },
-      {   
+      {
         "id": "content-10-2",
         "text": "Wanneer je een vraag hebt over een vacature kun je ons mailen via <a href='mailto:vacature@corendon.nl'>vacature@corendon.nl</a>",
         "page": "contact.html"
       },
-      {   
+      {
         "id": "content-title-11",
         "text": "Boekhouding",
         "page": "contact.html"
       },
-      {   
+      {
         "id": "content-11-1",
         "text": "De afdeling boekhouding is bereikbaar op",
         "page": "contact.html"
       },
-      {   
+      {
         "id": "content-11-2",
         "text": "Maandag t/m vrijdag 09.00 - 18.00 uur",
         "page": "contact.html"
@@ -378,7 +379,7 @@
         "id": "lang-interests",
         "text": "Interesses",
         "page": "profile-edit.html"
-      },{
+      }, {
         "id": "lang-name",
         "text": "Naam",
         "page": "profile.html"
@@ -412,8 +413,7 @@
         "id": "lang-interests",
         "text": "Interesses",
         "page": "profile.html"
-      }
-      ,
+      },
       {
         "id": "reispartner_h2",
         "text": " Vind Reispartners",
@@ -484,7 +484,7 @@
         "text": "Cameras",
         "page": "matches.html"
       },
-      
+
       {
         "id": "Voetbal",
         "text": "Voetbal",
@@ -541,12 +541,12 @@
         "page": "matches.html"
       },
       {
-        "id": "Food & Drinks",
+        "id": "Food-\\&-Drinks",
         "text": "Eten & Drinken",
         "page": "matches.html"
       },
       {
-        "id": "Alcholishe dranken",
+        "id": "Alcholishe-dranken",
         "text": "Alcholishe dranken",
         "page": "matches.html"
       },
@@ -556,17 +556,17 @@
         "page": "matches.html"
       },
       {
-        "id": "Chinese cuisine",
+        "id": "Chinese-cuisine",
         "text": "Chinese cuisine",
         "page": "matches.html"
       },
       {
-        "id": "Indische cuisine",
+        "id": "Indische-cuisine",
         "text": "Indische cuisine",
         "page": "matches.html"
       },
       {
-        "id": "Koreaanse cuisine",
+        "id": "Koreaanse-cuisine",
         "text": "Koreaanse cuisine",
         "page": "matches.html"
       },
@@ -574,7 +574,7 @@
         "id": "Koffie",
         "text": "Koffie",
         "page": "matches.html"
-      },     
+      },
       {
         "id": "Entertainment",
         "text": "Entertainment",
@@ -624,16 +624,259 @@
         "id": "searchlocationid",
         "text": "Op Locatie Zoeken",
         "page": "matches.html"
-      }
-
-
-
-
-
-
-    ],
-    "en": [
+      },
       {
+        "id": "lang-televisies",
+        "text": "Televisies",
+        "page": "profile.html"
+      },
+      {
+        "id": "lang-cameras",
+        "text": "Cameras",
+        "page": "profile.html"
+      },
+      {
+        "id": "lang-voetbal",
+        "text": "Voetbal",
+        "page": "profile.html"
+      },
+      {
+        "id": "lang-vissen",
+        "text": "Vissen",
+        "page": "profile.html"
+      },
+      {
+        "id": "lang-skiën",
+        "text": "Skiën",
+        "page": "profile.html"
+      },
+      {
+        "id": "lang-outdoor",
+        "text": "Buitenshuis",
+        "page": "profile.html"
+      },
+      {
+        "id": "lang-varen",
+        "text": "Varen",
+        "page": "profile.html"
+      },
+      {
+        "id": "lang-paard-rijden",
+        "text": "Paard rijden",
+        "page": "profile.html"
+      },
+      {
+        "id": "lang-wandelen",
+        "text": "Wandelen",
+        "page": "profile.html"
+      },
+      {
+        "id": "lang-tuinieren",
+        "text": "Tuinieren",
+        "page": "profile.html"
+      },
+      {
+        "id": "Food-\\&-Drinks",
+        "text": "Eten & Drinken",
+        "page": "profile.html"
+      },
+      {
+        "id": "lang-alcholishe-dranken",
+        "text": "Alcholishe dranken",
+        "page": "profile.html"
+      },
+      {
+        "id": "lang-koken",
+        "text": "Koken",
+        "page": "profile.html"
+      },
+      {
+        "id": "lang-chinese-cuisine",
+        "text": "Chinese cuisine",
+        "page": "profile.html"
+      },
+      {
+        "id": "lang-indische-cuisine",
+        "text": "Indische cuisine",
+        "page": "profile.html"
+      },
+      {
+        "id": "lang-koreaanse-cuisine",
+        "text": "Koreaanse cuisine",
+        "page": "profile.html"
+      },
+      {
+        "id": "lang-koffie",
+        "text": "Koffie",
+        "page": "profile.html"
+      },
+      {
+        "id": "lang-entertainment",
+        "text": "Entertainment",
+        "page": "profile.html"
+      },
+      {
+        "id": "lang-concerten",
+        "text": "Concerten",
+        "page": "profile.html"
+      },
+      {
+        "id": "lang-films",
+        "text": "Films",
+        "page": "profile.html"
+      },
+      {
+        "id": "lang-boeken",
+        "text": "Boeken",
+        "page": "profile.html"
+      },
+      {
+        "id": "lang-tv-shows",
+        "text": "Tv-shows",
+        "page": "profile.html"
+      },
+      {
+        "id": "lang-man",
+        "text": "Man",
+        "page": "profile.html"
+      },
+      {
+        "id": "lang-vrouw",
+        "text": "Vrouw",
+        "page": "profile.html"
+      },
+      {
+        "id": "lang-overig",
+        "text": "Overig",
+        "page": "profile.html"
+      },
+      {
+        "id": "lang-televisies",
+        "text": "Televisies",
+        "page": "profile-edit.html"
+      },
+      {
+        "id": "lang-cameras",
+        "text": "Cameras",
+        "page": "profile-edit.html"
+      },
+      {
+        "id": "lang-voetbal",
+        "text": "Voetbal",
+        "page": "profile-edit.html"
+      },
+      {
+        "id": "lang-vissen",
+        "text": "Vissen",
+        "page": "profile-edit.html"
+      },
+      {
+        "id": "lang-skiën",
+        "text": "Skiën",
+        "page": "profile-edit.html"
+      },
+      {
+        "id": "lang-outdoor",
+        "text": "Buitenshuis",
+        "page": "profile-edit.html"
+      },
+      {
+        "id": "lang-varen",
+        "text": "Varen",
+        "page": "profile-edit.html"
+      },
+      {
+        "id": "lang-paard-rijden",
+        "text": "Paard rijden",
+        "page": "profile-edit.html"
+      },
+      {
+        "id": "lang-wandelen",
+        "text": "Wandelen",
+        "page": "profile-edit.html"
+      },
+      {
+        "id": "lang-tuinieren",
+        "text": "Tuinieren",
+        "page": "profile-edit.html"
+      },
+      {
+        "id": "Food-\\&-Drinks",
+        "text": "Eten & Drinken",
+        "page": "profile-edit.html"
+      },
+      {
+        "id": "lang-alcholishe-dranken",
+        "text": "Alcholishe dranken",
+        "page": "profile-edit.html"
+      },
+      {
+        "id": "lang-koken",
+        "text": "Koken",
+        "page": "profile-edit.html"
+      },
+      {
+        "id": "lang-chinese-cuisine",
+        "text": "Chinese cuisine",
+        "page": "profile-edit.html"
+      },
+      {
+        "id": "lang-indische-cuisine",
+        "text": "Indische cuisine",
+        "page": "profile-edit.html"
+      },
+      {
+        "id": "lang-koreaanse-cuisine",
+        "text": "Koreaanse cuisine",
+        "page": "profile-edit.html"
+      },
+      {
+        "id": "lang-koffie",
+        "text": "Koffie",
+        "page": "profile-edit.html"
+      },
+      {
+        "id": "lang-entertainment",
+        "text": "Entertainment",
+        "page": "profile-edit.html"
+      },
+      {
+        "id": "lang-concerten",
+        "text": "Concerten",
+        "page": "profile-edit.html"
+      },
+      {
+        "id": "lang-films",
+        "text": "Films",
+        "page": "profile-edit.html"
+      },
+      {
+        "id": "lang-boeken",
+        "text": "Boeken",
+        "page": "profile-edit.html"
+      },
+      {
+        "id": "lang-tv-shows",
+        "text": "Tv-shows",
+        "page": "profile-edit.html"
+      },
+      {
+        "id": "lang-man",
+        "text": "Man",
+        "page": "profile-edit.html"
+      },
+      {
+        "id": "lang-vrouw",
+        "text": "Vrouw",
+        "page": "profile-edit.html"
+      },
+      {
+        "id": "lang-overig",
+        "text": "Overig",
+        "page": "profile-edit.html"
+      }
+    ],
+    "en": [{
         "id": "title-1",
         "text": "Find your",
         "page": "index.html"
@@ -788,12 +1031,12 @@
         "text": "Sunday: 10.00 - 18.00 uur",
         "page": "contact.html"
       },
-      {   
+      {
         "id": "content-title-2",
         "text": "Social Media",
         "page": "contact.html"
       },
-      {   
+      {
         "id": "content-2",
         "text": "The employees of the webcare team are also happy to be of service. Via <a href='https://www.facebook.com/Corendon.nl/'>Facebook</a>, <a href='https://twitter.com/corendon'>Twitter</a> en <a href='https://www.instagram.com/corendon/'>Instagram</a> they are ready to answer all your questions 7 days a week.",
         "page": "contact.html"
@@ -818,32 +1061,32 @@
         "text": "Via Facebook you will receive a response within 24 hours",
         "page": "contact.html"
       },
-      {   
+      {
         "id": "content-title-3",
         "text": "Corendon Group Travel & Incentives",
         "page": "contact.html"
       },
-      {   
+      {
         "id": "content-3-1",
         "text": "The experienced team of Corendon Group Travel arranges all conceivable staff outings, group, incentive and conference trips. The professional, inventive and well-travelled staff will be happy to help you.",
         "page": "contact.html"
       },
-      {   
+      {
         "id": "content-3-2",
         "text": "Corendon Group Travel is available 5 days a week on <br> <b>+31 (0)23 5307583</b>",
         "page": "contact.html"
       },
-      {   
+      {
         "id": "content-3-3",
         "text": "Monday to Friday: 09.00 - 18.00 E-mail: <a href='mailto:group@corendon.nl'>group@corendon.nl</a>",
         "page": "contact.html"
       },
-      {   
+      {
         "id": "content-title-4",
         "text": "GOfun youth holidays",
         "page": "contact.html"
       },
-      {   
+      {
         "id": "content-4",
         "text": "The GOfun reservations team is ready to book the holiday of a lifetime with you!",
         "page": "contact.html"
@@ -868,112 +1111,112 @@
         "text": "Telephone number GOfun: <b>+31 (0)23 7510 610</b>",
         "page": "contact.html"
       },
-      {   
+      {
         "id": "content-title-5",
         "text": "Corendon service desk at Brussels Zaventem",
         "page": "contact.html"
       },
-      {   
+      {
         "id": "content-5-1",
         "text": "You can contact the Corendon service desk at Brussels Zaventem Airport with questions / comments before the start of your flight. If agreed, you also have the option to pick up your flight tickets here.",
         "page": "contact.html"
       },
-      {   
+      {
         "id": "content-5-2",
         "text": "The service desk at Brussels Zaventem is located in departure hall 1 (row 11) and is open from Monday to Friday: 09.00 - 17.00 hours.",
         "page": "contact.html"
       },
-      {   
+      {
         "id": "content-5-3",
         "text": "You cannot book travel at the desk.",
         "page": "contact.html"
       },
-      {   
+      {
         "id": "content-title-6",
         "text": "Client service",
         "page": "contact.html"
       },
-      {   
+      {
         "id": "content-6-1",
         "text": "The Client Service department can be reached by telephone 5 days a week on +31 (0)23 5307596. Monday to Friday: 10.00-17.00",
         "page": "contact.html"
       },
-      {   
+      {
         "id": "content-6-2",
         "text": "For objections and problems, please refer to <a href='https:\\www.corendon.nl/klachtenafhandeling'>corendon.nl/klachtenafhandeling</a>. Complaints must be submitted in writing within 2 months after return. Always mention your 7-digit reservation number.",
         "page": "contact.html"
       },
-      {   
+      {
         "id": "content-6-3",
         "text": "If you have made a reservation with a travel agency, we kindly ask you to contact the relevant travel agency to handle your complaint.",
         "page": "contact.html"
       },
-      {   
+      {
         "id": "content-title-7",
         "text": "Sales & Marketing",
         "page": "contact.html"
       },
-      {   
+      {
         "id": "content-7-1",
         "text": "The employees of Sales & Marketing can be reached via: <a href='mailto:sales@corendon.nl'>sales@corendon.nl</a>",
         "page": "contact.html"
       },
-      {   
+      {
         "id": "content-7-2",
         "text": "Online Marketing  The employees of Sales & Marketing can be reached via: <a href='mailto:aftersales@corendon.nl'>aftersales@corendon.nl</a>",
         "page": "contact.html"
       },
-      {   
+      {
         "id": "content-title-8",
         "text": "Administration",
         "page": "contact.html"
       },
-      {   
+      {
         "id": "content-8-1",
         "text": "For questions about the payment of your holiday, please call",
         "page": "contact.html"
       },
-      {   
+      {
         "id": "content-8-2",
         "text": "Monday to Friday 09.00 - 18.00 <br>E-mail: <a href='mailto:administratie@corendon.nl'>administratie@corendon.nl</a>",
         "page": "contact.html"
       },
-      {   
+      {
         "id": "content-title-9",
         "text": "Press Officer",
         "page": "contact.html"
       },
-      {   
+      {
         "id": "content-9-1",
         "text": "Newsroom; stay informed of all Corendon news",
         "page": "contact.html"
       },
-      {   
+      {
         "id": "content-9-2",
         "text": "Would you like to get in touch with our press officer? Please send an email to <a href='mailto:Lpers@corendon.nl'>pers@corendon.nl</a>",
         "page": "contact.html"
       },
-      {   
+      {
         "id": "content-10-1",
         "text": "Vacancies of Corendon can be found at <a href='https:\\www.werkenbijcorendon.nl'>www.werkenbijcorendon.nl</a>",
         "page": "contact.html"
       },
-      {   
+      {
         "id": "content-10-2",
         "text": "If you have a question about a vacancy, you can email us at <a href='mailto:vacature@corendon.nl'>vacature@corendon.nl</a>",
         "page": "contact.html"
       },
-      {   
+      {
         "id": "content-title-11",
         "text": "Accounting",
         "page": "contact.html"
       },
-      {   
+      {
         "id": "content-11-1",
         "text": "The accounting department can be reached at",
         "page": "contact.html"
       },
-      {   
+      {
         "id": "content-11-2",
         "text": "Monday to Friday 09.00 - 18.00",
         "page": "contact.html"
@@ -1012,7 +1255,7 @@
         "id": "lang-interests",
         "text": "Interests",
         "page": "profile-edit.html"
-      } ,{
+      }, {
         "id": "lang-name",
         "text": "Name",
         "page": "profile.html"
@@ -1046,7 +1289,7 @@
         "id": "lang-interests",
         "text": "Interests",
         "page": "profile.html"
-      } ,
+      },
       {
         "id": "reispartner_h2",
         "text": " Find your Travelpartner",
@@ -1119,7 +1362,7 @@
       },
       {
         "id": "Voetbal",
-        "text": "Football",
+        "text": "Socces",
         "page": "matches.html"
       },
       {
@@ -1129,7 +1372,7 @@
       },
       {
         "id": "Skiën",
-        "text": "Ski",
+        "text": "Skiing",
         "page": "matches.html"
       },
       {
@@ -1143,7 +1386,7 @@
         "page": "matches.html"
       },
       {
-        "id": "Paard Rijden",
+        "id": "Paard-Rijden",
         "text": "Horseback Riding",
         "page": "matches.html"
       },
@@ -1158,12 +1401,12 @@
         "page": "matches.html"
       },
       {
-        "id": "Eten & Drinken",
+        "id": "Food-\\&-Drinks",
         "text": "Food & Drinks",
         "page": "matches.html"
       },
       {
-        "id": "Alcholishe dranken",
+        "id": "Alcholishe-dranken",
         "text": "Alcoholic drinks",
         "page": "matches.html"
       },
@@ -1173,17 +1416,17 @@
         "page": "matches.html"
       },
       {
-        "id": "Chinese cuisine",
+        "id": "Chinese-cuisine",
         "text": "Chinese cuisine",
         "page": "matches.html"
       },
       {
-        "id": "Indische cuisine",
+        "id": "Indische-cuisine",
         "text": "Indian cuisine",
         "page": "matches.html"
       },
       {
-        "id": "Koreaanse cuisine",
+        "id": "Koreaanse-cuisine",
         "text": "Korean cuisine",
         "page": "matches.html"
       },
@@ -1231,15 +1474,261 @@
         "id": "searchlocationid",
         "text": "Search location",
         "page": "matches.html"
-      }
-
-
-
-
-
-    ],
-    "de": [
+      },
       {
+        "id": "lang-televisies",
+        "text": "Televisions",
+        "page": "profile.html"
+      },
+      {
+        "id": "lang-cameras",
+        "text": "Cameras",
+        "page": "profile.html"
+      },
+
+      {
+        "id": "lang-voetbal",
+        "text": "Soccer",
+        "page": "profile.html"
+      },
+      {
+        "id": "lang-vissen",
+        "text": "Fishing",
+        "page": "profile.html"
+      },
+      {
+        "id": "lang-skiën",
+        "text": "Skiing",
+        "page": "profile.html"
+      },
+      {
+        "id": "lang-outdoor",
+        "text": "Outdoors",
+        "page": "profile.html"
+      },
+      {
+        "id": "lang-varen",
+        "text": "Boating",
+        "page": "profile.html"
+      },
+      {
+        "id": "lang-paard-rijden",
+        "text": "Horseback Riding",
+        "page": "profile.html"
+      },
+      {
+        "id": "lang-wandelen",
+        "text": "Strolls",
+        "page": "profile.html"
+      },
+      {
+        "id": "lang-tuinieren",
+        "text": "Gardening",
+        "page": "profile.html"
+      },
+      {
+        "id": "Food-\\&-Drinks",
+        "text": "Food & Drinks",
+        "page": "profile.html"
+      },
+      {
+        "id": "lang-alcholishe-dranken",
+        "text": "Alcoholic drinks",
+        "page": "profile.html"
+      },
+      {
+        "id": "lang-koken",
+        "text": "Cooking",
+        "page": "profile.html"
+      },
+      {
+        "id": "lang-chinese-cuisine",
+        "text": "Chinese cuisine",
+        "page": "profile.html"
+      },
+      {
+        "id": "lang-indische-cuisine",
+        "text": "Indian cuisine",
+        "page": "profile.html"
+      },
+      {
+        "id": "lang-koreaanse-cuisine",
+        "text": "Korean cuisine",
+        "page": "profile.html"
+      },
+      {
+        "id": "lang-koffie",
+        "text": "Coffee",
+        "page": "profile.html"
+      },
+      {
+        "id": "lang-entertainment",
+        "text": "Entertainment",
+        "page": "profile.html"
+      },
+      {
+        "id": "lang-concerten",
+        "text": "Concerts",
+        "page": "profile.html"
+      },
+      {
+        "id": "lang-films",
+        "text": "Movies",
+        "page": "profile.html"
+      },
+      {
+        "id": "lang-boeken",
+        "text": "Boeken",
+        "page": "profile.html"
+      },
+      {
+        "id": "lang-tv-shows",
+        "text": "Tv-shows",
+        "page": "profile.html"
+      },
+      {
+        "id": "lang-man",
+        "text": "Male",
+        "page": "profile.html"
+      },
+      {
+        "id": "lang-vrouw",
+        "text": "Female",
+        "page": "profile.html"
+      },
+      {
+        "id": "lang-overig",
+        "text": "Other",
+        "page": "profile.html"
+      },
+      {
+        "id": "lang-televisies",
+        "text": "Televisions",
+        "page": "profile-edit.html"
+      },
+      {
+        "id": "lang-cameras",
+        "text": "Cameras",
+        "page": "profile-edit.html"
+      },
+
+      {
+        "id": "lang-voetbal",
+        "text": "Soccer",
+        "page": "profile-edit.html"
+      },
+      {
+        "id": "lang-vissen",
+        "text": "Fishing",
+        "page": "profile-edit.html"
+      },
+      {
+        "id": "lang-skiën",
+        "text": "Skiing",
+        "page": "profile-edit.html"
+      },
+      {
+        "id": "lang-outdoor",
+        "text": "Outdoors",
+        "page": "profile-edit.html"
+      },
+      {
+        "id": "lang-varen",
+        "text": "Boating",
+        "page": "profile-edit.html"
+      },
+      {
+        "id": "lang-paard-rijden",
+        "text": "Horseback Riding",
+        "page": "profile-edit.html"
+      },
+      {
+        "id": "lang-wandelen",
+        "text": "Strolls",
+        "page": "profile-edit.html"
+      },
+      {
+        "id": "lang-tuinieren",
+        "text": "Gardening",
+        "page": "profile-edit.html"
+      },
+      {
+        "id": "Food-\\&-Drinks",
+        "text": "Food & Drinks",
+        "page": "profile-edit.html"
+      },
+      {
+        "id": "lang-alcholishe-dranken",
+        "text": "Alcoholic drinks",
+        "page": "profile-edit.html"
+      },
+      {
+        "id": "lang-koken",
+        "text": "Cooking",
+        "page": "profile-edit.html"
+      },
+      {
+        "id": "lang-chinese-cuisine",
+        "text": "Chinese cuisine",
+        "page": "profile-edit.html"
+      },
+      {
+        "id": "lang-indische-cuisine",
+        "text": "Indian cuisine",
+        "page": "profile-edit.html"
+      },
+      {
+        "id": "lang-koreaanse-cuisine",
+        "text": "Korean cuisine",
+        "page": "profile-edit.html"
+      },
+      {
+        "id": "lang-koffie",
+        "text": "Coffee",
+        "page": "profile-edit.html"
+      },
+      {
+        "id": "lang-entertainment",
+        "text": "Entertainment",
+        "page": "profile-edit.html"
+      },
+      {
+        "id": "lang-concerten",
+        "text": "Concerts",
+        "page": "profile-edit.html"
+      },
+      {
+        "id": "lang-films",
+        "text": "Movies",
+        "page": "profile-edit.html"
+      },
+      {
+        "id": "lang-boeken",
+        "text": "Boeken",
+        "page": "profile-edit.html"
+      },
+      {
+        "id": "lang-tv-shows",
+        "text": "Tv-shows",
+        "page": "profile-edit.html"
+      },
+      {
+        "id": "lang-man",
+        "text": "Male",
+        "page": "profile-edit.html"
+      },
+      {
+        "id": "lang-vrouw",
+        "text": "Female",
+        "page": "profile-edit.html"
+      },
+      {
+        "id": "lang-overig",
+        "text": "Other",
+        "page": "profile-edit.html"
+      }
+    ],
+    "de": [{
         "id": "title-1",
         "text": "finde deinen",
         "page": "index.html"
@@ -1394,12 +1883,12 @@
         "text": "Sonntag: 10.00 - 18.00",
         "page": "contact.html"
       },
-      {   
+      {
         "id": "content-title-2",
         "text": "Soziale Medien",
         "page": "contact.html"
       },
-      {   
+      {
         "id": "content-2",
         "text": "Auch die Mitarbeiter des Webcare-Teams stehen Ihnen gerne zur Verfügung. Über <a href='https://www.facebook.com/Corendon.nl/'>Facebook</a>, <a href='https://twitter.com/corendon'>Twitter</a> und <a href='https://www.instagram.com/corendon/'>Instagram</a> sind sie bereit, alle Ihre Fragen 7 Tage die Woche zu beantworten.",
         "page": "contact.html"
@@ -1424,32 +1913,32 @@
         "text": "Über Facebook erhalten Sie innerhalb von 24 Stunden eine Antwort",
         "page": "contact.html"
       },
-      {   
+      {
         "id": "content-title-3",
         "text": "Corendon Gruppe Reisen & Incentives",
         "page": "contact.html"
       },
-      {   
+      {
         "id": "content-3-1",
         "text": "Das erfahrene Team von Corendon Group Travel organisiert alle erdenklichen Betriebsausflüge, Gruppen-, Incentive- und Konferenzreisen. Das professionelle, einfallsreiche und weitgereiste Personal hilft Ihnen gerne weiter.",
         "page": "contact.html"
       },
-      {   
+      {
         "id": "content-3-2",
         "text": "Corendon Group Travel ist 5 Tage die Woche verfügbar auf <br> <b>+31 (0)23 5307583</b>",
         "page": "contact.html"
       },
-      {   
+      {
         "id": "content-3-3",
         "text": "Montag bis Freitag: 09.00 - 18.00 Uhr E-Mail: <a href= mailto:group@corendon.nl'>group@corendon.nl</a>",
         "page": "contact.html"
       },
-      {   
+      {
         "id": "content-title-4",
         "text": "GOfun Jugendferien",
         "page": "contact.html"
       },
-      {   
+      {
         "id": "content-4",
         "text": "Das GOfun Reservierungsteam ist bereit, den Urlaub Ihres Lebens mit Ihnen zu buchen!",
         "page": "contact.html"
@@ -1474,112 +1963,112 @@
         "text": "Telefonnummer GOfun: <b>+31 (0)23 7510 610</b>",
         "page": "contact.html"
       },
-      {   
+      {
         "id": "content-title-5",
         "text": "Corendon Service Desk bei Brussels Zaventem",
         "page": "contact.html"
       },
-      {   
+      {
         "id": "content-5-1",
         "text": "Sie können den Corendon Service Desk am Flughafen Brüssel Zaventem mit Fragen / Kommentaren vor Beginn Ihres Fluges kontaktieren. Nach Absprache haben Sie auch die Möglichkeit, Ihre Flugtickets hier abzuholen.",
         "page": "contact.html"
       },
-      {   
+      {
         "id": "content-5-2",
         "text": "Der Service Desk im Brussels Zaventem befindet sich in der Abflughalle 1 (Reihe 11) und ist von Montag bis Freitag von 09.00 - 17.00 Uhr geöffnet.",
         "page": "contact.html"
       },
-      {   
+      {
         "id": "content-5-3",
         "text": "Sie können keine Reise am Schalter buchen.",
         "page": "contact.html"
       },
-      {   
+      {
         "id": "content-title-6",
         "text": "Kundenservice",
         "page": "contact.html"
       },
-      {   
+      {
         "id": "content-6-1",
         "text": "Der Kundenservice ist telefonisch 5 Tage die Woche unter +31 (0)23 5307596 erreichbar. Montag bis Freitag: 10.00-17.00 Uhr",
         "page": "contact.html"
       },
-      {   
+      {
         "id": "content-6-2",
         "text": "Für Einwände und Probleme wenden Sie sich bitte an <a href='https:\\www.corendon.nl/klachtenafhandeling'>corendon.nl/klachtenafhandeling</a>. Reklamationen müssen innerhalb von 2 Monaten nach Rücksendung schriftlich eingereicht werden. Erwähnen Sie immer Ihre 7-stellige Reservierungsnummer.",
         "page": "contact.html"
       },
-      {   
+      {
         "id": "content-6-3",
         "text": "Wenn Sie eine Reservierung bei einem Reisebüro vorgenommen haben, bitten wir Sie, sich an das zuständige Reisebüro zu wenden, um Ihre Beschwerde zu bearbeiten.",
         "page": "contact.html"
       },
-      {   
+      {
         "id": "content-title-7",
         "text": "Vertrieb & Marketing",
         "page": "contact.html"
       },
-      {   
+      {
         "id": "content-7-1",
         "text": "Die Mitarbeiter von Sales & Marketing sind erreichbar über: <a href='mailto:sales@corendon.nl'>sales@corendon.nl</a>",
         "page": "contact.html"
       },
-      {   
+      {
         "id": "content-7-2",
         "text": "Online-Marketing  Die Mitarbeiter von Sales & Marketing erreichen Sie über: <a href='mailto:aftersales@corendon.nl'>aftersales@corendon.nl</a>",
         "page": "contact.html"
       },
-      {   
+      {
         "id": "content-title-8",
         "text": "Verwaltung",
         "page": "contact.html"
       },
-      {   
+      {
         "id": "content-8-1",
         "text": "Bei Fragen zur Bezahlung Ihres Urlaubs rufen Sie bitte",
         "page": "contact.html"
       },
-      {   
+      {
         "id": "content-8-2",
         "text": "Montag bis Freitag 09.00 - 18.00 Uhr <br>E-mail: <a href='mailto:administratie@corendon.nl'>administratie@corendon.nl</a>",
         "page": "contact.html"
       },
-      {   
+      {
         "id": "content-title-9",
         "text": "Mediensprecher",
         "page": "contact.html"
       },
-      {   
+      {
         "id": "content-9-1",
         "text": "Newsroom; Bleiben Sie über alle Neuigkeiten von Corendon auf dem Laufenden",
         "page": "contact.html"
       },
-      {   
+      {
         "id": "content-9-2",
         "text": "Möchten Sie mit unserem Pressesprecher in Kontakt treten? Bitte senden Sie eine E-Mail an <a href='mailto:Lpers@corendon.nl'>pers@corendon.nl</a>",
         "page": "contact.html"
       },
-      {   
+      {
         "id": "content-10-1",
         "text": "Offene Stellen in Corendon finden Sie unter <a href='https:\\www.werkenbijcorendon.nl'>www.werkenbijcorendon.nl</a>",
         "page": "contact.html"
       },
-      {   
+      {
         "id": "content-10-2",
         "text": "Wenn Sie eine Frage zu einer offenen Stelle haben, können Sie uns eine E-Mail an <a href='mailto:vacature@corendon.nl'>vacature@corendon.nl</a>",
         "page": "contact.html"
       },
-      {   
+      {
         "id": "content-title-11",
         "text": "Buchführung",
         "page": "contact.html"
       },
-      {   
+      {
         "id": "content-11-1",
         "text": "Die Buchhaltung erreichen Sie unter",
         "page": "contact.html"
       },
-      {   
+      {
         "id": "content-11-2",
         "text": "Montag bis Freitag 09.00 - 18.00 Uhr",
         "page": "contact.html"
@@ -1618,7 +2107,7 @@
         "id": "lang-interests",
         "text": "Interessen",
         "page": "profile-edit.html"
-      } ,{
+      }, {
         "id": "lang-name",
         "text": "Name",
         "page": "profile.html"
@@ -1708,7 +2197,7 @@
         "text": "Technologie",
         "page": "matches.html"
       },
-           
+
       {
         "id": "Televisies",
         "text": "Fernseher",
@@ -1736,7 +2225,7 @@
       },
       {
         "id": "Outdoor",
-        "text": "draussen",
+        "text": "Draussen",
         "page": "matches.html"
       },
       {
@@ -1745,7 +2234,7 @@
         "page": "matches.html"
       },
       {
-        "id": "Paard Rijden",
+        "id": "Paard-Rijden",
         "text": "Pferde-Reiten",
         "page": "matches.html"
       },
@@ -1760,12 +2249,12 @@
         "page": "matches.html"
       },
       {
-        "id": "Eten & Drinken",
+        "id": "Food-\\&-Drinks",
         "text": "Essen & trinken",
         "page": "matches.html"
       },
       {
-        "id": "Alcholishe dranken",
+        "id": "Alcholishe-dranken",
         "text": "Alkoholische Getränke",
         "page": "matches.html"
       },
@@ -1775,17 +2264,17 @@
         "page": "matches.html"
       },
       {
-        "id": "Chinese cuisine",
-        "text": "chinesische Küche",
+        "id": "Chinese-cuisine",
+        "text": "Chinesische Küche",
         "page": "matches.html"
       },
       {
-        "id": "Indische cuisine",
-        "text": "indisch Küche",
+        "id": "Indische-cuisine",
+        "text": "Indisch Küche",
         "page": "matches.html"
       },
       {
-        "id": "Koreaanse cuisine",
+        "id": "Koreaanse-cuisine",
         "text": "Koreanisch Küche",
         "page": "matches.html"
       },
@@ -1833,11 +2322,259 @@
         "id": "searchlocationid",
         "text": "Standort suchen",
         "page": "matches.html"
+      },
+      {
+        "id": "lang-televisies",
+        "text": "Fernseher",
+        "page": "profile.html"
+      },
+      {
+        "id": "lang-cameras",
+        "text": "Kameras",
+        "page": "profile.html"
+      },
+
+      {
+        "id": "lang-voetbal",
+        "text": "Fußball",
+        "page": "profile.html"
+      },
+      {
+        "id": "lang-vissen",
+        "text": "Angeln",
+        "page": "profile.html"
+      },
+      {
+        "id": "lang-skiën",
+        "text": "Ski laufen",
+        "page": "profile.html"
+      },
+      {
+        "id": "lang-outdoor",
+        "text": "Draussen",
+        "page": "profile.html"
+      },
+      {
+        "id": "lang-varen",
+        "text": "Segel",
+        "page": "profile.html"
+      },
+      {
+        "id": "lang-paard-rijden",
+        "text": "Pferde-Reiten",
+        "page": "profile.html"
+      },
+      {
+        "id": "lang-wandelen",
+        "text": "Gehen",
+        "page": "profile.html"
+      },
+      {
+        "id": "lang-tuinieren",
+        "text": "Gartenarbeit",
+        "page": "profile.html"
+      },
+      {
+        "id": "Food-\\&-Drinks",
+        "text": "Essen & trinken",
+        "page": "profile.html"
+      },
+      {
+        "id": "lang-alcholishe-dranken",
+        "text": "Alkoholische Getränke",
+        "page": "profile.html"
+      },
+      {
+        "id": "lang-koken",
+        "text": "Koch",
+        "page": "profile.html"
+      },
+      {
+        "id": "lang-chinese-cuisine",
+        "text": "Chinesische Küche",
+        "page": "profile.html"
+      },
+      {
+        "id": "lang-indische-cuisine",
+        "text": "Indisch Küche",
+        "page": "profile.html"
+      },
+      {
+        "id": "lang-koreaanse-cuisine",
+        "text": "Koreanisch Küche",
+        "page": "profile.html"
+      },
+      {
+        "id": "lang-koffie",
+        "text": "Kaffee",
+        "page": "profile.html"
+      },
+      {
+        "id": "lang-entertainment",
+        "text": "Unterhaltung",
+        "page": "profile.html"
+      },
+      {
+        "id": "lang-concerten",
+        "text": "Konzerte",
+        "page": "profile.html"
+      },
+      {
+        "id": "lang-films",
+        "text": "Filme",
+        "page": "profile.html"
+      },
+      {
+        "id": "lang-boeken",
+        "text": "Bücher",
+        "page": "profile.html"
+      },
+      {
+        "id": "lang-tv-shows",
+        "text": "Fernsehshows",
+        "page": "profile.html"
+      },
+      {
+        "id": "lang-man",
+        "text": "Mann",
+        "page": "profile.html"
+      },
+      {
+        "id": "lang-vrouw",
+        "text": "Weiblich",
+        "page": "profile.html"
+      },
+      {
+        "id": "lang-overig",
+        "text": "Unterschiedlich",
+        "page": "profile.html"
+      },
+      {
+        "id": "lang-televisies",
+        "text": "Fernseher",
+        "page": "profile-edit.html"
+      },
+      {
+        "id": "lang-cameras",
+        "text": "Kameras",
+        "page": "profile-edit.html"
+      },
+
+      {
+        "id": "lang-voetbal",
+        "text": "Fußball",
+        "page": "profile-edit.html"
+      },
+      {
+        "id": "lang-vissen",
+        "text": "Angeln",
+        "page": "profile-edit.html"
+      },
+      {
+        "id": "lang-skiën",
+        "text": "Ski laufen",
+        "page": "profile-edit.html"
+      },
+      {
+        "id": "lang-outdoor",
+        "text": "Draussen",
+        "page": "profile-edit.html"
+      },
+      {
+        "id": "lang-varen",
+        "text": "Segel",
+        "page": "profile-edit.html"
+      },
+      {
+        "id": "lang-paard-rijden",
+        "text": "Pferde-Reiten",
+        "page": "profile-edit.html"
+      },
+      {
+        "id": "lang-wandelen",
+        "text": "Gehen",
+        "page": "profile-edit.html"
+      },
+      {
+        "id": "lang-tuinieren",
+        "text": "Gartenarbeit",
+        "page": "profile-edit.html"
+      },
+      {
+        "id": "Food-\\&-Drinks",
+        "text": "Essen & trinken",
+        "page": "profile-edit.html"
+      },
+      {
+        "id": "lang-alcholishe-dranken",
+        "text": "Alkoholische Getränke",
+        "page": "profile-edit.html"
+      },
+      {
+        "id": "lang-koken",
+        "text": "Koch",
+        "page": "profile-edit.html"
+      },
+      {
+        "id": "lang-chinese-cuisine",
+        "text": "Chinesische Küche",
+        "page": "profile-edit.html"
+      },
+      {
+        "id": "lang-indische-cuisine",
+        "text": "Indisch Küche",
+        "page": "profile-edit.html"
+      },
+      {
+        "id": "lang-koreaanse-cuisine",
+        "text": "Koreanisch Küche",
+        "page": "profile-edit.html"
+      },
+      {
+        "id": "lang-koffie",
+        "text": "Kaffee",
+        "page": "profile-edit.html"
+      },
+      {
+        "id": "lang-entertainment",
+        "text": "Unterhaltung",
+        "page": "profile-edit.html"
+      },
+      {
+        "id": "lang-concerten",
+        "text": "Konzerte",
+        "page": "profile-edit.html"
+      },
+      {
+        "id": "lang-films",
+        "text": "Filme",
+        "page": "profile-edit.html"
+      },
+      {
+        "id": "lang-boeken",
+        "text": "Bücher",
+        "page": "profile-edit.html"
+      },
+      {
+        "id": "lang-tv-shows",
+        "text": "Fernsehshows",
+        "page": "profile-edit.html"
+      },
+      {
+        "id": "lang-man",
+        "text": "Mann",
+        "page": "profile-edit.html"
+      },
+      {
+        "id": "lang-vrouw",
+        "text": "Weiblich",
+        "page": "profile-edit.html"
+      },
+      {
+        "id": "lang-overig",
+        "text": "Unterschiedlich",
+        "page": "profile-edit.html"
       }
-
-
-
-
     ]
   }
 }

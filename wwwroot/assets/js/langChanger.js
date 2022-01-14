@@ -20,6 +20,12 @@ async function getTranslationLang(lang) {
     }
 }
 
+
+/**
+ * Fetches the corospondig array wit data of the current page.
+ * 
+ * @param {*} jsonLang - array with json data.
+ */
 async function translate(jsonLang) {
     const currentUrl = window.location;
     let changes = [];
@@ -28,30 +34,46 @@ async function translate(jsonLang) {
 
     for (let i = 0; i < await jsonLang.length; i++) {
 
-        if(currentPage == jsonLang[i].page) {
+        if (currentPage == jsonLang[i].page) {
             changes.push(jsonLang[i]);
         }
     }
-    await updatePage(changes);
+    updatePage(changes);
 }
 
-async function updatePage(changes) {
-
+/**
+ * Updates the page with the corosponding data.
+ * 
+ * @param {*} changes - changes to be made to current page
+ */
+function updatePage(changes) {
     for (let i = 0; i < Object.keys(changes).length; i++) {
-        // console.log(`ID: ${changes[i].id}`);
-        // console.log(`TEXT: ${changes[i].text}`);
+        let toChangeItemArr = document.querySelectorAll(`#${changes[i].id}`);
 
-        try {
-            document.getElementById(changes[i].id).innerHTML = changes[i].text;
-        } catch {
-            // Fix this later
+        if (toChangeItemArr) {
+            // Loop through NodeList and aply update based on above loopø
+
+            for (let y = 0; y < toChangeItemArr.length; y++) {
+
+                if (toChangeItemArr[y].tagName == "button") {
+                    toChangeItemArr[y].textContent = changes[i].text;
+                } else {
+                    toChangeItemArr[y].innerHTML = changes[i].text;
+                }
+            }
         }
     }
 }
 
+/**
+ * Add the page here that needs to be able to be chagned.
+ * This functions fetches the json from the app.
+ * 
+ * @returns 
+ */
 async function getJsonAsync() {
     let uri = "";
-    
+
     switch (await getCurrentPageAsync()) {
         case "index.html":
             uri = "assets/lang.json";
@@ -70,6 +92,10 @@ async function getJsonAsync() {
     return await res.json();
 }
 
+/**
+ * Helper for geting current page.
+ * @returns 
+ */
 async function getCurrentPageAsync() {
     const path = window.location.pathname;
     const page = path.split("/").pop();

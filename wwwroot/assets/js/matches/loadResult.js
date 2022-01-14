@@ -431,7 +431,7 @@ function setInfo(user, card) {
 
 function loadMoreCards() {
 
-
+    checklang();
     if (wantedUsers === undefined || wantedUsers === null)
         return;
     checkCardAmount();
@@ -524,7 +524,6 @@ window.addEventListener('scroll', function (e) {
     // console.log(currentScroll);
     if (currentScroll + modifier > documentHeight) {
         loadMoreCards();
-
     }
 }, false);
 //});

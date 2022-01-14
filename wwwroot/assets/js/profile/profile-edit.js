@@ -3,28 +3,18 @@ document.addEventListener("DOMContentLoaded", async function () {
     const userId = loggedin[0].id;
 
     let allInterests;
+    let userData;
+    let genders;
     try {
-        allInterests = await FYSCloud.API.queryDatabase(`SELECT interestId, description, imageLink FROM interestdetail`)
+        userData = await FYSCloud.API.queryDatabase(`SELECT * FROM account WHERE id =${userId};`)
+        allInterests = await FYSCloud.API.queryDatabase(`SELECT interestId, description, imageLink FROM interestdetail`);
+        genders = await FYSCloud.API.queryDatabase(`SELECT * FROM gender`);
     } catch (e) {
         console.error(e);
     }
 
     const userInterests = await getUserInterests(userId);
     const maxInterests = 8;
-
-    let userData;
-    try {
-        userData = await FYSCloud.API.queryDatabase(`SELECT * FROM account WHERE id =${userId};`)
-    } catch (e) {
-        console.error(e);
-    }
-
-    let genders;
-    try {
-        genders = await FYSCloud.API.queryDatabase(`SELECT * FROM gender`);
-    } catch (e) {
-        console.error(e);
-    }
 
     const {
         name,
@@ -175,6 +165,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         let genderOption = document.createElement('option');
         genderOption.value = gender.id;
         genderOption.innerHTML = gender.name;
+        genderOption.id = `lang-${gender.name.toLowerCase()}`;
         genderInput.appendChild(genderOption);
     });
 
@@ -225,6 +216,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         // Make checkbox label
         const interestLabel = document.createElement("label");
         interestLabel.setAttribute("for", interestName);
+        interestLabel.id = `lang-${interestName.toLowerCase().replaceAll(' ', '-') }`;
         const interestLabelSpan = document.createTextNode(interestName);
         interestLabel.append(interestLabelSpan);
 
@@ -265,7 +257,6 @@ document.addEventListener("DOMContentLoaded", async function () {
         paginationElement.append(paginationText);
         paginationForwardButton.before(paginationElement);
     }
-
 
     const paginationTabsNum = document.querySelectorAll('.pagination-element').length;
     paginationBackButton.addEventListener('click', () => {
@@ -324,7 +315,6 @@ document.addEventListener("DOMContentLoaded", async function () {
             let activeCheckBoxCount = activeInterestCheckBoxes.length;
             if (activeCheckBoxCount == maxInterests) {
                 if (initialCall == false) {
-                    // console.log(initialCall)
                     // Turn shake on
                     maxInterestLabel.classList.toggle('shake');
                     // Turn shake off
@@ -339,7 +329,6 @@ document.addEventListener("DOMContentLoaded", async function () {
                     }
                 });
             } else {
-                // console.log(maxInterestLabel);
 
                 interestCheckBoxes.forEach(checkBox => {
                     if (checkBox.disabled) {
