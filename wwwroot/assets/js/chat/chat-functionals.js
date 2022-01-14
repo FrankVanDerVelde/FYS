@@ -351,7 +351,9 @@ window.addEventListener('load', async function () {
         async function getCurrUserData(userId){
             try {
                 const query = FYSCloud.API.queryDatabase(
-                    'SELECT * FROM account WHERE id = ?',[userId]
+                    'SELECT * FROM ' + 
+                    'account WHERE id = ?',
+                    [userId]
                 );
                 const results = await query;
                 return await results;
@@ -366,10 +368,12 @@ window.addEventListener('load', async function () {
          * @param {int} recieverId
          * @param {string} message
          */
-           async function insertMessage(senderId, recieverId, message){
+        async function insertMessage(senderId, recieverId, message){
             try {
                 const query = FYSCloud.API.queryDatabase(
-                    'SET NAMES utf8mb4; INSERT INTO `messages` (id, senderFk, recieverFk, message) VALUES(NULL, ?, ?, ?);',[senderId, recieverId, message]
+                    'INSERT INTO `messages` (id, senderFk, recieverFk, message) ' +
+                    'VALUES(NULL, ?, ?, ?);',
+                    [senderId, recieverId, message]
                 );
                 const results = await query;
                 return await results;
@@ -407,7 +411,7 @@ window.addEventListener('load', async function () {
                     'SELECT matches.id, account.name, account.profilePhoto FROM matches ' +
                     'INNER JOIN account ' +
                     'ON matchedUserFk = account.id or currUserFk = account.id ' +
-                    'WHERE matchedUserFk = ?  AND email != ? AND status = "pending"', 
+                    'WHERE matchedUserFk = ? AND email != ? AND status = "pending"', 
                     [userId, email]
                 );
                 const results = await query;
@@ -423,7 +427,7 @@ window.addEventListener('load', async function () {
                     'SELECT matches.id, account.name, account.profilePhoto FROM matches ' + 
                     'INNER JOIN account ' +
                     'ON matchedUserFk = account.id or currUserFk = account.id ' +
-                    'WHERE  status = "blocked" AND email != ? AND  lastUpdatedBy = ?',
+                    'WHERE  status = "blocked" AND email != ? AND lastUpdatedBy = ?',
                     [email, userId]
                 );
                 const results = await query;
